@@ -29,13 +29,12 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         {/* Available badge */}
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 border border-gold/30 px-4 py-2 mb-10 text-xs tracking-widest uppercase font-mono text-gold/80"
+          className="mb-10"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-          Available for freelance
+          <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse block" />
         </motion.div>
 
         {/* Name */}
