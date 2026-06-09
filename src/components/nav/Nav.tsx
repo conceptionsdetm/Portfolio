@@ -56,10 +56,12 @@ export default function Nav() {
             </Link>
           ))}
           <a
-            href="mailto:conceptionsdetm@gmail.com"
-            className="ml-4 px-5 py-2 border border-gold/50 text-gold text-xs tracking-widest uppercase font-mono hover:bg-gold hover:text-ink transition-all duration-200"
+            href="/Timonas-Stefanou-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-4 px-5 py-2 bg-gold text-ink text-xs tracking-widest uppercase font-mono hover:bg-white transition-colors duration-200"
           >
-            Hire Me
+            Download CV
           </a>
         </nav>
 
@@ -91,10 +93,12 @@ export default function Nav() {
             </Link>
           ))}
           <a
-            href="mailto:conceptionsdetm@gmail.com"
-            className="mt-2 self-start px-5 py-2.5 border border-gold text-gold text-xs tracking-widest uppercase font-mono"
+            href="/Timonas-Stefanou-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 self-start px-5 py-2.5 bg-gold text-ink text-xs tracking-widest uppercase font-mono"
           >
-            Hire Me
+            Download CV
           </a>
         </div>
       )}
