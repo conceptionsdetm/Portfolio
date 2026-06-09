@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
@@ -12,28 +11,28 @@ export default function FeaturedWork() {
   return (
     <section className="py-24 md:py-32 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
+
         {/* Section header */}
-        <RevealOnScroll className="flex items-end justify-between mb-16">
+        <RevealOnScroll className="mb-12 md:mb-14 flex items-end justify-between border-b border-paper/6 pb-6">
           <div>
-            <p className="text-gold text-xs tracking-widest uppercase font-mono mb-3">
-              Selected Work
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl text-white">
-              Featured Projects
+            <span className="font-mono text-[9px] tracking-[0.42em] uppercase text-paper/22 block mb-3">
+              № 02 — Selected Work
+            </span>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-paper leading-none">
+              Featured
             </h2>
           </div>
           <Link
             href="/work"
-            className="hidden md:inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-white/40 hover:text-gold transition-colors"
+            className="hidden md:flex items-center gap-2 font-mono text-[9px] tracking-[0.32em] uppercase text-paper/28 hover:text-gold transition-colors duration-200"
           >
-            View All
-            <span className="text-base">→</span>
+            All Work &nbsp;→
           </Link>
         </RevealOnScroll>
 
         {/* Featured grid */}
-        <div className="space-y-4 md:space-y-6">
-          {/* First featured — large hero card */}
+        <div className="space-y-4 md:space-y-5">
+          {/* First — large hero card */}
           {featured[0] && (
             <RevealOnScroll>
               <Link href={`/work/${featured[0].slug}`} className="group block">
@@ -51,16 +50,16 @@ export default function FeaturedWork() {
                       {featured[0].tags.slice(0, 3).map((t) => (
                         <span
                           key={t}
-                          className="text-xs font-mono tracking-widest uppercase border border-gold/30 text-gold px-2 py-0.5"
+                          className="font-mono text-[8px] tracking-[0.3em] uppercase border border-gold/30 text-gold px-2 py-0.5"
                         >
                           {t}
                         </span>
                       ))}
                     </div>
-                    <h3 className="font-display text-2xl md:text-4xl text-white mb-2 group-hover:text-gold transition-colors">
+                    <h3 className="font-display font-black text-2xl md:text-4xl text-paper mb-2 leading-tight group-hover:text-gold transition-colors duration-300">
                       {featured[0].title}
                     </h3>
-                    <p className="text-white/60 text-sm max-w-xl hidden md:block">
+                    <p className="text-paper/45 text-sm max-w-xl hidden md:block font-light">
                       {featured[0].summary}
                     </p>
                   </div>
@@ -69,10 +68,10 @@ export default function FeaturedWork() {
             </RevealOnScroll>
           )}
 
-          {/* Second and third — side by side */}
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+          {/* Second + third — side by side */}
+          <div className="grid md:grid-cols-2 gap-4 md:gap-5">
             {featured.slice(1, 3).map((project, i) => (
-              <RevealOnScroll key={project.slug} delay={i * 0.15}>
+              <RevealOnScroll key={project.slug} delay={i * 0.12}>
                 <Link href={`/work/${project.slug}`} className="group block">
                   <div className="relative overflow-hidden bg-zinc-900 aspect-[4/3] hover-lift">
                     <Image
@@ -84,10 +83,10 @@ export default function FeaturedWork() {
                     />
                     <div className="img-overlay" />
                     <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
-                      <p className="text-gold text-xs font-mono tracking-widest uppercase mb-2">
+                      <p className="font-mono text-[8px] tracking-[0.32em] uppercase text-gold mb-2">
                         {project.client}
                       </p>
-                      <h3 className="font-display text-xl md:text-2xl text-white group-hover:text-gold transition-colors">
+                      <h3 className="font-display font-black text-xl md:text-2xl text-paper leading-tight group-hover:text-gold transition-colors duration-300">
                         {project.title}
                       </h3>
                     </div>
@@ -102,11 +101,12 @@ export default function FeaturedWork() {
         <div className="mt-8 md:hidden text-center">
           <Link
             href="/work"
-            className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-white/40 hover:text-gold transition-colors"
+            className="font-mono text-[9px] tracking-[0.32em] uppercase text-paper/28 hover:text-gold transition-colors duration-200"
           >
-            View All Work →
+            All Work →
           </Link>
         </div>
+
       </div>
     </section>
   );

@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6,400;0,96,400;0,96,700;0,96,900;1,6,400;1,96,400;1,96,700;1,96,900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap');
 
 :root {
-  --font-display: "Playfair Display";
+  --font-display: "Bodoni Moda";
   --font-body:    "Inter";
   --font-mono:    "Space Mono";
 }
@@ -14,75 +14,102 @@ html { scroll-behavior: smooth; }
 
 body {
   background: #0a0a0a;
-  color: #f5f5f0;
+  color: #f0ebe2;
   font-family: "Inter", system-ui, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Selection ────────────────────────────────── */
+/* ── Selection ───────────────────────────────── */
 ::selection {
   background: #c9a96e;
   color: #0a0a0a;
 }
 
-/* ── Scrollbar ────────────────────────────────── */
-::-webkit-scrollbar              { width: 6px; }
+/* ── Scrollbar ───────────────────────────────── */
+::-webkit-scrollbar              { width: 4px; }
 ::-webkit-scrollbar-track        { background: #0a0a0a; }
-::-webkit-scrollbar-thumb        { background: #2a2a2a; border-radius: 3px; }
+::-webkit-scrollbar-thumb        { background: #1e1e1e; }
 ::-webkit-scrollbar-thumb:hover  { background: #c9a96e; }
 
-/* ── Utility classes ──────────────────────────── */
+/* ── Outline text — Dada stencil effect ──────── */
+.text-outline-gold {
+  -webkit-text-stroke: 2px #c9a96e;
+  color: transparent;
+}
+.text-outline-paper {
+  -webkit-text-stroke: 1px rgba(240,235,226,0.35);
+  color: transparent;
+}
+
+/* ── Gradient text ───────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #f5f5f0 0%, #c9a96e 100%);
+  background: linear-gradient(135deg, #f0ebe2 0%, #c9a96e 55%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.line-gold::after {
+/* ── Dada diagonal — very faint ruled lines ─── */
+.dada-diagonal::after {
   content: "";
-  display: block;
-  width: 48px;
-  height: 2px;
-  background: #c9a96e;
-  margin-top: 1rem;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    -11deg,
+    transparent,
+    transparent 210px,
+    rgba(240,235,226,0.013) 210px,
+    rgba(240,235,226,0.013) 211px
+  );
 }
 
-.hover-lift {
-  transition: transform 0.3s cubic-bezier(.22,1,.36,1);
-}
-.hover-lift:hover { transform: translateY(-6px); }
-
-/* ── Image reveal overlay ─────────────────────── */
+/* ── Image overlay ───────────────────────────── */
 .img-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(10,10,10,.85) 100%);
+  background: linear-gradient(180deg, transparent 35%, rgba(10,10,10,.92) 100%);
   pointer-events: none;
 }
 
-/* ── Marquee track ────────────────────────────── */
+/* ── Marquee ─────────────────────────────────── */
 .marquee-track {
   display: inline-flex;
   gap: 3rem;
-  animation: marqueeX 36s linear infinite;
+  animation: marqueeX 52s linear infinite;
   white-space: nowrap;
 }
 @keyframes marqueeX {
   to { transform: translateX(-50%); }
 }
 
-/* ── Noise texture ────────────────────────────── */
+/* ── Noise texture ───────────────────────────── */
 .noise::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 9000;
   pointer-events: none;
-  opacity: 0.025;
+  opacity: 0.018;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Hover lift ──────────────────────────────── */
+.hover-lift {
+  transition: transform 0.35s cubic-bezier(.22,1,.36,1);
+}
+.hover-lift:hover { transform: translateY(-5px); }
+
+/* ── Line gold ───────────────────────────────── */
+.line-gold::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: #c9a96e;
+  margin-top: 1rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

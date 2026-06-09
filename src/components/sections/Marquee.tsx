@@ -2,29 +2,27 @@
 
 const items = [
   "Brand Identity",
-  "Social Media Design",
+  "Social Media",
   "Website Design",
   "Motion Graphics",
   "Marketing Campaigns",
   "Print Design",
   "Creative Direction",
   "Visual Storytelling",
-  "Campaign Strategy",
-  "Corporate Identity",
 ];
 
 export default function Marquee() {
   const doubled = [...items, ...items];
 
   return (
-    <div className="border-y border-white/5 py-4 overflow-hidden bg-white/[0.02]">
+    <div className="border-y border-paper/5 py-3.5 overflow-hidden bg-ink">
       <div className="marquee-track">
         {doubled.map((item, i) => (
-          <span key={i} className="inline-flex items-center gap-6">
-            <span className="text-xs font-mono tracking-widest uppercase text-white/30">
+          <span key={i} className="inline-flex items-center gap-5">
+            <span className="font-mono text-[8px] tracking-[0.4em] uppercase text-paper/28">
               {item}
             </span>
-            <span className="text-gold/40 text-xs">◆</span>
+            <span className="text-vermillion" style={{ fontSize: "6px" }}>◆</span>
           </span>
         ))}
       </div>

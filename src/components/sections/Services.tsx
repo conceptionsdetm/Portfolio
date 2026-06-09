@@ -41,32 +41,51 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24 md:py-32 px-6 md:px-12 bg-white/[0.015]">
+    <section className="py-24 md:py-32 px-6 md:px-12 bg-ink">
       <div className="max-w-7xl mx-auto">
-        <RevealOnScroll className="mb-16">
-          <p className="text-gold text-xs tracking-widest uppercase font-mono mb-3">
-            What I Do
-          </p>
-          <h2 className="font-display text-4xl md:text-5xl text-white">
-            Services
-          </h2>
+
+        {/* Section header */}
+        <RevealOnScroll className="mb-14 md:mb-16 flex items-start justify-between">
+          <div>
+            <span className="font-mono text-[9px] tracking-[0.42em] uppercase text-paper/22 block mb-4">
+              № 04 — What I Do
+            </span>
+            <h2 className="font-display font-black text-4xl md:text-6xl text-paper leading-none">
+              Services
+            </h2>
+          </div>
+          <div
+            className="hidden md:block font-mono text-[8px] tracking-[0.42em] uppercase text-paper/12 mt-1"
+            style={{ writingMode: "vertical-lr" }}
+          >
+            Design Disciplines
+          </div>
         </RevealOnScroll>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
+        {/* Services grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <RevealOnScroll key={s.number} delay={i * 0.08} className="bg-ink p-8 md:p-10 group hover:bg-white/[0.03] transition-colors duration-300">
-              <span className="block font-mono text-gold/40 text-xs tracking-widest mb-6">
-                {s.number}
-              </span>
-              <h3 className="font-display text-xl text-white mb-4 group-hover:text-gold transition-colors duration-300">
-                {s.title}
-              </h3>
-              <p className="text-white/40 text-sm leading-relaxed">
-                {s.description}
-              </p>
+            <RevealOnScroll key={s.number} delay={i * 0.07}>
+              <div className="border border-paper/6 p-8 md:p-10 group hover:border-gold/20 transition-colors duration-500 relative">
+                {/* Corner crop mark */}
+                <div className="absolute top-3 right-3 w-3 h-px bg-paper/8" />
+                <div className="absolute top-3 right-3 w-px h-3 bg-paper/8" />
+
+                <span className="block font-mono text-[8px] tracking-[0.4em] uppercase text-gold/45 mb-7">
+                  {s.number}
+                </span>
+                <h3 className="font-display font-black text-xl md:text-2xl text-paper mb-4 leading-tight group-hover:text-gold transition-colors duration-300">
+                  {s.title}
+                </h3>
+                <div className="w-7 h-px bg-gold/30 mb-5" />
+                <p className="text-paper/32 text-sm leading-relaxed font-light">
+                  {s.description}
+                </p>
+              </div>
             </RevealOnScroll>
           ))}
         </div>
+
       </div>
     </section>
   );

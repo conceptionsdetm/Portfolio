@@ -10,20 +10,21 @@ const config: Config = {
     extend: {
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
-        body: ["var(--font-body)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        body:    ["var(--font-body)", "system-ui", "sans-serif"],
+        mono:    ["var(--font-mono)", "monospace"],
       },
       colors: {
-        gold:   "#c9a96e",
-        ink:    "#0a0a0a",
-        paper:  "#f5f5f0",
-        muted:  "#6b6b6b",
-        border: "rgba(255,255,255,0.08)",
+        gold:       "#c9a96e",
+        ink:        "#0a0a0a",
+        paper:      "#f0ebe2",
+        muted:      "#6b6b6b",
+        vermillion: "#d4291a",
+        border:     "rgba(255,255,255,0.08)",
       },
       animation: {
-        "fade-up":    "fadeUp .7s cubic-bezier(.22,1,.36,1) forwards",
-        "fade-in":    "fadeIn .6s ease forwards",
-        "marquee-x":  "marqueeX 32s linear infinite",
+        "fade-up":   "fadeUp .7s cubic-bezier(.22,1,.36,1) forwards",
+        "fade-in":   "fadeIn .6s ease forwards",
+        "marquee-x": "marqueeX 52s linear infinite",
       },
       keyframes: {
         fadeUp: {

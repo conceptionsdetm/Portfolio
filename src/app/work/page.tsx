@@ -19,12 +19,13 @@ export default function WorkPage() {
   return (
     <main className="min-h-screen pt-24 pb-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
+
         {/* Header */}
-        <RevealOnScroll className="mb-12">
-          <p className="text-gold text-xs tracking-widest uppercase font-mono mb-3">
-            Portfolio
-          </p>
-          <h1 className="font-display text-4xl md:text-6xl text-white">
+        <RevealOnScroll className="mb-12 border-b border-paper/6 pb-8">
+          <span className="font-mono text-[9px] tracking-[0.42em] uppercase text-paper/22 block mb-4">
+            Portfolio — All Work
+          </span>
+          <h1 className="font-display font-black text-5xl md:text-7xl text-paper leading-none">
             Selected Work
           </h1>
         </RevealOnScroll>
@@ -35,10 +36,10 @@ export default function WorkPage() {
             <button
               key={cat.id}
               onClick={() => setActiveFilter(cat.id as "all" | Category)}
-              className={`px-4 py-2 text-xs font-mono tracking-widest uppercase transition-all duration-200 ${
+              className={`px-4 py-1.5 font-mono text-[8px] tracking-[0.32em] uppercase transition-all duration-200 ${
                 activeFilter === cat.id
                   ? "bg-gold text-ink"
-                  : "border border-white/15 text-white/40 hover:border-gold/40 hover:text-gold/70"
+                  : "border border-paper/10 text-paper/32 hover:border-gold/30 hover:text-gold/65"
               }`}
             >
               {cat.label}
@@ -47,7 +48,7 @@ export default function WorkPage() {
         </RevealOnScroll>
 
         {/* Grid */}
-        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           <AnimatePresence>
             {filtered.map((project, i) => (
               <motion.div
@@ -55,8 +56,8 @@ export default function WorkPage() {
                 layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.4, delay: i * 0.04 }}
               >
                 <Link href={`/work/${project.slug}`} className="group block">
                   <div className="relative overflow-hidden bg-zinc-900 aspect-[4/3] hover-lift">
@@ -69,32 +70,21 @@ export default function WorkPage() {
                     />
                     <div className="img-overlay" />
 
-                    {/* Featured badge */}
                     {project.featured && (
-                      <div className="absolute top-4 left-4">
-                        <span className="text-xs font-mono tracking-widest uppercase bg-gold text-ink px-2 py-0.5">
+                      <div className="absolute top-3 left-3">
+                        <span className="font-mono text-[7px] tracking-[0.3em] uppercase bg-gold text-ink px-2 py-0.5">
                           Featured
                         </span>
                       </div>
                     )}
 
                     <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                      <p className="text-gold text-xs font-mono tracking-widest uppercase mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-gold font-mono text-[7px] tracking-[0.32em] uppercase mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         {project.client}
                       </p>
-                      <h3 className="font-display text-lg text-white group-hover:text-gold transition-colors duration-300">
+                      <h3 className="font-display font-black text-lg text-paper leading-tight group-hover:text-gold transition-colors duration-300">
                         {project.title}
                       </h3>
-                      <div className="flex gap-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        {project.tags.slice(0, 2).map((t) => (
-                          <span
-                            key={t}
-                            className="text-xs font-mono text-white/50"
-                          >
-                            {t}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 </Link>
@@ -104,10 +94,11 @@ export default function WorkPage() {
         </motion.div>
 
         {filtered.length === 0 && (
-          <p className="text-center text-white/30 font-mono text-sm py-20">
+          <p className="text-center text-paper/20 font-mono text-[9px] tracking-[0.35em] uppercase py-20">
             No projects in this category yet.
           </p>
         )}
+
       </div>
     </main>
   );
