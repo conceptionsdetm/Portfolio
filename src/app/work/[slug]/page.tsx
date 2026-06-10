@@ -6,6 +6,28 @@ import ProjectGallery from "@/components/sections/ProjectGallery";
 import WebsitePreview from "@/components/sections/WebsitePreview";
 import CampaignArticles from "@/components/sections/CampaignArticles";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
+import type { CampaignConfig } from "@/data/campaign-types";
+import { amsoilCampaign } from "@/data/amsoil-campaign";
+import { miaFemtechCampaign } from "@/data/mia-femtech-campaign";
+
+const CAMPAIGN_CONFIGS: Record<string, CampaignConfig> = {
+  "amsoil-social": {
+    campaign:    amsoilCampaign,
+    accentColor: "#D01F2B",
+    igUrl:       "https://www.instagram.com/amsoil.inc.cyprus/",
+    webUrl:      "https://amsoil.com.cy/",
+    igLabel:     "AMSOIL Cyprus — Instagram",
+    webLabel:    "amsoil.com.cy",
+  },
+  "mia-femtech-social": {
+    campaign:    miaFemtechCampaign,
+    accentColor: "#C4687A",
+    igUrl:       "http://instagram.com/miafemtech_cyprus_/",
+    webUrl:      "https://mia-femtech.medisera.eu/",
+    igLabel:     "MIA FemTech Cyprus — Instagram",
+    webLabel:    "mia-femtech.medisera.eu",
+  },
+};
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -146,15 +168,15 @@ export default function ProjectPage({ params }: Props) {
                   </object>
                 </div>
               </RevealOnScroll>
-            ) : project.slug === "amsoil-social" ? (
+            ) : CAMPAIGN_CONFIGS[project.slug] ? (
               <>
                 <RevealOnScroll>
                   <h2 className="font-display font-black text-xl text-paper mb-2">Campaign Articles</h2>
                   <p className="font-mono text-[8px] tracking-[0.32em] uppercase text-paper/28 mb-8">
-                    Monthly content calendar — April · May · June 2026
+                    Monthly content calendar
                   </p>
                 </RevealOnScroll>
-                <CampaignArticles />
+                <CampaignArticles {...CAMPAIGN_CONFIGS[project.slug]} />
               </>
             ) : (
               <>

@@ -1,20 +1,5 @@
-export interface CampaignPost {
-  id: string;
-  title: string;
-  /** Instagram carousel slides */
-  images?: string[];
-  /** Instagram story */
-  story?: string;
-  /** Video file path (in public/) — only if small enough to host */
-  video?: string;
-  /** Post is video content but file is too large to self-host */
-  videoPlaceholder?: boolean;
-}
-
-export interface CampaignMonth {
-  label: string;
-  posts: CampaignPost[];
-}
+export type { CampaignPost, CampaignMonth } from "./campaign-types";
+import type { CampaignMonth } from "./campaign-types";
 
 const B = "/work/amsoil/campaign";
 
