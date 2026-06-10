@@ -112,11 +112,6 @@ body {
   margin-top: 1rem;
 }
 
-/* ── Website scroll preview ──────────────────── */
-@keyframes website-scroll {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(-5400px); }
-}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
