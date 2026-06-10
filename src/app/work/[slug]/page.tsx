@@ -30,13 +30,13 @@ export default function ProjectPage({ params }: Props) {
     <main className="min-h-screen pt-24 pb-24">
 
       {/* Hero image */}
-      <div className="relative w-full aspect-[16/7] bg-zinc-900 mb-16 overflow-hidden">
+      <div className="relative w-full bg-zinc-900 mb-16 overflow-hidden" style={{ aspectRatio: "16/9" }}>
         <img
           src={assetPath(project.cover)}
           alt={project.title}
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
