@@ -30,22 +30,24 @@ export default function Nav() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link
-          href="/"
-          className="hover:opacity-80 transition-opacity duration-200"
-        >
-          <span className="relative inline-flex items-center justify-center bg-vermillion overflow-visible"
-                style={{ width: "52px", height: "38px" }}>
+        <Link href="/" className="hover:opacity-75 transition-opacity duration-200">
+          <span
+            className="relative inline-block bg-vermillion overflow-visible"
+            style={{ width: "54px", height: "34px" }}
+          >
             <span
-              className="font-display font-black text-paper text-sm tracking-[0.12em] uppercase absolute"
+              className="font-display font-black text-paper"
               style={{
-                transform: "rotate(-14deg) translateX(3px)",
+                position: "absolute",
+                top: "50%",
+                left: "44%",
+                transform: "translate(-50%, -50%) rotate(-13deg)",
                 fontSize: "13px",
-                letterSpacing: "0.08em",
+                letterSpacing: "0.12em",
                 whiteSpace: "nowrap",
               }}
             >
-              cdt<span style={{ position: "relative", right: "-3px", top: "1px" }}>m</span>
+              cdtm
             </span>
           </span>
         </Link>

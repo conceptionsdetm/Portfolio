@@ -37,7 +37,25 @@ export default function RootLayout({
         <footer className="border-t border-paper/5 py-8 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3">
             <div className="flex items-center gap-4">
-              <span className="font-display italic font-black text-xl text-gold">T·M</span>
+              <span
+                className="relative inline-block bg-vermillion overflow-visible flex-shrink-0"
+                style={{ width: "46px", height: "29px" }}
+              >
+                <span
+                  className="font-display font-black text-paper"
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "44%",
+                    transform: "translate(-50%, -50%) rotate(-13deg)",
+                    fontSize: "11px",
+                    letterSpacing: "0.12em",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  cdtm
+                </span>
+              </span>
               <span className="w-px h-3.5 bg-paper/10" />
               <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-paper/20">
                 Timonas Stefanou
