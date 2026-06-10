@@ -34,9 +34,18 @@ export default function Nav() {
           href="/"
           className="hover:opacity-80 transition-opacity duration-200"
         >
-          <span className="inline-flex items-center justify-center border-2 border-vermillion px-2.5 py-1">
-            <span className="font-display font-black text-paper text-sm tracking-[0.18em] uppercase">
-              cdtm
+          <span className="relative inline-flex items-center justify-center bg-vermillion overflow-visible"
+                style={{ width: "52px", height: "38px" }}>
+            <span
+              className="font-display font-black text-paper text-sm tracking-[0.12em] uppercase absolute"
+              style={{
+                transform: "rotate(-14deg) translateX(3px)",
+                fontSize: "13px",
+                letterSpacing: "0.08em",
+                whiteSpace: "nowrap",
+              }}
+            >
+              cdt<span style={{ position: "relative", right: "-3px", top: "1px" }}>m</span>
             </span>
           </span>
         </Link>
