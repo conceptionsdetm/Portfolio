@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { assetPath } from "@/lib/basePath";
 import Logo from "@/components/ui/Logo";
 
 const links = [
@@ -51,12 +52,15 @@ export default function Nav() {
               />
             </Link>
           ))}
-          <Link
-            href="/cv"
+          <a
+            href={assetPath("/Timonas-Stefanou-CV.pdf")}
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Timonas Stefanou CV.pdf"
             className="ml-3 px-5 py-2 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase hover:bg-paper transition-colors duration-200"
           >
             View CV
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile hamburger */}
@@ -86,13 +90,16 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/cv"
+          <a
+            href={assetPath("/Timonas-Stefanou-CV.pdf")}
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Timonas Stefanou CV.pdf"
             onClick={() => setOpen(false)}
             className="mt-2 self-start px-5 py-2.5 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase"
           >
             View CV
-          </Link>
+          </a>
         </div>
       )}
     </header>
