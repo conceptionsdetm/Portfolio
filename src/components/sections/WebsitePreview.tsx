@@ -48,10 +48,15 @@ export default function WebsitePreview({ url, img, imgTablet, imgMobile, title }
         </a>
       </div>
 
-      {/* Scrollable image viewport — max-height so short designs don't leave empty space */}
+      {/* Scrollable image viewport */}
       <div
-        className="w-full overflow-y-auto bg-white"
-        style={{ maxHeight: "80vh" }}
+        className="w-full bg-white"
+        style={{
+          maxHeight: "80vh",
+          overflowY: "scroll",
+          WebkitOverflowScrolling: "touch", // momentum scroll on iOS
+          overscrollBehavior: "contain",
+        }}
       >
         <img
           key={src}
