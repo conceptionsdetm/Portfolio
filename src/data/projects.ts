@@ -121,6 +121,7 @@ export const projects: Project[] = [
     previewImg: "/work/mia-femtech/preview-desktop.jpg",
     previewImgTablet: "/work/mia-femtech/preview-tablet.jpg",
     previewImgMobile: "/work/mia-femtech/preview-mobile.jpg",
+    url: "https://mia-femtech.medisera.eu/",
     summary:
       "A responsive multi-device website design for MIA FemTech — crafted to convert visitors into consultation bookings through trust, luxury, and clear information hierarchy.",
     description:
