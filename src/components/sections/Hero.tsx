@@ -29,16 +29,6 @@ export default function Hero() {
         </span>
       </div>
 
-      {/* Ghost D — far right */}
-      <div className="absolute right-[-6%] bottom-[-4%] select-none pointer-events-none z-0" aria-hidden>
-        <span
-          className="font-display font-black leading-none"
-          style={{ fontSize: "48vw", color: "rgba(240,235,226,0.015)" }}
-        >
-          D
-        </span>
-      </div>
-
       {/* ── Animated shapes (right side, away from text) ── */}
 
       {/* Vermillion square outline — top right */}

@@ -6,16 +6,6 @@ export default function CallToAction() {
   return (
     <section className="relative py-28 md:py-40 px-6 md:px-16 overflow-hidden bg-ink">
 
-      {/* Ghost letter */}
-      <div className="absolute right-[-5%] top-[-10%] select-none pointer-events-none z-0" aria-hidden>
-        <span
-          className="font-display font-black leading-none"
-          style={{ fontSize: "50vw", color: "rgba(240,235,226,0.018)" }}
-        >
-          T
-        </span>
-      </div>
-
       <div className="max-w-5xl mx-auto relative z-10">
 
         {/* "Let's" + "talk." */}

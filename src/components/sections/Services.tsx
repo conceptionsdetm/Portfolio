@@ -43,16 +43,6 @@ export default function Services() {
   return (
     <section className="py-24 md:py-32 px-6 md:px-12 bg-ink relative overflow-hidden">
 
-      {/* Ghost letter */}
-      <div className="absolute left-[-3%] bottom-[-8%] select-none pointer-events-none z-0" aria-hidden>
-        <span
-          className="font-display font-black leading-none"
-          style={{ fontSize: "35vw", color: "rgba(240,235,226,0.018)" }}
-        >
-          S
-        </span>
-      </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Section header */}
