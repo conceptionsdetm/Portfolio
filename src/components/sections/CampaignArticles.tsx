@@ -18,16 +18,16 @@ function IgIcon({ size = 14 }: { size?: number }) {
   );
 }
 
-function Chevron({ dir }: { dir: "left" | "right" }) {
+function Chevron({ dir, size = 20 }: { dir: "left" | "right"; size?: number }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
       {dir === "left" ? <polyline points="15 18 9 12 15 6"/> : <polyline points="9 18 15 12 9 6"/>}
     </svg>
   );
 }
 
-// ── Video lightbox modal ──────────────────────────────────────────────────
-function VideoModal({ src, title, onClose }: { src: string; title: string; onClose: () => void }) {
+// ── Shared modal close / key / scroll lock hook ───────────────────────────
+function useModalSetup(onClose: () => void) {
   useEffect(() => {
     function onKey(e: KeyboardEvent) { if (e.key === "Escape") onClose(); }
     document.addEventListener("keydown", onKey);
@@ -37,29 +37,21 @@ function VideoModal({ src, title, onClose }: { src: string; title: string; onClo
       document.body.style.overflow = "";
     };
   }, [onClose]);
+}
 
-  const modal = (
+// ── Video lightbox ────────────────────────────────────────────────────────
+function VideoModal({ src, title, onClose }: { src: string; title: string; onClose: () => void }) {
+  useModalSetup(onClose);
+  return createPortal(
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center"
-      style={{ backgroundColor: "rgba(0,0,0,0.92)" }}
+      style={{ backgroundColor: "rgba(0,0,0,0.93)" }}
       onClick={onClose}
     >
-      {/* Video container — stop propagation so clicking video doesn't close */}
-      <div
-        className="relative flex flex-col items-center"
-        style={{ maxHeight: "92vh", maxWidth: "92vw" }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute -top-10 right-0 text-white/60 hover:text-white transition-colors duration-150 flex items-center gap-1.5 font-mono text-[9px] tracking-[0.3em] uppercase"
-          aria-label="Close video"
-        >
+      <div className="relative flex flex-col items-center" style={{ maxHeight: "92vh", maxWidth: "92vw" }} onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute -top-10 right-0 text-white/55 hover:text-white transition-colors duration-150 font-mono text-[9px] tracking-[0.3em] uppercase">
           Close ✕
         </button>
-
-        {/* Video — constrained to viewport, natural aspect ratio preserved */}
         <video
           key={src}
           src={assetPath(src)}
@@ -69,16 +61,107 @@ function VideoModal({ src, title, onClose }: { src: string; title: string; onClo
           autoPlay
           playsInline
         />
-
-        {/* Title below */}
-        <p className="mt-4 font-mono text-[9px] tracking-[0.28em] uppercase text-white/45">
-          {title}
-        </p>
+        <p className="mt-4 font-mono text-[9px] tracking-[0.28em] uppercase text-white/40">{title}</p>
       </div>
-    </div>
+    </div>,
+    document.body
   );
+}
 
-  return createPortal(modal, document.body);
+// ── Image lightbox ────────────────────────────────────────────────────────
+function ImageModal({ post, onClose }: { post: CampaignPost; onClose: () => void }) {
+  const [slide, setSlide] = useState(0);
+  const [story, setStory] = useState(false);
+
+  useModalSetup(onClose);
+
+  const images = post.images ?? [];
+  const count  = images.length;
+
+  const src = story && post.story ? assetPath(post.story) : assetPath(images[slide]);
+  const aspectStyle = story ? { aspectRatio: "9/16", maxHeight: "85vh" } : { maxHeight: "85vh", maxWidth: "88vw" };
+
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center"
+      style={{ backgroundColor: "rgba(0,0,0,0.93)" }}
+      onClick={onClose}
+    >
+      <div className="relative flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+        {/* Close */}
+        <button onClick={onClose} className="absolute -top-10 right-0 text-white/55 hover:text-white transition-colors duration-150 font-mono text-[9px] tracking-[0.3em] uppercase">
+          Close ✕
+        </button>
+
+        {/* Image container */}
+        <div className="relative" style={aspectStyle}>
+          <img
+            key={src}
+            src={src}
+            alt={story ? `${post.title} — Story` : `${post.title} — ${slide + 1}/${count}`}
+            className="block rounded-sm"
+            style={{ maxHeight: "85vh", maxWidth: "88vw", width: "auto", height: "auto", objectFit: "contain" }}
+            draggable={false}
+          />
+
+          {/* Prev / Next (carousel mode only) */}
+          {!story && count > 1 && (
+            <>
+              <button
+                onClick={() => setSlide((s) => Math.max(0, s - 1))}
+                disabled={slide === 0}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full -ml-3 w-10 h-10 rounded-full bg-black/60 flex items-center justify-center text-white disabled:opacity-20 hover:bg-black/85 transition-colors duration-150"
+                aria-label="Previous"
+              >
+                <Chevron dir="left" size={20}/>
+              </button>
+              <button
+                onClick={() => setSlide((s) => Math.min(count - 1, s + 1))}
+                disabled={slide === count - 1}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full mr-3 w-10 h-10 rounded-full bg-black/60 flex items-center justify-center text-white disabled:opacity-20 hover:bg-black/85 transition-colors duration-150"
+                aria-label="Next"
+              >
+                <Chevron dir="right" size={20}/>
+              </button>
+              {/* Slide counter */}
+              <span className="absolute bottom-3 right-3 bg-black/65 font-mono text-[8px] text-white px-2.5 py-1 rounded-sm tracking-widest">
+                {slide + 1} / {count}
+              </span>
+            </>
+          )}
+
+          {/* Story toggle pill */}
+          {post.story && (
+            <button
+              onClick={() => setStory((s) => !s)}
+              className="absolute top-3 left-3 font-mono text-[7px] tracking-[0.25em] uppercase bg-black/65 text-white px-3 py-1.5 rounded-sm hover:bg-black/85 transition-colors duration-150"
+            >
+              {story ? "← Carousel" : "Story ↗"}
+            </button>
+          )}
+        </div>
+
+        {/* Dot indicators */}
+        {!story && count > 1 && (
+          <div className="flex items-center justify-center gap-1.5 mt-4">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setSlide(i)}
+                className="w-1.5 h-1.5 rounded-full transition-colors duration-150"
+                style={{ backgroundColor: i === slide ? RED : "rgba(255,255,255,0.3)" }}
+                aria-label={`Slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* Title */}
+        <p className="mt-4 font-mono text-[9px] tracking-[0.28em] uppercase text-white/40">{post.title}</p>
+      </div>
+    </div>,
+    document.body
+  );
 }
 
 // ── Video thumbnail card (grid) ───────────────────────────────────────────
@@ -90,34 +173,27 @@ function VideoCard({ post, onOpen }: { post: CampaignPost; onOpen: () => void })
         className="group relative aspect-square bg-zinc-950 overflow-hidden focus:outline-none"
         aria-label={`Play: ${post.title}`}
       >
-        {/* Animated ring + play icon */}
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
           <div
             className="w-14 h-14 rounded-full flex items-center justify-center border-2 transition-all duration-300 group-hover:scale-110"
             style={{ borderColor: RED, backgroundColor: `${RED}18` }}
           >
-            {/* Play triangle, shifted right slightly to look centred */}
             <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden>
-              <polygon points="6 4 20 12 6 20" fill={RED} />
+              <polygon points="6 4 20 12 6 20" fill={RED}/>
             </svg>
           </div>
           <span className="font-mono text-[7px] tracking-[0.32em] uppercase text-white/30 group-hover:text-white/60 transition-colors duration-200">
             Play Reel
           </span>
         </div>
-        {/* Subtle glow on hover */}
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{ background: `radial-gradient(circle at 50% 50%, ${RED}14 0%, transparent 70%)` }}
         />
       </button>
-
       <div className="mt-3 flex items-start justify-between gap-3">
         <h3 className="text-paper/80 text-[13px] leading-snug font-light flex-1">{post.title}</h3>
-        <span
-          className="shrink-0 mt-0.5 font-mono text-[7px] tracking-[0.28em] uppercase px-2 py-0.5 border"
-          style={{ color: RED, borderColor: `${RED}45` }}
-        >
+        <span className="shrink-0 mt-0.5 font-mono text-[7px] tracking-[0.28em] uppercase px-2 py-0.5 border" style={{ color: RED, borderColor: `${RED}45` }}>
           Reel
         </span>
       </div>
@@ -125,71 +201,48 @@ function VideoCard({ post, onOpen }: { post: CampaignPost; onOpen: () => void })
   );
 }
 
-// ── Image carousel card ───────────────────────────────────────────────────
-function PostCard({
-  post, slideIndex, viewingStory, onPrev, onNext, onToggleStory,
-}: {
-  post: CampaignPost;
-  slideIndex: number;
-  viewingStory: boolean;
-  onPrev: () => void;
-  onNext: () => void;
-  onToggleStory: () => void;
-}) {
+// ── Image thumbnail card (grid) ───────────────────────────────────────────
+function PostCard({ post, onOpen }: { post: CampaignPost; onOpen: () => void }) {
   const images = post.images ?? [];
-  const count  = images.length;
+  const multi  = images.length > 1;
 
   return (
     <article className="flex flex-col">
-      <div
-        className="relative bg-zinc-900 overflow-hidden"
-        style={{ aspectRatio: viewingStory ? "9/16" : "1/1" }}
+      <button
+        onClick={onOpen}
+        className="group relative aspect-square bg-zinc-900 overflow-hidden focus:outline-none"
+        aria-label={`View: ${post.title}`}
       >
-        {viewingStory && post.story ? (
-          <img
-            src={assetPath(post.story)}
-            alt={`${post.title} — Story`}
-            className="absolute inset-0 w-full h-full object-cover"
-            draggable={false}
-          />
-        ) : (
-          <img
-            key={images[slideIndex]}
-            src={assetPath(images[slideIndex])}
-            alt={`${post.title} — ${slideIndex + 1}/${count}`}
-            className="absolute inset-0 w-full h-full object-cover"
-            draggable={false}
-          />
+        {/* Thumbnail — first slide */}
+        <img
+          src={assetPath(images[0])}
+          alt={post.title}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          draggable={false}
+        />
+
+        {/* Hover overlay */}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors duration-250" />
+
+        {/* Carousel badge (top-right) */}
+        {multi && (
+          <div className="absolute top-2 right-2 opacity-80">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden>
+              <rect x="2" y="7" width="13" height="13" rx="2" opacity="0.5"/>
+              <rect x="6" y="3" width="13" height="13" rx="2" fill="white"/>
+            </svg>
+          </div>
         )}
 
-        {!viewingStory && count > 1 && (
-          <>
-            <button onClick={onPrev} disabled={slideIndex === 0} className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/50 flex items-center justify-center text-white disabled:opacity-20 hover:bg-black/75 transition-colors duration-150" aria-label="Previous slide">
-              <Chevron dir="left"/>
-            </button>
-            <button onClick={onNext} disabled={slideIndex === count - 1} className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/50 flex items-center justify-center text-white disabled:opacity-20 hover:bg-black/75 transition-colors duration-150" aria-label="Next slide">
-              <Chevron dir="right"/>
-            </button>
-            <span className="absolute bottom-2 right-2 bg-black/60 font-mono text-[8px] text-white px-2 py-0.5 rounded-sm tracking-widest">
-              {slideIndex + 1}/{count}
-            </span>
-          </>
-        )}
-
+        {/* Story badge (top-left) */}
         {post.story && (
-          <button onClick={onToggleStory} className="absolute top-2 left-2 font-mono text-[7px] tracking-[0.25em] uppercase bg-black/60 text-white px-2.5 py-1 rounded-sm hover:bg-black/80 transition-colors duration-150">
-            {viewingStory ? "← Carousel" : "Story ↗"}
-          </button>
+          <div className="absolute top-2 left-2 w-5 h-5 rounded-full border-2 border-white/70 flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${RED}, #f77737)` }}>
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="white" aria-hidden>
+              <polygon points="6 4 20 12 6 20"/>
+            </svg>
+          </div>
         )}
-      </div>
-
-      {!viewingStory && count > 1 && (
-        <div className="flex items-center justify-center gap-1 mt-2">
-          {images.map((_, i) => (
-            <span key={i} className="w-1 h-1 rounded-full" style={{ backgroundColor: i === slideIndex ? RED : "rgba(255,255,255,0.25)" }} />
-          ))}
-        </div>
-      )}
+      </button>
 
       <div className="mt-3 flex items-start justify-between gap-3">
         <h3 className="text-paper/80 text-[13px] leading-snug font-light flex-1">{post.title}</h3>
@@ -203,22 +256,18 @@ function PostCard({
 
 // ── Main component ────────────────────────────────────────────────────────
 export default function CampaignArticles() {
-  const [slides,  setSlides]  = useState<Record<string, number>>({});
-  const [stories, setStories] = useState<Record<string, boolean>>({});
-  const [modal,   setModal]   = useState<{ src: string; title: string } | null>(null);
+  const [videoModal, setVideoModal] = useState<{ src: string; title: string } | null>(null);
+  const [imageModal, setImageModal] = useState<CampaignPost | null>(null);
 
-  const closeModal = useCallback(() => setModal(null), []);
+  const closeVideo = useCallback(() => setVideoModal(null), []);
+  const closeImage = useCallback(() => setImageModal(null), []);
 
-  function getSlide(id: string) { return slides[id] ?? 0; }
-  function setSlide(id: string, idx: number) { setSlides((s) => ({ ...s, [id]: idx })); }
-  function toggleStory(id: string) { setStories((s) => ({ ...s, [id]: !s[id] })); }
+  const canPortal = typeof document !== "undefined";
 
   return (
     <>
-      {/* Video lightbox (portal to <body>) */}
-      {modal && typeof document !== "undefined" && (
-        <VideoModal src={modal.src} title={modal.title} onClose={closeModal} />
-      )}
+      {canPortal && videoModal && <VideoModal src={videoModal.src} title={videoModal.title} onClose={closeVideo}/>}
+      {canPortal && imageModal && <ImageModal post={imageModal} onClose={closeImage}/>}
 
       <div className="space-y-16">
         {amsoilCampaign.map((month) => (
@@ -227,34 +276,17 @@ export default function CampaignArticles() {
               <span className="font-mono text-[8px] tracking-[0.38em] uppercase px-3 py-1.5" style={{ color: RED, border: `1px solid ${RED}50` }}>
                 {month.label}
               </span>
-              <div className="flex-1 h-px bg-paper/8" />
+              <div className="flex-1 h-px bg-paper/8"/>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
-              {month.posts.map((post) => {
-                if (post.video) {
-                  return (
-                    <VideoCard
-                      key={post.id}
-                      post={post}
-                      onOpen={() => setModal({ src: post.video!, title: post.title })}
-                    />
-                  );
-                }
-                const images   = post.images ?? [];
-                const slideIdx = getSlide(post.id);
-                return (
-                  <PostCard
-                    key={post.id}
-                    post={post}
-                    slideIndex={slideIdx}
-                    viewingStory={!!stories[post.id]}
-                    onPrev={() => setSlide(post.id, Math.max(0, slideIdx - 1))}
-                    onNext={() => setSlide(post.id, Math.min(images.length - 1, slideIdx + 1))}
-                    onToggleStory={() => toggleStory(post.id)}
-                  />
-                );
-              })}
+              {month.posts.map((post) =>
+                post.video ? (
+                  <VideoCard key={post.id} post={post} onOpen={() => setVideoModal({ src: post.video!, title: post.title })}/>
+                ) : (
+                  <PostCard key={post.id} post={post} onOpen={() => setImageModal(post)}/>
+                )
+              )}
             </div>
           </section>
         ))}
@@ -262,9 +294,7 @@ export default function CampaignArticles() {
         {/* Bottom CTAs */}
         <div className="pt-10 border-t border-paper/8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href={IG_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={IG_URL} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full font-mono text-[10px] tracking-[0.25em] uppercase transition-opacity duration-200 hover:opacity-80"
             style={{ backgroundColor: RED, color: "#FFFFFF" }}
           >
@@ -272,9 +302,7 @@ export default function CampaignArticles() {
             AMSOIL Cyprus — Instagram
           </a>
           <a
-            href={WEB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={WEB_URL} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full font-mono text-[10px] tracking-[0.25em] uppercase transition-opacity duration-200 hover:opacity-80"
             style={{ border: `1px solid ${RED}70`, color: RED }}
           >
