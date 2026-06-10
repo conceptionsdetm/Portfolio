@@ -21,6 +21,9 @@ export interface Project {
   pdf?: string;
   pdfTablet?: string;
   pdfMobile?: string;
+  previewImg?: string;
+  previewImgTablet?: string;
+  previewImgMobile?: string;
   url?: string;
   summary: string;
   description: string;
@@ -178,9 +181,9 @@ export const projects: Project[] = [
     year: "2025",
     cover: "/work/northtide/cover.jpg",
     images: ["/work/northtide/cover.jpg", "/work/northtide/hero.jpg", "/work/northtide/full-page.jpg"],
-    pdf: "/pdfs/northtide-desktop.pdf",
-    pdfTablet: "/pdfs/northtide-tablet.pdf",
-    pdfMobile: "/pdfs/northtide-mobile.pdf",
+    previewImg: "/work/northtide/preview-desktop.jpg",
+    previewImgTablet: "/work/northtide/preview-tablet.jpg",
+    previewImgMobile: "/work/northtide/preview-mobile.jpg",
     url: "https://northtide.global/",
     summary:
       "A corporate landing page for NorthTide Cargo Logistics designed across desktop, tablet, and mobile — communicating reliability and global reach in maritime freight.",

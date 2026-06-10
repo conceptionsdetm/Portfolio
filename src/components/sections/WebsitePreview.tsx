@@ -4,29 +4,29 @@ import { useState, useEffect } from "react";
 
 interface Props {
   url: string;
-  pdf: string;
-  pdfTablet?: string;
-  pdfMobile?: string;
+  img: string;          // desktop preview image
+  imgTablet?: string;   // tablet preview image
+  imgMobile?: string;   // mobile preview image
   title: string;
 }
 
-export default function WebsitePreview({ url, pdf, pdfTablet, pdfMobile, title }: Props) {
-  const [src, setSrc] = useState(pdf);
+export default function WebsitePreview({ url, img, imgTablet, imgMobile, title }: Props) {
+  const [src, setSrc] = useState(img);
 
   useEffect(() => {
     const pick = () => {
       const w = window.innerWidth;
-      if (w < 640 && pdfMobile) setSrc(pdfMobile);
-      else if (w < 1024 && pdfTablet) setSrc(pdfTablet);
-      else setSrc(pdf);
+      if (w < 640 && imgMobile) setSrc(imgMobile);
+      else if (w < 1024 && imgTablet) setSrc(imgTablet);
+      else setSrc(img);
     };
     pick();
     window.addEventListener("resize", pick);
     return () => window.removeEventListener("resize", pick);
-  }, [pdf, pdfTablet, pdfMobile]);
+  }, [img, imgTablet, imgMobile]);
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden select-none">
 
       {/* Browser chrome */}
       <div className="flex items-center gap-2 bg-zinc-800 px-3 py-2">
@@ -43,51 +43,24 @@ export default function WebsitePreview({ url, pdf, pdfTablet, pdfMobile, title }
           target="_blank"
           rel="noopener noreferrer"
           className="shrink-0 font-mono text-[7px] tracking-[0.28em] uppercase text-gold/70 hover:text-gold transition-colors duration-200 whitespace-nowrap"
-          onClick={(e) => e.stopPropagation()}
         >
           Open ↗
         </a>
       </div>
 
-      {/* PDF viewport
-          <object> renders inline on desktop Chrome / Firefox / Edge / Android Chrome.
-          On iOS Safari, inline PDF is not supported — the fallback children are shown instead. */}
-      <div className="w-full bg-zinc-950" style={{ height: "80vh" }}>
-        <object
+      {/* Scrollable image viewport — max-height so short designs don't leave empty space */}
+      <div
+        className="w-full overflow-y-auto bg-white"
+        style={{ maxHeight: "80vh" }}
+      >
+        <img
           key={src}
-          data={src}
-          type="application/pdf"
-          aria-label={title}
-          style={{ display: "block", width: "100%", height: "100%", border: "none" }}
-        >
-          {/* ── Fallback: iOS Safari + any browser without inline PDF support ── */}
-          <div className="flex flex-col items-center justify-center h-full gap-6 px-6 text-center bg-zinc-950">
-            <div className="space-y-2">
-              <p className="font-mono text-[8px] tracking-[0.32em] uppercase text-paper/25">
-                Design Preview
-              </p>
-              <p className="text-paper/45 text-sm font-light leading-relaxed">
-                Tap below to open the full design PDF
-              </p>
-            </div>
-            <a
-              href={src}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-7 py-3 bg-gold text-ink font-mono text-[8px] tracking-[0.3em] uppercase hover:bg-paper transition-colors duration-200"
-            >
-              Open Full Design ↗
-            </a>
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-[8px] tracking-[0.28em] uppercase text-paper/30 hover:text-gold transition-colors duration-200"
-            >
-              Visit Live Website →
-            </a>
-          </div>
-        </object>
+          src={src}
+          alt={title}
+          draggable={false}
+          style={{ display: "block", width: "100%", height: "auto" }}
+          onContextMenu={(e) => e.preventDefault()}
+        />
       </div>
 
       {/* Footer */}
