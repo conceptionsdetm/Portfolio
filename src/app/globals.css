@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6,400;0,96,400;0,96,700;0,96,900;1,6,400;1,96,400;1,96,700;1,96,900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6,400;0,96,400;0,96,700;0,96,900;1,6,400;1,96,400;1,96,700;1,96,900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@500;700&display=swap');
 
 :root {
   --font-display: "Bodoni Moda";

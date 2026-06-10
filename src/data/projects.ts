@@ -28,6 +28,8 @@ export interface Project {
   ctaLabel?: string;
   ctaColor?: string;
   ctaTextColor?: string;
+  ctaFontFamily?: string;
+  ctaFontWeight?: number;
   summary: string;
   description: string;
   deliverables: string[];
@@ -128,6 +130,8 @@ export const projects: Project[] = [
     ctaLabel: "Visit MIA FemTech Live",
     ctaColor: "#C4687A",
     ctaTextColor: "#ffffff",
+    ctaFontFamily: "'Roboto', sans-serif",
+    ctaFontWeight: 400,
     summary:
       "A responsive multi-device website design for MIA FemTech — crafted to convert visitors into consultation bookings through trust, luxury, and clear information hierarchy.",
     description:
@@ -198,6 +202,8 @@ export const projects: Project[] = [
     ctaLabel: "Visit NorthTide Live",
     ctaColor: "#0ABFBC",
     ctaTextColor: "#ffffff",
+    ctaFontFamily: "'Roboto Slab', serif",
+    ctaFontWeight: 700,
     summary:
       "A corporate landing page for NorthTide Cargo Logistics designed across desktop, tablet, and mobile — communicating reliability and global reach in maritime freight.",
     description:

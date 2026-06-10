@@ -89,6 +89,8 @@ export default function ProjectPage({ params }: Props) {
                   ctaLabel={project.ctaLabel}
                   ctaColor={project.ctaColor}
                   ctaTextColor={project.ctaTextColor}
+                  ctaFontFamily={project.ctaFontFamily}
+                  ctaFontWeight={project.ctaFontWeight}
                 />
               </RevealOnScroll>
             ) : project.pdf ? (

@@ -11,13 +11,17 @@ interface Props {
   ctaLabel?: string;
   ctaColor?: string;
   ctaTextColor?: string;
+  ctaFontFamily?: string;
+  ctaFontWeight?: number;
 }
 
 export default function WebsitePreview({
   img, imgTablet, imgMobile, title, url,
   ctaLabel = "Visit Live Website",
-  ctaColor = "#c9a96e",   // default: portfolio gold
+  ctaColor = "#c9a96e",
   ctaTextColor = "#0a0a0a",
+  ctaFontFamily = "var(--font-mono)",
+  ctaFontWeight = 700,
 }: Props) {
   const [src, setSrc] = useState(img);
 
@@ -84,10 +88,13 @@ export default function WebsitePreview({
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 sm:px-10 py-3 sm:py-3.5 rounded-full font-mono text-[9px] sm:text-[10px] tracking-[0.28em] uppercase transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            className="inline-flex items-center gap-2 px-8 sm:px-10 py-3 sm:py-3.5 rounded-full text-[11px] sm:text-[12px] uppercase transition-all duration-300 hover:scale-105 whitespace-nowrap"
             style={{
               backgroundColor: ctaColor,
               color: ctaTextColor,
+              fontFamily: ctaFontFamily,
+              fontWeight: ctaFontWeight,
+              letterSpacing: "0.12em",
               boxShadow: `0 4px 24px ${ctaColor}55`,
             }}
           >
