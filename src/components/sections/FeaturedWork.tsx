@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { assetPath } from "@/lib/basePath";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 const featured = projects.filter((p) => p.featured);
@@ -37,12 +37,10 @@ export default function FeaturedWork() {
             <RevealOnScroll>
               <Link href={`/work/${featured[0].slug}`} className="group block">
                 <div className="relative overflow-hidden bg-zinc-900 aspect-[16/7] hover-lift">
-                  <Image
-                    src={featured[0].cover}
+                  <img
+                    src={assetPath(featured[0].cover)}
                     alt={featured[0].title}
-                    fill
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 90vw"
+                    className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="img-overlay" />
                   <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
@@ -74,12 +72,11 @@ export default function FeaturedWork() {
               <RevealOnScroll key={project.slug} delay={i * 0.12}>
                 <Link href={`/work/${project.slug}`} className="group block">
                   <div className="relative overflow-hidden bg-zinc-900 aspect-[4/3] hover-lift">
-                    <Image
-                      src={project.cover}
+                    <img
+                      src={assetPath(project.cover)}
                       alt={project.title}
-                      fill
-                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 45vw"
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="img-overlay" />
                     <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">

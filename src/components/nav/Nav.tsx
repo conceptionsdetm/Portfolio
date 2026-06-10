@@ -55,14 +55,12 @@ export default function Nav() {
               />
             </Link>
           ))}
-          <a
-            href="/Timonas-Stefanou-CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/cv"
             className="ml-3 px-5 py-2 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase hover:bg-paper transition-colors duration-200"
           >
-            Download CV
-          </a>
+            View CV
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -92,14 +90,13 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <a
-            href="/Timonas-Stefanou-CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/cv"
+            onClick={() => setOpen(false)}
             className="mt-2 self-start px-5 py-2.5 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase"
           >
-            Download CV
-          </a>
+            View CV
+          </Link>
         </div>
       )}
     </header>

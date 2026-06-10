@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { assetPath } from "@/lib/basePath";
 import ProjectGallery from "@/components/sections/ProjectGallery";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
@@ -29,14 +29,11 @@ export default function ProjectPage({ params }: Props) {
     <main className="min-h-screen pt-24 pb-24">
 
       {/* Hero image */}
-      <div className="relative w-full aspect-[16/7] bg-zinc-900 mb-16">
-        <Image
-          src={project.cover}
+      <div className="relative w-full aspect-[16/7] bg-zinc-900 mb-16 overflow-hidden">
+        <img
+          src={assetPath(project.cover)}
           alt={project.title}
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
       </div>
@@ -76,10 +73,43 @@ export default function ProjectPage({ params }: Props) {
               </p>
             </RevealOnScroll>
 
-            <RevealOnScroll>
-              <h2 className="font-display font-black text-xl text-paper mb-6">Gallery</h2>
-            </RevealOnScroll>
-            <ProjectGallery images={project.images} title={project.title} />
+            {project.pdf ? (
+              <RevealOnScroll>
+                <h2 className="font-display font-black text-xl text-paper mb-4">Full Design</h2>
+                <p className="font-mono text-[8px] tracking-[0.32em] uppercase text-paper/28 mb-5">
+                  Desktop viewport — scroll to view complete layout
+                </p>
+                <div className="w-full bg-zinc-900 border border-paper/6" style={{ height: "75vh" }}>
+                  <object
+                    data={assetPath(project.pdf)}
+                    type="application/pdf"
+                    className="w-full h-full"
+                    aria-label={`${project.title} — Full Design`}
+                  >
+                    <div className="flex flex-col items-center justify-center h-full gap-5 text-center px-8">
+                      <p className="font-mono text-[9px] tracking-[0.38em] uppercase text-paper/28">
+                        PDF viewer not supported in this browser.
+                      </p>
+                      <a
+                        href={assetPath(project.pdf)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-8 py-3 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase hover:bg-paper transition-colors duration-200"
+                      >
+                        Open Design in New Tab
+                      </a>
+                    </div>
+                  </object>
+                </div>
+              </RevealOnScroll>
+            ) : (
+              <>
+                <RevealOnScroll>
+                  <h2 className="font-display font-black text-xl text-paper mb-6">Gallery</h2>
+                </RevealOnScroll>
+                <ProjectGallery images={project.images} title={project.title} />
+              </>
+            )}
           </div>
 
           {/* Right: sidebar */}
@@ -131,12 +161,11 @@ export default function ProjectPage({ params }: Props) {
               {related.map((p) => (
                 <Link key={p.slug} href={`/work/${p.slug}`} className="group block">
                   <div className="relative overflow-hidden bg-zinc-900 aspect-[4/3] hover-lift mb-3">
-                    <Image
-                      src={p.cover}
+                    <img
+                      src={assetPath(p.cover)}
                       alt={p.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="img-overlay" />
                   </div>

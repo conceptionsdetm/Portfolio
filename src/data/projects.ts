@@ -3,10 +3,11 @@ export type Category =
   | "social-media"
   | "website"
   | "branding"
-  | "marketing"
+  | "email-campaigns"
   | "print"
   | "motion"
-  | "apparel";
+  | "apparel"
+  | "exhibition";
 
 export interface Project {
   slug: string;
@@ -17,6 +18,7 @@ export interface Project {
   year: string;
   cover: string;
   images: string[];
+  pdf?: string;
   summary: string;
   description: string;
   deliverables: string[];
@@ -42,6 +44,15 @@ export const projects: Project[] = [
       "/work/mia-femtech/post-05.jpg",
       "/work/mia-femtech/post-06.jpg",
       "/work/mia-femtech/post-08.jpg",
+      "/work/mia-femtech/dec-01-experience.jpg",
+      "/work/mia-femtech/dec-03-confidence.jpg",
+      "/work/mia-femtech/dec-05-checklist.jpg",
+      "/work/mia-femtech/dec-07-soft-luxury.jpg",
+      "/work/mia-femtech/dec-xmas.jpg",
+      "/work/mia-femtech/dec-newyear.jpg",
+      "/work/mia-femtech/apr-01-01.jpg",
+      "/work/mia-femtech/apr-01-02.jpg",
+      "/work/mia-femtech/apr-01-03.jpg",
     ],
     summary:
       "A premium content strategy and full social media campaign for Cyprus's leading FemTech clinic, positioning breast augmentation as a journey of confidence and self-care.",
@@ -61,7 +72,7 @@ export const projects: Project[] = [
     slug: "amsoil-social",
     title: "AMSOIL — Social Media Campaign",
     client: "AMSOIL Cyprus Distributor",
-    category: ["featured", "social-media", "marketing"],
+    category: ["featured", "social-media"],
     tags: ["Social Media", "Automotive", "Campaign", "Product Design", "Performance"],
     year: "2025–2026",
     cover: "/work/amsoil/post-01.jpg",
@@ -71,6 +82,12 @@ export const projects: Project[] = [
       "/work/amsoil/post-03.jpg",
       "/work/amsoil/extra-10.jpg",
       "/work/amsoil/extra-9.jpg",
+      "/work/amsoil/apr-carousel-01.jpg",
+      "/work/amsoil/apr-carousel-02.jpg",
+      "/work/amsoil/apr-carousel-03.jpg",
+      "/work/amsoil/apr-carousel-04.jpg",
+      "/work/amsoil/apr-carousel-05.jpg",
+      "/work/amsoil/apr-carousel-06.jpg",
     ],
     summary:
       "A bold, performance-driven social media campaign for AMSOIL's Cyprus distributor — communicating premium motor oil quality to an automotive enthusiast audience.",
@@ -109,6 +126,44 @@ export const projects: Project[] = [
     featured: true,
   },
 
+  // ─── SOCIAL MEDIA ───────────────────────────────────────────────────────────
+
+  {
+    slug: "fameline-social",
+    title: "Fameline Holding Group — Corporate Social Media",
+    client: "Fameline Holding Group",
+    category: ["social-media"],
+    tags: ["Social Media", "Corporate", "Campaign", "Event", "B2B"],
+    year: "2025–2026",
+    cover: "/work/fameline-social/impa.jpg",
+    images: [
+      "/work/fameline-social/impa.jpg",
+      "/work/fameline-social/meet-buyer-1.jpg",
+      "/work/fameline-social/meet-buyer-2.jpg",
+      "/work/fameline-social/meet-buyer-3.jpg",
+      "/work/fameline-social/save-the-date.jpg",
+      "/work/fameline-social/blood-donation.jpg",
+      "/work/fameline-social/hearts-of-gold.jpg",
+      "/work/fameline-social/charity.jpg",
+      "/work/fameline-social/movember.jpg",
+      "/work/fameline-social/xmas.jpg",
+      "/work/fameline-social/marathon.jpg",
+      "/work/fameline-social/tsikno.jpg",
+    ],
+    summary:
+      "Ongoing corporate social media content for Fameline Holding Group — spanning international trade events, corporate campaigns, charity initiatives, and internal culture posts.",
+    description:
+      "Fameline Holding Group required a consistent, professional social media presence across a wide variety of content types: international trade event promotions (IMPA London 2025), internal 'Meet the Buyer' team spotlights, CSR initiatives (Blood Donation, International Day of Charity), cultural events (Movember, Christmas), and group-wide communications. Each post maintains brand consistency while adapting tone to the content's purpose — from authoritative to celebratory.",
+    deliverables: [
+      "Trade event social posts (IMPA London 2025)",
+      "Meet the Buyer series — team member spotlights",
+      "CSR campaign posts (charity, blood donation)",
+      "Cultural and seasonal event posts",
+      "Internal communications graphics",
+    ],
+    featured: false,
+  },
+
   // ─── WEBSITE DESIGN ─────────────────────────────────────────────────────────
 
   {
@@ -120,6 +175,7 @@ export const projects: Project[] = [
     year: "2025",
     cover: "/work/posidonia/event-01.jpg",
     images: ["/work/posidonia/event-01.jpg", "/work/posidonia/event-02.jpg"],
+    pdf: "/pdfs/northtide-desktop.pdf",
     summary:
       "A corporate landing page for NorthTide Cargo Logistics designed across desktop, tablet, and mobile — communicating reliability and global reach in maritime freight.",
     description:
@@ -142,6 +198,7 @@ export const projects: Project[] = [
     year: "2025",
     cover: "/work/posidonia/event-02.jpg",
     images: ["/work/posidonia/event-02.jpg", "/work/posidonia/event-03.jpg"],
+    pdf: "/pdfs/fameline-web-desktop.pdf",
     summary:
       "A premium corporate website design for Fameline Mission Solutions — a defence and security solutions provider requiring gravitas, authority, and precision in every pixel.",
     description:
@@ -163,6 +220,7 @@ export const projects: Project[] = [
     year: "2025",
     cover: "/work/posidonia/event-03.jpg",
     images: ["/work/posidonia/event-03.jpg"],
+    pdf: "/pdfs/albaflux-web.pdf",
     summary:
       "A clean, conversion-focused landing page for Albaflux, complementing the brand's comprehensive identity system.",
     description:
@@ -200,22 +258,53 @@ export const projects: Project[] = [
     featured: false,
   },
 
-  // ─── MARKETING & EMAIL CAMPAIGNS ────────────────────────────────────────────
+  {
+    slug: "fameline-stationery",
+    title: "Fameline Holding Group — Corporate Stationery",
+    client: "Fameline Holding Group",
+    category: ["branding", "print"],
+    tags: ["Print Design", "Stationery", "Brand Identity", "Corporate", "Mockup"],
+    year: "2025–2026",
+    cover: "/work/fameline-stationery/envelope-dl.jpg",
+    images: [
+      "/work/fameline-stationery/envelope-dl.jpg",
+      "/work/fameline-stationery/envelope-a4.png",
+      "/work/fameline-stationery/notepad.png",
+    ],
+    summary:
+      "Branded corporate stationery for Fameline Holding Group — DL envelope, A4 envelope, and notepad, each carrying the group's identity with precision and refinement.",
+    description:
+      "Corporate stationery is where brand identity meets daily professional life. For Fameline Holding Group, I designed a cohesive suite of printed materials — DL and A4 envelopes and a branded notepad — ensuring that every piece of correspondence carries the group's visual identity consistently. The designs were produced as print-ready files with mockup presentations for stakeholder approval.",
+    deliverables: [
+      "DL envelope design (print-ready)",
+      "A4 envelope design (print-ready)",
+      "Corporate notepad design",
+      "Mockup presentations",
+    ],
+    featured: false,
+  },
+
+  // ─── EMAIL CAMPAIGNS ────────────────────────────────────────────────────────
 
   {
     slug: "bwss-email-campaign",
     title: "BWSS — Email Marketing Campaign",
     client: "BWSS (Ballast Water Solutions)",
-    category: ["marketing"],
+    category: ["email-campaigns"],
     tags: ["Email Marketing", "Campaign", "Maritime", "LinkedIn", "B2B"],
     year: "2025",
-    cover: "/work/bwss/campaign-3.jpg",
+    cover: "/work/bwss-email/header-01.jpg",
     images: [
-      "/work/bwss/campaign-3.jpg",
-      "/work/bwss/campaign-4.jpg",
-      "/work/bwss/campaign-5.jpg",
-      "/work/bwss/campaign-0.jpg",
-      "/work/bwss/campaign-1.jpg",
+      "/work/bwss-email/header-00.jpg",
+      "/work/bwss-email/header-01.jpg",
+      "/work/bwss-email/linkedin-01.jpg",
+      "/work/bwss-email/header-02.jpg",
+      "/work/bwss-email/linkedin-02.jpg",
+      "/work/bwss-email/header-03.jpg",
+      "/work/bwss-email/linkedin-03.jpg",
+      "/work/bwss-email/header-04.jpg",
+      "/work/bwss-email/linkedin-04.jpg",
+      "/work/bwss-email/header-05.jpg",
     ],
     summary:
       "A five-campaign email and LinkedIn marketing series for BWSS — educating maritime operators on ballast water management regulations and BWSS's solution portfolio.",
@@ -230,13 +319,13 @@ export const projects: Project[] = [
     featured: false,
   },
 
-  // ─── MOTION & EXHIBITIONS ───────────────────────────────────────────────────
+  // ─── EXHIBITIONS ────────────────────────────────────────────────────────────
 
   {
     slug: "posidonia-exhibition",
     title: "Posidonia 2024 — Exhibition Motion & Branding",
     client: "BWSS / Euploia / Armonia",
-    category: ["motion", "marketing"],
+    category: ["motion", "exhibition"],
     tags: ["Motion Graphics", "After Effects", "Exhibition", "Maritime", "Event Branding"],
     year: "2024",
     cover: "/work/posidonia/event-01.jpg",
@@ -259,44 +348,151 @@ export const projects: Project[] = [
     featured: false,
   },
 
-  // ─── APPAREL & MERCHANDISE ──────────────────────────────────────────────────
+  // ─── APPAREL & KITS ─────────────────────────────────────────────────────────
 
   {
-    slug: "apparel-design",
-    title: "Corporate Apparel Design",
-    client: "Multiple Clients",
-    category: ["print", "apparel"],
-    tags: ["Apparel Design", "Merchandise", "Corporate Branding", "Mockup", "Print"],
+    slug: "sinomed-apparel",
+    title: "SinoMed — Corporate Jacket Range",
+    client: "SinoMed",
+    category: ["apparel"],
+    tags: ["Apparel Design", "Corporate Branding", "Jacket", "Mockup", "Colourways"],
     year: "2024–2026",
-    cover: "/work/clothing/sinomed-jacket.jpg",
+    cover: "/work/sinomed/jacket-06.jpg",
     images: [
-      "/work/clothing/sinomed-jacket.jpg",
-      "/work/clothing/sinomed-grey.jpg",
-      "/work/clothing/lubedesk-jacket.jpg",
-      "/work/clothing/marathon-front.jpg",
+      "/work/sinomed/jacket-06.jpg",
+      "/work/sinomed/jacket-07.jpg",
+      "/work/sinomed/jacket-01.jpg",
+      "/work/sinomed/jacket-02.jpg",
+      "/work/sinomed/jacket-03.jpg",
+      "/work/sinomed/jacket-04.jpg",
+      "/work/sinomed/jacket-05.jpg",
     ],
     summary:
-      "Branded apparel and merchandise design for four corporate clients — translating each brand identity into wearable assets including jackets, sports kits, and event t-shirts.",
+      "A full range of branded corporate jackets for SinoMed — seven colourway variants designed to give the brand a strong, consistent presence across staff and corporate events.",
     description:
-      "Corporate apparel design requires understanding how a logo and brand system behaves on fabric and three-dimensional surfaces. Across four client projects — SinoMed, LubeDesk, MIE Group, and Fameline Holding Group — I designed branded jackets, sports kits, and event t-shirts. Each design was optimised for both on-screen presentation and print-ready production, including colour variants, logo placement options, and size specifications.",
+      "SinoMed required a professional jacket range that could serve both frontline staff and corporate occasions. I developed seven distinct colourway combinations — black, blue, and grey base jackets each paired with white, blue, grey, or red-white logo treatments — giving SinoMed full flexibility for different contexts. Each design was produced as a photo-realistic mockup for client approval before going to print production.",
     deliverables: [
-      "SinoMed branded jackets (multiple colourways)",
-      "LubeDesk corporate jackets",
-      "MIE Group football kit",
-      "Fameline Marathon t-shirt (front + back, print-ready)",
-      "Print specification files",
+      "7 jacket colourway designs",
+      "Logo placement and sizing specifications",
+      "Photo-realistic mockup presentations",
+      "Print-ready artwork files",
+    ],
+    featured: false,
+  },
+
+  {
+    slug: "lubedesk-apparel",
+    title: "LubeDesk — Corporate Jacket Range",
+    client: "LubeDesk",
+    category: ["apparel"],
+    tags: ["Apparel Design", "Corporate Branding", "Jacket", "Mockup", "Maritime"],
+    year: "2024–2026",
+    cover: "/work/lubedesk/jacket-03.jpg",
+    images: [
+      "/work/lubedesk/jacket-03.jpg",
+      "/work/lubedesk/jacket-04.jpg",
+      "/work/lubedesk/jacket-01.jpg",
+      "/work/lubedesk/jacket-02.jpg",
+    ],
+    summary:
+      "Four branded jacket variants for LubeDesk — black and blue colourways with complementary logo treatments, designed for professional maritime industry use.",
+    description:
+      "LubeDesk needed corporate apparel that would represent the brand consistently across maritime industry settings. I designed four jacket variants across two base colours (black and blue) with white, grey, and blue logo treatments, offering versatility for different environments and occasions. Each design was presented as a detailed mockup and produced as print-ready artwork.",
+    deliverables: [
+      "4 jacket colourway designs",
+      "Logo placement specifications",
+      "Mockup presentations",
+      "Print-ready artwork",
+    ],
+    featured: false,
+  },
+
+  {
+    slug: "mie-football",
+    title: "MIE Group — Football Kit Design",
+    client: "MIE Group",
+    category: ["apparel"],
+    tags: ["Apparel Design", "Sports Kit", "Football", "Corporate", "Mockup"],
+    year: "2025",
+    cover: "/work/mie-football/full-kit.jpg",
+    images: [
+      "/work/mie-football/full-kit.jpg",
+      "/work/mie-football/front.jpg",
+      "/work/mie-football/back.jpg",
+    ],
+    summary:
+      "A complete branded football kit for MIE Group — jersey front and back with full kit mockup, designed for corporate sporting events and team identity.",
+    description:
+      "MIE Group commissioned a branded football kit for corporate team events. The design translates the brand's identity onto sportswear — balancing visibility of the logo on dynamic sportswear with a clean, athletic aesthetic. The kit was presented as a full set mockup showing front jersey, back jersey with name/number area, and the complete outfit.",
+    deliverables: [
+      "Football jersey design (front + back)",
+      "Full kit mockup presentation",
+      "Print-ready artwork files",
+    ],
+    featured: false,
+  },
+
+  {
+    slug: "marathon-tshirt",
+    title: "Fameline Group — Marathon T-Shirt 2026",
+    client: "Fameline Holding Group",
+    category: ["apparel", "print"],
+    tags: ["Apparel Design", "Event", "T-Shirt", "Marathon", "Print"],
+    year: "2026",
+    cover: "/work/marathon/front.jpg",
+    images: [
+      "/work/marathon/front.jpg",
+      "/work/marathon/back.jpg",
+    ],
+    summary:
+      "Official event t-shirt design for the Fameline Holding Group team at the Limassol Marathon 2026 — front and back, print-ready for the event.",
+    description:
+      "Fameline Holding Group entered a team in the Limassol Marathon 2026 and required a branded event t-shirt for all participants. The design was created for the Fameline identity, optimised for on-body legibility and comfort during a running event. Both front and back were designed and delivered as print-ready files in time for the event.",
+    deliverables: [
+      "T-shirt front design (print-ready)",
+      "T-shirt back design (print-ready)",
+      "Mockup presentation for approvals",
+    ],
+    featured: false,
+  },
+
+  {
+    slug: "fameline-volleyball",
+    title: "Famelions — Volleyball Kit Design",
+    client: "Fameline Holding Group",
+    category: ["apparel"],
+    tags: ["Apparel Design", "Sports Kit", "Volleyball", "Corporate", "Mockup"],
+    year: "2025",
+    cover: "/work/fameline-volley/tank-front.jpg",
+    images: [
+      "/work/fameline-volley/tank-front.jpg",
+      "/work/fameline-volley/tank-back.jpg",
+      "/work/fameline-volley/shorts.jpg",
+      "/work/fameline-volley/good-luck.jpg",
+    ],
+    summary:
+      "Complete volleyball kit design for the Famelions — Fameline Holding Group's internal sports team — including tank top, shorts, and a campaign-style 'Good Luck' social post.",
+    description:
+      "The Famelions needed a full volleyball kit that unified the team's identity for their 2025 season. I designed the complete kit: tank top (front and back) and shorts, all carrying the Famelions brand. Alongside the kit, I produced a social media 'Good Luck Team' post to mark the season launch — demonstrating how apparel design and social communications reinforce each other.",
+    deliverables: [
+      "Volleyball tank top (front + back)",
+      "Shorts design",
+      "Full kit mockup",
+      "Good Luck social media post",
     ],
     featured: false,
   },
 ];
 
 export const categories = [
-  { id: "all",          label: "All Work" },
-  { id: "featured",    label: "Featured" },
-  { id: "social-media",label: "Social Media" },
-  { id: "website",     label: "Website Design" },
-  { id: "branding",    label: "Branding" },
-  { id: "marketing",   label: "Marketing" },
-  { id: "motion",      label: "Motion" },
-  { id: "print",       label: "Print & Apparel" },
+  { id: "all",             label: "All Work" },
+  { id: "featured",       label: "Featured" },
+  { id: "social-media",   label: "Social Media" },
+  { id: "website",        label: "Website Design" },
+  { id: "branding",       label: "Brand Identity" },
+  { id: "email-campaigns",label: "Email Campaigns" },
+  { id: "apparel",        label: "Apparel & Kits" },
+  { id: "print",          label: "Print & Stationery" },
+  { id: "exhibition",     label: "Exhibitions" },
+  { id: "motion",         label: "Motion" },
 ] as const;

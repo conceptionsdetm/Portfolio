@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects, categories } from "@/data/projects";
 import type { Category } from "@/data/projects";
+import { assetPath } from "@/lib/basePath";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 export default function WorkPage() {
@@ -61,12 +61,11 @@ export default function WorkPage() {
               >
                 <Link href={`/work/${project.slug}`} className="group block">
                   <div className="relative overflow-hidden bg-zinc-900 aspect-[4/3] hover-lift">
-                    <Image
-                      src={project.cover}
+                    <img
+                      src={assetPath(project.cover)}
                       alt={project.title}
-                      fill
-                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading={i < 6 ? "eager" : "lazy"}
+                      className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="img-overlay" />
 
