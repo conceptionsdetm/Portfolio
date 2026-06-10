@@ -112,7 +112,7 @@ export const projects: Project[] = [
     tags: ["Web Design", "UI/UX", "Landing Page", "Healthcare", "Mobile-First"],
     year: "2025",
     cover: "/work/mia-femtech/website-cover.jpg",
-    logoHero: "/work/mia-femtech/logo.png",
+    logoImg: "/work/mia-femtech-social/logo.png",
     images: ["/work/mia-femtech/website-cover.jpg"],
     previewImg: "/work/mia-femtech/preview-desktop.jpg",
     previewImgTablet: "/work/mia-femtech/preview-tablet.jpg",
