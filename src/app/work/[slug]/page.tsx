@@ -4,6 +4,7 @@ import { projects } from "@/data/projects";
 import { assetPath } from "@/lib/basePath";
 import ProjectGallery from "@/components/sections/ProjectGallery";
 import WebsitePreview from "@/components/sections/WebsitePreview";
+import CampaignArticles from "@/components/sections/CampaignArticles";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 export function generateStaticParams() {
@@ -145,6 +146,16 @@ export default function ProjectPage({ params }: Props) {
                   </object>
                 </div>
               </RevealOnScroll>
+            ) : project.slug === "amsoil-social" ? (
+              <>
+                <RevealOnScroll>
+                  <h2 className="font-display font-black text-xl text-paper mb-2">Campaign Articles</h2>
+                  <p className="font-mono text-[8px] tracking-[0.32em] uppercase text-paper/28 mb-8">
+                    Monthly content calendar — April · May · June 2026
+                  </p>
+                </RevealOnScroll>
+                <CampaignArticles />
+              </>
             ) : (
               <>
                 <RevealOnScroll>
