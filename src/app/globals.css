@@ -114,6 +114,20 @@ body {
   background: #D01F2B;
 }
 
+/* ── Shape animations ────────────────────────── */
+@keyframes s-float  { 0%,100%{transform:translateY(0)}            50%{transform:translateY(-14px)} }
+@keyframes s-floatx { 0%,100%{transform:translateX(0)}            50%{transform:translateX(10px)} }
+@keyframes s-rot    { 0%{transform:rotate(0deg)}                   100%{transform:rotate(360deg)} }
+@keyframes s-rotr   { 0%{transform:rotate(0deg)}                   100%{transform:rotate(-360deg)} }
+@keyframes s-blink  { 0%,100%{opacity:.15}                        50%{opacity:.55} }
+@keyframes s-blinkd { 0%,100%{opacity:.08}                        50%{opacity:.28} }
+@keyframes s-scale  { 0%,100%{transform:scale(1)}                  50%{transform:scale(1.1)} }
+@keyframes s-shrink { 0%,100%{transform:scaleX(1)}                 50%{transform:scaleX(.45)} }
+@keyframes s-rise   { 0%,100%{transform:translateY(0) rotate(-14deg)} 50%{transform:translateY(-16px) rotate(-6deg)} }
+@keyframes s-pulse  { 0%,100%{transform:scale(1);opacity:.22}      50%{transform:scale(1.14);opacity:.46} }
+@keyframes s-frot   { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-10px) rotate(45deg)} }
+@keyframes s-wag    { 0%,100%{transform:rotate(-8deg)}             50%{transform:rotate(8deg)} }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

@@ -29,69 +29,61 @@ export default function Hero() {
         </span>
       </div>
 
-      {/* ── Animated shapes (right side, away from text) ── */}
+      {/* ── Shapes ── */}
+      <div className="absolute inset-0 pointer-events-none z-0" aria-hidden>
 
-      {/* Vermillion square outline — top right */}
-      <motion.div
-        className="absolute pointer-events-none z-0"
-        style={{ top: "10%", right: "6%", width: 64, height: 64, border: "2px solid #D01F2B" }}
-        animate={{ rotate: [0, 90, 0], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-      />
+        {/* ── Right side ── */}
+        {/* Large gold circle */}
+        <div style={{ position:"absolute", top:"8%", right:"4%", width:120, height:120, borderRadius:"50%", border:"1.5px solid #C9A84C", opacity:.28, animation:"s-pulse 13s ease-in-out infinite" }} />
+        {/* Medium gold circle */}
+        <div style={{ position:"absolute", top:"12%", right:"7%", width:60, height:60, borderRadius:"50%", border:"1px solid #C9A84C", opacity:.2, animation:"s-scale 9s ease-in-out infinite", animationDelay:"1s" }} />
+        {/* Gold dot */}
+        <div style={{ position:"absolute", top:"7%", right:"14%", width:10, height:10, borderRadius:"50%", background:"#C9A84C", opacity:.55, animation:"s-float 7s ease-in-out infinite" }} />
 
-      {/* Vermillion horizontal slash — top right */}
-      <motion.div
-        className="absolute pointer-events-none z-0"
-        style={{ top: "7%", right: "4%", width: 110, height: 3, background: "#D01F2B", transformOrigin: "right" }}
-        animate={{ scaleX: [1, 0.5, 1], opacity: [0.5, 1, 0.5] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
+        {/* Vermillion square top-right */}
+        <div style={{ position:"absolute", top:"22%", right:"5%", width:60, height:60, border:"2px solid #D01F2B", opacity:.3, animation:"s-rotr 20s linear infinite" }} />
+        {/* Vermillion slash top-right */}
+        <div style={{ position:"absolute", top:"18%", right:"3%", width:120, height:2, background:"#D01F2B", opacity:.4, animation:"s-shrink 10s ease-in-out infinite" }} />
+        {/* Vermillion dot top-right */}
+        <div style={{ position:"absolute", top:"30%", right:"9%", width:7, height:7, background:"#D01F2B", opacity:.5, animation:"s-float 5s ease-in-out infinite", animationDelay:"1s" }} />
 
-      {/* Gold circle outline — lower right */}
-      <motion.div
-        className="absolute pointer-events-none z-0 rounded-full"
-        style={{ bottom: "22%", right: "8%", width: 90, height: 90, border: "1.5px solid #C9A84C" }}
-        animate={{ y: [0, -16, 0], scale: [1, 1.07, 1], opacity: [0.25, 0.5, 0.25] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      />
+        {/* Paper vertical line — far right */}
+        <div style={{ position:"absolute", top:"15%", right:"1.5%", width:1, height:220, background:"rgba(240,235,226,0.09)", animation:"s-rise 15s ease-in-out infinite" }} />
+        {/* Paper vertical line — inner right */}
+        <div style={{ position:"absolute", top:"25%", right:"18%", width:1, height:140, background:"rgba(240,235,226,0.07)", animation:"s-rise 11s ease-in-out infinite", animationDelay:"3s" }} />
 
-      {/* Gold filled dot — lower right */}
-      <motion.div
-        className="absolute pointer-events-none z-0 rounded-full"
-        style={{ bottom: "28%", right: "5%", width: 12, height: 12, background: "#C9A84C" }}
-        animate={{ y: [0, -10, 0], opacity: [0.4, 0.85, 0.4] }}
-        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-      />
+        {/* Mid-right: cross */}
+        <div style={{ position:"absolute", top:"50%", right:"12%", width:16, height:1, background:"rgba(240,235,226,0.14)" }} />
+        <div style={{ position:"absolute", top:"47.5%", right:"11.5%", width:1, height:16, background:"rgba(240,235,226,0.14)", animation:"s-blink 9s ease-in-out infinite" }} />
 
-      {/* Paper vertical line — right edge mid */}
-      <motion.div
-        className="absolute pointer-events-none z-0"
-        style={{ top: "22%", right: "2%", width: 1, height: 160, background: "rgba(240,235,226,0.1)", transformOrigin: "top" }}
-        animate={{ rotate: [-12, -5, -12], scaleY: [1, 0.65, 1] }}
-        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
-      />
+        {/* Gold circle lower right */}
+        <div style={{ position:"absolute", bottom:"20%", right:"7%", width:90, height:90, borderRadius:"50%", border:"1.5px solid #C9A84C", opacity:.25, animation:"s-float 11s ease-in-out infinite" }} />
+        {/* Gold dot lower-right */}
+        <div style={{ position:"absolute", bottom:"26%", right:"4%", width:11, height:11, borderRadius:"50%", background:"#C9A84C", opacity:.4, animation:"s-float 6s ease-in-out infinite", animationDelay:"1.5s" }} />
 
-      {/* Small vermillion dots cluster */}
-      <motion.div
-        className="absolute pointer-events-none z-0"
-        style={{ top: "38%", right: "16%", width: 7, height: 7, background: "#D01F2B" }}
-        animate={{ y: [0, -7, 0], opacity: [0.4, 1, 0.4] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute pointer-events-none z-0"
-        style={{ top: "44%", right: "20%", width: 4, height: 4, background: "#D01F2B" }}
-        animate={{ y: [0, 5, 0], opacity: [0.25, 0.65, 0.25] }}
-        transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-      />
+        {/* Gold rule */}
+        <div style={{ position:"absolute", bottom:"32%", right:"10%", width:170, height:1, background:"rgba(201,168,76,0.25)", animation:"s-shrink 9s ease-in-out infinite", animationDelay:"2.5s" }} />
 
-      {/* Gold horizontal rule — below name area right */}
-      <motion.div
-        className="absolute pointer-events-none z-0"
-        style={{ bottom: "32%", right: "10%", width: 160, height: 1, background: "rgba(201,168,76,0.28)" }}
-        animate={{ scaleX: [1, 0.55, 1], opacity: [0.28, 0.55, 0.28] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-      />
+        {/* Small dot cluster mid-right */}
+        <div style={{ position:"absolute", top:"40%", right:"16%", width:7, height:7, background:"#D01F2B", opacity:.45, animation:"s-float 4s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"45%", right:"20%", width:4, height:4, background:"#D01F2B", opacity:.3, animation:"s-float 3.5s ease-in-out infinite", animationDelay:"0.7s" }} />
+
+        {/* ── Left side (below vermillion bar, above name) ── */}
+        {/* Paper cross */}
+        <div style={{ position:"absolute", top:"12%", left:"8%", width:14, height:1, background:"rgba(240,235,226,0.12)" }} />
+        <div style={{ position:"absolute", top:"9.5%", left:"8.5%", width:1, height:14, background:"rgba(240,235,226,0.12)", animation:"s-blink 11s ease-in-out infinite" }} />
+        {/* Paper short line */}
+        <div style={{ position:"absolute", top:"16%", left:"6%", width:60, height:1, background:"rgba(240,235,226,0.08)", animation:"s-shrink 8s ease-in-out infinite", animationDelay:"5s" }} />
+
+        {/* ── Bottom area ── */}
+        {/* Gold outline square bottom-right */}
+        <div style={{ position:"absolute", bottom:"8%", right:"3%", width:45, height:45, border:"1.5px solid #C9A84C", opacity:.22, animation:"s-rot 26s linear infinite" }} />
+        {/* Bottom-left: paper line */}
+        <div style={{ position:"absolute", bottom:"12%", left:"8%", width:1, height:100, background:"rgba(240,235,226,0.07)", animation:"s-wag 14s ease-in-out infinite" }} />
+        {/* Bottom-left: vermillion tiny dot */}
+        <div style={{ position:"absolute", bottom:"16%", left:"12%", width:5, height:5, background:"#D01F2B", opacity:.35, animation:"s-float 6s ease-in-out infinite", animationDelay:"2s" }} />
+
+      </div>
 
       {/* ── Main content ── */}
       <div className="relative z-10 w-full pl-10 md:pl-16 pr-0">

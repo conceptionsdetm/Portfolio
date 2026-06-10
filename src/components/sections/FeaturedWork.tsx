@@ -9,8 +9,46 @@ const featured = projects.filter((p) => p.featured);
 
 export default function FeaturedWork() {
   return (
-    <section className="py-24 md:py-32 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-24 md:py-32 px-6 md:px-12 overflow-hidden">
+
+      {/* ── Shapes ── */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
+
+        {/* Top-right: gold circle */}
+        <div style={{ position:"absolute", top:"4%", right:"3%", width:90, height:90, borderRadius:"50%", border:"1.5px solid #C9A84C", opacity:.3, animation:"s-float 11s ease-in-out infinite" }} />
+        {/* Top-right: gold dot */}
+        <div style={{ position:"absolute", top:"8%", right:"6%", width:10, height:10, borderRadius:"50%", background:"#C9A84C", opacity:.5, animation:"s-float 6s ease-in-out infinite", animationDelay:"1s" }} />
+
+        {/* Top-left: vermillion horizontal slash */}
+        <div style={{ position:"absolute", top:"6%", left:"2%", width:120, height:2, background:"#D01F2B", opacity:.45, animation:"s-shrink 10s ease-in-out infinite" }} />
+        {/* Top-left: small vermillion square */}
+        <div style={{ position:"absolute", top:"10%", left:"4%", width:18, height:18, border:"2px solid #D01F2B", opacity:.35, animation:"s-frot 14s ease-in-out infinite" }} />
+
+        {/* Right-mid: paper vertical line */}
+        <div style={{ position:"absolute", top:"25%", right:"1.5%", width:1, height:200, background:"rgba(240,235,226,0.1)", animation:"s-rise 13s ease-in-out infinite" }} />
+
+        {/* Between cards: gold rule accent */}
+        <div style={{ position:"absolute", top:"54%", right:"4%", width:160, height:1, background:"rgba(201,168,76,0.25)", animation:"s-shrink 9s ease-in-out infinite", animationDelay:"2s" }} />
+
+        {/* Between cards: small dot */}
+        <div style={{ position:"absolute", top:"52%", right:"8%", width:7, height:7, borderRadius:"50%", background:"#D01F2B", opacity:.5, animation:"s-float 5s ease-in-out infinite", animationDelay:"0.8s" }} />
+
+        {/* Left-mid: paper short vertical */}
+        <div style={{ position:"absolute", top:"38%", left:"1%", width:1, height:100, background:"rgba(240,235,226,0.08)", animation:"s-float 12s ease-in-out infinite", animationDelay:"3s" }} />
+        {/* Left-mid: gold tiny dot */}
+        <div style={{ position:"absolute", top:"45%", left:"3%", width:8, height:8, borderRadius:"50%", background:"#C9A84C", opacity:.35, animation:"s-pulse 7s ease-in-out infinite" }} />
+
+        {/* Bottom-right: outline square */}
+        <div style={{ position:"absolute", bottom:"6%", right:"4%", width:50, height:50, border:"1.5px solid #C9A84C", opacity:.25, animation:"s-rotr 22s linear infinite" }} />
+        {/* Bottom-right: small dot */}
+        <div style={{ position:"absolute", bottom:"10%", right:"9%", width:6, height:6, background:"#D01F2B", opacity:.55, animation:"s-float 4s ease-in-out infinite", animationDelay:"1.5s" }} />
+
+        {/* Bottom-left: paper line */}
+        <div style={{ position:"absolute", bottom:"8%", left:"3%", width:80, height:1, background:"rgba(240,235,226,0.1)", animation:"s-shrink 8s ease-in-out infinite", animationDelay:"4s" }} />
+
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Section header */}
         <RevealOnScroll className="mb-12 md:mb-14 flex items-end justify-between border-b border-paper/6 pb-6">
