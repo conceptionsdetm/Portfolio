@@ -5,9 +5,9 @@ interface LogoProps {
 }
 
 export default function Logo({ size = "md" }: LogoProps) {
-  const w = size === "sm" ? 46 : 54;
-  const h = size === "sm" ? 30 : 36;
-  const fs = size === "sm" ? 11 : 13;
+  const w = size === "sm" ? 52 : 62;
+  const h = size === "sm" ? 32 : 38;
+  const fs = size === "sm" ? 13 : 15;
 
   return (
     <Link href="/" className="hover:opacity-75 transition-opacity duration-200">
