@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import Logo from "@/components/ui/Logo";
 
 const links = [
   { href: "/",        label: "Home" },
@@ -30,27 +31,7 @@ export default function Nav() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="hover:opacity-75 transition-opacity duration-200">
-          <span
-            className="relative inline-block bg-vermillion overflow-visible"
-            style={{ width: "54px", height: "34px" }}
-          >
-            <span
-              className="font-display font-black text-paper"
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "44%",
-                transform: "translate(-50%, -50%) rotate(-13deg)",
-                fontSize: "13px",
-                letterSpacing: "0.12em",
-                whiteSpace: "nowrap",
-              }}
-            >
-              cdtm
-            </span>
-          </span>
-        </Link>
+        <Logo size="md" />
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">

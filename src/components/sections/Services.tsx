@@ -43,7 +43,7 @@ export default function Services() {
   return (
     <section className="py-24 md:py-32 px-6 md:px-12 bg-ink relative overflow-hidden">
 
-      {/* Ghost text background */}
+      {/* Ghost letter */}
       <div className="absolute left-[-3%] bottom-[-8%] select-none pointer-events-none z-0" aria-hidden>
         <span
           className="font-display font-black leading-none"
@@ -56,44 +56,27 @@ export default function Services() {
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Section header */}
-        <RevealOnScroll className="mb-14 md:mb-20 flex items-start justify-between">
-          <div>
-            <div className="flex items-center gap-4 mb-5">
-              <span className="w-5 h-px bg-vermillion block" />
-              <span className="font-mono text-[11px] tracking-[0.42em] uppercase text-paper/30">
-                № 04 — What I Do
-              </span>
-            </div>
-            <h2 className="font-display font-black text-paper leading-none"
-                style={{ fontSize: "clamp(3rem,8vw,6rem)" }}>
-              Services
-            </h2>
-          </div>
+        <RevealOnScroll className="mb-14 md:mb-20">
+          <h2 className="font-display font-black text-paper leading-none"
+              style={{ fontSize: "clamp(3rem,8vw,6rem)" }}>
+            Services
+          </h2>
         </RevealOnScroll>
 
         {/* Services grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <RevealOnScroll key={s.number} delay={i * 0.07}>
-              <div className="border border-paper/6 p-8 md:p-10 group hover:border-vermillion/30 transition-colors duration-500 relative">
-
-                {/* Crop corner */}
-                <div className="absolute top-3 right-3 w-3 h-px bg-paper/10" />
-                <div className="absolute top-3 right-3 w-px h-3 bg-paper/10" />
-
-                {/* Number — large Bodoni Black, vermillion */}
+              <div className="border border-paper/6 p-8 md:p-10 group hover:border-vermillion/30 transition-colors duration-500">
                 <span className="block font-display font-black text-vermillion leading-none mb-6"
                       style={{ fontSize: "clamp(2.5rem,4vw,3.5rem)" }}>
                   {s.number}
                 </span>
-
                 <h3 className="font-display font-black text-paper mb-4 leading-tight group-hover:text-gold transition-colors duration-300"
                     style={{ fontSize: "clamp(1.25rem,2.2vw,1.75rem)" }}>
                   {s.title}
                 </h3>
-
                 <div className="w-6 h-[3px] bg-vermillion/40 mb-5 group-hover:bg-vermillion transition-colors duration-300" />
-
                 <p className="font-display font-normal text-paper/45 text-lg leading-relaxed">
                   {s.description}
                 </p>

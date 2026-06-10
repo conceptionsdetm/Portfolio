@@ -11,7 +11,7 @@ export default function Stats() {
   return (
     <section className="py-20 px-6 md:px-12 bg-paper relative overflow-hidden">
 
-      {/* Ghost number background */}
+      {/* Ghost number */}
       <div className="absolute right-[-4%] top-1/2 -translate-y-1/2 select-none pointer-events-none" aria-hidden>
         <span
           className="font-display font-black leading-none"
@@ -20,12 +20,6 @@ export default function Stats() {
           5
         </span>
       </div>
-
-      {/* Crop marks */}
-      <div className="absolute top-5 left-5 w-5 h-px bg-ink/10" />
-      <div className="absolute top-5 left-5 w-px h-5 bg-ink/10" />
-      <div className="absolute bottom-5 right-5 w-5 h-px bg-ink/10" />
-      <div className="absolute bottom-5 right-5 w-px h-5 bg-ink/10" />
 
       {/* Vermillion top rule */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-vermillion" />
@@ -44,9 +38,6 @@ export default function Stats() {
           </RevealOnScroll>
         ))}
       </div>
-
-      {/* Bottom rule */}
-      <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-ink/5" />
     </section>
   );
 }

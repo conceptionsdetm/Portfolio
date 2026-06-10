@@ -16,23 +16,9 @@ export default function CallToAction() {
         </span>
       </div>
 
-      {/* Crop marks */}
-      <div className="absolute top-8 left-8 w-5 h-px bg-paper/10" />
-      <div className="absolute top-8 left-8 w-px h-5 bg-paper/10" />
-      <div className="absolute top-8 right-8 w-5 h-px bg-paper/10" />
-      <div className="absolute top-8 right-8 w-px h-5 bg-paper/10" />
-
       <div className="max-w-5xl mx-auto relative z-10">
 
-        {/* Section label */}
-        <div className="flex items-center gap-4 mb-10">
-          <span className="w-5 h-px bg-vermillion block" />
-          <span className="font-mono text-[11px] tracking-[0.45em] uppercase text-paper/25">
-            № 06 — Let&apos;s Work Together
-          </span>
-        </div>
-
-        {/* "Let's" solid + "talk." in vermillion — zero italic */}
+        {/* "Let's" + "talk." */}
         <div className="mb-10">
           <div className="overflow-hidden">
             <motion.h2
@@ -60,7 +46,6 @@ export default function CallToAction() {
           </div>
         </div>
 
-        {/* Vermillion rule */}
         <div className="w-14 h-[3px] bg-vermillion mb-8" />
 
         <p className="font-display font-normal text-paper/45 text-xl leading-relaxed max-w-sm mb-10">
