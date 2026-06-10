@@ -19,6 +19,7 @@ export interface Project {
   cover: string;
   images: string[];
   pdf?: string;
+  url?: string;
   summary: string;
   description: string;
   deliverables: string[];
@@ -173,9 +174,9 @@ export const projects: Project[] = [
     category: ["website", "branding"],
     tags: ["Web Design", "UI/UX", "Maritime", "Corporate", "Responsive"],
     year: "2025",
-    cover: "/work/posidonia/event-01.jpg",
-    images: ["/work/posidonia/event-01.jpg", "/work/posidonia/event-02.jpg"],
-    pdf: "/pdfs/northtide-desktop.pdf",
+    cover: "/work/northtide/cover.jpg",
+    images: ["/work/northtide/cover.jpg", "/work/northtide/hero.jpg", "/work/northtide/full-page.jpg"],
+    url: "https://northtide.global/",
     summary:
       "A corporate landing page for NorthTide Cargo Logistics designed across desktop, tablet, and mobile — communicating reliability and global reach in maritime freight.",
     description:
