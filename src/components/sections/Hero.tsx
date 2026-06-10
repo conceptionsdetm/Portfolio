@@ -86,7 +86,7 @@ export default function Hero() {
       </div>
 
       {/* ── Main content ── */}
-      <div className="relative z-10 w-full pl-10 md:pl-16 pr-0">
+      <div className="relative z-10 w-full pl-6 md:pl-12 pr-0">
 
         {/* Name block — full bleed, no max-w constraint */}
         <div className="mb-10 md:mb-14">
@@ -188,7 +188,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.9, duration: 0.8 }}
-        className="absolute bottom-8 left-10 md:left-16 flex items-center gap-3 z-10"
+        className="absolute bottom-8 left-6 md:left-12 flex items-center gap-3 z-10"
       >
         <motion.div
           animate={{ y: [0, 7, 0] }}
