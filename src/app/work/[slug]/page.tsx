@@ -74,13 +74,19 @@ export default function ProjectPage({ params }: Props) {
               </p>
             </RevealOnScroll>
 
-            {project.url ? (
+            {project.url && project.pdf ? (
               <RevealOnScroll>
-                <h2 className="font-display font-black text-xl text-paper mb-4">Live Preview</h2>
+                <h2 className="font-display font-black text-xl text-paper mb-4">Design Preview</h2>
                 <p className="font-mono text-[8px] tracking-[0.32em] uppercase text-paper/28 mb-5">
-                  Auto-scrolling — click to pause
+                  Scroll to explore the full design
                 </p>
-                <WebsitePreview url={project.url} title={project.title} />
+                <WebsitePreview
+                  url={project.url}
+                  pdf={assetPath(project.pdf)}
+                  pdfTablet={project.pdfTablet ? assetPath(project.pdfTablet) : undefined}
+                  pdfMobile={project.pdfMobile ? assetPath(project.pdfMobile) : undefined}
+                  title={project.title}
+                />
               </RevealOnScroll>
             ) : project.pdf ? (
               <RevealOnScroll>
