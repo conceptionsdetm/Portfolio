@@ -5,6 +5,7 @@ import { amsoilCampaign, CampaignPost } from "@/data/amsoil-campaign";
 import { assetPath } from "@/lib/basePath";
 
 const IG_URL = "https://www.instagram.com/amsoil.inc.cyprus/";
+const WEB_URL = "https://amsoil.com.cy/";
 const AMSOIL_RED = "#D01F2B";
 
 // ── Instagram icon ──────────────────────────────────────────────────────────
@@ -16,55 +17,28 @@ function IgIcon({ size = 14 }: { size?: number }) {
   );
 }
 
-// ── Chevron arrow ────────────────────────────────────────────────────────────
+// ── Chevron arrow ─────────────────────────────────────────────────────────
 function Chevron({ dir }: { dir: "left" | "right" }) {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      {dir === "left" ? (
-        <polyline points="15 18 9 12 15 6" />
-      ) : (
-        <polyline points="9 18 15 12 9 6" />
-      )}
+      {dir === "left" ? <polyline points="15 18 9 12 15 6" /> : <polyline points="9 18 15 12 9 6" />}
     </svg>
   );
 }
 
-// ── Video placeholder card ───────────────────────────────────────────────────
+// ── Video card ────────────────────────────────────────────────────────────
 function VideoCard({ post }: { post: CampaignPost }) {
   return (
     <article className="flex flex-col">
-      <a
-        href={IG_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative block aspect-square bg-zinc-900 overflow-hidden"
-        title={`View "${post.title}" on Instagram`}
-      >
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-          {/* Play button ring */}
-          <div
-            className="w-14 h-14 rounded-full flex items-center justify-center border transition-colors duration-200"
-            style={{ borderColor: `${AMSOIL_RED}55`, backgroundColor: `${AMSOIL_RED}15` }}
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill={AMSOIL_RED} aria-hidden>
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-          </div>
-          <p className="font-mono text-[8px] tracking-[0.3em] uppercase text-paper/30">Video Content</p>
-        </div>
-        {/* Hover overlay */}
-        <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
-          style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)" }}
-        >
-          <span className="flex items-center gap-1.5 font-mono text-[8px] tracking-[0.25em] uppercase text-paper/70">
-            <IgIcon size={11} />
-            View on Instagram
-          </span>
-        </div>
-      </a>
-
-      {/* Title row */}
+      <div className="relative aspect-square bg-black overflow-hidden">
+        <video
+          src={assetPath(post.video!)}
+          className="absolute inset-0 w-full h-full object-contain"
+          controls
+          playsInline
+          preload="none"
+        />
+      </div>
       <div className="mt-3 flex items-start justify-between gap-3">
         <h3 className="text-paper/80 text-[13px] leading-snug font-light flex-1">{post.title}</h3>
         <span
@@ -78,7 +52,7 @@ function VideoCard({ post }: { post: CampaignPost }) {
   );
 }
 
-// ── Image carousel card ──────────────────────────────────────────────────────
+// ── Image carousel card ───────────────────────────────────────────────────
 function PostCard({
   post,
   slideIndex,
@@ -99,9 +73,11 @@ function PostCard({
 
   return (
     <article className="flex flex-col">
-      {/* ── Image area ── */}
-      <div className="relative bg-zinc-900 overflow-hidden" style={{ aspectRatio: viewingStory ? "9/16" : "1/1" }}>
-
+      {/* Image area */}
+      <div
+        className="relative bg-zinc-900 overflow-hidden"
+        style={{ aspectRatio: viewingStory ? "9/16" : "1/1" }}
+      >
         {viewingStory && post.story ? (
           <img
             src={assetPath(post.story)}
@@ -119,7 +95,7 @@ function PostCard({
           />
         )}
 
-        {/* Prev / Next (only in carousel mode with >1 slide) */}
+        {/* Prev / Next */}
         {!viewingStory && count > 1 && (
           <>
             <button
@@ -138,14 +114,13 @@ function PostCard({
             >
               <Chevron dir="right" />
             </button>
-            {/* Slide counter */}
             <span className="absolute bottom-2 right-2 bg-black/60 font-mono text-[8px] text-white px-2 py-0.5 rounded-sm tracking-widest">
               {slideIndex + 1}/{count}
             </span>
           </>
         )}
 
-        {/* Story / Back toggle */}
+        {/* Story toggle */}
         {post.story && (
           <button
             onClick={onToggleStory}
@@ -156,22 +131,20 @@ function PostCard({
         )}
       </div>
 
-      {/* ── Dot indicator ── */}
+      {/* Dot indicator */}
       {!viewingStory && count > 1 && (
         <div className="flex items-center justify-center gap-1 mt-2">
           {images.map((_, i) => (
-            <button
+            <span
               key={i}
-              onClick={() => {/* parent controls — skip for simplicity */}}
-              className="w-1 h-1 rounded-full transition-colors duration-150"
+              className="w-1 h-1 rounded-full"
               style={{ backgroundColor: i === slideIndex ? AMSOIL_RED : "rgba(255,255,255,0.25)" }}
-              aria-label={`Slide ${i + 1}`}
             />
           ))}
         </div>
       )}
 
-      {/* ── Title + IG link ── */}
+      {/* Title + IG link */}
       <div className="mt-3 flex items-start justify-between gap-3">
         <h3 className="text-paper/80 text-[13px] leading-snug font-light flex-1">{post.title}</h3>
         <a
@@ -189,24 +162,14 @@ function PostCard({
   );
 }
 
-// ── Main component ───────────────────────────────────────────────────────────
+// ── Main component ────────────────────────────────────────────────────────
 export default function CampaignArticles() {
-  // Per-post slide index: key = post.id, value = slide index
   const [slides, setSlides] = useState<Record<string, number>>({});
-  // Per-post story view toggle
   const [stories, setStories] = useState<Record<string, boolean>>({});
 
-  function getSlide(id: string) {
-    return slides[id] ?? 0;
-  }
-
-  function setSlide(id: string, idx: number) {
-    setSlides((s) => ({ ...s, [id]: idx }));
-  }
-
-  function toggleStory(id: string) {
-    setStories((s) => ({ ...s, [id]: !s[id] }));
-  }
+  function getSlide(id: string) { return slides[id] ?? 0; }
+  function setSlide(id: string, idx: number) { setSlides((s) => ({ ...s, [id]: idx })); }
+  function toggleStory(id: string) { setStories((s) => ({ ...s, [id]: !s[id] })); }
 
   return (
     <div className="space-y-16">
@@ -226,13 +189,11 @@ export default function CampaignArticles() {
           {/* Post grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
             {month.posts.map((post) => {
-              if (post.videoPlaceholder) {
+              if (post.video) {
                 return <VideoCard key={post.id} post={post} />;
               }
-
               const images = post.images ?? [];
               const slideIdx = getSlide(post.id);
-
               return (
                 <PostCard
                   key={post.id}
@@ -248,6 +209,33 @@ export default function CampaignArticles() {
           </div>
         </section>
       ))}
+
+      {/* ── Bottom CTAs ────────────────────────────────────────────────────── */}
+      <div className="pt-10 border-t border-paper/8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href={IG_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full font-mono text-[10px] tracking-[0.25em] uppercase transition-opacity duration-200 hover:opacity-80"
+          style={{ backgroundColor: AMSOIL_RED, color: "#FFFFFF" }}
+        >
+          <IgIcon size={13} />
+          AMSOIL Cyprus — Instagram
+        </a>
+        <a
+          href={WEB_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full font-mono text-[10px] tracking-[0.25em] uppercase transition-opacity duration-200 hover:opacity-80"
+          style={{ border: `1px solid ${AMSOIL_RED}70`, color: AMSOIL_RED }}
+        >
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          amsoil.com.cy
+        </a>
+      </div>
     </div>
   );
 }

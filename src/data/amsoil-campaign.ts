@@ -43,7 +43,7 @@ export const amsoilCampaign: CampaignMonth[] = [
       {
         id: "apr-p4",
         title: "Understanding Oil Viscosity",
-        videoPlaceholder: true,
+        video: `${B}/apr-p4/video.mp4`,
       },
       {
         id: "apr-p5",
@@ -66,7 +66,7 @@ export const amsoilCampaign: CampaignMonth[] = [
       {
         id: "apr-p8",
         title: "Every Part, Protected",
-        videoPlaceholder: true,
+        video: `${B}/apr-p8/video.mp4`,
       },
     ],
   },
@@ -106,7 +106,7 @@ export const amsoilCampaign: CampaignMonth[] = [
       {
         id: "may-p6",
         title: "Protection at Sea",
-        videoPlaceholder: true,
+        video: `${B}/may-p6/video.mp4`,
       },
       {
         id: "may-p7",
@@ -117,7 +117,7 @@ export const amsoilCampaign: CampaignMonth[] = [
       {
         id: "may-p8",
         title: "Built for Dirt",
-        videoPlaceholder: true,
+        video: `${B}/may-p8/video.mp4`,
       },
       {
         id: "may-p9",
