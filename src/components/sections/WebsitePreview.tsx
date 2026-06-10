@@ -54,8 +54,7 @@ export default function WebsitePreview({ url, img, imgTablet, imgMobile, title }
         style={{
           maxHeight: "80vh",
           overflowY: "scroll",
-          WebkitOverflowScrolling: "touch", // momentum scroll on iOS
-          overscrollBehavior: "contain",
+          WebkitOverflowScrolling: "touch",
         }}
       >
         <img
