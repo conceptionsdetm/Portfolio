@@ -3,6 +3,7 @@ import Link from "next/link";
 import { projects } from "@/data/projects";
 import { assetPath } from "@/lib/basePath";
 import ProjectGallery from "@/components/sections/ProjectGallery";
+import WebsitePreview from "@/components/sections/WebsitePreview";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 export function generateStaticParams() {
@@ -73,7 +74,15 @@ export default function ProjectPage({ params }: Props) {
               </p>
             </RevealOnScroll>
 
-            {project.pdf ? (
+            {project.url ? (
+              <RevealOnScroll>
+                <h2 className="font-display font-black text-xl text-paper mb-4">Live Preview</h2>
+                <p className="font-mono text-[8px] tracking-[0.32em] uppercase text-paper/28 mb-5">
+                  Auto-scrolling — click to pause
+                </p>
+                <WebsitePreview url={project.url} title={project.title} />
+              </RevealOnScroll>
+            ) : project.pdf ? (
               <RevealOnScroll>
                 <h2 className="font-display font-black text-xl text-paper mb-4">Full Design</h2>
                 <p className="font-mono text-[8px] tracking-[0.32em] uppercase text-paper/28 mb-5">
@@ -137,21 +146,6 @@ export default function ProjectPage({ params }: Props) {
                     </ul>
                   </div>
                 </div>
-                {project.url && (
-                  <div className="border border-paper/10 p-6">
-                    <p className="font-mono text-[8px] tracking-[0.38em] uppercase text-paper/28 mb-3">
-                      Live Website
-                    </p>
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-center px-6 py-3 border border-gold text-gold font-mono text-[9px] tracking-[0.3em] uppercase hover:bg-gold hover:text-ink transition-colors duration-200"
-                    >
-                      Visit Website →
-                    </a>
-                  </div>
-                )}
                 <div className="border border-gold/18 p-6">
                   <p className="text-paper/55 text-sm mb-4 font-light">
                     Need something similar? Let&apos;s talk.
