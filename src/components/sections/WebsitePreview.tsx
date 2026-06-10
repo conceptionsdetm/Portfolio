@@ -70,8 +70,8 @@ export default function WebsitePreview({ img, imgTablet, imgMobile, title, url }
       </div>
 
       {/* Footer */}
-      <div className="bg-zinc-800 px-3 py-2 flex items-center justify-between">
-        <span className="font-mono text-[7px] tracking-[0.28em] uppercase text-paper/22">
+      <div className="bg-zinc-800 border-t border-paper/8 px-4 py-3 flex items-center justify-between gap-4">
+        <span className="font-mono text-[9px] tracking-[0.22em] uppercase text-paper/50">
           Full Design Preview
         </span>
         {url ? (
@@ -79,12 +79,12 @@ export default function WebsitePreview({ img, imgTablet, imgMobile, title, url }
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-[7px] tracking-[0.28em] uppercase text-gold hover:text-paper transition-colors duration-200 whitespace-nowrap"
+            className="shrink-0 px-4 py-1.5 bg-gold text-ink font-mono text-[9px] tracking-[0.22em] uppercase hover:bg-paper transition-colors duration-200 whitespace-nowrap"
           >
             Visit Live Website →
           </a>
         ) : (
-          <span className="font-mono text-[7px] tracking-[0.28em] uppercase text-paper/22">
+          <span className="font-mono text-[9px] tracking-[0.22em] uppercase text-paper/40 truncate">
             {title}
           </span>
         )}
