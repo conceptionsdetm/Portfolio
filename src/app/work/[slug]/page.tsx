@@ -29,15 +29,38 @@ export default function ProjectPage({ params }: Props) {
   return (
     <main className="min-h-screen pt-24 pb-24">
 
-      {/* Hero image — aspect-video on mobile/tablet, fixed 52vh on desktop */}
-      <div className="relative w-full bg-zinc-900 mb-16 overflow-hidden aspect-video lg:aspect-auto lg:h-[52vh]">
-        <img
-          src={assetPath(project.cover)}
-          alt={project.title}
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
-      </div>
+      {/* Hero — logo nav strip (full-width design crop) */}
+      {project.logoHero ? (
+        <div className="relative w-full bg-zinc-950 mb-16 overflow-hidden h-[160px] md:h-[220px] lg:h-[300px]">
+          <img
+            src={assetPath(project.logoHero)}
+            alt={project.client}
+            className="absolute inset-0 w-full h-full object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/65 via-transparent to-transparent" />
+        </div>
+      ) : project.logoImg ? (
+        /* Hero — isolated logo on dark background */
+        <div className="relative w-full bg-zinc-950 mb-16 flex items-center justify-center overflow-hidden" style={{ height: "260px" }}>
+          <img
+            src={assetPath(project.logoImg)}
+            alt={project.client}
+            className="max-h-[65%] max-w-[60%] object-contain"
+            style={{ filter: "drop-shadow(0 4px 32px rgba(0,0,0,0.6))" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent pointer-events-none" />
+        </div>
+      ) : (
+        /* Hero — fallback cover photo */
+        <div className="relative w-full bg-zinc-900 mb-16 overflow-hidden aspect-video lg:aspect-auto lg:h-[52vh]">
+          <img
+            src={assetPath(project.cover)}
+            alt={project.title}
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-[2fr_1fr] gap-16">

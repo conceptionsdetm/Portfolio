@@ -30,6 +30,10 @@ export interface Project {
   ctaTextColor?: string;
   ctaFontFamily?: string;
   ctaFontWeight?: number;
+  /** Wide nav/header crop from the design PDF — displayed full-width in hero */
+  logoHero?: string;
+  /** Isolated logo PNG (standalone logo PDF) — displayed centred on dark bg */
+  logoImg?: string;
   summary: string;
   description: string;
   deliverables: string[];
@@ -47,6 +51,7 @@ export const projects: Project[] = [
     tags: ["Social Media", "Brand Identity", "Campaign", "Healthcare", "Luxury"],
     year: "2025–2026",
     cover: "/work/mia-femtech/post-01.jpg",
+    logoHero: "/work/mia-femtech/logo.png",
     images: [
       "/work/mia-femtech/post-01.jpg",
       "/work/mia-femtech/post-02.jpg",
@@ -87,6 +92,7 @@ export const projects: Project[] = [
     tags: ["Social Media", "Automotive", "Campaign", "Product Design", "Performance"],
     year: "2025–2026",
     cover: "/work/amsoil/post-01.jpg",
+    logoImg: "/work/amsoil/logo.png",
     images: [
       "/work/amsoil/post-01.jpg",
       "/work/amsoil/post-02.jpg",
@@ -122,6 +128,7 @@ export const projects: Project[] = [
     tags: ["Web Design", "UI/UX", "Landing Page", "Healthcare", "Mobile-First"],
     year: "2025",
     cover: "/work/mia-femtech/website-cover.jpg",
+    logoHero: "/work/mia-femtech/logo.png",
     images: ["/work/mia-femtech/website-cover.jpg"],
     previewImg: "/work/mia-femtech/preview-desktop.jpg",
     previewImgTablet: "/work/mia-femtech/preview-tablet.jpg",
@@ -194,6 +201,7 @@ export const projects: Project[] = [
     tags: ["Web Design", "UI/UX", "Maritime", "Corporate", "Responsive"],
     year: "2025",
     cover: "/work/northtide/cover.jpg",
+    logoHero: "/work/northtide/logo.png",
     images: ["/work/northtide/cover.jpg", "/work/northtide/hero.jpg", "/work/northtide/full-page.jpg"],
     previewImg: "/work/northtide/preview-desktop.jpg",
     previewImgTablet: "/work/northtide/preview-tablet.jpg",
@@ -225,6 +233,7 @@ export const projects: Project[] = [
     tags: ["Web Design", "Corporate", "Defence", "UI/UX", "Multi-page"],
     year: "2025",
     cover: "/work/fameline-website/website-cover.jpg",
+    logoHero: "/work/fameline-website/logo.png",
     images: ["/work/fameline-website/website-cover.jpg"],
     previewImg: "/work/fameline-website/preview-desktop.jpg",
     previewImgTablet: "/work/fameline-website/preview-tablet.jpg",
@@ -254,6 +263,7 @@ export const projects: Project[] = [
     tags: ["Web Design", "Landing Page", "Maritime", "Brand Identity"],
     year: "2025",
     cover: "/work/posidonia/event-03.jpg",
+    logoHero: "/work/albaflux-website/logo.png",
     images: ["/work/posidonia/event-03.jpg"],
     pdf: "/pdfs/albaflux-web.pdf",
     summary:
@@ -274,6 +284,7 @@ export const projects: Project[] = [
     tags: ["Brand Identity", "Brand Guidelines", "Maritime", "Corporate Identity"],
     year: "2025",
     cover: "/work/bwss/campaign-0.jpg",
+    logoHero: "/work/albaflux-brand/logo.png",
     images: [
       "/work/bwss/campaign-0.jpg",
       "/work/bwss/campaign-1.jpg",
@@ -329,6 +340,7 @@ export const projects: Project[] = [
     tags: ["Email Marketing", "Campaign", "Maritime", "LinkedIn", "B2B"],
     year: "2025",
     cover: "/work/bwss-email/header-01.jpg",
+    logoImg: "/work/bwss-email/logo.png",
     images: [
       "/work/bwss-email/header-00.jpg",
       "/work/bwss-email/header-01.jpg",
@@ -364,6 +376,7 @@ export const projects: Project[] = [
     tags: ["Motion Graphics", "After Effects", "Exhibition", "Maritime", "Event Branding"],
     year: "2024",
     cover: "/work/posidonia/event-01.jpg",
+    logoImg: "/work/posidonia/logo.png",
     images: [
       "/work/posidonia/event-01.jpg",
       "/work/posidonia/event-02.jpg",
@@ -499,6 +512,7 @@ export const projects: Project[] = [
     tags: ["Apparel Design", "Sports Kit", "Volleyball", "Corporate", "Mockup"],
     year: "2025",
     cover: "/work/fameline-volley/tank-front.jpg",
+    logoImg: "/work/fameline-volley/logo.png",
     images: [
       "/work/fameline-volley/tank-front.jpg",
       "/work/fameline-volley/tank-back.jpg",
