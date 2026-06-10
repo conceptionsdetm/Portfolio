@@ -26,6 +26,8 @@ export interface Project {
   previewImgMobile?: string;
   url?: string;
   ctaLabel?: string;
+  ctaColor?: string;
+  ctaTextColor?: string;
   summary: string;
   description: string;
   deliverables: string[];
@@ -124,6 +126,8 @@ export const projects: Project[] = [
     previewImgMobile: "/work/mia-femtech/preview-mobile.jpg",
     url: "https://mia-femtech.medisera.eu/",
     ctaLabel: "Visit MIA FemTech Live",
+    ctaColor: "#C4687A",
+    ctaTextColor: "#ffffff",
     summary:
       "A responsive multi-device website design for MIA FemTech — crafted to convert visitors into consultation bookings through trust, luxury, and clear information hierarchy.",
     description:
@@ -192,6 +196,8 @@ export const projects: Project[] = [
     previewImgMobile: "/work/northtide/preview-mobile.jpg",
     url: "https://northtide.global/",
     ctaLabel: "Visit NorthTide Live",
+    ctaColor: "#0ABFBC",
+    ctaTextColor: "#ffffff",
     summary:
       "A corporate landing page for NorthTide Cargo Logistics designed across desktop, tablet, and mobile — communicating reliability and global reach in maritime freight.",
     description:

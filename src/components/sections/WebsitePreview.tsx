@@ -8,12 +8,16 @@ interface Props {
   imgMobile?: string;
   title: string;
   url?: string;
-  ctaLabel?: string; // custom button text per project
+  ctaLabel?: string;
+  ctaColor?: string;
+  ctaTextColor?: string;
 }
 
 export default function WebsitePreview({
   img, imgTablet, imgMobile, title, url,
   ctaLabel = "Visit Live Website",
+  ctaColor = "#c9a96e",   // default: portfolio gold
+  ctaTextColor = "#0a0a0a",
 }: Props) {
   const [src, setSrc] = useState(img);
 
@@ -80,16 +84,12 @@ export default function WebsitePreview({
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="
-              inline-flex items-center gap-2
-              px-8 sm:px-10 py-3 sm:py-3.5
-              rounded-full
-              bg-gold text-ink
-              font-mono text-[9px] sm:text-[10px] tracking-[0.28em] uppercase
-              hover:bg-paper hover:scale-105
-              transition-all duration-300
-              whitespace-nowrap
-            "
+            className="inline-flex items-center gap-2 px-8 sm:px-10 py-3 sm:py-3.5 rounded-full font-mono text-[9px] sm:text-[10px] tracking-[0.28em] uppercase transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            style={{
+              backgroundColor: ctaColor,
+              color: ctaTextColor,
+              boxShadow: `0 4px 24px ${ctaColor}55`,
+            }}
           >
             {ctaLabel}
             <span className="text-[11px]">→</span>

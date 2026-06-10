@@ -87,6 +87,8 @@ export default function ProjectPage({ params }: Props) {
                   title={project.title}
                   url={project.url}
                   ctaLabel={project.ctaLabel}
+                  ctaColor={project.ctaColor}
+                  ctaTextColor={project.ctaTextColor}
                 />
               </RevealOnScroll>
             ) : project.pdf ? (
