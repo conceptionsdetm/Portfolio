@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 
 interface Props {
-  url: string;
-  img: string;          // desktop preview image
-  imgTablet?: string;   // tablet preview image
-  imgMobile?: string;   // mobile preview image
+  img: string;
+  imgTablet?: string;
+  imgMobile?: string;
   title: string;
+  url?: string; // optional — omit if no live site
 }
 
-export default function WebsitePreview({ url, img, imgTablet, imgMobile, title }: Props) {
+export default function WebsitePreview({ img, imgTablet, imgMobile, title, url }: Props) {
   const [src, setSrc] = useState(img);
 
   useEffect(() => {
@@ -36,16 +36,18 @@ export default function WebsitePreview({ url, img, imgTablet, imgMobile, title }
           <span className="w-2 h-2 rounded-full bg-green-500/60" />
         </div>
         <div className="flex-1 min-w-0 bg-zinc-700/60 rounded px-2 py-0.5 font-mono text-[8px] text-paper/35 tracking-wide truncate">
-          {url}
+          {url ?? title}
         </div>
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="shrink-0 font-mono text-[7px] tracking-[0.28em] uppercase text-gold/70 hover:text-gold transition-colors duration-200 whitespace-nowrap"
-        >
-          Open ↗
-        </a>
+        {url && (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 font-mono text-[7px] tracking-[0.28em] uppercase text-gold/70 hover:text-gold transition-colors duration-200 whitespace-nowrap"
+          >
+            Open ↗
+          </a>
+        )}
       </div>
 
       {/* Scrollable image viewport */}
@@ -72,14 +74,20 @@ export default function WebsitePreview({ url, img, imgTablet, imgMobile, title }
         <span className="font-mono text-[7px] tracking-[0.28em] uppercase text-paper/22">
           Full Design Preview
         </span>
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-mono text-[7px] tracking-[0.28em] uppercase text-gold hover:text-paper transition-colors duration-200 whitespace-nowrap"
-        >
-          Visit Live Website →
-        </a>
+        {url ? (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[7px] tracking-[0.28em] uppercase text-gold hover:text-paper transition-colors duration-200 whitespace-nowrap"
+          >
+            Visit Live Website →
+          </a>
+        ) : (
+          <span className="font-mono text-[7px] tracking-[0.28em] uppercase text-paper/22">
+            {title}
+          </span>
+        )}
       </div>
 
     </div>

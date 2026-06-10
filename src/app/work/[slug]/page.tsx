@@ -74,18 +74,18 @@ export default function ProjectPage({ params }: Props) {
               </p>
             </RevealOnScroll>
 
-            {project.url && project.previewImg ? (
+            {project.previewImg ? (
               <RevealOnScroll>
                 <h2 className="font-display font-black text-xl text-paper mb-4">Design Preview</h2>
                 <p className="font-mono text-[8px] tracking-[0.32em] uppercase text-paper/28 mb-5">
                   Scroll to explore the full design
                 </p>
                 <WebsitePreview
-                  url={project.url}
                   img={assetPath(project.previewImg)}
                   imgTablet={project.previewImgTablet ? assetPath(project.previewImgTablet) : undefined}
                   imgMobile={project.previewImgMobile ? assetPath(project.previewImgMobile) : undefined}
                   title={project.title}
+                  url={project.url}
                 />
               </RevealOnScroll>
             ) : project.pdf ? (

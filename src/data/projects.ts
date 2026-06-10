@@ -116,8 +116,11 @@ export const projects: Project[] = [
     category: ["featured", "website"],
     tags: ["Web Design", "UI/UX", "Landing Page", "Healthcare", "Mobile-First"],
     year: "2025",
-    cover: "/work/mia-femtech/post-04.jpg",
-    images: ["/work/mia-femtech/post-04.jpg", "/work/mia-femtech/post-05.jpg"],
+    cover: "/work/mia-femtech/website-cover.jpg",
+    images: ["/work/mia-femtech/website-cover.jpg"],
+    previewImg: "/work/mia-femtech/preview-desktop.jpg",
+    previewImgTablet: "/work/mia-femtech/preview-tablet.jpg",
+    previewImgMobile: "/work/mia-femtech/preview-mobile.jpg",
     summary:
       "A responsive multi-device website design for MIA FemTech — crafted to convert visitors into consultation bookings through trust, luxury, and clear information hierarchy.",
     description:
