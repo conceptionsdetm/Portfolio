@@ -7,10 +7,14 @@ interface Props {
   imgTablet?: string;
   imgMobile?: string;
   title: string;
-  url?: string; // optional — omit if no live site
+  url?: string;
+  ctaLabel?: string; // custom button text per project
 }
 
-export default function WebsitePreview({ img, imgTablet, imgMobile, title, url }: Props) {
+export default function WebsitePreview({
+  img, imgTablet, imgMobile, title, url,
+  ctaLabel = "Visit Live Website",
+}: Props) {
   const [src, setSrc] = useState(img);
 
   useEffect(() => {
@@ -69,22 +73,29 @@ export default function WebsitePreview({ img, imgTablet, imgMobile, title, url }
         />
       </div>
 
-      {/* Footer */}
-      <div className="bg-zinc-800 border-t border-paper/8 px-4 py-3 flex items-center justify-between gap-4">
-        <span className="font-mono text-[9px] tracking-[0.22em] uppercase text-paper/50">
-          Full Design Preview
-        </span>
+      {/* Footer — pill CTA, centred, breathing room */}
+      <div className="bg-zinc-800 border-t border-paper/8 px-6 py-5 flex items-center justify-center">
         {url ? (
           <a
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 px-4 py-1.5 bg-gold text-ink font-mono text-[9px] tracking-[0.22em] uppercase hover:bg-paper transition-colors duration-200 whitespace-nowrap"
+            className="
+              inline-flex items-center gap-2
+              px-8 sm:px-10 py-3 sm:py-3.5
+              rounded-full
+              bg-gold text-ink
+              font-mono text-[9px] sm:text-[10px] tracking-[0.28em] uppercase
+              hover:bg-paper hover:scale-105
+              transition-all duration-300
+              whitespace-nowrap
+            "
           >
-            Visit Live Website →
+            {ctaLabel}
+            <span className="text-[11px]">→</span>
           </a>
         ) : (
-          <span className="font-mono text-[9px] tracking-[0.22em] uppercase text-paper/40 truncate">
+          <span className="font-mono text-[9px] tracking-[0.28em] uppercase text-paper/30">
             {title}
           </span>
         )}

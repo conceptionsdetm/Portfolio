@@ -86,6 +86,7 @@ export default function ProjectPage({ params }: Props) {
                   imgMobile={project.previewImgMobile ? assetPath(project.previewImgMobile) : undefined}
                   title={project.title}
                   url={project.url}
+                  ctaLabel={project.ctaLabel}
                 />
               </RevealOnScroll>
             ) : project.pdf ? (
