@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6,400;0,96,400;0,96,700;0,96,900;1,6,400;1,96,400;1,96,700;1,96,900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6,400;96,400;96,500;96,700;96,900&family=Space+Mono:wght@400;700&family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@500;700&display=swap');
 
 :root {
   --font-display: "Bodoni Moda";
-  --font-body:    "Inter";
+  --font-body:    "Bodoni Moda";
   --font-mono:    "Space Mono";
 }
 
@@ -15,26 +15,31 @@ html { scroll-behavior: smooth; }
 body {
   background: #0a0a0a;
   color: #f0ebe2;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: 18px;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 /* ── Selection ───────────────────────────────── */
 ::selection {
-  background: #c9a96e;
-  color: #0a0a0a;
+  background: #D01F2B;
+  color: #f0ebe2;
 }
 
 /* ── Scrollbar ───────────────────────────────── */
 ::-webkit-scrollbar              { width: 4px; }
 ::-webkit-scrollbar-track        { background: #0a0a0a; }
 ::-webkit-scrollbar-thumb        { background: #1e1e1e; }
-::-webkit-scrollbar-thumb:hover  { background: #c9a96e; }
+::-webkit-scrollbar-thumb:hover  { background: #D01F2B; }
 
 /* ── Outline text — Dada stencil effect ──────── */
 .text-outline-gold {
   -webkit-text-stroke: 2px #c9a96e;
+  color: transparent;
+}
+.text-outline-vermillion {
+  -webkit-text-stroke: 2px #D01F2B;
   color: transparent;
 }
 .text-outline-paper {
@@ -76,8 +81,8 @@ body {
 /* ── Marquee ─────────────────────────────────── */
 .marquee-track {
   display: inline-flex;
-  gap: 3rem;
-  animation: marqueeX 52s linear infinite;
+  gap: 4rem;
+  animation: marqueeX 65s linear infinite;
   white-space: nowrap;
 }
 @keyframes marqueeX {
@@ -102,16 +107,12 @@ body {
 }
 .hover-lift:hover { transform: translateY(-5px); }
 
-/* ── Line gold ───────────────────────────────── */
-.line-gold::after {
-  content: "";
+/* ── Dada rule ───────────────────────────────── */
+.dada-rule {
   display: block;
-  width: 36px;
-  height: 1px;
-  background: #c9a96e;
-  margin-top: 1rem;
+  height: 3px;
+  background: #D01F2B;
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
