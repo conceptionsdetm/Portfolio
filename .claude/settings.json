@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -File C:/Users/tstefanou/Portfolio/portfolio-pro/.claude/auto-sync.ps1"
+          }
+        ]
+      }
+    ]
+  }
+}
