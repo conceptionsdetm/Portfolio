@@ -29,8 +29,8 @@ export default function ProjectPage({ params }: Props) {
   return (
     <main className="min-h-screen pt-24 pb-24">
 
-      {/* Hero image */}
-      <div className="relative w-full bg-zinc-900 mb-16 overflow-hidden" style={{ height: "52vh" }}>
+      {/* Hero image — aspect-video on mobile/tablet, fixed 52vh on desktop */}
+      <div className="relative w-full bg-zinc-900 mb-16 overflow-hidden aspect-video lg:aspect-auto lg:h-[52vh]">
         <img
           src={assetPath(project.cover)}
           alt={project.title}

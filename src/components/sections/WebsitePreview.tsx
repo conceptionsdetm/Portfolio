@@ -102,8 +102,18 @@ export default function WebsitePreview({
             <span className="text-[11px]">→</span>
           </a>
         ) : (
-          <span className="font-mono text-[9px] tracking-[0.28em] uppercase text-paper/30">
-            {title}
+          <span
+            className="inline-flex items-center gap-2 px-8 sm:px-10 py-3 sm:py-3.5 rounded-full text-[11px] sm:text-[12px] uppercase cursor-default whitespace-nowrap"
+            style={{
+              backgroundColor: ctaColor,
+              color: ctaTextColor,
+              fontFamily: ctaFontFamily,
+              fontWeight: ctaFontWeight,
+              letterSpacing: "0.12em",
+              opacity: 0.75,
+            }}
+          >
+            {ctaLabel}
           </span>
         )}
       </div>
