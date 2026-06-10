@@ -14,15 +14,15 @@ export default function FeaturedWork() {
       {/* ── Shapes ── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
 
-        {/* Top-right: gold circle */}
-        <div style={{ position:"absolute", top:"4%", right:"3%", width:90, height:90, borderRadius:"50%", border:"1.5px solid #C9A84C", opacity:.3, animation:"s-float 11s ease-in-out infinite" }} />
+        {/* Top-right: gold circle — filled */}
+        <div style={{ position:"absolute", top:"4%", right:"3%", width:90, height:90, borderRadius:"50%", background:"rgba(201,168,76,0.13)", border:"1.5px solid rgba(201,168,76,0.4)", animation:"s-float 11s ease-in-out infinite" }} />
         {/* Top-right: gold dot */}
         <div style={{ position:"absolute", top:"8%", right:"6%", width:10, height:10, borderRadius:"50%", background:"#C9A84C", opacity:.5, animation:"s-float 6s ease-in-out infinite", animationDelay:"1s" }} />
 
         {/* Top-left: vermillion horizontal slash */}
         <div style={{ position:"absolute", top:"6%", left:"2%", width:120, height:2, background:"#D01F2B", opacity:.45, animation:"s-shrink 10s ease-in-out infinite" }} />
-        {/* Top-left: small vermillion square */}
-        <div style={{ position:"absolute", top:"10%", left:"4%", width:18, height:18, border:"2px solid #D01F2B", opacity:.35, animation:"s-frot 14s ease-in-out infinite" }} />
+        {/* Top-left: small vermillion square — filled */}
+        <div style={{ position:"absolute", top:"10%", left:"4%", width:28, height:28, background:"rgba(208,31,43,0.22)", border:"2px solid rgba(208,31,43,0.55)", animation:"s-frot 14s ease-in-out infinite" }} />
 
         {/* Right-mid: paper vertical line */}
         <div style={{ position:"absolute", top:"25%", right:"1.5%", width:1, height:200, background:"rgba(240,235,226,0.1)", animation:"s-rise 13s ease-in-out infinite" }} />
@@ -38,8 +38,8 @@ export default function FeaturedWork() {
         {/* Left-mid: gold tiny dot */}
         <div style={{ position:"absolute", top:"45%", left:"3%", width:8, height:8, borderRadius:"50%", background:"#C9A84C", opacity:.35, animation:"s-pulse 7s ease-in-out infinite" }} />
 
-        {/* Bottom-right: outline square */}
-        <div style={{ position:"absolute", bottom:"6%", right:"4%", width:50, height:50, border:"1.5px solid #C9A84C", opacity:.25, animation:"s-rotr 22s linear infinite" }} />
+        {/* Bottom-right: gold square — filled */}
+        <div style={{ position:"absolute", bottom:"6%", right:"4%", width:50, height:50, background:"rgba(201,168,76,0.12)", border:"1.5px solid rgba(201,168,76,0.38)", animation:"s-rotr 22s linear infinite" }} />
         {/* Bottom-right: small dot */}
         <div style={{ position:"absolute", bottom:"10%", right:"9%", width:6, height:6, background:"#D01F2B", opacity:.55, animation:"s-float 4s ease-in-out infinite", animationDelay:"1.5s" }} />
 

@@ -46,17 +46,17 @@ export default function Services() {
       {/* ── Shapes ── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
 
-        {/* Top-right: large gold circle */}
-        <div style={{ position:"absolute", top:"3%", right:"2%", width:110, height:110, borderRadius:"50%", border:"1.5px solid #C9A84C", opacity:.22, animation:"s-pulse 13s ease-in-out infinite" }} />
-        {/* Top-right: medium gold circle inside */}
-        <div style={{ position:"absolute", top:"6%", right:"4.5%", width:55, height:55, borderRadius:"50%", border:"1px solid #C9A84C", opacity:.2, animation:"s-scale 9s ease-in-out infinite", animationDelay:"1s" }} />
+        {/* Top-right: large gold circle — filled */}
+        <div style={{ position:"absolute", top:"3%", right:"2%", width:110, height:110, borderRadius:"50%", background:"rgba(201,168,76,0.13)", border:"1.5px solid rgba(201,168,76,0.38)", animation:"s-pulse 13s ease-in-out infinite" }} />
+        {/* Top-right: medium gold circle — filled */}
+        <div style={{ position:"absolute", top:"6%", right:"4.5%", width:55, height:55, borderRadius:"50%", background:"rgba(201,168,76,0.1)", border:"1px solid rgba(201,168,76,0.28)", animation:"s-scale 9s ease-in-out infinite", animationDelay:"1s" }} />
         {/* Top-right: gold dot */}
         <div style={{ position:"absolute", top:"4%", right:"10%", width:9, height:9, borderRadius:"50%", background:"#C9A84C", opacity:.45, animation:"s-float 6s ease-in-out infinite" }} />
 
         {/* Top-left: vermillion slash */}
         <div style={{ position:"absolute", top:"5%", left:"1%", width:140, height:2, background:"#D01F2B", opacity:.4, animation:"s-shrink 11s ease-in-out infinite" }} />
-        {/* Top-left: small square */}
-        <div style={{ position:"absolute", top:"9%", left:"3%", width:22, height:22, border:"2px solid #D01F2B", opacity:.3, animation:"s-frot 16s ease-in-out infinite" }} />
+        {/* Top-left: small square — filled */}
+        <div style={{ position:"absolute", top:"9%", left:"3%", width:32, height:32, background:"rgba(208,31,43,0.2)", border:"2px solid rgba(208,31,43,0.5)", animation:"s-frot 16s ease-in-out infinite" }} />
         {/* Top-left: tiny dot */}
         <div style={{ position:"absolute", top:"15%", left:"2%", width:6, height:6, background:"#D01F2B", opacity:.4, animation:"s-float 5s ease-in-out infinite", animationDelay:"2s" }} />
 
@@ -74,15 +74,15 @@ export default function Services() {
         {/* Between row 1 and row 2: gold rule (at ~52% height) */}
         <div style={{ position:"absolute", top:"50%", left:"0", width:"100%", height:1, background:"rgba(201,168,76,0.06)" }} />
 
-        {/* Bottom-left: outline square */}
-        <div style={{ position:"absolute", bottom:"5%", left:"2%", width:60, height:60, border:"1.5px solid #C9A84C", opacity:.2, animation:"s-rotr 20s linear infinite" }} />
+        {/* Bottom-left: gold square — filled */}
+        <div style={{ position:"absolute", bottom:"5%", left:"2%", width:60, height:60, background:"rgba(201,168,76,0.12)", border:"1.5px solid rgba(201,168,76,0.35)", animation:"s-rotr 20s linear infinite" }} />
         {/* Bottom-left: dot */}
         <div style={{ position:"absolute", bottom:"9%", left:"6%", width:10, height:10, borderRadius:"50%", background:"#C9A84C", opacity:.35, animation:"s-float 8s ease-in-out infinite" }} />
         {/* Bottom-left: horizontal rule */}
         <div style={{ position:"absolute", bottom:"14%", left:"1%", width:100, height:1, background:"rgba(240,235,226,0.08)", animation:"s-shrink 10s ease-in-out infinite", animationDelay:"4s" }} />
 
-        {/* Bottom-right: vermillion square */}
-        <div style={{ position:"absolute", bottom:"6%", right:"3%", width:40, height:40, border:"2px solid #D01F2B", opacity:.25, animation:"s-rot 28s linear infinite" }} />
+        {/* Bottom-right: vermillion square — filled */}
+        <div style={{ position:"absolute", bottom:"6%", right:"3%", width:40, height:40, background:"rgba(208,31,43,0.18)", border:"2px solid rgba(208,31,43,0.45)", animation:"s-rot 28s linear infinite" }} />
         {/* Bottom-right: paper line */}
         <div style={{ position:"absolute", bottom:"10%", right:"6%", width:1, height:120, background:"rgba(240,235,226,0.07)", animation:"s-wag 12s ease-in-out infinite" }} />
         {/* Bottom-right: tiny dot cluster */}

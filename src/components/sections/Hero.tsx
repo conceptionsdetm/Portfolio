@@ -33,15 +33,15 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none z-0" aria-hidden>
 
         {/* ── Right side ── */}
-        {/* Large gold circle */}
-        <div style={{ position:"absolute", top:"8%", right:"4%", width:120, height:120, borderRadius:"50%", border:"1.5px solid #C9A84C", opacity:.28, animation:"s-pulse 13s ease-in-out infinite" }} />
-        {/* Medium gold circle */}
-        <div style={{ position:"absolute", top:"12%", right:"7%", width:60, height:60, borderRadius:"50%", border:"1px solid #C9A84C", opacity:.2, animation:"s-scale 9s ease-in-out infinite", animationDelay:"1s" }} />
+        {/* Large gold circle — filled wash */}
+        <div style={{ position:"absolute", top:"8%", right:"4%", width:120, height:120, borderRadius:"50%", background:"rgba(201,168,76,0.14)", border:"1.5px solid rgba(201,168,76,0.4)", animation:"s-pulse 13s ease-in-out infinite" }} />
+        {/* Medium gold circle — filled */}
+        <div style={{ position:"absolute", top:"12%", right:"7%", width:60, height:60, borderRadius:"50%", background:"rgba(201,168,76,0.1)", border:"1px solid rgba(201,168,76,0.3)", animation:"s-scale 9s ease-in-out infinite", animationDelay:"1s" }} />
         {/* Gold dot */}
         <div style={{ position:"absolute", top:"7%", right:"14%", width:10, height:10, borderRadius:"50%", background:"#C9A84C", opacity:.55, animation:"s-float 7s ease-in-out infinite" }} />
 
-        {/* Vermillion square top-right */}
-        <div style={{ position:"absolute", top:"22%", right:"5%", width:60, height:60, border:"2px solid #D01F2B", opacity:.3, animation:"s-rotr 20s linear infinite" }} />
+        {/* Vermillion square top-right — filled */}
+        <div style={{ position:"absolute", top:"22%", right:"5%", width:60, height:60, background:"rgba(208,31,43,0.18)", border:"2px solid rgba(208,31,43,0.5)", animation:"s-rotr 20s linear infinite" }} />
         {/* Vermillion slash top-right */}
         <div style={{ position:"absolute", top:"18%", right:"3%", width:120, height:2, background:"#D01F2B", opacity:.4, animation:"s-shrink 10s ease-in-out infinite" }} />
         {/* Vermillion dot top-right */}
@@ -56,8 +56,8 @@ export default function Hero() {
         <div style={{ position:"absolute", top:"50%", right:"12%", width:16, height:1, background:"rgba(240,235,226,0.14)" }} />
         <div style={{ position:"absolute", top:"47.5%", right:"11.5%", width:1, height:16, background:"rgba(240,235,226,0.14)", animation:"s-blink 9s ease-in-out infinite" }} />
 
-        {/* Gold circle lower right */}
-        <div style={{ position:"absolute", bottom:"20%", right:"7%", width:90, height:90, borderRadius:"50%", border:"1.5px solid #C9A84C", opacity:.25, animation:"s-float 11s ease-in-out infinite" }} />
+        {/* Gold circle lower right — filled */}
+        <div style={{ position:"absolute", bottom:"20%", right:"7%", width:90, height:90, borderRadius:"50%", background:"rgba(201,168,76,0.12)", border:"1.5px solid rgba(201,168,76,0.35)", animation:"s-float 11s ease-in-out infinite" }} />
         {/* Gold dot lower-right */}
         <div style={{ position:"absolute", bottom:"26%", right:"4%", width:11, height:11, borderRadius:"50%", background:"#C9A84C", opacity:.4, animation:"s-float 6s ease-in-out infinite", animationDelay:"1.5s" }} />
 
