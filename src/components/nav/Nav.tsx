@@ -32,9 +32,13 @@ export default function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-display italic font-black text-2xl text-gold tracking-wide hover:opacity-75 transition-opacity duration-200"
+          className="hover:opacity-80 transition-opacity duration-200"
         >
-          T·M
+          <span className="inline-flex items-center justify-center border-2 border-vermillion px-2.5 py-1">
+            <span className="font-display font-black text-paper text-sm tracking-[0.18em] uppercase">
+              cdtm
+            </span>
+          </span>
         </Link>
 
         {/* Desktop nav */}
