@@ -190,7 +190,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.55, delay: 1.1 }}
-            className="flex flex-wrap items-center gap-y-2 mb-5"
+            className="flex flex-nowrap items-center mb-5 overflow-hidden"
           >
             {["Brand Identity", "Social Media", "Website Design", "Creative Direction"].map((f, i, arr) => (
               <span key={f} className="flex items-center">
@@ -225,22 +225,6 @@ export default function Hero() {
             >
               View Work →
             </Link>
-            <a
-              href="mailto:conceptionsdetm@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3 font-grotesk font-bold text-[10px] uppercase tracking-[0.16em] transition-all duration-200 hover:scale-105 whitespace-nowrap"
-              style={{ border: "2px solid #000000", color: "#000000", background:"#FFFFFF", boxShadow: "4px 4px 0px #000000", transform: "rotate(0.8deg)" }}
-            >
-              Contact →
-            </a>
-            <a
-              href="https://www.instagram.com/conceptions.detm/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 font-grotesk font-bold text-[10px] uppercase tracking-[0.16em] transition-all duration-200 hover:scale-105 whitespace-nowrap"
-              style={{ border: `2px solid ${B}`, color: B, background:"#FFFFFF", boxShadow: `4px 4px 0px ${B}`, transform: "rotate(-0.5deg)" }}
-            >
-              Instagram ↗
-            </a>
           </motion.div>
         </div>
       </div>
