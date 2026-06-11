@@ -109,14 +109,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Vermillion rule */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.75, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            style={{ transformOrigin: "left", height: "3px" }}
-            className="w-full bg-vermillion mb-1"
-          />
 
           {/* STEFANOU — outlined gold, offset right + green breathing dot at end */}
           <div className="overflow-hidden pl-[3.5%]">
@@ -177,19 +169,20 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.35 }}
-          className="flex gap-3"
+          className="flex flex-wrap gap-4"
         >
           <Link
             href="/work"
-            className="px-8 py-3.5 bg-vermillion text-paper font-mono text-[11px] tracking-[0.32em] uppercase hover:bg-gold hover:text-ink transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-mono text-[11px] uppercase tracking-[0.12em] transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            style={{ backgroundColor: "#D01F2B", color: "#F0EBE2", boxShadow: "0 4px 24px rgba(208,31,43,0.45)" }}
           >
-            View Work
+            View Work <span className="text-[11px]">→</span>
           </Link>
           <a
             href="mailto:conceptionsdetm@gmail.com"
-            className="px-8 py-3.5 border border-paper/18 text-paper font-mono text-[11px] tracking-[0.32em] uppercase hover:border-vermillion hover:text-vermillion transition-all duration-200"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-mono text-[11px] uppercase tracking-[0.12em] border border-paper/22 text-paper transition-all duration-300 hover:scale-105 hover:border-gold hover:text-gold whitespace-nowrap"
           >
-            Contact
+            Contact <span className="text-[11px]">→</span>
           </a>
         </motion.div>
       </div>
