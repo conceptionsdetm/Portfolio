@@ -3,29 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-/* ── Dada letter data ───────────────────────────────────────────── */
-const name1Letters = [
-  { l: "T", rotate: -3,  scale: 1.10, dy: -8  },
-  { l: "I", rotate:  5,  scale: 0.82, dy: 10  },
-  { l: "M", rotate: -2,  scale: 1.05, dy: -5  },
-  { l: "O", rotate:  3,  scale: 0.93, dy:  8, gold: true },
-  { l: "N", rotate: -4,  scale: 1.07, dy: -6  },
-  { l: "A", rotate:  2,  scale: 0.88, dy:  9  },
-  { l: "S", rotate: -2,  scale: 1.12, dy: -4  },
-];
-
-const name2Letters = [
-  { l: "S", rotate:  4,  scale: 1.00, dy:  6 },
-  { l: "T", rotate: -3,  scale: 1.06, dy: -8 },
-  { l: "E", rotate:  2,  scale: 0.86, dy:  9 },
-  { l: "F", rotate: -4,  scale: 1.03, dy: -4 },
-  { l: "A", rotate:  5,  scale: 0.92, dy:  7 },
-  { l: "N", rotate: -2,  scale: 1.00, dy: -5 },
-  { l: "O", rotate:  3,  scale: 1.08, dy:  3, filled: true },
-  { l: "U", rotate: -4,  scale: 0.94, dy: -2 },
-];
-
-const BASE = "clamp(3.5rem,12vw,10.5rem)";
+const name1 = "TIMONAS".split("");
+const name2 = "STEFANOU".split("");
 
 export default function Hero() {
   return (
@@ -100,50 +79,37 @@ export default function Hero() {
       {/* ── Main content ── */}
       <div className="relative z-10 w-full pl-6 md:pl-12 pr-0">
 
-        {/* ── TIMONAS — Dada ── */}
-        <div className="mb-0" style={{ paddingTop: "1rem" }}>
-          <div className="flex items-end" style={{ lineHeight: 0.88 }}>
-            {name1Letters.map((lt, i) => (
+        {/* TIMONAS */}
+        <div className="overflow-hidden mb-1">
+          <div className="flex">
+            {name1.map((letter, i) => (
               <motion.span
                 key={i}
-                initial={{ opacity: 0, y: lt.dy - 30, rotate: lt.rotate - 7 }}
-                animate={{ opacity: 1, y: lt.dy,      rotate: lt.rotate      }}
-                transition={{ duration: 0.8, delay: 0.12 + i * 0.065, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display font-black select-none inline-block"
-                style={{
-                  fontSize: `calc(${BASE} * ${lt.scale})`,
-                  lineHeight: 0.88,
-                  letterSpacing: "0.03em",
-                  color: lt.gold ? "#C9A84C" : "#F0EBE2",
-                  transformOrigin: "bottom center",
-                }}
+                initial={{ y: "-115%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.72, delay: 0.18 + i * 0.065, ease: [0.22, 1, 0.36, 1] }}
+                className="font-display font-black text-paper select-none"
+                style={{ fontSize: "clamp(3.5rem,12vw,10.5rem)", lineHeight: 0.88, letterSpacing: "0.04em" }}
               >
-                {lt.l}
+                {letter}
               </motion.span>
             ))}
           </div>
         </div>
 
-        {/* ── STEFANOU — Dada gold outline, offset right ── */}
-        <div className="mb-3 md:mb-4 pl-[3.5%]">
+        {/* STEFANOU — gold outline, offset right + green dot */}
+        <div className="overflow-hidden pl-[3.5%] mb-3 md:mb-4">
           <div className="flex items-end">
-            {name2Letters.map((lt, i) => (
+            {name2.map((letter, i) => (
               <motion.span
                 key={i}
-                initial={{ opacity: 0, y: lt.dy + 30, rotate: lt.rotate + 7 }}
-                animate={{ opacity: 1, y: lt.dy,       rotate: lt.rotate      }}
-                transition={{ duration: 0.8, delay: 0.48 + i * 0.065, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display font-black select-none inline-block"
-                style={{
-                  fontSize: `calc(${BASE} * ${lt.scale})`,
-                  lineHeight: 0.88,
-                  letterSpacing: "0.03em",
-                  color:              lt.filled ? "#C9A84C" : "transparent",
-                  WebkitTextStroke:   lt.filled ? "0px"     : "1.5px #C9A84C",
-                  transformOrigin: "bottom center",
-                }}
+                initial={{ y: "115%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.72, delay: 0.52 + i * 0.065, ease: [0.22, 1, 0.36, 1] }}
+                className="font-display font-black text-outline-gold select-none"
+                style={{ fontSize: "clamp(3.5rem,12vw,10.5rem)", lineHeight: 0.88, letterSpacing: "0.04em" }}
               >
-                {lt.l}
+                {letter}
               </motion.span>
             ))}
 
