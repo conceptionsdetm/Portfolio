@@ -32,7 +32,8 @@ export default function Nav() {
           scrolled ? "bg-paper/96 backdrop-blur-md border-b border-ink/8" : "bg-transparent"
         }`}
       >
-        <div className="px-8 md:px-14 h-16 flex items-center justify-between">
+        <div className="px-8 md:px-14 h-16 flex items-center">
+          <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           {/* Logo */}
           <Logo size="md" />
 
@@ -72,6 +73,7 @@ export default function Nav() {
             <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "opacity-0" : ""}`} />
             <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
           </button>
+          </div>
         </div>
 
         {/* Mobile menu */}

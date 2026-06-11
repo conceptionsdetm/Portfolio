@@ -36,7 +36,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <footer className="border-t-4 border-black bg-white py-8 px-8 md:px-14">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row md:items-center justify-between gap-3">
             <div className="flex items-center gap-4">
               <Logo size="sm" />
               <span className="w-px h-3.5 bg-black/15" />
