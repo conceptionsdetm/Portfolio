@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { assetPath } from "@/lib/basePath";
 
 export default function CVModal({ onClose }: { onClose: () => void }) {
-  const pdfSrc = assetPath("/Timonas-Stefanou-CV.pdf");
+  const pdfSrc = assetPath("/Timonas-Stefanou-CV-2025.pdf");
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
