@@ -9,7 +9,7 @@ const name2 = "STEFANOU".split("");
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-center bg-ink"
+      className="relative min-h-screen flex flex-col justify-center bg-paper"
       style={{ overflowX: "clip" }}
     >
       {/* Vermillion left edge bar */}
@@ -23,61 +23,59 @@ export default function Hero() {
       >
         <span
           className="font-display font-black leading-none"
-          style={{ fontSize: "26vw", color: "rgba(240,235,226,0.028)", letterSpacing: "0.14em" }}
+          style={{ fontSize: "26vw", color: "rgba(17,17,17,0.04)", letterSpacing: "0.14em" }}
         >
           CDTM
         </span>
       </div>
 
-      {/* ── Bauhaus panel — right 40%, slams in on load ── */}
+      {/* ── Bauhaus black panel — slams in from right ── */}
       <motion.div
         initial={{ x: "100%" }}
         animate={{ x: 0 }}
-        transition={{ duration: 0.55, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute top-0 right-0 h-full pointer-events-none z-0"
-        style={{ width: "clamp(200px, 40%, 580px)", borderLeft: "1px solid rgba(208,31,43,0.18)", background: "rgba(208,31,43,0.045)" }}
+        transition={{ duration: 0.5, delay: 0.04, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute top-0 right-0 h-full pointer-events-none z-0 bg-ink"
+        style={{ width: "clamp(180px, 38%, 540px)" }}
         aria-hidden
       >
-        {/* Shapes — all inside the Bauhaus panel */}
+        {/* Primary-color shapes inside the black panel */}
 
-        {/* Top cluster */}
-        <div style={{ position:"absolute", top:"7%",  left:"18%", width:110, height:110, borderRadius:"50%", background:"rgba(201,168,76,0.13)", border:"1.5px solid rgba(201,168,76,0.38)", animation:"s-pulse 13s ease-in-out infinite" }} />
-        <div style={{ position:"absolute", top:"10%", left:"32%", width:55,  height:55,  borderRadius:"50%", background:"rgba(201,168,76,0.09)", border:"1px solid rgba(201,168,76,0.28)", animation:"s-scale 9s ease-in-out infinite", animationDelay:"1s" }} />
-        <div style={{ position:"absolute", top:"6%",  left:"55%", width:9,   height:9,   borderRadius:"50%", background:"#C9A84C", opacity:.5, animation:"s-float 7s ease-in-out infinite" }} />
-        <div style={{ position:"absolute", top:"5%",  right:"8%", width:1,   height:200, background:"rgba(240,235,226,0.08)", animation:"s-rise 15s ease-in-out infinite" }} />
+        {/* Top */}
+        <div style={{ position:"absolute", top:"7%",  left:"20%", width:100, height:100, borderRadius:"50%", border:"2px solid #F7C800", background:"rgba(247,200,0,0.12)", animation:"s-pulse 13s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"5%",  left:"55%", width:8,  height:8,  borderRadius:"50%", background:"#F7C800", opacity:.7, animation:"s-float 7s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"14%", right:"8%", width:1,  height:180, background:"rgba(242,240,232,0.10)", animation:"s-rise 15s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"18%", left:"12%", width:55, height:55, background:"rgba(208,31,43,0.25)", border:"2px solid #D01F2B", animation:"s-rotr 20s linear infinite" }} />
 
-        {/* Upper-mid cluster */}
-        <div style={{ position:"absolute", top:"22%", left:"10%", width:55, height:55,  background:"rgba(208,31,43,0.20)", border:"2px solid rgba(208,31,43,0.50)", animation:"s-rotr 20s linear infinite" }} />
-        <div style={{ position:"absolute", top:"28%", left:"40%", width:6,  height:6,   background:"#D01F2B", opacity:.45, animation:"s-float 5s ease-in-out infinite", animationDelay:"1s" }} />
-        <div style={{ position:"absolute", top:"32%", left:"20%", width:90, height:1,   background:"rgba(201,168,76,0.22)", animation:"s-shrink 10s ease-in-out infinite", animationDelay:"2s" }} />
-        <div style={{ position:"absolute", top:"35%", right:"12%",width:14, height:1,   background:"rgba(240,235,226,0.13)" }} />
-        <div style={{ position:"absolute", top:"32.5%",right:"11.5%",width:1,height:14, background:"rgba(240,235,226,0.13)", animation:"s-blink 10s ease-in-out infinite" }} />
+        {/* Upper-mid */}
+        <div style={{ position:"absolute", top:"28%", left:"38%", width:7,  height:7,  background:"#D01F2B", opacity:.65, animation:"s-float 5s ease-in-out infinite", animationDelay:"1s" }} />
+        <div style={{ position:"absolute", top:"32%", left:"18%", width:80, height:1,  background:"rgba(247,200,0,0.35)", animation:"s-shrink 10s ease-in-out infinite", animationDelay:"2s" }} />
+        <div style={{ position:"absolute", top:"35%", right:"14%",width:14, height:1,  background:"rgba(242,240,232,0.18)" }} />
+        <div style={{ position:"absolute", top:"32.5%",right:"13.5%",width:1,height:14, background:"rgba(242,240,232,0.18)", animation:"s-blink 10s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"38%", left:"50%", width:45, height:45, border:"2px solid rgba(242,240,232,0.15)", animation:"s-rot 22s linear infinite" }} />
 
-        {/* Center cluster */}
-        <div style={{ position:"absolute", top:"46%", left:"8%",  width:70, height:70,  background:"rgba(201,168,76,0.10)", border:"1px solid rgba(201,168,76,0.28)", animation:"s-wag 18s ease-in-out infinite" }} />
-        <div style={{ position:"absolute", top:"50%", left:"42%", width:16, height:1,   background:"rgba(240,235,226,0.14)" }} />
-        <div style={{ position:"absolute", top:"47.5%",left:"41.5%",width:1,height:16,  background:"rgba(240,235,226,0.14)", animation:"s-blink 9s ease-in-out infinite" }} />
-        <div style={{ position:"absolute", top:"55%", left:"28%", width:5,  height:5,   borderRadius:"50%", background:"#C9A84C", opacity:.35, animation:"s-float 6s ease-in-out infinite", animationDelay:"0.8s" }} />
-        <div style={{ position:"absolute", top:"60%", left:"55%", width:80, height:1,   background:"rgba(201,168,76,0.15)", animation:"s-shrink 12s ease-in-out infinite", animationDelay:"3s" }} />
+        {/* Center */}
+        <div style={{ position:"absolute", top:"46%", left:"8%",  width:70, height:70, background:"rgba(247,200,0,0.10)", border:"1.5px solid rgba(247,200,0,0.40)", animation:"s-wag 18s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"50%", left:"45%", width:16, height:1,  background:"rgba(242,240,232,0.18)" }} />
+        <div style={{ position:"absolute", top:"47.5%",left:"44.5%",width:1,height:16, background:"rgba(242,240,232,0.18)", animation:"s-blink 9s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"55%", left:"30%", width:5,  height:5,  borderRadius:"50%", background:"#F7C800", opacity:.55, animation:"s-float 6s ease-in-out infinite", animationDelay:"0.8s" }} />
+        <div style={{ position:"absolute", top:"60%", left:"55%", width:70, height:1,  background:"rgba(247,200,0,0.20)", animation:"s-shrink 12s ease-in-out infinite", animationDelay:"3s" }} />
 
-        {/* Lower-mid cluster */}
-        <div style={{ position:"absolute", bottom:"26%",left:"12%", width:85, height:85, borderRadius:"50%", background:"rgba(201,168,76,0.11)", border:"1.5px solid rgba(201,168,76,0.32)", animation:"s-float 11s ease-in-out infinite" }} />
-        <div style={{ position:"absolute", bottom:"30%",left:"42%", width:10, height:10, borderRadius:"50%", background:"#C9A84C", opacity:.38, animation:"s-float 6s ease-in-out infinite", animationDelay:"1.5s" }} />
-        <div style={{ position:"absolute", bottom:"28%",right:"8%", width:1,  height:130, background:"rgba(240,235,226,0.07)", animation:"s-rise 14s ease-in-out infinite", animationDelay:"2s" }} />
-        <div style={{ position:"absolute", bottom:"24%",left:"25%", width:5,  height:5,  background:"#D01F2B", opacity:.35, animation:"s-float 7s ease-in-out infinite", animationDelay:"2.5s" }} />
+        {/* Lower-mid */}
+        <div style={{ position:"absolute", bottom:"26%",left:"10%", width:80, height:80, borderRadius:"50%", border:"2px solid rgba(242,240,232,0.12)", background:"rgba(242,240,232,0.04)", animation:"s-float 11s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", bottom:"30%",left:"44%", width:9,  height:9,  borderRadius:"50%", background:"#D01F2B", opacity:.55, animation:"s-float 6s ease-in-out infinite", animationDelay:"1.5s" }} />
+        <div style={{ position:"absolute", bottom:"24%",left:"26%", width:5,  height:5,  background:"#F7C800", opacity:.45, animation:"s-float 7s ease-in-out infinite", animationDelay:"2.5s" }} />
+        <div style={{ position:"absolute", bottom:"28%",right:"6%", width:1,  height:110, background:"rgba(242,240,232,0.07)", animation:"s-rise 14s ease-in-out infinite", animationDelay:"2s" }} />
 
-        {/* Bottom cluster */}
-        <div style={{ position:"absolute", bottom:"10%",left:"6%",  width:42, height:42, border:"1.5px solid #C9A84C", opacity:.25, animation:"s-rot 26s linear infinite" }} />
-        <div style={{ position:"absolute", bottom:"8%", left:"28%", width:35, height:35, background:"rgba(208,31,43,0.18)", border:"2px solid rgba(208,31,43,0.38)", animation:"s-rotr 18s linear infinite" }} />
-        <div style={{ position:"absolute", bottom:"12%",left:"55%", width:7,  height:7,  borderRadius:"50%", background:"#C9A84C", opacity:.35, animation:"s-float 8s ease-in-out infinite", animationDelay:"3s" }} />
-        <div style={{ position:"absolute", bottom:"6%", right:"6%", width:14, height:1,  background:"rgba(240,235,226,0.12)" }} />
-        <div style={{ position:"absolute", bottom:"3.5%",right:"5.5%",width:1,height:14, background:"rgba(240,235,226,0.12)", animation:"s-blink 11s ease-in-out infinite" }} />
+        {/* Bottom */}
+        <div style={{ position:"absolute", bottom:"10%",left:"8%",  width:40, height:40, border:"2px solid #D01F2B", opacity:.5, animation:"s-rot 26s linear infinite" }} />
+        <div style={{ position:"absolute", bottom:"8%", left:"30%", width:32, height:32, background:"rgba(247,200,0,0.20)", border:"2px solid rgba(247,200,0,0.45)", animation:"s-rotr 18s linear infinite" }} />
+        <div style={{ position:"absolute", bottom:"12%",left:"57%", width:7,  height:7,  borderRadius:"50%", background:"#F2F0E8", opacity:.25, animation:"s-float 8s ease-in-out infinite", animationDelay:"3s" }} />
       </motion.div>
 
       {/* ── Main content ── */}
       <div className="relative z-10 w-full pl-6 md:pl-12 pr-0">
 
-        {/* TIMONAS */}
+        {/* TIMONAS — black on white */}
         <div className="overflow-hidden mb-1">
           <div className="flex">
             {name1.map((letter, i) => (
@@ -86,7 +84,7 @@ export default function Hero() {
                 initial={{ y: "-115%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.72, delay: 0.18 + i * 0.065, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display font-black text-paper select-none"
+                className="font-display font-black text-ink select-none"
                 style={{ fontSize: "clamp(3.5rem,12vw,10.5rem)", lineHeight: 0.88, letterSpacing: "0.04em" }}
               >
                 {letter}
@@ -95,16 +93,16 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Structural gold rule — Bauhaus grid divider */}
+        {/* Structural rule — thin black Bauhaus grid line */}
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.5, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          style={{ transformOrigin: "left", height: "1px", background: "rgba(201,168,76,0.28)" }}
+          transition={{ duration: 0.45, delay: 0.82, ease: [0.22, 1, 0.36, 1] }}
+          style={{ transformOrigin: "left", height: "2px", background: "#111111" }}
           className="w-full mb-1"
         />
 
-        {/* STEFANOU — gold outline, offset right + green dot */}
+        {/* STEFANOU — red outline on white, offset right + green dot */}
         <div className="overflow-hidden pl-[3.5%] mb-3 md:mb-4">
           <div className="flex items-end">
             {name2.map((letter, i) => (
@@ -113,7 +111,7 @@ export default function Hero() {
                 initial={{ y: "115%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.72, delay: 0.52 + i * 0.065, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display font-black text-outline-gold select-none"
+                className="font-display font-black text-outline-vermillion select-none"
                 style={{ fontSize: "clamp(3.5rem,12vw,10.5rem)", lineHeight: 0.88, letterSpacing: "0.04em" }}
               >
                 {letter}
@@ -128,8 +126,8 @@ export default function Hero() {
               className="ml-4 mb-3 flex-shrink-0"
             >
               <span className="relative flex h-5 w-5 md:h-6 md:w-6">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-55" />
-                <span className="relative inline-flex rounded-full h-5 w-5 md:h-6 md:w-6 bg-green-400" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-55" />
+                <span className="relative inline-flex rounded-full h-5 w-5 md:h-6 md:w-6 bg-green-500" />
               </span>
             </motion.span>
           </div>
@@ -146,7 +144,7 @@ export default function Hero() {
             {["Brand Identity","Social Media Design","Website Design","Marketing Design","Motion Graphics","Creative Direction"].map((field, i, arr) => (
               <span key={field} className="flex items-center">
                 <span
-                  className="font-grotesk font-medium text-paper/75 hover:text-paper transition-colors duration-200 cursor-default"
+                  className="font-grotesk font-medium text-ink/65 hover:text-ink transition-colors duration-200 cursor-default"
                   style={{ fontSize: "clamp(0.82rem,1.4vw,1.05rem)", letterSpacing: "0.04em" }}
                 >
                   {field}
@@ -166,11 +164,11 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 1.28 }}
           className="mb-10 md:mb-12 max-w-xl"
         >
-          <p className="font-grotesk font-light text-paper/80 text-base md:text-lg leading-relaxed">
+          <p className="font-grotesk font-normal text-ink/75 text-base md:text-lg leading-relaxed">
             Graphic designer from Limassol, Cyprus. BA in Graphic &amp; Advertising Design,
             Frederick University — Erasmus+ at Escuela de Arte, Sevilla.
           </p>
-          <p className="font-grotesk font-light text-paper/50 text-sm md:text-base leading-relaxed mt-4">
+          <p className="font-grotesk font-light text-ink/45 text-sm md:text-base leading-relaxed mt-4">
             Working across FemTech, healthcare, maritime logistics, automotive, and corporate
             services — contextual intelligence and visual precision on every brief.
           </p>
@@ -185,14 +183,14 @@ export default function Hero() {
         >
           <Link
             href="/work"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-grotesk font-medium text-[11px] uppercase tracking-[0.14em] transition-all duration-300 hover:scale-105 whitespace-nowrap"
-            style={{ backgroundColor: "#D01F2B", color: "#F0EBE2", boxShadow: "0 4px 24px rgba(208,31,43,0.45)" }}
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-grotesk font-semibold text-[11px] uppercase tracking-[0.14em] transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            style={{ backgroundColor: "#D01F2B", color: "#F2F0E8", boxShadow: "0 4px 22px rgba(208,31,43,0.35)" }}
           >
             View Work <span>→</span>
           </Link>
           <a
             href="mailto:conceptionsdetm@gmail.com"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-grotesk font-medium text-[11px] uppercase tracking-[0.14em] border border-paper/22 text-paper transition-all duration-300 hover:scale-105 hover:border-gold hover:text-gold whitespace-nowrap"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-grotesk font-semibold text-[11px] uppercase tracking-[0.14em] border-2 border-ink/20 text-ink transition-all duration-300 hover:scale-105 hover:border-vermillion hover:text-vermillion whitespace-nowrap"
           >
             Contact <span>→</span>
           </a>
@@ -200,8 +198,8 @@ export default function Hero() {
             href="https://www.instagram.com/conceptions.detm/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-grotesk font-medium text-[11px] uppercase tracking-[0.14em] transition-all duration-300 hover:scale-105 whitespace-nowrap"
-            style={{ border: "1px solid rgba(201,168,76,0.35)", color: "#C9A84C" }}
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-grotesk font-semibold text-[11px] uppercase tracking-[0.14em] transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            style={{ border: "2px solid rgba(247,200,0,0.6)", color: "#111111", background: "rgba(247,200,0,0.12)" }}
           >
             Instagram <span>↗</span>
           </a>
@@ -218,7 +216,7 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 7, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px h-8 bg-gradient-to-b from-paper/28 to-transparent"
+          className="w-px h-8 bg-gradient-to-b from-ink/25 to-transparent"
         />
       </motion.div>
 

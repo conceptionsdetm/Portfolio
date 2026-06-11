@@ -14,8 +14,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #0a0a0a;
-  color: #f0ebe2;
+  background: #F2F0E8;
+  color: #111111;
   font-family: "Space Grotesk", system-ui, sans-serif;
   font-size: 18px;
   overflow-x: hidden;
@@ -25,18 +25,18 @@ body {
 /* ── Selection ───────────────────────────────── */
 ::selection {
   background: #D01F2B;
-  color: #f0ebe2;
+  color: #F2F0E8;
 }
 
 /* ── Scrollbar ───────────────────────────────── */
 ::-webkit-scrollbar              { width: 4px; }
-::-webkit-scrollbar-track        { background: #0a0a0a; }
-::-webkit-scrollbar-thumb        { background: #1e1e1e; }
+::-webkit-scrollbar-track        { background: #F2F0E8; }
+::-webkit-scrollbar-thumb        { background: #ccc8be; }
 ::-webkit-scrollbar-thumb:hover  { background: #D01F2B; }
 
 /* ── Outline text — Dada stencil effect ──────── */
 .text-outline-gold {
-  -webkit-text-stroke: 2px #c9a96e;
+  -webkit-text-stroke: 2px #F7C800;
   color: transparent;
 }
 .text-outline-vermillion {

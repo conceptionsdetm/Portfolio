@@ -29,7 +29,7 @@ export default function Nav() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-ink/96 backdrop-blur-md border-b border-paper/5" : "bg-transparent"
+          scrolled ? "bg-paper/96 backdrop-blur-md border-b border-ink/8" : "bg-transparent"
         }`}
       >
         <div className="px-6 md:px-12 h-16 flex items-center justify-between">
@@ -42,13 +42,13 @@ export default function Nav() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`font-mono text-[9px] tracking-[0.35em] uppercase transition-colors duration-200 relative group ${
-                  pathname === l.href ? "text-gold" : "text-paper/40 hover:text-paper"
+                className={`font-grotesk font-medium text-[9px] tracking-[0.35em] uppercase transition-colors duration-200 relative group ${
+                  pathname === l.href ? "text-vermillion" : "text-ink/45 hover:text-ink"
                 }`}
               >
                 {l.label}
                 <span
-                  className={`absolute -bottom-0.5 left-0 h-px bg-gold transition-all duration-300 ${
+                  className={`absolute -bottom-0.5 left-0 h-px bg-vermillion transition-all duration-300 ${
                     pathname === l.href ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 />
@@ -76,14 +76,14 @@ export default function Nav() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden bg-ink/98 backdrop-blur-md border-t border-paper/5 px-6 py-8 flex flex-col gap-6">
+          <div className="md:hidden bg-paper/98 backdrop-blur-md border-t border-ink/8 px-6 py-8 flex flex-col gap-6">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className={`font-mono text-[11px] tracking-[0.35em] uppercase ${
-                  pathname === l.href ? "text-gold" : "text-paper/50"
+                className={`font-grotesk font-medium text-[11px] tracking-[0.35em] uppercase ${
+                  pathname === l.href ? "text-vermillion" : "text-ink/55"
                 }`}
               >
                 {l.label}

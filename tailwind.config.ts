@@ -15,12 +15,12 @@ const config: Config = {
         grotesk:  ["var(--font-grotesk)",  "system-ui",  "sans-serif"],
       },
       colors: {
-        gold:       "#c9a96e",
-        ink:        "#0a0a0a",
-        paper:      "#f0ebe2",
+        gold:       "#F7C800",
+        ink:        "#111111",
+        paper:      "#F2F0E8",
         muted:      "#6b6b6b",
-        vermillion: "#d4291a",
-        border:     "rgba(255,255,255,0.08)",
+        vermillion: "#D01F2B",
+        border:     "rgba(0,0,0,0.10)",
       },
       animation: {
         "fade-up":   "fadeUp .7s cubic-bezier(.22,1,.36,1) forwards",
