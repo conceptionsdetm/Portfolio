@@ -150,15 +150,31 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Graphic Designer — tight under name */}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
+        {/* Fields of Work — replacing Graphic Designer */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="font-display font-bold text-paper text-xl leading-tight mb-10 md:mb-14"
+          transition={{ duration: 0.7, delay: 1.2 }}
+          className="mb-10 md:mb-14"
         >
-          Graphic Designer
-        </motion.p>
+          <p className="font-display font-bold text-paper text-xl leading-tight mb-4">
+            Fields of Work
+          </p>
+          <div className="w-full h-px bg-vermillion/50 mb-5" />
+          <div className="flex flex-wrap items-center">
+            {["Brand Identity","Social Media Design","Website Design","Marketing Design","Motion Graphics","Creative Direction"].map((field, i, arr) => (
+              <span key={field} className="flex items-center">
+                <span className="font-display font-bold text-paper/75 hover:text-paper transition-colors duration-200 cursor-default"
+                      style={{ fontSize: "clamp(0.95rem,1.6vw,1.2rem)" }}>
+                  {field}
+                </span>
+                {i < arr.length - 1 && (
+                  <span className="text-vermillion mx-3 md:mx-5 select-none text-xs">◆</span>
+                )}
+              </span>
+            ))}
+          </div>
+        </motion.div>
 
         {/* CTAs */}
         <motion.div
