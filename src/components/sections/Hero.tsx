@@ -89,7 +89,7 @@ export default function Hero() {
       <div className="relative z-10 w-full pl-6 md:pl-12 pr-0">
 
         {/* Name block — full bleed, no max-w constraint */}
-        <div className="mb-4 md:mb-5">
+        <div className="mb-3 md:mb-4">
 
           {/* TIMONAS */}
           <div className="overflow-hidden mb-1">
@@ -150,17 +150,13 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Fields of Work — replacing Graphic Designer */}
+        {/* Fields of Work */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.2 }}
-          className="mb-10 md:mb-14"
+          className="mb-8 md:mb-10"
         >
-          <p className="font-display font-bold text-paper text-xl leading-tight mb-4">
-            Fields of Work
-          </p>
-          <div className="w-full h-px bg-vermillion/50 mb-5" />
           <div className="flex flex-wrap items-center">
             {["Brand Identity","Social Media Design","Website Design","Marketing Design","Motion Graphics","Creative Direction"].map((field, i, arr) => (
               <span key={field} className="flex items-center">
