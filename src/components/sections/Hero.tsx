@@ -3,8 +3,29 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const name1 = "TIMONAS".split("");
-const name2 = "STEFANOU".split("");
+/* ── Dada letter data ───────────────────────────────────────────── */
+const name1Letters = [
+  { l: "T", rotate: -3,  scale: 1.10, dy: -8  },
+  { l: "I", rotate:  5,  scale: 0.82, dy: 10  },
+  { l: "M", rotate: -2,  scale: 1.05, dy: -5  },
+  { l: "O", rotate:  3,  scale: 0.93, dy:  8, gold: true },
+  { l: "N", rotate: -4,  scale: 1.07, dy: -6  },
+  { l: "A", rotate:  2,  scale: 0.88, dy:  9  },
+  { l: "S", rotate: -2,  scale: 1.12, dy: -4  },
+];
+
+const name2Letters = [
+  { l: "S", rotate:  4,  scale: 1.00, dy:  6 },
+  { l: "T", rotate: -3,  scale: 1.06, dy: -8 },
+  { l: "E", rotate:  2,  scale: 0.86, dy:  9 },
+  { l: "F", rotate: -4,  scale: 1.03, dy: -4 },
+  { l: "A", rotate:  5,  scale: 0.92, dy:  7 },
+  { l: "N", rotate: -2,  scale: 1.00, dy: -5 },
+  { l: "O", rotate:  3,  scale: 1.08, dy:  3, filled: true },
+  { l: "U", rotate: -4,  scale: 0.94, dy: -2 },
+];
+
+const BASE = "clamp(3.5rem,12vw,10.5rem)";
 
 export default function Hero() {
   return (
@@ -15,7 +36,7 @@ export default function Hero() {
       {/* Vermillion left edge bar */}
       <div className="absolute left-0 top-0 h-full w-[5px] bg-vermillion z-20" />
 
-      {/* CDTM ghost text — behind names */}
+      {/* CDTM ghost text */}
       <div
         className="absolute select-none pointer-events-none z-0"
         style={{ left: "4%", top: "14%" }}
@@ -29,116 +50,115 @@ export default function Hero() {
         </span>
       </div>
 
-      {/* ── Shapes ── */}
+      {/* ── Shapes — right side only, every empty zone ── */}
       <div className="absolute inset-0 pointer-events-none z-0" aria-hidden>
 
-        {/* ── Right side ── */}
-        {/* Large gold circle — filled wash */}
-        <div style={{ position:"absolute", top:"8%", right:"4%", width:120, height:120, borderRadius:"50%", background:"rgba(201,168,76,0.14)", border:"1.5px solid rgba(201,168,76,0.4)", animation:"s-pulse 13s ease-in-out infinite" }} />
-        {/* Medium gold circle — filled */}
-        <div style={{ position:"absolute", top:"12%", right:"7%", width:60, height:60, borderRadius:"50%", background:"rgba(201,168,76,0.1)", border:"1px solid rgba(201,168,76,0.3)", animation:"s-scale 9s ease-in-out infinite", animationDelay:"1s" }} />
-        {/* Gold dot */}
-        <div style={{ position:"absolute", top:"7%", right:"14%", width:10, height:10, borderRadius:"50%", background:"#C9A84C", opacity:.55, animation:"s-float 7s ease-in-out infinite" }} />
+        {/* Zone 1 — top (0–25%) */}
+        <div style={{ position:"absolute", top:"8%",  right:"4%",  width:120, height:120, borderRadius:"50%", background:"rgba(201,168,76,0.14)", border:"1.5px solid rgba(201,168,76,0.4)",  animation:"s-pulse 13s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"12%", right:"7%",  width:60,  height:60,  borderRadius:"50%", background:"rgba(201,168,76,0.10)", border:"1px  solid rgba(201,168,76,0.3)",  animation:"s-scale 9s ease-in-out infinite", animationDelay:"1s" }} />
+        <div style={{ position:"absolute", top:"7%",  right:"14%", width:10,  height:10,  borderRadius:"50%", background:"#C9A84C", opacity:.55, animation:"s-float 7s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"22%", right:"5%",  width:60,  height:60,  background:"rgba(208,31,43,0.18)", border:"2px solid rgba(208,31,43,0.5)", animation:"s-rotr 20s linear infinite" }} />
+        <div style={{ position:"absolute", top:"15%", right:"1.5%",width:1,   height:220, background:"rgba(240,235,226,0.09)", animation:"s-rise 15s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"28%", right:"20%", width:8,   height:8,   borderRadius:"50%", background:"#C9A84C", opacity:.4, animation:"s-float 6s ease-in-out infinite", animationDelay:"2s" }} />
 
-        {/* Vermillion square top-right — filled */}
-        <div style={{ position:"absolute", top:"22%", right:"5%", width:60, height:60, background:"rgba(208,31,43,0.18)", border:"2px solid rgba(208,31,43,0.5)", animation:"s-rotr 20s linear infinite" }} />
-        {/* Vermillion slash top-right */}
-        <div style={{ position:"absolute", top:"18%", right:"3%", width:120, height:2, background:"#D01F2B", opacity:.4, animation:"s-shrink 10s ease-in-out infinite" }} />
-        {/* Vermillion dot top-right */}
-        <div style={{ position:"absolute", top:"30%", right:"9%", width:7, height:7, background:"#D01F2B", opacity:.5, animation:"s-float 5s ease-in-out infinite", animationDelay:"1s" }} />
+        {/* Zone 2 — upper-mid (25–45%) */}
+        <div style={{ position:"absolute", top:"30%", right:"9%",  width:7,   height:7,   background:"#C9A84C", opacity:.45, animation:"s-float 5s ease-in-out infinite", animationDelay:"1s" }} />
+        <div style={{ position:"absolute", top:"35%", right:"22%", width:50,  height:50,  border:"1.5px solid rgba(201,168,76,0.28)", animation:"s-rot 22s linear infinite" }} />
+        <div style={{ position:"absolute", top:"38%", right:"8%",  width:14,  height:1,   background:"rgba(240,235,226,0.13)" }} />
+        <div style={{ position:"absolute", top:"35.5%",right:"7.5%",width:1,  height:14,  background:"rgba(240,235,226,0.13)", animation:"s-blink 10s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"42%", right:"16%", width:80,  height:1,   background:"rgba(201,168,76,0.18)", animation:"s-shrink 11s ease-in-out infinite", animationDelay:"1.5s" }} />
+        <div style={{ position:"absolute", top:"44%", right:"3%",  width:1,   height:160, background:"rgba(240,235,226,0.07)", animation:"s-rise 13s ease-in-out infinite", animationDelay:"4s" }} />
 
-        {/* Paper vertical line — far right */}
-        <div style={{ position:"absolute", top:"15%", right:"1.5%", width:1, height:220, background:"rgba(240,235,226,0.09)", animation:"s-rise 15s ease-in-out infinite" }} />
-        {/* Paper vertical line — inner right */}
-        <div style={{ position:"absolute", top:"25%", right:"18%", width:1, height:140, background:"rgba(240,235,226,0.07)", animation:"s-rise 11s ease-in-out infinite", animationDelay:"3s" }} />
+        {/* Zone 3 — center (45–65%) */}
+        <div style={{ position:"absolute", top:"50%", right:"12%", width:16,  height:1,   background:"rgba(240,235,226,0.14)" }} />
+        <div style={{ position:"absolute", top:"47.5%",right:"11.5%",width:1, height:16,  background:"rgba(240,235,226,0.14)", animation:"s-blink 9s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"55%", right:"5%",   width:65,  height:65, background:"rgba(201,168,76,0.10)", border:"1px solid rgba(201,168,76,0.28)", animation:"s-wag 18s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", top:"58%", right:"20%",  width:6,   height:6,  borderRadius:"50%", background:"#C9A84C", opacity:.35, animation:"s-float 5s ease-in-out infinite", animationDelay:"0.8s" }} />
+        <div style={{ position:"absolute", top:"62%", right:"14%",  width:4,   height:4,  background:"#D01F2B", opacity:.3, animation:"s-float 4s ease-in-out infinite", animationDelay:"1.4s" }} />
+        <div style={{ position:"absolute", top:"63%", right:"8%",   width:100, height:1,  background:"rgba(201,168,76,0.15)", animation:"s-shrink 9s ease-in-out infinite", animationDelay:"3s" }} />
 
-        {/* Mid-right: cross */}
-        <div style={{ position:"absolute", top:"50%", right:"12%", width:16, height:1, background:"rgba(240,235,226,0.14)" }} />
-        <div style={{ position:"absolute", top:"47.5%", right:"11.5%", width:1, height:16, background:"rgba(240,235,226,0.14)", animation:"s-blink 9s ease-in-out infinite" }} />
+        {/* Zone 4 — lower-mid (65–80%) */}
+        <div style={{ position:"absolute", bottom:"25%",right:"7%", width:90,  height:90, borderRadius:"50%", background:"rgba(201,168,76,0.12)", border:"1.5px solid rgba(201,168,76,0.35)", animation:"s-float 11s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", bottom:"30%",right:"18%",width:14,  height:1,  background:"rgba(240,235,226,0.12)" }} />
+        <div style={{ position:"absolute", bottom:"27.5%",right:"17.5%",width:1,height:14,background:"rgba(240,235,226,0.12)", animation:"s-blink 12s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", bottom:"28%",right:"3%", width:5,   height:5,  background:"#D01F2B", opacity:.35, animation:"s-float 7s ease-in-out infinite", animationDelay:"2s" }} />
+        <div style={{ position:"absolute", bottom:"32%",right:"10%",width:170, height:1,  background:"rgba(201,168,76,0.25)", animation:"s-shrink 9s ease-in-out infinite", animationDelay:"2.5s" }} />
 
-        {/* Gold circle lower right — filled */}
-        <div style={{ position:"absolute", bottom:"20%", right:"7%", width:90, height:90, borderRadius:"50%", background:"rgba(201,168,76,0.12)", border:"1.5px solid rgba(201,168,76,0.35)", animation:"s-float 11s ease-in-out infinite" }} />
-        {/* Gold dot lower-right */}
-        <div style={{ position:"absolute", bottom:"26%", right:"4%", width:11, height:11, borderRadius:"50%", background:"#C9A84C", opacity:.4, animation:"s-float 6s ease-in-out infinite", animationDelay:"1.5s" }} />
+        {/* Zone 5 — bottom (80–100%) */}
+        <div style={{ position:"absolute", bottom:"18%",right:"4%", width:11,  height:11, borderRadius:"50%", background:"#C9A84C", opacity:.4, animation:"s-float 6s ease-in-out infinite", animationDelay:"1.5s" }} />
+        <div style={{ position:"absolute", bottom:"12%",right:"12%",width:7,   height:7,  borderRadius:"50%", background:"#C9A84C", opacity:.35, animation:"s-float 8s ease-in-out infinite", animationDelay:"3s" }} />
+        <div style={{ position:"absolute", bottom:"8%", right:"3%", width:45,  height:45, border:"1.5px solid #C9A84C", opacity:.22, animation:"s-rot 26s linear infinite" }} />
+        <div style={{ position:"absolute", bottom:"14%",right:"20%",width:35,  height:35, background:"rgba(208,31,43,0.15)", border:"2px solid rgba(208,31,43,0.35)", animation:"s-rotr 18s linear infinite" }} />
 
-        {/* Gold rule */}
-        <div style={{ position:"absolute", bottom:"32%", right:"10%", width:170, height:1, background:"rgba(201,168,76,0.25)", animation:"s-shrink 9s ease-in-out infinite", animationDelay:"2.5s" }} />
-
-        {/* Small dot cluster mid-right */}
-        <div style={{ position:"absolute", top:"40%", right:"16%", width:7, height:7, background:"#D01F2B", opacity:.45, animation:"s-float 4s ease-in-out infinite" }} />
-        <div style={{ position:"absolute", top:"45%", right:"20%", width:4, height:4, background:"#D01F2B", opacity:.3, animation:"s-float 3.5s ease-in-out infinite", animationDelay:"0.7s" }} />
-
-        {/* ── Left side (below vermillion bar, above name) ── */}
-        {/* Paper cross */}
-        <div style={{ position:"absolute", top:"12%", left:"8%", width:14, height:1, background:"rgba(240,235,226,0.12)" }} />
-        <div style={{ position:"absolute", top:"9.5%", left:"8.5%", width:1, height:14, background:"rgba(240,235,226,0.12)", animation:"s-blink 11s ease-in-out infinite" }} />
-        {/* Paper short line */}
-        <div style={{ position:"absolute", top:"16%", left:"6%", width:60, height:1, background:"rgba(240,235,226,0.08)", animation:"s-shrink 8s ease-in-out infinite", animationDelay:"5s" }} />
-
-        {/* ── Bottom area ── */}
-        {/* Gold outline square bottom-right */}
-        <div style={{ position:"absolute", bottom:"8%", right:"3%", width:45, height:45, border:"1.5px solid #C9A84C", opacity:.22, animation:"s-rot 26s linear infinite" }} />
-        {/* Bottom-left: paper line */}
-        <div style={{ position:"absolute", bottom:"12%", left:"8%", width:1, height:100, background:"rgba(240,235,226,0.07)", animation:"s-wag 14s ease-in-out infinite" }} />
-        {/* Bottom-left: vermillion tiny dot */}
-        <div style={{ position:"absolute", bottom:"16%", left:"12%", width:5, height:5, background:"#D01F2B", opacity:.35, animation:"s-float 6s ease-in-out infinite", animationDelay:"2s" }} />
+        {/* Far-left subtle accents — above the text zone */}
+        <div style={{ position:"absolute", top:"12%", left:"8%",   width:14,  height:1,  background:"rgba(240,235,226,0.12)" }} />
+        <div style={{ position:"absolute", top:"9.5%",left:"8.5%", width:1,   height:14, background:"rgba(240,235,226,0.12)", animation:"s-blink 11s ease-in-out infinite" }} />
+        <div style={{ position:"absolute", bottom:"12%",left:"8%", width:1,   height:100,background:"rgba(240,235,226,0.07)", animation:"s-wag 14s ease-in-out infinite" }} />
 
       </div>
 
       {/* ── Main content ── */}
       <div className="relative z-10 w-full pl-6 md:pl-12 pr-0">
 
-        {/* Name block — full bleed, no max-w constraint */}
-        <div className="mb-3 md:mb-4">
-
-          {/* TIMONAS */}
-          <div className="overflow-hidden mb-1">
-            <div className="flex">
-              {name1.map((letter, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ y: "-115%", opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.72, delay: 0.18 + i * 0.065, ease: [0.22, 1, 0.36, 1] }}
-                  className="font-display font-black text-paper select-none"
-                  style={{ fontSize: "clamp(3.5rem,12vw,10.5rem)", lineHeight: 0.88, letterSpacing: "0.04em" }}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </div>
-          </div>
-
-
-          {/* STEFANOU — outlined gold, offset right + green breathing dot at end */}
-          <div className="overflow-hidden pl-[3.5%]">
-            <div className="flex items-end">
-              {name2.map((letter, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ y: "115%", opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.72, delay: 0.52 + i * 0.065, ease: [0.22, 1, 0.36, 1] }}
-                  className="font-display font-black text-outline-gold select-none"
-                  style={{ fontSize: "clamp(3.5rem,12vw,10.5rem)", lineHeight: 0.88, letterSpacing: "0.04em" }}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-
-              {/* Green availability dot — the living period of the name */}
+        {/* ── TIMONAS — Dada ── */}
+        <div className="mb-0" style={{ paddingTop: "1rem" }}>
+          <div className="flex items-end" style={{ lineHeight: 0.88 }}>
+            {name1Letters.map((lt, i) => (
               <motion.span
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1.5 }}
-                className="ml-4 mb-3 flex-shrink-0"
+                key={i}
+                initial={{ opacity: 0, y: lt.dy - 30, rotate: lt.rotate - 7 }}
+                animate={{ opacity: 1, y: lt.dy,      rotate: lt.rotate      }}
+                transition={{ duration: 0.8, delay: 0.12 + i * 0.065, ease: [0.22, 1, 0.36, 1] }}
+                className="font-display font-black select-none inline-block"
+                style={{
+                  fontSize: `calc(${BASE} * ${lt.scale})`,
+                  lineHeight: 0.88,
+                  letterSpacing: "0.03em",
+                  color: lt.gold ? "#C9A84C" : "#F0EBE2",
+                  transformOrigin: "bottom center",
+                }}
               >
-                <span className="relative flex h-5 w-5 md:h-6 md:w-6">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-55" />
-                  <span className="relative inline-flex rounded-full h-5 w-5 md:h-6 md:w-6 bg-green-400" />
-                </span>
+                {lt.l}
               </motion.span>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── STEFANOU — Dada gold outline, offset right ── */}
+        <div className="mb-3 md:mb-4 pl-[3.5%]">
+          <div className="flex items-end">
+            {name2Letters.map((lt, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: lt.dy + 30, rotate: lt.rotate + 7 }}
+                animate={{ opacity: 1, y: lt.dy,       rotate: lt.rotate      }}
+                transition={{ duration: 0.8, delay: 0.48 + i * 0.065, ease: [0.22, 1, 0.36, 1] }}
+                className="font-display font-black select-none inline-block"
+                style={{
+                  fontSize: `calc(${BASE} * ${lt.scale})`,
+                  lineHeight: 0.88,
+                  letterSpacing: "0.03em",
+                  color:              lt.filled ? "#C9A84C" : "transparent",
+                  WebkitTextStroke:   lt.filled ? "0px"     : "1.5px #C9A84C",
+                  transformOrigin: "bottom center",
+                }}
+              >
+                {lt.l}
+              </motion.span>
+            ))}
+
+            {/* Green availability dot */}
+            <motion.span
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 1.5 }}
+              className="ml-4 mb-3 flex-shrink-0"
+            >
+              <span className="relative flex h-5 w-5 md:h-6 md:w-6">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-55" />
+                <span className="relative inline-flex rounded-full h-5 w-5 md:h-6 md:w-6 bg-green-400" />
+              </span>
+            </motion.span>
           </div>
         </div>
 
@@ -152,8 +172,10 @@ export default function Hero() {
           <div className="flex flex-wrap items-center">
             {["Brand Identity","Social Media Design","Website Design","Marketing Design","Motion Graphics","Creative Direction"].map((field, i, arr) => (
               <span key={field} className="flex items-center">
-                <span className="font-display font-bold text-paper/75 hover:text-paper transition-colors duration-200 cursor-default"
-                      style={{ fontSize: "clamp(0.95rem,1.6vw,1.2rem)" }}>
+                <span
+                  className="font-display font-bold text-paper/75 hover:text-paper transition-colors duration-200 cursor-default"
+                  style={{ fontSize: "clamp(0.95rem,1.6vw,1.2rem)" }}
+                >
                   {field}
                 </span>
                 {i < arr.length - 1 && (
@@ -169,7 +191,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.28 }}
-          className="mb-10 md:mb-12 max-w-xl border-l-2 border-vermillion/50 pl-5"
+          className="mb-10 md:mb-12 max-w-xl"
         >
           <p className="text-paper/80 text-base md:text-lg leading-relaxed font-light">
             Graphic designer from Limassol, Cyprus. BA in Graphic &amp; Advertising Design,
