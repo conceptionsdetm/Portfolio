@@ -32,7 +32,7 @@ export default function Nav() {
           scrolled ? "bg-paper/96 backdrop-blur-md border-b border-ink/8" : "bg-transparent"
         }`}
       >
-        <div className="px-6 md:px-12 h-16 flex items-center justify-between">
+        <div className="px-8 md:px-14 h-16 flex items-center justify-between">
           {/* Logo */}
           <Logo size="md" />
 
