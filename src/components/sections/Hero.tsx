@@ -164,11 +164,28 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        {/* Bio */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 1.28 }}
+          className="mb-8 md:mb-10 max-w-lg"
+        >
+          <p className="text-paper/50 text-sm leading-relaxed font-light">
+            Graphic designer from Limassol, Cyprus. BA in Graphic &amp; Advertising Design,
+            Frederick University — Erasmus+ at Escuela de Arte, Sevilla.
+          </p>
+          <p className="text-paper/35 text-sm leading-relaxed font-light mt-3">
+            Working across FemTech, healthcare, maritime logistics, automotive, and corporate
+            services — contextual intelligence and visual precision on every brief.
+          </p>
+        </motion.div>
+
         {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.35 }}
+          transition={{ duration: 0.7, delay: 1.45 }}
           className="flex flex-wrap gap-4"
         >
           <Link
