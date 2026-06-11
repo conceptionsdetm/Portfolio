@@ -22,44 +22,64 @@ export default function CallToAction() {
         <div style={{ position:"absolute", top:"50%", right:"2%",   width:4,  height:160, background:"rgba(0,0,0,0.12)" }} />
       </div>
 
+      {/* Ghost stamp — Dada background layer */}
+      <div
+        className="absolute pointer-events-none select-none"
+        style={{
+          right: "2%",
+          top: "50%",
+          transform: "translateY(-50%) rotate(-85deg)",
+          fontSize: "clamp(4rem,18vw,16rem)",
+          fontFamily: "var(--font-display)",
+          fontWeight: 900,
+          color: "rgba(0,0,0,0.06)",
+          letterSpacing: "0.06em",
+          whiteSpace: "nowrap",
+          zIndex: 1,
+        }}
+        aria-hidden
+      >
+        CDTM
+      </div>
+
       <div className="relative z-10 max-w-5xl">
 
-        {/* "Let's" — black */}
-        <div className="overflow-hidden">
+        {/* "Let's" — black, slightly tilted */}
+        <div className="overflow-visible">
           <motion.h2
             initial={{ y: "110%" }}
             whileInView={{ y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display font-black leading-[0.85]"
-            style={{ fontSize: "clamp(4.5rem,15vw,13rem)", color: "#000000" }}
+            className="font-display font-black leading-[0.85] inline-block"
+            style={{ fontSize: "clamp(4.5rem,15vw,13rem)", color: "#000000", transform: "rotate(-1.2deg)" }}
           >
             Let&apos;s
           </motion.h2>
         </div>
 
-        {/* "talk." — red */}
-        <div className="overflow-hidden pl-[6%]">
+        {/* "talk." — red, offset more, counter-tilt */}
+        <div className="overflow-visible pl-[8%]">
           <motion.h2
             initial={{ y: "110%" }}
             whileInView={{ y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.75, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display font-black leading-[0.85]"
-            style={{ fontSize: "clamp(4.5rem,15vw,13rem)", color: "#BE1622" }}
+            className="font-display font-black leading-[0.85] inline-block"
+            style={{ fontSize: "clamp(4.5rem,15vw,13rem)", color: "#BE1622", transform: "rotate(1.5deg)" }}
           >
             talk.
           </motion.h2>
         </div>
 
-        {/* 4px black rule */}
+        {/* Dada slash rule — angled */}
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          style={{ transformOrigin: "left", height: "4px", background: "#000000" }}
-          className="w-24 mt-8 mb-8"
+          style={{ transformOrigin: "left", height: "4px", background: "#000000", transform: "rotate(-1deg)", width: "7rem" }}
+          className="mt-8 mb-8"
         />
 
         {/* Contact links */}
@@ -73,7 +93,7 @@ export default function CallToAction() {
           <a
             href="mailto:conceptionsdetm@gmail.com"
             className="inline-flex items-center gap-2 px-8 py-3.5 font-grotesk font-bold text-[11px] uppercase tracking-[0.16em] transition-all duration-200 hover:scale-105 whitespace-nowrap"
-            style={{ background: "#000000", color: "#FFDD00", boxShadow: "4px 4px 0px #BE1622" }}
+            style={{ background: "#000000", color: "#FFDD00", boxShadow: "4px 4px 0px #BE1622", transform: "rotate(-1deg)" }}
           >
             Start a Conversation →
           </a>
@@ -82,7 +102,7 @@ export default function CallToAction() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 font-grotesk font-bold text-[11px] uppercase tracking-[0.16em] transition-all duration-200 hover:scale-105 whitespace-nowrap"
-            style={{ border: "2px solid #000000", color: "#000000", boxShadow: "4px 4px 0px #000000" }}
+            style={{ border: "2px solid #000000", color: "#000000", boxShadow: "4px 4px 0px #000000", transform: "rotate(0.8deg)" }}
           >
             Instagram ↗
           </a>

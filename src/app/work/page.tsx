@@ -17,16 +17,31 @@ export default function WorkPage() {
       : projects.filter((p) => p.category.includes(activeFilter as Category));
 
   return (
-    <main className="min-h-screen pt-24 pb-24 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <main className="min-h-screen bg-white pt-24 pb-24 px-8 md:px-14 relative overflow-hidden">
+
+      {/* Bauhaus shapes — top right corner */}
+      <div className="absolute top-0 right-0 pointer-events-none" aria-hidden style={{ width:180, height:180, overflow:"hidden" }}>
+        <div style={{ position:"absolute", top:0, right:0, width:"100%", height:"100%", background:"#FFDD00" }} />
+        <div style={{ position:"absolute", top:0, right:0, width:"100%", height:"100%", borderRadius:"50%", background:"#FFFFFF" }} />
+        <div style={{ position:"absolute", top:24, right:24, width:64, height:64, background:"#BE1622", borderRadius:"50%" }} />
+      </div>
+
+      {/* Blue rule — bottom left */}
+      <div className="absolute bottom-24 left-0 pointer-events-none" aria-hidden>
+        <div style={{ width:100, height:4, background:"#00539F", transform:"rotate(-8deg)" }} />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Header */}
-        <RevealOnScroll className="mb-12 border-b border-paper/6 pb-8">
-          <span className="font-mono text-[9px] tracking-[0.42em] uppercase text-paper/22 block mb-4">
+        <RevealOnScroll className="mb-12">
+          <div style={{ width:"100%", height:4, background:"#000000", marginBottom:24 }} />
+          <span className="font-grotesk font-bold text-[9px] tracking-[0.42em] uppercase text-black/30 block mb-4">
             Portfolio — All Work
           </span>
-          <h1 className="font-display font-black text-5xl md:text-7xl text-paper leading-none">
-            Selected Work
+          <h1 className="font-display font-black text-5xl md:text-7xl text-black leading-none">
+            Selected{" "}
+            <span style={{ color:"#BE1622", display:"inline-block", transform:"rotate(-1deg)" }}>Work</span>
           </h1>
         </RevealOnScroll>
 
@@ -36,11 +51,12 @@ export default function WorkPage() {
             <button
               key={cat.id}
               onClick={() => setActiveFilter(cat.id as "all" | Category)}
-              className={`px-4 py-1.5 font-mono text-[8px] tracking-[0.32em] uppercase transition-all duration-200 ${
+              className="font-grotesk font-bold text-[8px] tracking-[0.32em] uppercase px-4 py-1.5 transition-all duration-200 hover:scale-105"
+              style={
                 activeFilter === cat.id
-                  ? "bg-gold text-ink"
-                  : "border border-paper/10 text-paper/32 hover:border-gold/30 hover:text-gold/65"
-              }`}
+                  ? { background:"#000000", color:"#FFDD00", boxShadow:"2px 2px 0px #BE1622" }
+                  : { border:"2px solid rgba(0,0,0,0.15)", color:"rgba(0,0,0,0.4)" }
+              }
             >
               {cat.label}
             </button>
@@ -48,7 +64,7 @@ export default function WorkPage() {
         </RevealOnScroll>
 
         {/* Grid */}
-        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-[4px]" style={{ background:"#000000" }}>
           <AnimatePresence>
             {filtered.map((project, i) => (
               <motion.div
@@ -60,7 +76,7 @@ export default function WorkPage() {
                 transition={{ duration: 0.4, delay: i * 0.04 }}
               >
                 <Link href={`/work/${project.slug}`} className="group block">
-                  <div className="relative overflow-hidden bg-zinc-900 aspect-[4/3] hover-lift">
+                  <div className="relative overflow-hidden bg-black aspect-[4/3] hover-lift">
                     <img
                       src={assetPath(project.cover)}
                       alt={project.title}
@@ -69,19 +85,26 @@ export default function WorkPage() {
                     />
                     <div className="img-overlay" />
 
+                    {/* Bauhaus accent bar on hover */}
+                    <div
+                      className="absolute top-0 left-0 right-0 h-[4px] transition-all duration-300 origin-left"
+                      style={{ background:"#BE1622", transform:"scaleX(0)" }}
+                      onMouseEnter={e => (e.currentTarget.style.transform = "scaleX(1)")}
+                    />
+
                     {project.featured && (
                       <div className="absolute top-3 left-3">
-                        <span className="font-mono text-[7px] tracking-[0.3em] uppercase bg-gold text-ink px-2 py-0.5">
+                        <span className="font-grotesk font-bold text-[7px] tracking-[0.3em] uppercase px-2 py-0.5" style={{ background:"#FFDD00", color:"#000000" }}>
                           Featured
                         </span>
                       </div>
                     )}
 
                     <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                      <p className="text-gold font-mono text-[7px] tracking-[0.32em] uppercase mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="font-grotesk font-bold text-[7px] tracking-[0.32em] uppercase mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color:"#FFDD00" }}>
                         {project.client}
                       </p>
-                      <h3 className="font-display font-black text-lg text-paper leading-tight group-hover:text-gold transition-colors duration-300">
+                      <h3 className="font-display font-black text-lg text-white leading-tight group-hover:text-gold transition-colors duration-300">
                         {project.title}
                       </h3>
                     </div>
@@ -93,11 +116,12 @@ export default function WorkPage() {
         </motion.div>
 
         {filtered.length === 0 && (
-          <p className="text-center text-paper/20 font-mono text-[9px] tracking-[0.35em] uppercase py-20">
+          <p className="text-center text-black/25 font-grotesk font-bold text-[9px] tracking-[0.35em] uppercase py-20">
             No projects in this category yet.
           </p>
         )}
 
+        <div style={{ width:"100%", height:4, background:"#000000", marginTop:64 }} />
       </div>
     </main>
   );

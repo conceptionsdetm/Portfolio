@@ -1,47 +1,41 @@
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 const contactLinks = [
-  {
-    label: "Email",
-    value: "conceptionsdetm@gmail.com",
-    href: "mailto:conceptionsdetm@gmail.com",
-    description: "Best for project enquiries and brief discussions.",
-  },
-  {
-    label: "Phone",
-    value: "+357 99 212155",
-    href: "tel:+35799212155",
-    description: "Available Mon–Fri, 9am–6pm Cyprus time.",
-  },
-  {
-    label: "Instagram",
-    value: "@conceptions.detm",
-    href: "https://www.instagram.com/conceptions.detm/",
-    description: "Follow the work and behind-the-scenes process.",
-  },
-  {
-    label: "Location",
-    value: "Limassol, Cyprus",
-    href: "#",
-    description: "Available for remote and local projects.",
-  },
+  { label:"Email",    value:"conceptionsdetm@gmail.com", href:"mailto:conceptionsdetm@gmail.com", description:"Best for project enquiries and brief discussions.", accent:"#BE1622" },
+  { label:"Phone",    value:"+357 99 212155",             href:"tel:+35799212155",                 description:"Available Mon–Fri, 9am–6pm Cyprus time.",           accent:"#000000" },
+  { label:"Instagram",value:"@conceptions.detm",          href:"https://www.instagram.com/conceptions.detm/", description:"Follow the work and behind-the-scenes process.", accent:"#00539F" },
+  { label:"Location", value:"Limassol, Cyprus",            href:"#",                                description:"Available for remote and local projects.",          accent:"#FFDD00" },
 ];
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen pt-24 pb-24 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <main className="min-h-screen bg-white pt-24 pb-24 px-8 md:px-14 relative overflow-hidden">
+
+      {/* Bauhaus circle — top right */}
+      <div className="absolute top-0 right-0 pointer-events-none" aria-hidden style={{ width:200, height:200, overflow:"hidden" }}>
+        <div style={{ position:"absolute", top:"-50%", right:"-50%", width:"200%", height:"200%", borderRadius:"50%", background:"#FFDD00", opacity:0.85 }} />
+        <div style={{ position:"absolute", top:40, right:40, width:80, height:80, background:"#BE1622", borderRadius:"50%" }} />
+      </div>
+
+      {/* Blue geometric — bottom left */}
+      <div className="absolute bottom-32 left-0 pointer-events-none" aria-hidden>
+        <div style={{ width:120, height:4, background:"#00539F", transform:"rotate(-12deg)", marginBottom:12 }} />
+        <div style={{ width:80, height:4, background:"#BE1622", transform:"rotate(-12deg)" }} />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Header */}
-        <RevealOnScroll className="mb-16 max-w-xl border-b border-paper/6 pb-8">
-          <span className="font-mono text-[9px] tracking-[0.42em] uppercase text-paper/22 block mb-4">
+        <RevealOnScroll className="mb-16 max-w-xl">
+          <div style={{ width:"100%", height:4, background:"#000000", marginBottom:24 }} />
+          <span className="font-grotesk font-bold text-[9px] tracking-[0.42em] uppercase text-black/30 block mb-4">
             Contact
           </span>
-          <h1 className="font-display font-black text-4xl md:text-6xl text-paper mb-6 leading-none">
+          <h1 className="font-display font-black text-4xl md:text-6xl text-black mb-6 leading-none">
             Let&apos;s Create<br />
-            <span className="italic text-outline-gold">Something Great</span>
+            <span style={{ color:"#BE1622", transform:"rotate(-1deg)", display:"inline-block" }}>Something Great</span>
           </h1>
-          <p className="text-paper/45 text-base leading-relaxed font-light">
+          <p className="text-black/50 text-base leading-relaxed font-grotesk font-light">
             Whether it&apos;s a brand identity from scratch, a social media
             campaign, or a new website — I&apos;m currently available for
             freelance projects and collaborations.
@@ -49,22 +43,25 @@ export default function ContactPage() {
         </RevealOnScroll>
 
         {/* Contact grid */}
-        <div className="grid md:grid-cols-2 gap-px bg-paper/5 mb-20">
+        <div className="grid md:grid-cols-2 gap-[4px] mb-20" style={{ background:"#000000" }}>
           {contactLinks.map((link, i) => (
             <RevealOnScroll key={i} delay={i * 0.08}>
               <a
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group block bg-ink p-8 md:p-10 hover:bg-paper/[0.025] transition-colors duration-300"
+                className="group block bg-white p-8 md:p-10 transition-all duration-300 hover:bg-black"
+                style={{ borderLeft:`4px solid ${link.accent}` }}
               >
-                <p className="font-mono text-[8px] tracking-[0.4em] uppercase text-gold mb-3">
+                <p className="font-grotesk font-bold text-[8px] tracking-[0.4em] uppercase mb-3 transition-colors duration-300" style={{ color: link.accent }}>
                   {link.label}
                 </p>
-                <p className="font-display font-black text-xl text-paper mb-3 leading-tight group-hover:text-gold transition-colors duration-300">
+                <p className="font-display font-black text-xl text-black mb-3 leading-tight group-hover:text-white transition-colors duration-300">
                   {link.value}
                 </p>
-                <p className="text-paper/28 text-sm font-light">{link.description}</p>
+                <p className="text-black/40 group-hover:text-white/40 text-sm font-grotesk font-light transition-colors duration-300">
+                  {link.description}
+                </p>
               </a>
             </RevealOnScroll>
           ))}
@@ -72,29 +69,30 @@ export default function ContactPage() {
 
         {/* Availability banner */}
         <RevealOnScroll>
-          <div className="border border-gold/18 p-8 md:p-12 text-center relative">
-            {/* Crop marks */}
-            <div className="absolute top-4 left-4 w-4 h-px bg-gold/20" />
-            <div className="absolute top-4 left-4 w-px h-4 bg-gold/20" />
-            <div className="absolute bottom-4 right-4 w-4 h-px bg-gold/20" />
-            <div className="absolute bottom-4 right-4 w-px h-4 bg-gold/20" />
+          <div className="relative p-8 md:p-12 text-center" style={{ background:"#FFDD00", border:"4px solid #000000" }}>
 
-            <div className="inline-flex items-center gap-2 font-mono text-[9px] tracking-[0.38em] uppercase text-gold mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+            {/* Dada decorative shapes */}
+            <div style={{ position:"absolute", top:-12, right:24, width:24, height:24, background:"#BE1622", transform:"rotate(12deg)" }} aria-hidden />
+            <div style={{ position:"absolute", bottom:-12, left:24, width:24, height:24, borderRadius:"50%", background:"#00539F" }} aria-hidden />
+
+            <div className="inline-flex items-center gap-2 font-grotesk font-bold text-[9px] tracking-[0.38em] uppercase text-black mb-5">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
               Currently Available for Freelance
             </div>
-            <p className="font-display font-black text-2xl md:text-3xl text-paper mb-6 leading-tight">
+            <p className="font-display font-black text-2xl md:text-3xl text-black mb-6 leading-tight" style={{ transform:"rotate(-0.5deg)" }}>
               Ready to start a project?
             </p>
             <a
               href="mailto:conceptionsdetm@gmail.com"
-              className="inline-block px-10 py-4 bg-gold text-ink font-mono text-[9px] tracking-[0.32em] uppercase hover:bg-paper transition-colors duration-200"
+              className="inline-block px-10 py-4 font-grotesk font-bold text-[9px] tracking-[0.32em] uppercase transition-all duration-200 hover:scale-105"
+              style={{ background:"#000000", color:"#FFDD00", boxShadow:"4px 4px 0px #BE1622", transform:"rotate(-1deg)" }}
             >
-              Send Me a Brief
+              Send Me a Brief →
             </a>
           </div>
         </RevealOnScroll>
 
+        <div style={{ width:"100%", height:4, background:"#000000", marginTop:64 }} />
       </div>
     </main>
   );
