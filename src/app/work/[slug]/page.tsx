@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { clients } from "@/data/clients";
 import { assetPath } from "@/lib/basePath";
+import ClientPage from "@/components/sections/ClientPage";
 import ProjectGallery from "@/components/sections/ProjectGallery";
 import WebsitePreview from "@/components/sections/WebsitePreview";
 import CampaignArticles from "@/components/sections/CampaignArticles";
@@ -30,21 +32,35 @@ const CAMPAIGN_CONFIGS: Record<string, CampaignConfig> = {
 };
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  const projectParams = projects.map((p) => ({ slug: p.slug }));
+  const clientParams  = clients.map((c)  => ({ slug: c.slug }));
+  return [...projectParams, ...clientParams];
 }
 
 interface Props {
   params: { slug: string };
 }
 
-export default function ProjectPage({ params }: Props) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default function WorkDetailPage({ params }: Props) {
+  const { slug } = params;
+
+  /* ── Client case study ── */
+  const client = clients.find((c) => c.slug === slug);
+  if (client) {
+    const clientProjects = projects.filter((p) =>
+      client.projectSlugs.includes(p.slug)
+    );
+    return <ClientPage client={client} clientProjects={clientProjects} />;
+  }
+
+  /* ── Individual project page ── */
+  const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
   const related = projects
     .filter(
       (p) =>
-        p.slug !== params.slug &&
+        p.slug !== slug &&
         p.category.some((c) => project.category.includes(c))
     )
     .slice(0, 3);
@@ -52,7 +68,7 @@ export default function ProjectPage({ params }: Props) {
   return (
     <main className="min-h-screen pt-24 pb-24">
 
-      {/* Hero — logo nav strip (full-width design crop) */}
+      {/* Hero */}
       {project.logoHero ? (
         <div className="relative w-full bg-zinc-950 mb-16 overflow-hidden h-[160px] md:h-[220px] lg:h-[300px]">
           <img
@@ -63,18 +79,16 @@ export default function ProjectPage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/65 via-transparent to-transparent" />
         </div>
       ) : project.logoImg ? (
-        /* Hero — isolated logo on dark background */
-        <div className="relative w-full bg-zinc-950 mb-16 flex items-center justify-center overflow-hidden" style={{ height: "260px" }}>
+        <div className="relative w-full bg-zinc-950 mb-16 flex items-center justify-center overflow-hidden" style={{ height:"260px" }}>
           <img
             src={assetPath(project.logoImg)}
             alt={project.client}
             className="max-h-[65%] max-w-[60%] object-contain"
-            style={{ filter: "drop-shadow(0 4px 32px rgba(0,0,0,0.6))" }}
+            style={{ filter:"drop-shadow(0 4px 32px rgba(0,0,0,0.6))" }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent pointer-events-none" />
         </div>
       ) : (
-        /* Hero — fallback cover photo */
         <div className="relative w-full bg-zinc-900 mb-16 overflow-hidden aspect-video lg:aspect-auto lg:h-[52vh]">
           <img
             src={assetPath(project.cover)}
@@ -145,7 +159,7 @@ export default function ProjectPage({ params }: Props) {
                 <p className="font-mono text-[8px] tracking-[0.32em] uppercase text-paper/28 mb-5">
                   Desktop viewport — scroll to view complete layout
                 </p>
-                <div className="w-full bg-zinc-900 border border-paper/6" style={{ height: "75vh" }}>
+                <div className="w-full bg-zinc-900 border border-paper/6" style={{ height:"75vh" }}>
                   <object
                     data={assetPath(project.pdf)}
                     type="application/pdf"
@@ -224,6 +238,21 @@ export default function ProjectPage({ params }: Props) {
                     Get in Touch
                   </a>
                 </div>
+
+                {/* Back to client */}
+                {(() => {
+                  const parentClient = clients.find((c) =>
+                    c.projectSlugs.includes(project.slug)
+                  );
+                  return parentClient ? (
+                    <Link
+                      href={`/work/${parentClient.slug}`}
+                      className="block font-grotesk font-bold text-[8px] tracking-[0.28em] uppercase text-paper/22 hover:text-gold transition-colors duration-200"
+                    >
+                      ← {parentClient.shortName} — All Work
+                    </Link>
+                  ) : null;
+                })()}
               </div>
             </RevealOnScroll>
           </div>
