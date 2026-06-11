@@ -190,7 +190,7 @@ export default function Hero() {
           >
             {["Brand Identity", "Social Media", "Website Design", "Creative Direction"].map((f, i, arr) => (
               <span key={f} className="flex items-center">
-                <span className="font-grotesk font-medium text-black/55 text-xs tracking-[0.05em]">{f}</span>
+                <span className="font-grotesk font-medium text-black/55 text-lg tracking-[0.05em]">{f}</span>
                 {i < arr.length - 1 && <span className="text-vermillion mx-2 text-[0.5rem]">◆</span>}
               </span>
             ))}
@@ -201,7 +201,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 1.22 }}
-            className="font-grotesk font-normal text-black/60 text-sm leading-relaxed mb-8"
+            className="font-grotesk font-normal text-black/60 text-lg leading-relaxed mb-8"
           >
             Graphic designer from Limassol, Cyprus. BA Graphic &amp; Advertising Design,
             Frederick University — Erasmus+ Escuela de Arte, Sevilla.
