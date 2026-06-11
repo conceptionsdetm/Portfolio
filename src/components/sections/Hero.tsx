@@ -169,13 +169,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.28 }}
-          className="mb-8 md:mb-10 max-w-lg"
+          className="mb-10 md:mb-12 max-w-xl border-l-2 border-vermillion/50 pl-5"
         >
-          <p className="text-paper/50 text-sm leading-relaxed font-light">
+          <p className="text-paper/80 text-base md:text-lg leading-relaxed font-light">
             Graphic designer from Limassol, Cyprus. BA in Graphic &amp; Advertising Design,
             Frederick University — Erasmus+ at Escuela de Arte, Sevilla.
           </p>
-          <p className="text-paper/35 text-sm leading-relaxed font-light mt-3">
+          <p className="text-paper/50 text-sm md:text-base leading-relaxed font-light mt-4">
             Working across FemTech, healthcare, maritime logistics, automotive, and corporate
             services — contextual intelligence and visual precision on every brief.
           </p>
