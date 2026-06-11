@@ -47,11 +47,11 @@ export default function Hero() {
       {/* Top-right quarter circle — shrinks & cycles blue → yellow → red */}
       <div aria-hidden className="absolute top-0 right-0 pointer-events-none"
         style={{ width:210, height:210, overflow:"hidden",
-          animation:"h-qc-grow-b 19s ease-in-out infinite 2.5s" }}>
+          animation:"h-qc-grow-b 19s ease-in-out infinite" }}>
         <div style={{
           position:"absolute", top:0, right:0, left:"auto", width:"200%", height:"200%",
-          borderRadius:"50%",
-          animation:"h-fill-byrB 15s ease-in-out infinite 1.5s",
+          borderRadius:"50%", background:"#00539F",
+          animation:"h-fill-byrB 15s ease-in-out infinite",
         }} />
       </div>
 
@@ -72,11 +72,11 @@ export default function Hero() {
       {/* Bottom-left quarter circle — pulses + red → blue → yellow */}
       <div aria-hidden className="absolute bottom-0 left-0 pointer-events-none"
         style={{ width:210, height:210, overflow:"hidden",
-          animation:"h-qc-grow-a 18s ease-in-out infinite 4s" }}>
+          animation:"h-qc-grow-a 18s ease-in-out infinite" }}>
         <div style={{
           position:"absolute", bottom:0, left:0, top:"auto", width:"200%", height:"200%",
-          borderRadius:"50%",
-          animation:"h-fill-rybR 11s ease-in-out infinite 3s",
+          borderRadius:"50%", background:"#BE1622",
+          animation:"h-fill-rybR 11s ease-in-out infinite",
         }} />
       </div>
 
