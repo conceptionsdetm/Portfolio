@@ -89,8 +89,7 @@ export default function CallToAction() {
         <div className="w-14 h-[3px] bg-vermillion mb-8" />
 
         <p className="font-display font-normal text-paper/45 text-xl leading-relaxed max-w-sm mb-10">
-          Available for freelance — brand identity,
-          social campaigns, and full creative direction.
+          Brand identity, social campaigns, and full creative direction.
         </p>
 
         <div className="flex flex-wrap gap-4">
