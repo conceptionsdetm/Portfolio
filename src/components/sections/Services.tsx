@@ -97,7 +97,7 @@ export default function Services() {
         <RevealOnScroll className="mb-14 md:mb-20">
           <h2 className="font-display font-black text-paper leading-none"
               style={{ fontSize: "clamp(3rem,8vw,6rem)" }}>
-            Services
+            Fields of Work
           </h2>
         </RevealOnScroll>
 
