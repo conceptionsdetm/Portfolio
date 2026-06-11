@@ -3,10 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const Y = "#FFDD00";
 const R = "#BE1622";
 const B = "#00539F";
-const K = "#000000";
 
 const NAME1 = [
   { l:"T", color:"#000000",     stroke:null,      r:-2,   ty: 3 },
@@ -35,67 +33,73 @@ export default function Hero() {
 
       {/* ── Animated Bauhaus shapes (background) ── */}
 
-      {/* Top-left yellow quarter circle */}
-      <div aria-hidden className="absolute top-0 left-0 pointer-events-none" style={{ width:280, height:280, overflow:"hidden" }}>
+      {/* Top-left quarter circle — grows & cycles yellow → red → blue */}
+      <div aria-hidden className="absolute top-0 left-0 pointer-events-none"
+        style={{ width:300, height:300, overflow:"hidden",
+          animation:"h-qc-grow-a 16s ease-in-out infinite" }}>
         <div style={{
           position:"absolute", top:0, left:0, width:"200%", height:"200%",
-          borderRadius:"50%", background:Y,
-          animation:"s-pulse 13s ease-in-out infinite",
+          borderRadius:"50%",
+          animation:"h-fill-yrbY 12s ease-in-out infinite",
         }} />
       </div>
 
-      {/* Top-right blue quarter circle */}
-      <div aria-hidden className="absolute top-0 right-0 pointer-events-none" style={{ width:200, height:200, overflow:"hidden" }}>
+      {/* Top-right quarter circle — shrinks & cycles blue → yellow → red */}
+      <div aria-hidden className="absolute top-0 right-0 pointer-events-none"
+        style={{ width:210, height:210, overflow:"hidden",
+          animation:"h-qc-grow-b 19s ease-in-out infinite 2.5s" }}>
         <div style={{
           position:"absolute", top:0, right:0, left:"auto", width:"200%", height:"200%",
-          borderRadius:"50%", background:B,
-          animation:"s-pulse 17s ease-in-out infinite 2s",
+          borderRadius:"50%",
+          animation:"h-fill-byrB 15s ease-in-out infinite 1.5s",
         }} />
       </div>
 
-      {/* Right-side floating red circle */}
+      {/* Right floating circle — orbits + red → blue → yellow */}
       <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
-        width:160, height:160, borderRadius:"50%", background:R,
-        right:"7%", top:"35%",
-        animation:"s-float 9s ease-in-out infinite",
+        width:155, height:155, borderRadius:"50%",
+        right:"8%", top:"36%",
+        animation:"h-circle-drift 11s ease-in-out infinite",
       }} />
 
-      {/* Right-side large yellow circle (behind red) */}
+      {/* Right large circle — breathes + yellow → red → blue */}
       <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
-        width:260, height:260, borderRadius:"50%", background:Y, opacity:0.75,
-        right:"3%", top:"22%",
-        animation:"s-scale 11s ease-in-out infinite 1s",
+        width:265, height:265, borderRadius:"50%",
+        right:"2%", top:"20%",
+        animation:"h-circle-breathe 14s ease-in-out infinite 1s",
       }} />
 
-      {/* Bottom-left red quarter circle */}
-      <div aria-hidden className="absolute bottom-0 left-0 pointer-events-none" style={{ width:200, height:200, overflow:"hidden" }}>
+      {/* Bottom-left quarter circle — pulses + red → blue → yellow */}
+      <div aria-hidden className="absolute bottom-0 left-0 pointer-events-none"
+        style={{ width:210, height:210, overflow:"hidden",
+          animation:"h-qc-grow-a 18s ease-in-out infinite 4s" }}>
         <div style={{
           position:"absolute", bottom:0, left:0, top:"auto", width:"200%", height:"200%",
-          borderRadius:"50%", background:R,
-          animation:"s-pulse 15s ease-in-out infinite 3s",
+          borderRadius:"50%",
+          animation:"h-fill-rybR 11s ease-in-out infinite 3s",
         }} />
       </div>
 
-      {/* Bottom-right floating blue circle outline */}
+      {/* Bottom-right circle outline — scales, rotates, border morphs blue → red → yellow */}
       <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
-        width:220, height:220, borderRadius:"50%",
-        border:`5px solid ${B}`, opacity:0.22,
-        right:"20%", bottom:"8%",
-        animation:"s-scale 10s ease-in-out infinite 0.5s",
+        width:230, height:230, borderRadius:"50%",
+        border:"5px solid #00539F",
+        right:"19%", bottom:"7%",
+        animation:"h-outline-morph 13s ease-in-out infinite 0.8s",
       }} />
 
-      {/* Mid floating small black square */}
-      <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
-        width:55, height:55, background:K, opacity:0.07,
-        left:"44%", top:"18%",
-        animation:"s-frot 22s ease-in-out infinite",
-      }} />
-
-      {/* Mid-left rotating yellow square */}
+      {/* Left rotating square — spins + yellow → red → blue */}
       <div aria-hidden className="absolute pointer-events-none" style={{
-        width:70, height:70, background:Y, opacity:0.6,
-        left:"2%", top:"52%",
-        animation:"s-rot 25s linear infinite",
+        width:72, height:72,
+        left:"2%", top:"53%",
+        animation:"h-sq-spin 22s linear infinite",
+      }} />
+
+      {/* Mid drifting small square — wanders + colour + opacity */}
+      <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
+        width:52, height:52,
+        left:"44%", top:"17%",
+        animation:"h-sq-wander 20s ease-in-out infinite 2s",
       }} />
 
       {/* ── Content ── */}
