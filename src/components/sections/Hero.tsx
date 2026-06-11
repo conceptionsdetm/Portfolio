@@ -216,7 +216,7 @@ export default function Hero() {
             transition={{ duration: 0.55, delay: 1.22 }}
             className="font-grotesk font-normal text-black/60 text-lg leading-relaxed mb-8 max-w-md"
           >
-            Graphic designer from Limassol, Cyprus. BA Graphic &amp; Advertising Design,
+            Graphic designer from Limassol, Cyprus. BA Graphic &amp; Advertising Design.<br />
             Frederick University. Erasmus+ Escuela de Arte, Sevilla.
           </motion.p>
 
