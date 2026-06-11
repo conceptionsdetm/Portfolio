@@ -201,6 +201,15 @@ export default function Hero() {
           >
             Contact <span className="text-[11px]">→</span>
           </a>
+          <a
+            href="https://www.instagram.com/conceptions.detm/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-mono text-[11px] uppercase tracking-[0.12em] transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            style={{ border: "1px solid rgba(201,168,76,0.35)", color: "#C9A84C" }}
+          >
+            Instagram <span className="text-[11px]">↗</span>
+          </a>
         </motion.div>
       </div>
 

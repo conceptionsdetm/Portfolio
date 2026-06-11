@@ -86,28 +86,6 @@ export default function CallToAction() {
           </div>
         </div>
 
-        <div className="w-14 h-[3px] bg-vermillion mb-8" />
-
-        <p className="font-display font-normal text-paper/45 text-xl leading-relaxed max-w-sm mb-10">
-          Brand identity, social campaigns, and full creative direction.
-        </p>
-
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="mailto:conceptionsdetm@gmail.com"
-            className="px-9 py-4 bg-vermillion text-paper font-mono text-[11px] tracking-[0.32em] uppercase hover:bg-gold hover:text-ink transition-colors duration-200"
-          >
-            Start a Conversation
-          </a>
-          <a
-            href="https://www.instagram.com/conceptions.detm/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-9 py-4 border border-paper/14 text-paper font-mono text-[11px] tracking-[0.32em] uppercase hover:border-vermillion hover:text-vermillion transition-all duration-200"
-          >
-            Instagram
-          </a>
-        </div>
 
       </div>
     </section>
