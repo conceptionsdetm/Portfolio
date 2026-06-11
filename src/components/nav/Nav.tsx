@@ -32,53 +32,56 @@ export default function Nav() {
           scrolled ? "bg-paper/96 backdrop-blur-md border-b border-ink/8" : "bg-transparent"
         }`}
       >
-        <div className="px-8 md:px-14 h-16 flex items-center">
-          <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
-          {/* Logo */}
-          <Logo size="md" />
+        <div className="px-8 md:px-14 h-16">
+          <div className="max-w-7xl mx-auto w-full h-full flex items-center justify-between">
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`font-grotesk font-medium text-[9px] tracking-[0.35em] uppercase transition-colors duration-200 relative group ${
-                  pathname === l.href ? "text-vermillion" : "text-ink/45 hover:text-ink"
-                }`}
-              >
-                {l.label}
-                <span
-                  className={`absolute -bottom-0.5 left-0 h-px bg-vermillion transition-all duration-300 ${
-                    pathname === l.href ? "w-full" : "w-0 group-hover:w-full"
+            {/* Logo — left */}
+            <Logo size="md" />
+
+            {/* Nav links — centre */}
+            <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+              {links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`font-grotesk font-medium text-[9px] tracking-[0.35em] uppercase transition-colors duration-200 relative group ${
+                    pathname === l.href ? "text-vermillion" : "text-ink/45 hover:text-ink"
                   }`}
-                />
-              </Link>
-            ))}
+                >
+                  {l.label}
+                  <span
+                    className={`absolute -bottom-0.5 left-0 h-px bg-vermillion transition-all duration-300 ${
+                      pathname === l.href ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </Link>
+              ))}
+            </nav>
+
+            {/* CV button — right */}
             <button
               onClick={() => setCvOpen(true)}
-              className="ml-3 px-5 py-2 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase hover:bg-paper transition-colors duration-200"
+              className="hidden md:block px-5 py-2 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase hover:bg-paper transition-colors duration-200"
             >
               View CV
             </button>
-          </nav>
 
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden flex flex-col gap-1.5 p-2"
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
-            <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "opacity-0" : ""}`} />
-            <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
-          </button>
+            {/* Mobile hamburger */}
+            <button
+              className="md:hidden flex flex-col gap-1.5 p-2"
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
+            >
+              <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "opacity-0" : ""}`} />
+              <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+            </button>
           </div>
         </div>
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden bg-paper/98 backdrop-blur-md border-t border-ink/8 px-6 py-8 flex flex-col gap-6">
+          <div className="md:hidden bg-paper/98 backdrop-blur-md border-t border-ink/8 px-8 py-8 flex flex-col gap-6">
             {links.map((l) => (
               <Link
                 key={l.href}
