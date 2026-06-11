@@ -68,9 +68,9 @@ export default function Nav() {
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
-            <span className={`block h-px w-5 bg-paper transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block h-px w-5 bg-paper transition-all duration-300 ${open ? "opacity-0" : ""}`} />
-            <span className={`block h-px w-5 bg-paper transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "opacity-0" : ""}`} />
+            <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
           </button>
         </div>
 

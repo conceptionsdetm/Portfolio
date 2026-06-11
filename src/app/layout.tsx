@@ -35,17 +35,17 @@ export default function RootLayout({
       <body className="noise">
         <Nav />
         {children}
-        <footer className="border-t border-paper/5 py-8 px-6 md:px-12">
+        <footer className="border-t-4 border-black bg-white py-8 px-8 md:px-14">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
             <div className="flex items-center gap-4">
               <Logo size="sm" />
-              <span className="w-px h-3.5 bg-paper/10" />
-              <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-paper/20">
+              <span className="w-px h-3.5 bg-black/15" />
+              <span className="font-grotesk font-bold text-[9px] tracking-[0.3em] uppercase text-black/30">
                 Timonas Stefanou
               </span>
             </div>
-            <p className="font-mono text-[9px] tracking-[0.3em] uppercase text-paper/15">
-              © {new Date().getFullYear()} &nbsp;◆&nbsp; Limassol, Cyprus
+            <p className="font-grotesk font-bold text-[9px] tracking-[0.3em] uppercase text-black/25">
+              © {new Date().getFullYear()} &nbsp;<span className="text-vermillion">◆</span>&nbsp; Limassol, Cyprus
             </p>
           </div>
         </footer>
