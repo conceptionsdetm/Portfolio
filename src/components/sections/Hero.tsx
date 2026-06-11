@@ -25,33 +25,39 @@ type LetterDef = {
 
 /* ── TIMONAS ───────────────────────────────────── */
 const NAME1: LetterDef[] = [
-  { l:"T", color:K, stroke:null, r:-2, ty:3,
-    shape:{ type:"square",  color:R,    size:18, top:"-8px",  right:"0px" } },
-  { l:"I", color:"transparent", stroke:R, r:1.5, ty:-5,
-    shape:{ type:"circle",  color:Y,    size:16, top:"20%",   left:"calc(50% - 8px)" } },
-  { l:"M", color:K, stroke:null, r:-1, ty:0 },
-  { l:"O", color:R, stroke:null, r:2.5, ty:-3,
-    shape:{ type:"circle",  color:K,    size:20, top:"22%",   left:"20%" } },
-  { l:"N", color:"transparent", stroke:K, r:-1.5, ty:4 },
-  { l:"A", color:K, stroke:null, r:1.5, ty:0,
-    shape:{ type:"diamond", color:R,    size:14, top:"-10px", left:"calc(50% - 7px)" } },
-  { l:"S", color:R, stroke:null, r:-2.5, ty:2 },
+  { l:"T", color:K,            stroke:null, r:-6,  ty:10,
+    shape:{ type:"square",  color:R, size:24, top:"-12px", right:"-2px" } },
+  { l:"I", color:"transparent", stroke:R,   r:4,   ty:-12,
+    shape:{ type:"circle",  color:Y, size:22, top:"15%",   left:"calc(50% - 11px)" } },
+  { l:"M", color:K,            stroke:null, r:-3,  ty:5,
+    shape:{ type:"circle",  color:B, size:16, bottom:"-8px", left:"10%" } },
+  { l:"O", color:R,            stroke:null, r:6,   ty:-8,
+    shape:{ type:"circle",  color:K, size:26, top:"18%",   left:"18%" } },
+  { l:"N", color:"transparent", stroke:K,   r:-5,  ty:12,
+    shape:{ type:"square",  color:Y, size:14, top:"-6px",  right:"-4px" } },
+  { l:"A", color:K,            stroke:null, r:4,   ty:-4,
+    shape:{ type:"diamond", color:R, size:20, top:"-14px", left:"calc(50% - 10px)" } },
+  { l:"S", color:R,            stroke:null, r:-7,  ty:6,
+    shape:{ type:"square",  color:K, size:12, bottom:"-4px", right:"0px" } },
 ];
 
 /* ── STEFANOU ──────────────────────────────────── */
 const NAME2: LetterDef[] = [
-  { l:"S", color:R, stroke:null, r:-1.5, ty:2,
-    shape:{ type:"circle",  color:Y,    size:15, top:"8%",    left:"-4px" } },
-  { l:"T", color:"transparent", stroke:K, r:2, ty:-4 },
-  { l:"E", color:R, stroke:null, r:-1, ty:3,
-    shape:{ type:"square",  color:B,    size:12, top:"40%",   right:"-5px" } },
-  { l:"F", color:K, stroke:null, r:1.5, ty:-2 },
-  { l:"A", color:"transparent", stroke:R, r:-2, ty:0,
-    shape:{ type:"circle",  color:K,    size:12, top:"-7px",  left:"calc(50% - 6px)" } },
-  { l:"N", color:R, stroke:null, r:1, ty:3 },
-  { l:"O", color:"transparent", stroke:K, r:-1.5, ty:-3,
-    shape:{ type:"circle",  color:R,    size:18, top:"25%",   left:"25%" } },
-  { l:"U", color:R, stroke:null, r:2.5, ty:0 },
+  { l:"S", color:R,            stroke:null, r:-5,  ty:8,
+    shape:{ type:"circle",  color:Y, size:20, top:"6%",    left:"-6px" } },
+  { l:"T", color:"transparent", stroke:K,   r:6,   ty:-10,
+    shape:{ type:"square",  color:R, size:18, top:"-10px", left:"10%" } },
+  { l:"E", color:R,            stroke:null, r:-4,  ty:8,
+    shape:{ type:"square",  color:B, size:16, top:"38%",   right:"-8px" } },
+  { l:"F", color:K,            stroke:null, r:5,   ty:-6,
+    shape:{ type:"circle",  color:Y, size:14, bottom:"-6px", left:"20%" } },
+  { l:"A", color:"transparent", stroke:R,   r:-6,  ty:4,
+    shape:{ type:"circle",  color:K, size:18, top:"-10px", left:"calc(50% - 9px)" } },
+  { l:"N", color:R,            stroke:null, r:4,   ty:10 },
+  { l:"O", color:"transparent", stroke:K,   r:-5,  ty:-8,
+    shape:{ type:"circle",  color:R, size:24, top:"22%",   left:"22%" } },
+  { l:"U", color:R,            stroke:null, r:7,   ty:4,
+    shape:{ type:"diamond", color:B, size:14, bottom:"-8px", left:"calc(50% - 7px)" } },
 ];
 
 function DadaLetter({ d, i, dir }: { d: LetterDef; i: number; dir: "up" | "down" }) {
@@ -118,17 +124,17 @@ export default function Hero() {
           borderRadius:"50%", background:B }} />
       </div>
 
-      {/* Yellow circle — beside TIMONAS, right of name */}
+      {/* Yellow circle — right side, aligned with TIMONAS row */}
       <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
         width:260, height:260, borderRadius:"50%", background:Y, opacity:0.85,
-        left:"58%", top:"8%",
+        right:"3%", top:"15%",
         animation:"s-scale 13s ease-in-out infinite 1s",
       }} />
 
-      {/* Red circle — beside STEFANOU, floats */}
+      {/* Red circle — right side, aligned with STEFANOU row */}
       <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
         width:140, height:140, borderRadius:"50%", background:R,
-        left:"65%", top:"38%",
+        right:"8%", top:"50%",
         animation:"s-float 9s ease-in-out infinite",
       }} />
 
@@ -214,10 +220,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 1.22 }}
-            className="font-grotesk font-normal text-black/60 text-lg leading-relaxed mb-8 max-w-md"
+            className="font-grotesk font-normal text-black/60 text-lg leading-relaxed mb-8"
           >
-            A graphic designer from Limassol, Cyprus with a BA in Graphic &amp; Advertising Design
-            from Frederick University and an Erasmus+ exchange at Escuela de Arte, Sevilla.
+            A graphic designer from Limassol, Cyprus with a BA in Graphic &amp; Advertising Design from Frederick University<br />
+            and an Erasmus+ exchange at Escuela de Arte, Sevilla.
           </motion.p>
 
           {/* CTA */}
