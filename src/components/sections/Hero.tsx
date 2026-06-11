@@ -118,17 +118,17 @@ export default function Hero() {
           borderRadius:"50%", background:B }} />
       </div>
 
-      {/* Right zone — large yellow circle, partially off edge */}
+      {/* Yellow circle — beside TIMONAS, right of name */}
       <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
-        width:280, height:280, borderRadius:"50%", background:Y, opacity:0.8,
-        right:"-40px", top:"12%",
+        width:260, height:260, borderRadius:"50%", background:Y, opacity:0.85,
+        left:"58%", top:"8%",
         animation:"s-scale 13s ease-in-out infinite 1s",
       }} />
 
-      {/* Right zone — red circle, floats in front of yellow */}
+      {/* Red circle — beside STEFANOU, floats */}
       <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
-        width:150, height:150, borderRadius:"50%", background:R,
-        right:"4%", top:"30%",
+        width:140, height:140, borderRadius:"50%", background:R,
+        left:"65%", top:"38%",
         animation:"s-float 9s ease-in-out infinite",
       }} />
 
@@ -208,21 +208,6 @@ export default function Hero() {
 
         {/* Info block */}
         <div className="mt-8 md:mt-10">
-
-          {/* Discipline tags — single line */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.55, delay: 1.1 }}
-            className="flex items-center mb-5 whitespace-nowrap"
-          >
-            {["Brand Identity", "Social Media", "Website Design", "Creative Direction"].map((f, i, arr) => (
-              <span key={f} className="flex items-center">
-                <span className="font-grotesk font-medium text-black/55 text-lg tracking-[0.03em]">{f}</span>
-                {i < arr.length - 1 && <span className="text-vermillion mx-3 text-[0.5rem]">◆</span>}
-              </span>
-            ))}
-          </motion.div>
 
           {/* Bio */}
           <motion.p
