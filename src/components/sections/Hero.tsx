@@ -89,7 +89,7 @@ export default function Hero() {
       <div className="relative z-10 w-full pl-6 md:pl-12 pr-0">
 
         {/* Name block — full bleed, no max-w constraint */}
-        <div className="mb-10 md:mb-14">
+        <div className="mb-4 md:mb-5">
 
           {/* TIMONAS */}
           <div className="overflow-hidden mb-1">
@@ -150,36 +150,35 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Tagline + CTAs */}
+        {/* Graphic Designer — tight under name */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          className="font-display font-bold text-paper text-xl leading-tight mb-10 md:mb-14"
+        >
+          Graphic Designer
+        </motion.p>
+
+        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.35 }}
-          className="max-w-6xl pr-6 md:pr-20 flex flex-col md:flex-row md:items-end gap-8 md:gap-20"
+          className="flex gap-3"
         >
-          <div>
-            <p className="font-display font-bold text-paper text-xl mb-1 leading-tight">
-              Graphic Designer
-            </p>
-            <p className="font-display font-normal text-paper/45 text-lg leading-snug">
-              Brand Identity&ensp;·&ensp;Social Media&ensp;·&ensp;Web&ensp;·&ensp;Motion
-            </p>
-          </div>
-
-          <div className="flex gap-3">
-            <Link
-              href="/work"
-              className="px-8 py-3.5 bg-vermillion text-paper font-mono text-[11px] tracking-[0.32em] uppercase hover:bg-gold hover:text-ink transition-colors duration-200"
-            >
-              View Work
-            </Link>
-            <a
-              href="mailto:conceptionsdetm@gmail.com"
-              className="px-8 py-3.5 border border-paper/18 text-paper font-mono text-[11px] tracking-[0.32em] uppercase hover:border-vermillion hover:text-vermillion transition-all duration-200"
-            >
-              Contact
-            </a>
-          </div>
+          <Link
+            href="/work"
+            className="px-8 py-3.5 bg-vermillion text-paper font-mono text-[11px] tracking-[0.32em] uppercase hover:bg-gold hover:text-ink transition-colors duration-200"
+          >
+            View Work
+          </Link>
+          <a
+            href="mailto:conceptionsdetm@gmail.com"
+            className="px-8 py-3.5 border border-paper/18 text-paper font-mono text-[11px] tracking-[0.32em] uppercase hover:border-vermillion hover:text-vermillion transition-all duration-200"
+          >
+            Contact
+          </a>
         </motion.div>
       </div>
 

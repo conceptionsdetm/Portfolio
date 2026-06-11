@@ -27,10 +27,7 @@ export default function Services() {
 
         {/* Title + rule */}
         <RevealOnScroll className="mb-6 md:mb-8">
-          <h2
-            className="font-display font-black text-paper leading-none"
-            style={{ fontSize: "clamp(2.8rem,7vw,5.5rem)" }}
-          >
+          <h2 className="font-display font-bold text-paper text-xl leading-tight">
             Fields of Work
           </h2>
         </RevealOnScroll>
