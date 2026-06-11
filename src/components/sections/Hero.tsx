@@ -25,39 +25,25 @@ type LetterDef = {
 
 /* ── TIMONAS ───────────────────────────────────── */
 const NAME1: LetterDef[] = [
-  { l:"T", color:K,            stroke:null, r:-6,  ty:10,
-    shape:{ type:"square",  color:R, size:24, top:"-12px", right:"-2px" } },
-  { l:"I", color:"transparent", stroke:R,   r:4,   ty:-12,
-    shape:{ type:"circle",  color:Y, size:22, top:"15%",   left:"calc(50% - 11px)" } },
-  { l:"M", color:K,            stroke:null, r:-3,  ty:5,
-    shape:{ type:"circle",  color:B, size:16, bottom:"-8px", left:"10%" } },
-  { l:"O", color:R,            stroke:null, r:6,   ty:-8,
-    shape:{ type:"circle",  color:K, size:26, top:"18%",   left:"18%" } },
-  { l:"N", color:"transparent", stroke:K,   r:-5,  ty:12,
-    shape:{ type:"square",  color:Y, size:14, top:"-6px",  right:"-4px" } },
-  { l:"A", color:K,            stroke:null, r:4,   ty:-4,
-    shape:{ type:"diamond", color:R, size:20, top:"-14px", left:"calc(50% - 10px)" } },
-  { l:"S", color:R,            stroke:null, r:-7,  ty:6,
-    shape:{ type:"square",  color:K, size:12, bottom:"-4px", right:"0px" } },
+  { l:"T", color:K,            stroke:null, r:-6,  ty:10 },
+  { l:"I", color:"transparent", stroke:R,   r:4,   ty:-12 },
+  { l:"M", color:K,            stroke:null, r:-3,  ty:5 },
+  { l:"O", color:R,            stroke:null, r:6,   ty:-8 },
+  { l:"N", color:"transparent", stroke:K,   r:-5,  ty:12 },
+  { l:"A", color:K,            stroke:null, r:4,   ty:-4 },
+  { l:"S", color:R,            stroke:null, r:-7,  ty:6 },
 ];
 
 /* ── STEFANOU ──────────────────────────────────── */
 const NAME2: LetterDef[] = [
-  { l:"S", color:R,            stroke:null, r:-5,  ty:8,
-    shape:{ type:"circle",  color:Y, size:20, top:"6%",    left:"-6px" } },
-  { l:"T", color:"transparent", stroke:K,   r:6,   ty:-10,
-    shape:{ type:"square",  color:R, size:18, top:"-10px", left:"10%" } },
-  { l:"E", color:R,            stroke:null, r:-4,  ty:8,
-    shape:{ type:"square",  color:B, size:16, top:"38%",   right:"-8px" } },
-  { l:"F", color:K,            stroke:null, r:5,   ty:-6,
-    shape:{ type:"circle",  color:Y, size:14, bottom:"-6px", left:"20%" } },
-  { l:"A", color:"transparent", stroke:R,   r:-6,  ty:4,
-    shape:{ type:"circle",  color:K, size:18, top:"-10px", left:"calc(50% - 9px)" } },
+  { l:"S", color:R,            stroke:null, r:-5,  ty:8 },
+  { l:"T", color:"transparent", stroke:K,   r:6,   ty:-10 },
+  { l:"E", color:R,            stroke:null, r:-4,  ty:8 },
+  { l:"F", color:K,            stroke:null, r:5,   ty:-6 },
+  { l:"A", color:"transparent", stroke:R,   r:-6,  ty:4 },
   { l:"N", color:R,            stroke:null, r:4,   ty:10 },
-  { l:"O", color:"transparent", stroke:K,   r:-5,  ty:-8,
-    shape:{ type:"circle",  color:R, size:24, top:"22%",   left:"22%" } },
-  { l:"U", color:R,            stroke:null, r:7,   ty:4,
-    shape:{ type:"diamond", color:B, size:14, bottom:"-8px", left:"calc(50% - 7px)" } },
+  { l:"O", color:"transparent", stroke:K,   r:-5,  ty:-8 },
+  { l:"U", color:R,            stroke:null, r:7,   ty:4 },
 ];
 
 function DadaLetter({ d, i, dir }: { d: LetterDef; i: number; dir: "up" | "down" }) {
@@ -181,16 +167,6 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Dada rule */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.4, delay: 0.78, ease: [0.22, 1, 0.36, 1] }}
-            style={{
-              transformOrigin:"left", height:4, background:K,
-              transform:"rotate(-0.8deg)", width:"62%", margin:"6px 0",
-            }}
-          />
 
           {/* STEFANOU */}
           <div className="flex items-end overflow-visible pl-[2%]">
@@ -205,8 +181,8 @@ export default function Hero() {
               className="ml-3 mb-2 flex-shrink-0"
             >
               <span className="relative flex h-4 w-4 md:h-5 md:w-5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-55" />
-                <span className="relative inline-flex rounded-full h-4 w-4 md:h-5 md:w-5 bg-green-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-55" style={{ background:"#00539F" }} />
+                <span className="relative inline-flex rounded-full h-4 w-4 md:h-5 md:w-5 bg-neutral-300" />
               </span>
             </motion.span>
           </div>
