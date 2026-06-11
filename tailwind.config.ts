@@ -9,9 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
-        body:    ["var(--font-body)", "system-ui", "sans-serif"],
-        mono:    ["var(--font-mono)", "monospace"],
+        display:  ["var(--font-display)",  "Georgia",    "serif"],
+        body:     ["var(--font-body)",     "system-ui",  "sans-serif"],
+        mono:     ["var(--font-mono)",     "monospace"],
+        grotesk:  ["var(--font-grotesk)",  "system-ui",  "sans-serif"],
       },
       colors: {
         gold:       "#c9a96e",
