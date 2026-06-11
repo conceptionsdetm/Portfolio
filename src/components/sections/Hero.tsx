@@ -33,73 +33,70 @@ export default function Hero() {
 
       {/* ── Animated Bauhaus shapes (background) ── */}
 
-      {/* Top-left quarter circle — grows & cycles yellow → red → blue */}
+      {/* Top-left quarter circle — yellow, pulses */}
       <div aria-hidden className="absolute top-0 left-0 pointer-events-none"
         style={{ width:300, height:300, overflow:"hidden",
           animation:"h-qc-grow-a 16s ease-in-out infinite" }}>
         <div style={{
           position:"absolute", top:0, left:0, width:"200%", height:"200%",
-          borderRadius:"50%",
-          animation:"h-fill-yrbY 12s ease-in-out infinite",
+          borderRadius:"50%", background:"#FFDD00",
         }} />
       </div>
 
-      {/* Top-right quarter circle — shrinks & cycles blue → yellow → red */}
+      {/* Top-right quarter circle — blue, pulses */}
       <div aria-hidden className="absolute top-0 right-0 pointer-events-none"
         style={{ width:210, height:210, overflow:"hidden",
           animation:"h-qc-grow-b 19s ease-in-out infinite" }}>
         <div style={{
           position:"absolute", top:0, right:0, left:"auto", width:"200%", height:"200%",
           borderRadius:"50%", background:"#00539F",
-          animation:"h-fill-byrB 15s ease-in-out infinite",
         }} />
       </div>
 
-      {/* Right floating circle — orbits + red → blue → yellow */}
+      {/* Right floating circle — red, floats */}
       <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
-        width:155, height:155, borderRadius:"50%",
+        width:155, height:155, borderRadius:"50%", background:"#BE1622",
         right:"8%", top:"36%",
-        animation:"h-circle-drift 11s ease-in-out infinite",
+        animation:"s-float 9s ease-in-out infinite",
       }} />
 
-      {/* Right large circle — breathes + yellow → red → blue */}
+      {/* Right large circle — yellow, breathes */}
       <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
-        width:265, height:265, borderRadius:"50%",
+        width:265, height:265, borderRadius:"50%", background:"#FFDD00", opacity:0.75,
         right:"2%", top:"20%",
-        animation:"h-circle-breathe 14s ease-in-out infinite 1s",
+        animation:"s-scale 11s ease-in-out infinite 1s",
       }} />
 
-      {/* Bottom-left quarter circle — pulses + red → blue → yellow */}
+      {/* Bottom-left quarter circle — red, pulses */}
       <div aria-hidden className="absolute bottom-0 left-0 pointer-events-none"
         style={{ width:210, height:210, overflow:"hidden",
           animation:"h-qc-grow-a 18s ease-in-out infinite" }}>
         <div style={{
           position:"absolute", bottom:0, left:0, top:"auto", width:"200%", height:"200%",
           borderRadius:"50%", background:"#BE1622",
-          animation:"h-fill-rybR 11s ease-in-out infinite",
         }} />
       </div>
 
-      {/* Bottom-right circle outline — scales, rotates, border morphs blue → red → yellow */}
+      {/* Bottom-right circle outline — blue, scales */}
       <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
         width:230, height:230, borderRadius:"50%",
-        border:"5px solid #00539F",
+        border:"5px solid #00539F", opacity:0.22,
         right:"19%", bottom:"7%",
-        animation:"h-outline-morph 13s ease-in-out infinite 0.8s",
+        animation:"s-scale 10s ease-in-out infinite 0.5s",
       }} />
 
-      {/* Left rotating square — spins + yellow → red → blue */}
+      {/* Left rotating square — yellow, spins */}
       <div aria-hidden className="absolute pointer-events-none" style={{
-        width:72, height:72,
+        width:72, height:72, background:"#FFDD00", opacity:0.65,
         left:"2%", top:"53%",
-        animation:"h-sq-spin 22s linear infinite",
+        animation:"s-rot 25s linear infinite",
       }} />
 
-      {/* Mid drifting small square — wanders + colour + opacity */}
+      {/* Mid drifting small square — black, floats */}
       <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
-        width:52, height:52,
+        width:52, height:52, background:"#000000", opacity:0.07,
         left:"44%", top:"17%",
-        animation:"h-sq-wander 20s ease-in-out infinite 2s",
+        animation:"s-frot 20s ease-in-out infinite 2s",
       }} />
 
       {/* ── Content ── */}
