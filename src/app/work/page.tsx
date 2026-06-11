@@ -8,6 +8,10 @@ import type { Category } from "@/data/projects";
 import { assetPath } from "@/lib/basePath";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
+const Y = "#FFDD00";
+const R = "#BE1622";
+const B = "#00539F";
+
 export default function WorkPage() {
   const [activeFilter, setActiveFilter] = useState<"all" | Category>("all");
 
@@ -19,17 +23,47 @@ export default function WorkPage() {
   return (
     <main className="min-h-screen bg-white pt-24 pb-24 px-8 md:px-14 relative overflow-hidden">
 
-      {/* Bauhaus shapes — top right corner */}
-      <div className="absolute top-0 right-0 pointer-events-none" aria-hidden style={{ width:180, height:180, overflow:"hidden" }}>
-        <div style={{ position:"absolute", top:0, right:0, width:"100%", height:"100%", background:"#FFDD00" }} />
-        <div style={{ position:"absolute", top:0, right:0, width:"100%", height:"100%", borderRadius:"50%", background:"#FFFFFF" }} />
-        <div style={{ position:"absolute", top:24, right:24, width:64, height:64, background:"#BE1622", borderRadius:"50%" }} />
+      {/* ── Animated Bauhaus shapes ── */}
+
+      {/* Top-right red quarter circle */}
+      <div aria-hidden className="absolute top-0 right-0 pointer-events-none" style={{ width:200, height:200, overflow:"hidden" }}>
+        <div style={{
+          position:"absolute", top:0, right:0, left:"auto", width:"200%", height:"200%",
+          borderRadius:"50%", background:R, opacity:0.88,
+          animation:"s-pulse 15s ease-in-out infinite",
+        }} />
       </div>
 
-      {/* Blue rule — bottom left */}
-      <div className="absolute bottom-24 left-0 pointer-events-none" aria-hidden>
-        <div style={{ width:100, height:4, background:"#00539F", transform:"rotate(-8deg)" }} />
+      {/* Top-right small yellow circle */}
+      <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
+        width:65, height:65, borderRadius:"50%", background:Y,
+        right:50, top:50,
+        animation:"s-float 10s ease-in-out infinite 1s",
+      }} />
+
+      {/* Bottom-left yellow quarter circle */}
+      <div aria-hidden className="absolute bottom-0 left-0 pointer-events-none" style={{ width:170, height:170, overflow:"hidden" }}>
+        <div style={{
+          position:"absolute", bottom:0, left:0, top:"auto", width:"200%", height:"200%",
+          borderRadius:"50%", background:Y, opacity:0.82,
+          animation:"s-pulse 12s ease-in-out infinite 2s",
+        }} />
       </div>
+
+      {/* Rotating blue square — left mid */}
+      <div aria-hidden className="absolute pointer-events-none" style={{
+        width:50, height:50, background:B, opacity:0.55,
+        left:"2%", top:"50%",
+        animation:"s-rot 22s linear infinite",
+      }} />
+
+      {/* Floating blue circle outline — right mid */}
+      <div aria-hidden className="absolute pointer-events-none hidden md:block" style={{
+        width:160, height:160, borderRadius:"50%",
+        border:`4px solid ${B}`, opacity:0.14,
+        right:"5%", top:"42%",
+        animation:"s-scale 14s ease-in-out infinite 0.5s",
+      }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -41,7 +75,7 @@ export default function WorkPage() {
           </span>
           <h1 className="font-display font-black text-5xl md:text-7xl text-black leading-none">
             Selected{" "}
-            <span style={{ color:"#BE1622", display:"inline-block", transform:"rotate(-1deg)" }}>Work</span>
+            <span style={{ color:R, display:"inline-block", transform:"rotate(-1deg)" }}>Work</span>
           </h1>
         </RevealOnScroll>
 
@@ -54,7 +88,7 @@ export default function WorkPage() {
               className="font-grotesk font-bold text-[8px] tracking-[0.32em] uppercase px-4 py-1.5 transition-all duration-200 hover:scale-105"
               style={
                 activeFilter === cat.id
-                  ? { background:"#000000", color:"#FFDD00", boxShadow:"2px 2px 0px #BE1622" }
+                  ? { background:"#000000", color:Y, boxShadow:`2px 2px 0px ${R}` }
                   : { border:"2px solid rgba(0,0,0,0.15)", color:"rgba(0,0,0,0.4)" }
               }
             >
@@ -85,23 +119,16 @@ export default function WorkPage() {
                     />
                     <div className="img-overlay" />
 
-                    {/* Bauhaus accent bar on hover */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[4px] transition-all duration-300 origin-left"
-                      style={{ background:"#BE1622", transform:"scaleX(0)" }}
-                      onMouseEnter={e => (e.currentTarget.style.transform = "scaleX(1)")}
-                    />
-
                     {project.featured && (
                       <div className="absolute top-3 left-3">
-                        <span className="font-grotesk font-bold text-[7px] tracking-[0.3em] uppercase px-2 py-0.5" style={{ background:"#FFDD00", color:"#000000" }}>
+                        <span className="font-grotesk font-bold text-[7px] tracking-[0.3em] uppercase px-2 py-0.5" style={{ background:Y, color:"#000000" }}>
                           Featured
                         </span>
                       </div>
                     )}
 
                     <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                      <p className="font-grotesk font-bold text-[7px] tracking-[0.32em] uppercase mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color:"#FFDD00" }}>
+                      <p className="font-grotesk font-bold text-[7px] tracking-[0.32em] uppercase mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color:Y }}>
                         {project.client}
                       </p>
                       <h3 className="font-display font-black text-lg text-white leading-tight group-hover:text-gold transition-colors duration-300">
