@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import CVModal from "@/components/ui/CVModal";
 
 const links = [
   { href: "/work",    label: "Work" },
@@ -13,6 +14,7 @@ const links = [
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [cvOpen, setCvOpen] = useState(false);
 
   return (
     <>
@@ -53,14 +55,25 @@ export default function Nav() {
           ))}
         </nav>
 
-        {/* Right: Kandinsky circles — hidden on mobile */}
+        {/* Right: CV button */}
         <div className="bauhaus-nav__right">
-          <svg width="38" height="38" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="40" cy="40" r="36" fill="none" stroke="#1A1A1A" strokeWidth="1.5"/>
-            <circle cx="40" cy="40" r="27" fill="none" stroke="#1A1A1A" strokeWidth="1.5"/>
-            <circle cx="40" cy="40" r="17" fill="#F5C400"/>
-            <circle cx="40" cy="40" r="7"  fill="#1A1A1A"/>
-          </svg>
+          <button
+            onClick={() => setCvOpen(true)}
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 9,
+              letterSpacing: "0.3em",
+              textTransform: "uppercase",
+              padding: "0.5rem 1.25rem",
+              background: "var(--yellow)",
+              color: "var(--black)",
+              border: "none",
+              cursor: "pointer",
+              whiteSpace: "nowrap",
+            }}
+          >
+            View CV
+          </button>
         </div>
       </header>
 
@@ -134,6 +147,8 @@ export default function Nav() {
           .mobile-menu-btn { display: flex !important; }
         }
       `}</style>
+
+      {cvOpen && <CVModal onClose={() => setCvOpen(false)} />}
     </>
   );
 }
