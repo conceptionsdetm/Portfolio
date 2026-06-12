@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;700&family=IBM+Plex+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Space+Grotesk:wght@300;400;700&family=IBM+Plex+Mono:wght@400;700&display=swap');
 
 /* ──────────────────────────────────────────────────────
    DESIGN TOKENS
@@ -15,7 +15,7 @@
   --black:  #1A1A1A;
   --white:  #FFFFFF;
 
-  --font-display: 'Bebas Neue', sans-serif;
+  --font-display: 'Barlow Condensed', sans-serif;
   --font-body:    'Space Grotesk', sans-serif;
   --font-mono:    'IBM Plex Mono', monospace;
   --font-grotesk: 'Space Grotesk', sans-serif;
@@ -42,8 +42,8 @@ a   { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 400;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
 }
 
 p, li, td, th {
@@ -169,6 +169,7 @@ p, li, td, th {
   bottom: -0.12em;
   right: -0.15em;
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: 20rem;
   line-height: 1;
   color: var(--black);
@@ -200,6 +201,7 @@ p, li, td, th {
 }
 .bauhaus-hero__name {
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: clamp(72px, 8.5vw, 116px);
   line-height: 0.88;
   letter-spacing: 0.01em;
@@ -315,6 +317,7 @@ p, li, td, th {
 }
 .bauhaus-work__ghost-num {
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: 5.5rem;
   line-height: 1;
   opacity: 0.07;
@@ -456,6 +459,7 @@ p, li, td, th {
 }
 .bauhaus-client-card__name {
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: 1.4rem;
   line-height: 1;
   text-transform: uppercase;
@@ -555,6 +559,7 @@ p, li, td, th {
 }
 .bauhaus-stat__value {
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: 2.6rem;
   line-height: 1;
 }
@@ -606,6 +611,7 @@ p, li, td, th {
 }
 .bauhaus-row__role {
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: 1.8rem;
   line-height: 1;
   text-transform: uppercase;

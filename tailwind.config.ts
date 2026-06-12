@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["'Bebas Neue'", "sans-serif"],
+        display: ["'Barlow Condensed'", "sans-serif"],
         body:    ["'Space Grotesk'", "system-ui", "sans-serif"],
         mono:    ["'IBM Plex Mono'", "monospace"],
         grotesk: ["'Space Grotesk'", "system-ui", "sans-serif"],

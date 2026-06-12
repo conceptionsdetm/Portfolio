@@ -41,6 +41,7 @@ export default function ContactPage() {
 
           <h2 style={{
             fontFamily: "var(--font-display)",
+            fontWeight: 900,
             fontSize: "clamp(3.2rem, 5.5vw, 5.5rem)",
             lineHeight: 0.92,
             transform: "rotate(-1.2deg)",
