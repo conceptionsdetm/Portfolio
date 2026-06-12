@@ -70,7 +70,7 @@ export default function AboutPage() {
             fontSize: 15,
             fontWeight: 300,
             lineHeight: 1.75,
-            opacity: 0.72,
+            color: "rgba(26,26,26,0.78)",
             maxWidth: 540,
           }}>
             A graphic designer from Limassol, Cyprus with a BA in Graphic &amp; Advertising
@@ -128,18 +128,18 @@ export default function AboutPage() {
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: "2rem", lineHeight: 1, marginBottom: "1.5rem" }}>
                 The Designer
               </h3>
-              <div style={{ display: "flex", flexDirection: "column", gap: "1rem", opacity: 0.65 }}>
-                <p style={{ fontSize: 14, lineHeight: 1.75, fontWeight: 300 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                <p style={{ fontSize: 14, lineHeight: 1.75, fontWeight: 300, color: "rgba(26,26,26,0.75)" }}>
                   I specialise in brand identity, social media design, website design, and
                   marketing campaigns. My work spans industries from FemTech and healthcare to
                   maritime logistics, automotive, and corporate services.
                 </p>
-                <p style={{ fontSize: 14, lineHeight: 1.75, fontWeight: 300 }}>
+                <p style={{ fontSize: 14, lineHeight: 1.75, fontWeight: 300, color: "rgba(26,26,26,0.75)" }}>
                   What sets my work apart is the combination of strategic thinking and
                   executional quality. Every project starts with understanding the audience,
                   the objective, and the brand before a single element is placed on canvas.
                 </p>
-                <p style={{ fontSize: 14, lineHeight: 1.75, fontWeight: 300 }}>
+                <p style={{ fontSize: 14, lineHeight: 1.75, fontWeight: 300, color: "rgba(26,26,26,0.75)" }}>
                   Currently working as Junior Graphic Designer at Fameline Holding Group in
                   Limassol, while taking on selected freelance projects for clients who care
                   about craft.
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 {skills.map((s) => (
                   <div key={s.name}>
                     <div className="bauhaus-skill-label">
-                      <span style={{ opacity: 0.5 }}>{s.name}</span>
+                      <span style={{ color: "rgba(26,26,26,0.7)" }}>{s.name}</span>
                       <span style={{ color: "var(--red)" }}>{s.level}%</span>
                     </div>
                     <div className="bauhaus-skill-track">

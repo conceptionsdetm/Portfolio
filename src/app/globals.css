@@ -91,11 +91,11 @@ p, li, td, th {
   font-size: 11px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  opacity: 0.45;
-  transition: color 0.18s, opacity 0.18s;
+  color: rgba(26,26,26,0.65);
+  transition: color 0.18s;
 }
-.bauhaus-nav__links a:hover { opacity: 1; color: var(--red); }
-.bauhaus-nav__links a.active { opacity: 1; color: var(--red); }
+.bauhaus-nav__links a:hover { color: var(--red); opacity: 1; }
+.bauhaus-nav__links a.active { color: var(--red); opacity: 1; }
 
 .bauhaus-nav__right {
   display: flex;
@@ -181,7 +181,7 @@ p, li, td, th {
   font-family: var(--font-mono);
   font-size: 9px;
   letter-spacing: 0.3em;
-  opacity: 0.3;
+  color: rgba(26,26,26,0.5);
   position: relative;
   z-index: 2;
 }
@@ -232,12 +232,11 @@ p, li, td, th {
 .bauhaus-hero__rule::after  { right: 0; }
 .bauhaus-hero__role {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(10px, 1.1vw, 13px);
   letter-spacing: 0.55em;
   text-transform: uppercase;
-  color: var(--black);
-  opacity: 0.55;
+  color: rgba(26,26,26,0.7);
   margin-bottom: 2.8rem;
 }
 .bauhaus-hero__nav {
@@ -250,10 +249,10 @@ p, li, td, th {
   font-size: 11px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  opacity: 0.38;
-  transition: opacity 0.18s, color 0.18s;
+  color: rgba(26,26,26,0.6);
+  transition: color 0.18s;
 }
-.bauhaus-hero__nav a:hover { opacity: 1; color: var(--red); }
+.bauhaus-hero__nav a:hover { color: var(--red); opacity: 1; }
 
 /* DADA fragments */
 .dada-stamp {
@@ -275,8 +274,7 @@ p, li, td, th {
   font-size: 9px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--black);
-  opacity: 0.28;
+  color: rgba(26,26,26,0.45);
   user-select: none;
   pointer-events: none;
   z-index: 5;
@@ -287,8 +285,7 @@ p, li, td, th {
   font-size: 8px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--black);
-  opacity: 0.16;
+  color: rgba(26,26,26,0.35);
   user-select: none;
   pointer-events: none;
   z-index: 5;
@@ -334,10 +331,10 @@ p, li, td, th {
   font-size: 10px;
   letter-spacing: 0.45em;
   text-transform: uppercase;
-  opacity: 0.38;
+  color: rgba(26,26,26,0.6);
   white-space: nowrap;
 }
-.bauhaus-work__rule { flex: 1; height: 1px; background: var(--black); opacity: 0.15; }
+.bauhaus-work__rule { flex: 1; height: 1px; background: rgba(26,26,26,0.25); }
 
 /* filter + search bar */
 .bauhaus-work__filter-bar {
@@ -355,7 +352,7 @@ p, li, td, th {
   font-size: 8px;
   letter-spacing: 0.38em;
   text-transform: uppercase;
-  opacity: 0.28;
+  color: rgba(26,26,26,0.55);
 }
 .bauhaus-work__filters {
   display: flex;
@@ -373,15 +370,13 @@ p, li, td, th {
   height: 64px;
   border-right: var(--grid-line);
   background: transparent;
-  color: var(--black);
-  opacity: 0.38;
+  color: rgba(26,26,26,0.65);
   cursor: pointer;
   transition: all 0.18s;
   border-top: none; border-bottom: none; border-left: none;
 }
-.bauhaus-work__filter-btn:hover { opacity: 0.8; }
+.bauhaus-work__filter-btn:hover { color: var(--black); }
 .bauhaus-work__filter-btn.active {
-  opacity: 1;
   background: var(--black);
   color: var(--yellow);
 }
@@ -437,7 +432,7 @@ p, li, td, th {
   font-family: var(--font-mono);
   font-size: 8px;
   letter-spacing: 0.3em;
-  opacity: 0.3;
+  color: rgba(26,26,26,0.5);
   margin-bottom: auto;
 }
 .bauhaus-client-card__logo {
@@ -471,7 +466,7 @@ p, li, td, th {
   font-size: 7px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  opacity: 0.35;
+  color: rgba(26,26,26,0.55);
   margin-top: 0.3rem;
 }
 .bauhaus-client-card__services {
@@ -479,7 +474,7 @@ p, li, td, th {
   font-size: 7px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  opacity: 0.22;
+  color: rgba(26,26,26,0.45);
   margin-top: 0.2rem;
 }
 .bauhaus-client-card__arrow {
@@ -541,7 +536,7 @@ p, li, td, th {
   font-size: 8px;
   letter-spacing: 0.42em;
   text-transform: uppercase;
-  opacity: 0.28;
+  color: rgba(26,26,26,0.5);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
@@ -556,7 +551,7 @@ p, li, td, th {
   font-size: 8px;
   letter-spacing: 0.38em;
   text-transform: uppercase;
-  opacity: 0.3;
+  color: rgba(26,26,26,0.55);
 }
 .bauhaus-stat__value {
   font-family: var(--font-display);
@@ -568,7 +563,7 @@ p, li, td, th {
   font-weight: 300;
   font-size: 11px;
   letter-spacing: 0.06em;
-  opacity: 0.45;
+  color: rgba(26,26,26,0.65);
 }
 
 /* section divider rules */
@@ -578,20 +573,20 @@ p, li, td, th {
   font-size: 9px;
   letter-spacing: 0.42em;
   text-transform: uppercase;
-  opacity: 0.3;
+  color: rgba(26,26,26,0.55);
   display: block;
   margin-bottom: 2rem;
 }
 .bauhaus-stamp {
   display: inline-block;
-  border: 1.5px solid var(--black);
+  border: 1.5px solid rgba(26,26,26,0.5);
   padding: 0.4rem 0.85rem;
   font-family: var(--font-mono);
   font-size: 8px;
   letter-spacing: 0.38em;
   text-transform: uppercase;
+  color: rgba(26,26,26,0.6);
   transform: rotate(-1.8deg);
-  opacity: 0.38;
 }
 
 /* experience / education rows */
@@ -621,7 +616,7 @@ p, li, td, th {
   font-size: 8px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  opacity: 0.35;
+  color: rgba(26,26,26,0.55);
   margin-bottom: 0.75rem;
 }
 .bauhaus-row__desc {
@@ -629,7 +624,7 @@ p, li, td, th {
   font-weight: 300;
   font-size: 14px;
   line-height: 1.7;
-  opacity: 0.6;
+  color: rgba(26,26,26,0.75);
 }
 
 /* skill bars */
@@ -640,11 +635,12 @@ p, li, td, th {
   font-size: 8px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
+  color: rgba(26,26,26,0.7);
   margin-bottom: 0.4rem;
 }
 .bauhaus-skill-track {
   height: 2px;
-  background: rgba(26,26,26,0.1);
+  background: rgba(26,26,26,0.15);
   position: relative;
   overflow: hidden;
 }
@@ -689,7 +685,7 @@ p, li, td, th {
 }
 .bauhaus-contact__link:hover { color: var(--red); }
 .bauhaus-contact__link-label {
-  opacity: 0.3;
+  color: rgba(26,26,26,0.55);
   font-size: 8px;
   letter-spacing: 0.42em;
   min-width: 80px;
@@ -735,7 +731,7 @@ p, li, td, th {
   font-size: 9px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.55);
 }
 .bauhaus-footer__links {
   display: flex;
@@ -744,14 +740,14 @@ p, li, td, th {
   gap: 0;
   margin-top: 0.75rem;
   padding-top: 0.75rem;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 .bauhaus-footer__link {
   font-family: var(--font-mono);
   font-size: 8px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.7);
   white-space: nowrap;
   transition: color 0.18s;
 }
@@ -759,7 +755,7 @@ p, li, td, th {
 .bauhaus-footer__sep {
   font-family: var(--font-mono);
   font-size: 8px;
-  color: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.35);
   padding: 0 0.6rem;
   user-select: none;
 }
@@ -768,7 +764,7 @@ p, li, td, th {
   font-family: var(--font-mono);
   font-size: 9px;
   letter-spacing: 0.3em;
-  color: rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.55);
   white-space: nowrap;
 }
 

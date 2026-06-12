@@ -58,7 +58,7 @@ export default function ContactPage() {
             fontWeight: 300,
             fontSize: 15,
             lineHeight: 1.75,
-            opacity: 0.65,
+            color: "rgba(26,26,26,0.75)",
             maxWidth: 480,
             marginBottom: "3rem",
           }}>
