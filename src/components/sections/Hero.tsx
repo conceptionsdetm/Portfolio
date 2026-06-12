@@ -4,32 +4,6 @@ export default function Hero() {
   return (
     <section className="bauhaus-hero" aria-label="Introduction">
 
-      {/* Top-left: red block with Bauhaus asterisk */}
-      <div className="bauhaus-hero__tl" aria-hidden="true">
-        <svg width="68" height="68" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="36" y="4" width="8" height="72" fill="#F5C400"/>
-          <rect x="36" y="4" width="8" height="72" fill="#F5C400" transform="rotate(45 40 40)"/>
-          <rect x="36" y="4" width="8" height="72" fill="#F5C400" transform="rotate(90 40 40)"/>
-          <rect x="36" y="4" width="8" height="72" fill="#F5C400" transform="rotate(135 40 40)"/>
-        </svg>
-      </div>
-
-      {/* Top-centre: empty structural cell */}
-      <div className="bauhaus-hero__tc" aria-hidden="true" />
-
-      {/* Top-right: Kandinsky circle + blue block */}
-      <div className="bauhaus-hero__tr">
-        <div className="bauhaus-hero__tr-circle">
-          <svg width="140" height="140" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="80" cy="80" r="74" fill="none" stroke="#1A1A1A" strokeWidth="2"/>
-            <circle cx="80" cy="80" r="57" fill="none" stroke="#1A1A1A" strokeWidth="2"/>
-            <circle cx="80" cy="80" r="38" fill="#F5C400"/>
-            <circle cx="80" cy="80" r="17" fill="#1A1A1A"/>
-          </svg>
-        </div>
-        <div className="bauhaus-hero__tr-blue" aria-hidden="true" />
-      </div>
-
       {/* Left manifest column */}
       <div className="bauhaus-hero__left" aria-hidden="true">
         <span className="bauhaus-hero__left-manifest">Manifest</span>

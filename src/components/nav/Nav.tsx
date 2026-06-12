@@ -18,15 +18,27 @@ export default function Nav() {
     <>
       <header className="bauhaus-nav">
 
-        {/* Left: red block — home link */}
-        <Link href="/" className="bauhaus-nav__block">
-          <svg width="32" height="32" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="27" y="3"  width="6" height="54" fill="#F5C400"/>
-            <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(45 30 30)"/>
-            <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(90 30 30)"/>
-            <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(135 30 30)"/>
-          </svg>
-        </Link>
+        {/* Left: red block with asterisk + blue accent strip */}
+        <div className="bauhaus-nav__block" style={{ display: "flex", padding: 0 }}>
+          <Link href="/" style={{
+            flex: 1,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            background: "var(--red)",
+          }}>
+            <svg width="32" height="32" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="27" y="3"  width="6" height="54" fill="#F5C400"/>
+              <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(45 30 30)"/>
+              <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(90 30 30)"/>
+              <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(135 30 30)"/>
+            </svg>
+          </Link>
+          {/* Blue accent — matches the hero's right-column accent */}
+          <div aria-hidden="true" style={{
+            width: 18,
+            background: "var(--blue)",
+            borderLeft: "var(--grid-line)",
+          }} />
+        </div>
 
         {/* Centre: nav links — hidden on mobile */}
         <nav className="bauhaus-nav__links" aria-label="Primary navigation">
