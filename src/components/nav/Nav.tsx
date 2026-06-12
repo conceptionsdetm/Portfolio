@@ -2,12 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
-import Logo from "@/components/ui/Logo";
-import CVModal from "@/components/ui/CVModal";
+import { useState } from "react";
 
 const links = [
-  { href: "/",        label: "Home" },
   { href: "/work",    label: "Work" },
   { href: "/about",   label: "About" },
   { href: "/contact", label: "Contact" },
@@ -15,97 +12,116 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [cvOpen, setCvOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-paper/96 backdrop-blur-md border-b border-ink/8" : "bg-transparent"
-        }`}
-      >
-        <div className="px-8 md:px-14 h-16">
-          <div className="max-w-7xl mx-auto w-full h-full flex items-center justify-between">
+      <header className="bauhaus-nav">
 
-            {/* Logo — left */}
-            <Logo size="md" />
+        {/* Left: red block — home link */}
+        <Link href="/" className="bauhaus-nav__block">
+          <svg width="32" height="32" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="27" y="3"  width="6" height="54" fill="#F5C400"/>
+            <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(45 30 30)"/>
+            <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(90 30 30)"/>
+            <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(135 30 30)"/>
+          </svg>
+        </Link>
 
-            {/* Nav links — centre */}
-            <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-              {links.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className={`font-grotesk font-medium text-[9px] tracking-[0.35em] uppercase transition-colors duration-200 relative group ${
-                    pathname === l.href ? "text-vermillion" : "text-ink/45 hover:text-ink"
-                  }`}
-                >
-                  {l.label}
-                  <span
-                    className={`absolute -bottom-0.5 left-0 h-px bg-vermillion transition-all duration-300 ${
-                      pathname === l.href ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  />
-                </Link>
-              ))}
-            </nav>
-
-            {/* CV button — right */}
-            <button
-              onClick={() => setCvOpen(true)}
-              className="hidden md:block px-5 py-2 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase hover:bg-paper transition-colors duration-200"
+        {/* Centre: nav links — hidden on mobile */}
+        <nav className="bauhaus-nav__links" aria-label="Primary navigation">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className={pathname.startsWith(l.href) ? "active" : ""}
             >
-              View CV
-            </button>
+              {l.label}
+            </Link>
+          ))}
+        </nav>
 
-            {/* Mobile hamburger */}
-            <button
-              className="md:hidden flex flex-col gap-1.5 p-2"
-              onClick={() => setOpen(!open)}
-              aria-label="Toggle menu"
-            >
-              <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "opacity-0" : ""}`} />
-              <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
-            </button>
-          </div>
+        {/* Right: Kandinsky circles — hidden on mobile */}
+        <div className="bauhaus-nav__right">
+          <svg width="38" height="38" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="40" cy="40" r="36" fill="none" stroke="#1A1A1A" strokeWidth="1.5"/>
+            <circle cx="40" cy="40" r="27" fill="none" stroke="#1A1A1A" strokeWidth="1.5"/>
+            <circle cx="40" cy="40" r="17" fill="#F5C400"/>
+            <circle cx="40" cy="40" r="7"  fill="#1A1A1A"/>
+          </svg>
         </div>
-
-        {/* Mobile menu */}
-        {open && (
-          <div className="md:hidden bg-paper/98 backdrop-blur-md border-t border-ink/8 px-8 py-8 flex flex-col gap-6">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className={`font-grotesk font-medium text-[11px] tracking-[0.35em] uppercase ${
-                  pathname === l.href ? "text-vermillion" : "text-ink/55"
-                }`}
-              >
-                {l.label}
-              </Link>
-            ))}
-            <button
-              onClick={() => { setOpen(false); setCvOpen(true); }}
-              className="mt-2 self-start px-5 py-2.5 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase"
-            >
-              View CV
-            </button>
-          </div>
-        )}
       </header>
 
-      {/* CV Modal */}
-      {cvOpen && <CVModal onClose={() => setCvOpen(false)} />}
+      {/* Mobile drawer — toggled by hamburger hidden on desktop */}
+      {/* Mobile hamburger — shown only on small screens via inline style */}
+      <button
+        aria-label="Toggle menu"
+        onClick={() => setOpen(!open)}
+        style={{
+          display: "none",
+          position: "fixed",
+          top: 0,
+          right: 0,
+          zIndex: 201,
+          height: "var(--nav-h)",
+          width: 56,
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 5,
+        }}
+        className="mobile-menu-btn"
+      >
+        <span style={{ display:"block", width:22, height:1.5, background:"var(--black)", transition:"all 0.2s",
+          transform: open ? "rotate(45deg) translateY(6px)" : "none" }} />
+        <span style={{ display:"block", width:22, height:1.5, background:"var(--black)", transition:"all 0.2s",
+          opacity: open ? 0 : 1 }} />
+        <span style={{ display:"block", width:22, height:1.5, background:"var(--black)", transition:"all 0.2s",
+          transform: open ? "rotate(-45deg) translateY(-6px)" : "none" }} />
+      </button>
+
+      {open && (
+        <div style={{
+          position: "fixed",
+          top: "var(--nav-h)",
+          left: 0,
+          right: 0,
+          zIndex: 199,
+          background: "var(--cream)",
+          borderBottom: "var(--grid-line)",
+          padding: "2rem 1.5rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "1.5rem",
+        }}>
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 13,
+                letterSpacing: "0.25em",
+                textTransform: "uppercase",
+                color: pathname.startsWith(l.href) ? "var(--red)" : "var(--black)",
+                opacity: pathname.startsWith(l.href) ? 1 : 0.6,
+              }}
+            >
+              {l.label}
+            </Link>
+          ))}
+        </div>
+      )}
+
+      <style>{`
+        @media (max-width: 768px) {
+          .mobile-menu-btn { display: flex !important; }
+        }
+      `}</style>
     </>
   );
 }
