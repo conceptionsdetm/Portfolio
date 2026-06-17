@@ -78,13 +78,16 @@ export default function WorkPage() {
             >
               <span className="bauhaus-client-card__num">№ {String(i + 1).padStart(2, "0")}</span>
 
-              <div className="bauhaus-client-card__logo">
+              <div
+                className="bauhaus-client-card__logo"
+                style={{ background: client.logoInitialsBg }}
+              >
                 {client.logo ? (
                   <img
                     src={assetPath(client.logo)}
                     alt={client.name}
                     loading={i < 9 ? "eager" : "lazy"}
-                    style={{ maxHeight: 64, maxWidth: "80%", objectFit: "contain" }}
+                    style={{ maxHeight: 60, maxWidth: "78%", objectFit: "contain" }}
                   />
                 ) : (
                   <div

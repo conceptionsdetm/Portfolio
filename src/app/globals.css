@@ -414,7 +414,9 @@ p, li, td, th {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 1.25rem 0.75rem;
+  margin: 0 -1.25rem;
+  border-bottom: var(--grid-line);
 }
 .bauhaus-client-card__initials {
   width: 56px; height: 56px;
