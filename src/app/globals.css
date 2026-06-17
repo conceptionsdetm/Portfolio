@@ -230,10 +230,10 @@ p, li, td, th {
 /* DADA fragments */
 .dada-stamp {
   position: absolute;
-  border: 2px solid var(--red);
-  padding: 0.35rem 0.75rem;
+  border: 2.5px solid var(--red);
+  padding: 0.45rem 1rem;
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 13px;
   letter-spacing: 0.32em;
   color: var(--red);
   text-transform: uppercase;

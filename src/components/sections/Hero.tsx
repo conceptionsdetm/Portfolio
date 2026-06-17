@@ -33,7 +33,7 @@ export default function Hero() {
         </nav>
 
         {/* DADA fragments — decorative */}
-        <span className="dada-stamp hero__stamp" aria-hidden="true">Portfolio&nbsp;2025</span>
+        <span className="dada-stamp hero__stamp" aria-hidden="true">Portfolio&nbsp;2026</span>
         <span className="dada-arrow hero__scroll" aria-hidden="true">Scroll &#8594;</span>
         <span className="dada-frag hero__frag1" aria-hidden="true">Limassol — Cyprus</span>
         <span className="dada-frag hero__frag2" aria-hidden="true">BA · Frederick University · Sevilla</span>
