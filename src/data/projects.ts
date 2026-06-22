@@ -1,5 +1,4 @@
 export type Category =
-  | "featured"
   | "social-media"
   | "website"
   | "branding"
@@ -37,17 +36,14 @@ export interface Project {
   summary: string;
   description: string;
   deliverables: string[];
-  featured: boolean;
 }
 
 export const projects: Project[] = [
-  // ─── FEATURED ───────────────────────────────────────────────────────────────
-
   {
     slug: "mia-femtech-social",
     title: "MIA FemTech — Social Media Campaign",
     client: "MIA FemTech Cyprus",
-    category: ["featured", "social-media"],
+    category: ["social-media"],
     tags: ["Social Media", "Brand Identity", "Campaign", "Healthcare", "Luxury"],
     year: "2025–2026",
     cover: "/work/mia-femtech/post-01.jpg",
@@ -70,14 +66,13 @@ export const projects: Project[] = [
       "Video social content",
       "Brand tone-of-voice guidelines",
     ],
-    featured: true,
   },
 
   {
     slug: "amsoil-social",
     title: "AMSOIL — Social Media Campaign",
     client: "AMSOIL Cyprus Distributor",
-    category: ["featured", "social-media"],
+    category: ["social-media"],
     tags: ["Social Media", "Automotive", "Campaign", "Product Design", "Performance"],
     year: "2025–2026",
     cover: "/work/amsoil/post-01.jpg",
@@ -101,14 +96,13 @@ export const projects: Project[] = [
       "Story formats and highlights covers",
       "Classic Car Festival 2026 campaign",
     ],
-    featured: true,
   },
 
   {
     slug: "mia-femtech-website",
     title: "MIA FemTech — Website Design",
     client: "MIA FemTech Cyprus",
-    category: ["featured", "website"],
+    category: ["website"],
     tags: ["Web Design", "UI/UX", "Landing Page", "Healthcare", "Mobile-First"],
     year: "2025",
     cover: "/work/mia-femtech/website-cover.jpg",
@@ -134,10 +128,7 @@ export const projects: Project[] = [
       "Component design system",
       "Typography and spacing guidelines",
     ],
-    featured: true,
   },
-
-  // ─── SOCIAL MEDIA ───────────────────────────────────────────────────────────
 
   {
     slug: "fameline-social",
@@ -172,7 +163,6 @@ export const projects: Project[] = [
       "Cultural and seasonal event posts",
       "Internal communications graphics",
     ],
-    featured: false,
   },
 
   // ─── WEBSITE DESIGN ─────────────────────────────────────────────────────────
@@ -206,7 +196,6 @@ export const projects: Project[] = [
       "Mobile phone layout",
       "Brand colour and typography system",
     ],
-    featured: false,
   },
 
   {
@@ -236,7 +225,6 @@ export const projects: Project[] = [
       "Services page (desktop + mobile)",
       "Brand application guidelines",
     ],
-    featured: false,
   },
 
   {
@@ -255,7 +243,6 @@ export const projects: Project[] = [
     description:
       "Designed in conjunction with the Albaflux brand guidelines, this landing page translates the brand system into a digital experience. The design uses the established colour palette and typography to create a cohesive online presence that extends the brand's credibility.",
     deliverables: ["Single-page landing design", "Brand system integration"],
-    featured: false,
   },
 
   // ─── BRANDING & IDENTITY ────────────────────────────────────────────────────
@@ -285,7 +272,6 @@ export const projects: Project[] = [
       "Email signature design",
       "Corporate stationery",
     ],
-    featured: false,
   },
 
   {
@@ -311,7 +297,6 @@ export const projects: Project[] = [
       "Corporate notepad design",
       "Mockup presentations",
     ],
-    featured: false,
   },
 
   // ─── EMAIL CAMPAIGNS ────────────────────────────────────────────────────────
@@ -347,7 +332,6 @@ export const projects: Project[] = [
       "Campaign copywriting and visual direction",
       "Case study creative assets",
     ],
-    featured: false,
   },
 
   // ─── EXHIBITIONS ────────────────────────────────────────────────────────────
@@ -377,7 +361,6 @@ export const projects: Project[] = [
       "After Effects source projects",
       "Exhibition booth branding assets",
     ],
-    featured: false,
   },
 
   // ─── APPAREL & KITS ─────────────────────────────────────────────────────────
@@ -409,7 +392,6 @@ export const projects: Project[] = [
       "Photo-realistic mockup presentations",
       "Print-ready artwork files",
     ],
-    featured: false,
   },
 
   {
@@ -436,7 +418,6 @@ export const projects: Project[] = [
       "Mockup presentations",
       "Print-ready artwork",
     ],
-    featured: false,
   },
 
   {
@@ -461,7 +442,6 @@ export const projects: Project[] = [
       "Full kit mockup presentation",
       "Print-ready artwork files",
     ],
-    featured: false,
   },
 
   {
@@ -485,7 +465,6 @@ export const projects: Project[] = [
       "T-shirt back design (print-ready)",
       "Mockup presentation for approvals",
     ],
-    featured: false,
   },
 
   {
@@ -513,13 +492,11 @@ export const projects: Project[] = [
       "Full kit mockup",
       "Good Luck social media post",
     ],
-    featured: false,
   },
 ];
 
 export const categories = [
   { id: "all",             label: "All Work" },
-  { id: "featured",       label: "Featured" },
   { id: "social-media",   label: "Social Media" },
   { id: "website",        label: "Website Design" },
   { id: "branding",       label: "Brand Identity" },

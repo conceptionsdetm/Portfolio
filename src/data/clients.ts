@@ -232,5 +232,4 @@ export const sectionLabels: Record<string, string> = {
   "print":           "Print & Stationery",
   "exhibition":      "Exhibition Design",
   "motion":          "Motion Graphics",
-  "featured":        "Featured",
 };
