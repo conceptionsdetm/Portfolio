@@ -3,1092 +3,515 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- [REPLACE: page title] -->
-  <title>Timonas Stefanou — Creative Designer</title>
-  <meta name="description" content="[REPLACE: meta description]" />
-
-  <style>
-
-/* ──────────────────────────────────────────────────────
-   GOOGLE FONTS
-   ────────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;700&family=IBM+Plex+Mono:wght@400;700&display=swap');
-
-/* ──────────────────────────────────────────────────────
-   DESIGN TOKENS
-   ────────────────────────────────────────────────────── */
-:root {
-  --cream:  #F5F0E8;
-  --red:    #D62B2B;
-  --blue:   #1A3FA0;
-  --yellow: #F5C400;
-  --black:  #1A1A1A;
-  --white:  #FFFFFF;
-
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-body:    'Space Grotesk', sans-serif;
-  --font-mono:    'IBM Plex Mono', monospace;
-
-  --grid-line: 1.5px solid #1A1A1A;
-  --nav-h: 56px;
-}
-
-/* ──────────────────────────────────────────────────────
-   RESET
-   ────────────────────────────────────────────────────── */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html  { scroll-behavior: smooth; }
-body  {
-  font-family: var(--font-body);
-  background: var(--cream);
-  color: var(--black);
-  overflow-x: hidden;
-}
-a     { text-decoration: none; color: inherit; }
-img   { display: block; max-width: 100%; }
-
-/* ──────────────────────────────────────────────────────
-   NAV
-   ────────────────────────────────────────────────────── */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 200;
-  height: var(--nav-h);
-  display: grid;
-  grid-template-columns: 200px 1fr auto;
-  border-bottom: var(--grid-line);
-  background: var(--cream);
-}
-
-.nav__block {
-  background: var(--red);
-  border-right: var(--grid-line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav__links {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  padding-left: 2.5rem;
-}
-.nav__links a {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  transition: color 0.18s;
-}
-.nav__links a:hover { color: var(--red); }
-
-.nav__right {
-  display: flex;
-  align-items: center;
-  padding: 0 1.5rem;
-  border-left: var(--grid-line);
-}
-
-/* ──────────────────────────────────────────────────────
-   HERO
-   ────────────────────────────────────────────────────── */
-.hero {
-  min-height: 100vh;
-  padding-top: var(--nav-h);
-  display: grid;
-  grid-template-columns: 200px 1fr 260px;
-  grid-template-rows: 200px 1fr;
-  border-bottom: var(--grid-line);
-}
-
-/* ── Hero: top-left colour block ── */
-.hero__tl {
-  grid-column: 1; grid-row: 1;
-  background: var(--red);
-  border-right: var(--grid-line);
-  border-bottom: var(--grid-line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ── Hero: top-centre ── */
-.hero__tc {
-  grid-column: 2; grid-row: 1;
-  border-bottom: var(--grid-line);
-  border-right: var(--grid-line);
-  position: relative;
-  overflow: hidden;
-}
-
-/* ── Hero: top-right with Kandinsky circle ── */
-.hero__tr {
-  grid-column: 3; grid-row: 1;
-  border-bottom: var(--grid-line);
-  display: grid;
-  grid-template-columns: 1fr 60px;
-}
-.hero__kandinsky-cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: var(--grid-line);
-  padding: 1rem;
-}
-.hero__blue-block {
-  background: var(--blue);
-}
-
-/* ── Hero: left manifest column ── */
-.hero__left {
-  grid-column: 1; grid-row: 2;
-  border-right: var(--grid-line);
-  padding: 2.5rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-}
-.hero__manifest-text {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  color: var(--blue);
-  position: relative;
-  z-index: 2;
-}
-.hero__num-label {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.3em;
-  opacity: 0.3;
-  position: relative;
-  z-index: 2;
-}
-.hero__ghost-num {
-  position: absolute;
-  bottom: -0.12em;
-  right: -0.15em;
-  font-family: var(--font-display);
-  font-size: 20rem;
-  line-height: 1;
-  color: var(--black);
-  opacity: 0.04;
-  user-select: none;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* ── Hero: main content centre ── */
-.hero__main {
-  grid-column: 2; grid-row: 2;
-  padding: 3rem 3.5rem 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  border-right: var(--grid-line);
-}
-
-.hero__name {
-  font-family: var(--font-display);
-  font-size: clamp(72px, 8.5vw, 116px);
-  line-height: 0.88;
-  letter-spacing: 0.01em;
-  transform: rotate(-2.5deg);
-  transform-origin: left bottom;
-  color: var(--black);
-  position: relative;
-  z-index: 2;
-  /* overlap the rule */
-  margin-bottom: -0.06em;
-}
-
-.hero__rule {
-  width: 100%;
-  height: 2px;
-  background: var(--black);
-  position: relative;
-  margin: 1.2rem 0 1.4rem;
-  z-index: 1;
-}
-.hero__rule::before,
-.hero__rule::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 8px;
-  height: 8px;
-  background: var(--black);
-  transform: translateY(-50%);
-}
-.hero__rule::before { left: 0; }
-.hero__rule::after  { right: 0; }
-
-.hero__role {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: clamp(10px, 1.1vw, 13px);
-  letter-spacing: 0.55em;
-  text-transform: uppercase;
-  color: var(--black);
-  opacity: 0.55;
-  margin-bottom: 2.8rem;
-}
-
-.hero__nav {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-}
-.hero__nav a {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  opacity: 0.38;
-  transition: opacity 0.18s, color 0.18s;
-}
-.hero__nav a:hover { opacity: 1; color: var(--red); }
-
-/* ── Hero: right lower cell ── */
-.hero__right {
-  grid-column: 3; grid-row: 2;
-}
-
-/* ── DADA fragments ── */
-.dada-stamp {
-  position: absolute;
-  border: 2px solid var(--red);
-  padding: 0.35rem 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.32em;
-  color: var(--red);
-  text-transform: uppercase;
-  user-select: none;
-  pointer-events: none;
-  z-index: 5;
-}
-.dada-arrow {
-  position: absolute;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--black);
-  opacity: 0.28;
-  user-select: none;
-  pointer-events: none;
-  z-index: 5;
-}
-.dada-frag {
-  position: absolute;
-  font-family: var(--font-mono);
-  font-size: 8px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--black);
-  opacity: 0.16;
-  user-select: none;
-  pointer-events: none;
-  z-index: 5;
-}
-
-/* fragment positions */
-.hero__stamp   { bottom: 28%; right: 8%; transform: rotate(10deg); }
-.hero__scroll  { bottom: 10%; left: 4%; transform: rotate(-4deg); }
-.hero__frag1   { top: 18%; left: -1%; transform: rotate(2deg); }
-.hero__frag2   { top: 42%; right: 3%; transform: rotate(-6deg); font-size: 7px; }
-
-/* ──────────────────────────────────────────────────────
-   WORK
-   ────────────────────────────────────────────────────── */
-.work { border-bottom: var(--grid-line); }
-
-/* Section header row */
-.work__header {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  border-bottom: var(--grid-line);
-  height: 72px;
-}
-.work__header-num {
-  border-right: var(--grid-line);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 1.5rem;
-}
-.work__ghost-num {
-  font-family: var(--font-display);
-  font-size: 5.5rem;
-  line-height: 1;
-  opacity: 0.07;
-  user-select: none;
-}
-.work__header-label {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 0 2.5rem;
-}
-.work__label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  opacity: 0.38;
-  white-space: nowrap;
-}
-.work__rule { flex: 1; height: 1px; background: var(--black); opacity: 0.15; }
-
-/* Project grid */
-.work__grid {
-  display: grid;
-  grid-template-columns: 200px repeat(3, 1fr);
-}
-
-.work__sidebar {
-  border-right: var(--grid-line);
-  position: relative;
-  min-height: 220px;
-}
-.work__sidebar + .work__sidebar {
-  border-top: var(--grid-line);
-}
-.work__sidebar-label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%) rotate(180deg);
-  writing-mode: vertical-rl;
-  font-family: var(--font-mono);
-  font-size: 8px;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-  opacity: 0.25;
-  white-space: nowrap;
-}
-
-/* Project card base */
-.project {
-  border-right: var(--grid-line);
-  border-bottom: var(--grid-line);
-  padding: 1.8rem 2rem;
-  min-height: 220px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-.project:last-child { border-right: none; }
-
-/* row 2 — remove redundant bottom border on last row */
-.work__grid > .project:nth-child(n+6) { border-bottom: none; }
-
-/* Colour variants */
-.project--cream  { background: var(--cream); }
-.project--red    { background: var(--red);    color: var(--white); }
-.project--blue   { background: var(--blue);   color: var(--white); }
-.project--yellow { background: var(--yellow); color: var(--black); }
-.project--black  { background: var(--black);  color: var(--white); }
-
-/* Diagonal scratch line overlay on one card */
-.project--scratch::after {
-  content: '';
-  position: absolute;
-  width: 160%;
-  height: 1.5px;
-  background: currentColor;
-  opacity: 0.18;
-  top: 62%;
-  left: -30%;
-  transform: rotate(-11deg);
-  pointer-events: none;
-}
-
-/* Vertical label card */
-.project--vert {
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.project__title--vert {
-  writing-mode: vertical-lr;
-  font-size: 3.2rem;
-  letter-spacing: 0.04em;
-  margin-top: 0.5rem;
-}
-
-/* Card typography */
-.project__num {
-  font-family: var(--font-mono);
-  font-size: 8px;
-  letter-spacing: 0.3em;
-  opacity: 0.4;
-  margin-bottom: auto;
-}
-.project__body { margin-top: auto; }
-.project__title {
-  font-family: var(--font-display);
-  font-size: 2.1rem;
-  line-height: 1;
-  text-transform: uppercase;
-}
-.project__client {
-  font-family: var(--font-mono);
-  font-size: 8px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  opacity: 0.5;
-  margin-top: 0.45rem;
-}
-.project__type {
-  font-family: var(--font-mono);
-  font-size: 7px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.32;
-  margin-top: 0.2rem;
-}
-.project__ghost {
-  position: absolute;
-  bottom: -0.08em;
-  right: -0.08em;
-  font-family: var(--font-display);
-  font-size: 11rem;
-  line-height: 1;
-  opacity: 0.06;
-  user-select: none;
-  pointer-events: none;
-}
-
-/* ──────────────────────────────────────────────────────
-   ABOUT
-   ────────────────────────────────────────────────────── */
-.about {
-  display: grid;
-  grid-template-columns: 200px 1fr 260px;
-  border-bottom: var(--grid-line);
-}
-
-.about__left {
-  border-right: var(--grid-line);
-  background: var(--red);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3.5rem 1.5rem;
-}
-
-.about__center {
-  padding: 4rem 3.5rem;
-  position: relative;
-}
-
-.about__section-id {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-  opacity: 0.3;
-  display: block;
-  margin-bottom: 2rem;
-}
-
-.about__heading {
-  font-family: var(--font-display);
-  font-size: clamp(3.2rem, 5.5vw, 5.5rem);
-  line-height: 0.92;
-  transform: rotate(-1.2deg);
-  transform-origin: left center;
-  display: inline-block;
-  margin-bottom: 0;
-}
-
-.about__divider {
-  width: 100%;
-  height: 1.5px;
-  background: var(--black);
-  margin: 2rem 0;
-}
-
-.about__text {
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.75;
-  opacity: 0.72;
-  max-width: 540px;
-  /* [REPLACE: bio paragraph] */
-}
-
-.about__stamp {
-  margin-top: 2.5rem;
-  display: inline-block;
-  border: 1.5px solid var(--black);
-  padding: 0.4rem 0.85rem;
-  font-family: var(--font-mono);
-  font-size: 8px;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  transform: rotate(-1.8deg);
-  opacity: 0.38;
-}
-
-.about__right {
-  border-left: var(--grid-line);
-  padding: 3.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.about__stat { display: flex; flex-direction: column; gap: 0.2rem; }
-.about__stat-label {
-  font-family: var(--font-mono);
-  font-size: 8px;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  opacity: 0.3;
-}
-.about__stat-value {
-  font-family: var(--font-display);
-  font-size: 2.6rem;
-  line-height: 1;
-}
-.about__stat-desc {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  opacity: 0.45;
-}
-
-/* ──────────────────────────────────────────────────────
-   FOOTER / CONTACT
-   ────────────────────────────────────────────────────── */
-.footer {
-  background: var(--black);
-  display: grid;
-  grid-template-columns: 200px 1fr auto;
-  align-items: start;
-  padding: 1.8rem 0;
-}
-
-.footer__accent {
-  height: 100%;
-  border-right: 1.5px solid rgba(255,255,255,0.07);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 0.2rem;
-}
-.footer__accent-sq {
-  width: 10px;
-  height: 10px;
-  background: var(--yellow);
-}
-
-.footer__center {
-  padding: 0 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-.footer__name {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.82);
-}
-.footer__location {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.28);
-}
-
-/* Contact links row */
-.footer__links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0;
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255,255,255,0.07);
-}
-.footer__link {
-  font-family: var(--font-mono);
-  font-size: 8px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  white-space: nowrap;
-  transition: color 0.18s;
-}
-.footer__link:hover { color: var(--yellow); }
-.footer__sep {
-  font-family: var(--font-mono);
-  font-size: 8px;
-  color: rgba(255,255,255,0.1);
-  padding: 0 0.6rem;
-  user-select: none;
-}
-
-.footer__year {
-  padding: 0.2rem 2.5rem 0;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.3em;
-  color: rgba(255,255,255,0.22);
-  white-space: nowrap;
-}
-
-/* ──────────────────────────────────────────────────────
-   SCROLL REVEAL
-   ────────────────────────────────────────────────────── */
-.section {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ──────────────────────────────────────────────────────
-   RESPONSIVE — 768px breakpoint
-   ────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
-
-  /* Nav */
-  .nav { grid-template-columns: 60px 1fr; }
-  .nav__right { display: none; }
-  .nav__links { gap: 1.5rem; padding-left: 1.5rem; }
-
-  /* Hero */
-  .hero {
-    grid-template-columns: 60px 1fr;
-    grid-template-rows: 100px auto;
-  }
-  .hero__tl  { grid-column: 1; grid-row: 1; }
-  .hero__tc  { grid-column: 2; grid-row: 1; }
-  .hero__tr  { display: none; }
-  .hero__left { grid-column: 1; grid-row: 2; padding: 1.5rem 0.75rem; }
-  .hero__ghost-num { font-size: 8rem; }
-  .hero__main { grid-column: 2; grid-row: 2; padding: 2rem 1.5rem 3rem; border-right: none; }
-  .hero__right { display: none; }
-  .hero__name { font-size: clamp(52px, 14vw, 72px); }
-  .hero__role { letter-spacing: 0.3em; margin-bottom: 2rem; }
-  .hero__stamp { bottom: 20%; right: 4%; }
-  .hero__frag2 { display: none; }
-
-  /* Work */
-  .work__header { grid-template-columns: 60px 1fr; }
-  .work__grid   { grid-template-columns: 1fr 1fr; }
-  .work__sidebar { display: none; }
-  .project { min-height: 160px; }
-  .project__ghost { font-size: 6rem; }
-
-  /* About */
-  .about { grid-template-columns: 1fr; }
-  .about__left { min-height: 100px; padding: 2rem; }
-  .about__center { padding: 2.5rem 1.5rem; }
-  .about__right {
-    border-left: none;
-    border-top: var(--grid-line);
-    padding: 2rem 1.5rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  .about__stat { flex: 1; min-width: 120px; }
-
-  /* Footer */
-  .footer { grid-template-columns: 1fr auto; padding: 1.5rem 0; }
-  .footer__accent { display: none; }
-  .footer__center { padding: 0 1.5rem; }
-  .footer__year   { padding: 0 1.5rem; align-self: flex-start; }
-  .footer__links  { gap: 0; }
-  .footer__sep    { padding: 0 0.4rem; }
-}
-
-  </style>
+  <meta name="description" content="Timonas Stefanou — Graphic Designer & Creative Director. Cyprus. Visual identity, editorial, motion." />
+  <title>Timonas Stefanou — Graphic Designer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════════
-     NAV
-     ══════════════════════════════════════════════════════ -->
-<header class="nav">
+  <!-- CURSOR: red dot that follows mouse -->
+  <div class="cursor" aria-hidden="true"></div>
 
-  <!-- [REPLACE: nav accent block colour — currently red] -->
-  <div class="nav__block">
-    <!-- Bauhaus 8-point asterisk in yellow on red -->
-    <svg width="36" height="36" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="27" y="3"  width="6" height="54" fill="#F5C400"/>
-      <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(45 30 30)"/>
-      <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(90 30 30)"/>
-      <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(135 30 30)"/>
-    </svg>
-  </div>
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════════════ -->
+  <header class="nav" id="top">
+    <a href="#hero" class="nav-logo" aria-label="Timonas Stefanou — home">T·S</a>
 
-  <!-- [REPLACE: nav links] -->
-  <nav class="nav__links" aria-label="Primary navigation">
-    <a href="#work">Work</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <!-- Kandinsky concentric circles — nav size -->
-  <div class="nav__right">
-    <svg width="40" height="40" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="40" cy="40" r="36" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
-      <circle cx="40" cy="40" r="27" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
-      <circle cx="40" cy="40" r="17" fill="#F5C400"/>
-      <circle cx="40" cy="40" r="7"  fill="#1A1A1A"/>
-    </svg>
-  </div>
-
-</header>
-
-
-<!-- ══════════════════════════════════════════════════════
-     HERO
-     ══════════════════════════════════════════════════════ -->
-<section class="hero section" id="hero" aria-label="Introduction">
-
-  <!-- Top-left: primary colour block -->
-  <!-- [REPLACE: block colour — could be red, blue, or yellow] -->
-  <div class="hero__tl">
-    <svg width="68" height="68" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="36" y="4" width="8" height="72" fill="#F5C400"/>
-      <rect x="36" y="4" width="8" height="72" fill="#F5C400" transform="rotate(45 40 40)"/>
-      <rect x="36" y="4" width="8" height="72" fill="#F5C400" transform="rotate(90 40 40)"/>
-      <rect x="36" y="4" width="8" height="72" fill="#F5C400" transform="rotate(135 40 40)"/>
-    </svg>
-  </div>
-
-  <!-- Top-centre: empty structural cell -->
-  <div class="hero__tc" aria-hidden="true"></div>
-
-  <!-- Top-right: Kandinsky circle + blue block -->
-  <div class="hero__tr">
-    <div class="hero__kandinsky-cell">
-      <!-- Kandinsky concentric circles — hero size -->
-      <svg width="140" height="140" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="80" cy="80" r="74" fill="none" stroke="#1A1A1A" stroke-width="2"/>
-        <circle cx="80" cy="80" r="57" fill="none" stroke="#1A1A1A" stroke-width="2"/>
-        <circle cx="80" cy="80" r="38" fill="#F5C400"/>
-        <circle cx="80" cy="80" r="17" fill="#1A1A1A"/>
-      </svg>
-    </div>
-    <!-- [REPLACE: right-block colour — currently blue] -->
-    <div class="hero__blue-block" aria-hidden="true"></div>
-  </div>
-
-  <!-- Left manifest column -->
-  <div class="hero__left" aria-hidden="true">
-    <!-- [REPLACE: vertical label — studio name, year, or manifesto word] -->
-    <span class="hero__manifest-text">Manifest</span>
-    <div>
-      <span class="hero__ghost-num">01</span>
-      <!-- [REPLACE: numbered label] -->
-      <p class="hero__num-label">№ 001</p>
-    </div>
-  </div>
-
-  <!-- Main hero content -->
-  <div class="hero__main">
-
-    <!-- [REPLACE: owner full name — displayed in Bebas Neue at large scale] -->
-    <h1 class="hero__name" aria-label="Timonas Stefanou">
-      Timonas<br>Stefanou
-    </h1>
-
-    <div class="hero__rule" aria-hidden="true"></div>
-
-    <!-- [REPLACE: role / discipline tagline] -->
-    <p class="hero__role">Creative &nbsp;·&nbsp; Brand &nbsp;·&nbsp; Digital</p>
-
-    <!-- Inline nav (secondary — visible in hero) -->
-    <nav class="hero__nav" aria-label="Section links">
-      <!-- [REPLACE: links] -->
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+    <nav class="nav-links" aria-label="Main navigation" id="navLinks">
+      <a href="#about"   class="nav-link">About</a>
+      <a href="#work"    class="nav-link">Work</a>
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
-    <!-- DADA fragments — purely decorative, hidden from screen readers -->
-    <!-- [REPLACE: stamp text] -->
-    <span class="dada-stamp hero__stamp" aria-hidden="true">Portfolio&nbsp;2025</span>
-    <!-- [REPLACE: directional label] -->
-    <span class="dada-arrow hero__scroll" aria-hidden="true">Scroll &#8594;</span>
-    <!-- [REPLACE: found-text fragment 1 — location, studio] -->
-    <span class="dada-frag hero__frag1" aria-hidden="true">Limassol — Cyprus</span>
-    <!-- [REPLACE: found-text fragment 2] -->
-    <span class="dada-frag hero__frag2" aria-hidden="true">BA · Frederick University · Sevilla</span>
+    <a href="#contact" class="nav-cta" aria-label="Hire me">Hire Me</a>
 
-  </div>
+    <!-- Mobile hamburger — shown on screens < 640px -->
+    <button class="nav-toggle" id="navToggle"
+            aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-  <!-- Right lower cell — empty structural block -->
-  <div class="hero__right" aria-hidden="true"></div>
+  <!-- ═══════════════════════════════════════════════════════
+       HERO SECTION
+       "I DESIGN AGAINST THE STRAIGHT LINE"
+       AESTHETIC RISK: the headline breaks across 3 lines
+       at different sizes and alignments — disorienting
+       for 1 second, then suddenly legible.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero" aria-label="Introduction">
 
-</section>
-
-
-<!-- ══════════════════════════════════════════════════════
-     WORK / PROJECTS
-     ══════════════════════════════════════════════════════ -->
-<section class="work section" id="work" aria-label="Selected work">
-
-  <!-- Section header -->
-  <div class="work__header" aria-hidden="true">
-    <div class="work__header-num">
-      <span class="work__ghost-num">02</span>
-    </div>
-    <div class="work__header-label">
-      <span class="work__label">Selected Work</span>
-      <div class="work__rule"></div>
-    </div>
-  </div>
-
-  <!-- Project grid -->
-  <div class="work__grid">
-
-    <!-- Sidebar — row 1 -->
-    <div class="work__sidebar" aria-hidden="true">
-      <span class="work__sidebar-label">Brand &amp; Digital</span>
+    <!-- Floating paper scraps and stamps (hidden on mobile) -->
+    <div class="hero-scrap-1 reveal" aria-hidden="true">
+      chaos<br />as method<br />since 1916<br />———<br />cyprus, 2026
     </div>
 
-    <!-- [REPLACE: Project 01] -->
-    <article class="project project--red">
-      <span class="project__num">№ 01</span>
-      <div class="project__body">
-        <!-- [REPLACE: project title] -->
-        <h3 class="project__title">Social Campaign</h3>
-        <!-- [REPLACE: client name] -->
-        <p class="project__client">MIA FemTech Cyprus</p>
-        <!-- [REPLACE: category/discipline] -->
-        <p class="project__type">Social Media · Healthcare</p>
+    <div class="hero-scrap-2" aria-hidden="true">
+      <span class="stamp large" style="transform:rotate(-6deg)">No. 2026</span>
+    </div>
+
+    <div class="hero-scrap-3" aria-hidden="true">
+      — graphic agitator
+    </div>
+
+    <div class="hero-stamp-1" aria-hidden="true">
+      <span class="stamp circle" style="--stamp-delay:0.2s">CYPRUS<br />2026</span>
+    </div>
+
+    <div class="hero-stamp-2" aria-hidden="true">
+      <span class="stamp" style="transform:rotate(8deg);--stamp-delay:0.4s">
+        APPROVED<br />FOR DISORDER
+      </span>
+    </div>
+
+    <div class="hero-arrow" aria-hidden="true">↙</div>
+
+    <div class="hero-ref" aria-hidden="true">
+      REF / TS-001 / CLASS: DESIGNER
+    </div>
+
+    <div class="hero-inner wrap">
+      <div class="hero-headline">
+        <span class="hero-line-1 glitch-text" data-text="I DESIGN">I DESIGN</span>
+        <span class="hero-line-2">AGAINST THE</span>
+        <span class="hero-line-3">STRAIGHT LINE</span>
       </div>
-      <span class="project__ghost" aria-hidden="true">I</span>
-    </article>
 
-    <!-- [REPLACE: Project 02 — vertical label card] -->
-    <article class="project project--yellow project--vert">
-      <span class="project__num">№ 02</span>
-      <!-- [REPLACE: short rotated label — category or keyword] -->
-      <h3 class="project__title project__title--vert">Digital</h3>
-    </article>
-
-    <!-- [REPLACE: Project 03 — diagonal scratch] -->
-    <article class="project project--cream project--scratch">
-      <span class="project__num">№ 03</span>
-      <div class="project__body">
-        <!-- [REPLACE: project title] -->
-        <h3 class="project__title">Exhibition</h3>
-        <!-- [REPLACE: client name] -->
-        <p class="project__client">BWSS · Posidonia</p>
-        <!-- [REPLACE: category] -->
-        <p class="project__type">Exhibition · Motion</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn-stamp primary">Enter the Collage</a>
+        <a href="#work" class="btn-stamp red">See the Work</a>
       </div>
-    </article>
-
-    <!-- Sidebar — row 2 -->
-    <div class="work__sidebar" style="border-top: var(--grid-line);" aria-hidden="true">
-      <span class="work__sidebar-label">Identity &amp; Print</span>
     </div>
 
-    <!-- [REPLACE: Project 04] -->
-    <article class="project project--cream" style="border-top: var(--grid-line);">
-      <span class="project__num">№ 04</span>
-      <div class="project__body">
-        <!-- [REPLACE: project title] -->
-        <h3 class="project__title">Brand Identity</h3>
-        <!-- [REPLACE: client name] -->
-        <p class="project__client">Albaflux</p>
-        <!-- [REPLACE: category] -->
-        <p class="project__type">Branding · Maritime</p>
+    <!-- Scroll indicator -->
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ABOUT — Manifesto newspaper article
+  ═══════════════════════════════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="wrap">
+
+      <!-- Newspaper masthead -->
+      <div class="about-masthead reveal">
+        <h2 class="about-title">MANIFESTO<br />No. 01</h2>
+        <div class="about-dateline">
+          THE TIMONAS STEFANOU DISPATCH<br />
+          LIMASSOL · NICOSIA · EVERYWHERE<br />
+          VOL. VI · ISSUE 001 · 2026<br />
+          ——————————————<br />
+          FILE: TS-MANIFESTO-001<br />
+          CLEARANCE: OPEN
+        </div>
       </div>
-      <span class="project__ghost" aria-hidden="true">A</span>
-    </article>
 
-    <!-- [REPLACE: Project 05] -->
-    <article class="project project--blue" style="border-top: var(--grid-line);">
-      <span class="project__num">№ 05</span>
-      <div class="project__body">
-        <!-- [REPLACE: project title] -->
-        <h3 class="project__title">Website Design</h3>
-        <!-- [REPLACE: client name] -->
-        <p class="project__client">NorthTide Cargo</p>
-        <!-- [REPLACE: category] -->
-        <p class="project__type">Digital · Logistics</p>
+      <div class="about-inner">
+
+        <!-- Left column -->
+        <div class="about-col reveal r1">
+          <p>
+            <span class="about-drop-cap">I</span>
+            am a graphic designer and creative director based in Cyprus.
+            For six years I have been building visual identities for the companies
+            that <span class="redacted">refuse</span> to look like their competitors.
+          </p>
+          <p>
+            My clients operate in maritime logistics, defence, healthcare,
+            and fast-moving consumer markets. What they share is a demand
+            for design that holds up under scrutiny — not just admiration.
+          </p>
+          <p>
+            <!-- REPLACE THIS TEXT WITH YOUR BIO -->
+            [WRITE YOUR BIO HERE — who you are, where you trained,
+            what kinds of clients you work with, what you care about
+            in design. Keep it direct. Avoid adjectives that don't earn their place.]
+          </p>
+          <p>
+            Before a design leaves my desk, it has been tested against
+            one question: does this make the right thing <em>easier</em>?
+            I am not interested in decoration. I am interested in
+            <span class="redacted">clarity</span>,
+            confidence, and the kind of work people keep for decades.
+          </p>
+        </div>
+
+        <!-- Right column -->
+        <div class="about-col about-col-2 reveal r2">
+
+          <!-- Stamp overlaid on content -->
+          <div class="about-stamp-area" aria-hidden="true">
+            <span class="stamp large" style="transform:rotate(-10deg);--stamp-delay:0.5s">
+              VERIFIED
+            </span>
+          </div>
+
+          <p>
+            <!-- REPLACE THIS WITH YOUR APPROACH / PHILOSOPHY -->
+            [WRITE YOUR DESIGN PHILOSOPHY HERE — how you approach
+            briefs, what process you follow, what you believe makes
+            design work. This is the place to be opinionated.]
+          </p>
+          <p>
+            <!-- ADD SPECIFIC INDUSTRIES OR CLIENTS HERE -->
+            [NOTE: You can mention client names, awards, exhibitions,
+            or publications here once you have them to share.]
+          </p>
+
+          <div class="file-ref" aria-hidden="true">
+            FILE NO. TS-001 — DESIGNER<br />
+            DOB: LIMASSOL, CYPRUS<br />
+            LANGUAGES: GR / EN<br />
+            STATUS: AVAILABLE — <span style="color:var(--accent)">OPEN FOR WORK</span>
+          </div>
+        </div>
+
+      </div><!-- /about-inner -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SKILLS — scattered paper scraps
+  ═══════════════════════════════════════════════════════ -->
+  <section class="skills section" id="skills">
+    <div class="wrap">
+      <div class="section-label reveal">Disciplines</div>
+
+      <!-- Skill scraps — JS applies random rotations on load.
+           To add a skill: copy one <span class="skill-scrap"> element.
+           Change the text. The rotation is applied automatically. -->
+      <div class="skills-heap" role="list" aria-label="Skills and disciplines">
+        <span class="skill-scrap accent wobble" role="listitem">Brand Identity</span>
+        <span class="skill-scrap wobble"        role="listitem">Typography</span>
+        <span class="skill-scrap dark wobble"   role="listitem">Editorial Design</span>
+        <span class="skill-scrap wobble"        role="listitem">Motion Graphics</span>
+        <span class="skill-scrap accent wobble" role="listitem">Art Direction</span>
+        <span class="skill-scrap wobble"        role="listitem">UI Design</span>
+        <span class="skill-scrap dark wobble"   role="listitem">Illustration</span>
+        <span class="skill-scrap wobble"        role="listitem">Print &amp; Stationery</span>
+        <span class="skill-scrap accent wobble" role="listitem">Social Media</span>
+        <span class="skill-scrap wobble"        role="listitem">Exhibition Design</span>
+        <span class="skill-scrap dark wobble"   role="listitem">Apparel</span>
+        <span class="skill-scrap wobble"        role="listitem">Web Design</span>
+        <span class="skill-scrap wobble"        role="listitem">Creative Strategy</span>
+        <!-- ADD MORE SKILLS HERE: copy one <span class="skill-scrap"> line -->
       </div>
-    </article>
+    </div>
+  </section>
 
-    <!-- [REPLACE: Project 06] -->
-    <article class="project project--black" style="border-top: var(--grid-line);">
-      <span class="project__num">№ 06</span>
-      <div class="project__body">
-        <!-- [REPLACE: project title] -->
-        <h3 class="project__title">Apparel &amp; Kits</h3>
-        <!-- [REPLACE: client name] -->
-        <p class="project__client">SinoMed · LubeDesk</p>
-        <!-- [REPLACE: category] -->
-        <p class="project__type">Apparel · Corporate</p>
+  <!-- ═══════════════════════════════════════════════════════
+       WORK — Project Grid
+       ────────────────────────────────────────────────────
+       HOW TO ADD A NEW PROJECT:
+       1. Copy ONE complete project-card block below
+       2. Update data-project="05" (next number)
+       3. Update href to "projects/project-05.html"
+       4. Update title, category, description
+       5. Duplicate one project page in /projects/ folder
+       6. Rename it project-05.html
+       7. Update that file's content
+       ────────────────────────────────────────────────────
+  ═══════════════════════════════════════════════════════ -->
+  <section class="work section" id="work">
+    <div class="wrap">
+      <div class="work-header">
+        <div>
+          <div class="section-label">Selected Work</div>
+          <h2 class="work-title reveal">THE<br />PROJECTS</h2>
+        </div>
+        <span class="stamp" style="transform:rotate(-4deg)" aria-hidden="true">
+          OPEN<br />FOR INSPECTION
+        </span>
       </div>
-    </article>
 
-  </div>
-</section>
+      <div class="projects-grid">
 
+        <!-- ─── PROJECT CARD 01 ───────────────────────────── -->
+        <!-- To duplicate: copy this entire block, change data-project,
+             href, title, category, description, and card-visual gradient -->
+        <article class="project-card reveal" data-project="01">
+          <a href="projects/project-01.html" class="card-link-wrap"
+             style="display:contents" aria-label="Open project: Blank Poster Study">
+            <div class="card-visual">
+              <span class="card-num" aria-hidden="true">01</span>
+              <span class="card-cat-stamp">Poster / Print</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">Poster Design · Print</span>
+              <h3 class="card-title">Blank Poster Study</h3>
+              <div class="card-rule"></div>
+              <p class="card-desc">
+                <!-- REPLACE: short 1–2 sentence project description -->
+                [ADD PROJECT DESCRIPTION — what was the brief,
+                who was it for, what makes it interesting?]
+              </p>
+              <div class="card-rule"></div>
+              <span class="card-link">Open File</span>
+            </div>
+          </a>
+        </article>
+        <!-- ─── END PROJECT CARD 01 ──────────────────────── -->
 
-<!-- ══════════════════════════════════════════════════════
-     ABOUT
-     ══════════════════════════════════════════════════════ -->
-<section class="about section" id="about" aria-label="About">
+        <!-- ─── PROJECT CARD 02 ───────────────────────────── -->
+        <article class="project-card reveal r1" data-project="02">
+          <a href="projects/project-02.html" class="card-link-wrap"
+             style="display:contents" aria-label="Open project: Untitled Identity System">
+            <div class="card-visual">
+              <span class="card-num" aria-hidden="true">02</span>
+              <span class="card-cat-stamp">Identity</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">Brand Identity · System</span>
+              <h3 class="card-title">Untitled Identity System</h3>
+              <div class="card-rule"></div>
+              <p class="card-desc">
+                <!-- REPLACE: short 1–2 sentence project description -->
+                [ADD PROJECT DESCRIPTION — what was the brief,
+                who was it for, what makes it interesting?]
+              </p>
+              <div class="card-rule"></div>
+              <span class="card-link">Open File</span>
+            </div>
+          </a>
+        </article>
+        <!-- ─── END PROJECT CARD 02 ──────────────────────── -->
 
-  <!-- Left: Bauhaus geometric shape on colour block -->
-  <!-- [REPLACE: block colour] -->
-  <div class="about__left">
-    <!-- Kandinsky target — yellow circle with black bull's-eye (SVG, no border-radius) -->
-    <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="60" cy="60" r="56" fill="#F5C400"/>
-      <circle cx="60" cy="60" r="36" fill="#D62B2B"/>
-      <circle cx="60" cy="60" r="18" fill="#1A1A1A"/>
-    </svg>
-  </div>
+        <!-- ─── PROJECT CARD 03 ───────────────────────────── -->
+        <article class="project-card reveal" data-project="03">
+          <a href="projects/project-03.html" class="card-link-wrap"
+             style="display:contents" aria-label="Open project: Editorial Experiment">
+            <div class="card-visual">
+              <span class="card-num" aria-hidden="true">03</span>
+              <span class="card-cat-stamp">Editorial</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">Editorial Design</span>
+              <h3 class="card-title">Editorial Experiment</h3>
+              <div class="card-rule"></div>
+              <p class="card-desc">
+                <!-- REPLACE: short 1–2 sentence project description -->
+                [ADD PROJECT DESCRIPTION — what was the brief,
+                who was it for, what makes it interesting?]
+              </p>
+              <div class="card-rule"></div>
+              <span class="card-link">Open File</span>
+            </div>
+          </a>
+        </article>
+        <!-- ─── END PROJECT CARD 03 ──────────────────────── -->
 
-  <!-- Center: text content -->
-  <div class="about__center">
-    <!-- [REPLACE: section identifier] -->
-    <span class="about__section-id">03 — About</span>
+        <!-- ─── PROJECT CARD 04 ───────────────────────────── -->
+        <article class="project-card reveal r1" data-project="04">
+          <a href="projects/project-04.html" class="card-link-wrap"
+             style="display:contents" aria-label="Open project: Motion Collage Test">
+            <div class="card-visual">
+              <span class="card-num" aria-hidden="true">04</span>
+              <span class="card-cat-stamp">Motion</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">Motion Graphics</span>
+              <h3 class="card-title">Motion Collage Test</h3>
+              <div class="card-rule"></div>
+              <p class="card-desc">
+                <!-- REPLACE: short 1–2 sentence project description -->
+                [ADD PROJECT DESCRIPTION — what was the brief,
+                who was it for, what makes it interesting?]
+              </p>
+              <div class="card-rule"></div>
+              <span class="card-link">Open File</span>
+            </div>
+          </a>
+        </article>
+        <!-- ─── END PROJECT CARD 04 ──────────────────────── -->
 
-    <!-- [REPLACE: section heading] -->
-    <h2 class="about__heading">About<br>the Work</h2>
-
-    <div class="about__divider"></div>
-
-    <!-- [REPLACE: bio paragraph — 2–4 sentences] -->
-    <p class="about__text">
-      A graphic designer from Limassol, Cyprus with a BA in Graphic &amp; Advertising
-      Design from Frederick University and an Erasmus+ exchange at Escuela de Arte,
-      Sevilla. Specialising in brand identity, social media campaigns, and website design
-      for clients across maritime, healthcare, defence, and corporate sectors.
-    </p>
-
-    <!-- [REPLACE: location / studio DADA stamp] -->
-    <span class="about__stamp" aria-hidden="true">Limassol, Cyprus — 2025</span>
-  </div>
-
-  <!-- Right: stats / credentials column -->
-  <div class="about__right">
-    <!-- [REPLACE: stat 01] -->
-    <div class="about__stat">
-      <p class="about__stat-label">Discipline</p>
-      <p class="about__stat-value">Brand</p>
-      <p class="about__stat-desc">Identity · Social · Digital</p>
+      </div><!-- /projects-grid -->
     </div>
-    <!-- [REPLACE: stat 02] -->
-    <div class="about__stat">
-      <p class="about__stat-label">Based in</p>
-      <p class="about__stat-value">CY</p>
-      <p class="about__stat-desc">Limassol, Cyprus</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PROCESS — fragmented diagram
+  ═══════════════════════════════════════════════════════ -->
+  <section class="process section" id="process">
+    <div class="wrap">
+      <div class="section-label reveal">Method</div>
+      <h2 class="process-label reveal">HOW THE<br />PAPER MOVES</h2>
+
+      <div class="steps">
+
+        <div class="step reveal">
+          <div class="step-num" aria-hidden="true">01</div>
+          <div class="step-body">
+            <h3 class="step-name">Collect</h3>
+            <p class="step-desc">
+              Research, gather fragments. Absorb the industry,
+              the competitors, the people who will live inside this design.
+            </p>
+          </div>
+          <span class="step-arrow" aria-hidden="true">→</span>
+        </div>
+
+        <div class="step reveal r1">
+          <div class="step-num" aria-hidden="true">02</div>
+          <div class="step-body">
+            <h3 class="step-name">Cut</h3>
+            <p class="step-desc">
+              Reject the clichés. Find what is actually true about
+              this brand and sever the rest.
+            </p>
+          </div>
+          <span class="step-arrow" aria-hidden="true">→</span>
+        </div>
+
+        <div class="step reveal r2">
+          <div class="step-num" aria-hidden="true">03</div>
+          <div class="step-body">
+            <h3 class="step-name">Arrange</h3>
+            <p class="step-desc">
+              Try every composition. Colour, type, form — move
+              until the system feels inevitable.
+            </p>
+          </div>
+          <span class="step-arrow" aria-hidden="true">→</span>
+        </div>
+
+        <div class="step reveal r1">
+          <div class="step-num" aria-hidden="true">04</div>
+          <div class="step-body">
+            <h3 class="step-name">Distort</h3>
+            <p class="step-desc">
+              Push one element past comfortable. That tension
+              is what makes the work remembered.
+            </p>
+          </div>
+          <span class="step-arrow" aria-hidden="true">→</span>
+        </div>
+
+        <div class="step reveal r2">
+          <div class="step-num" aria-hidden="true">05</div>
+          <div class="step-body">
+            <h3 class="step-name">Publish</h3>
+            <p class="step-desc">
+              Ship it — print, screen, fabric, wall. The work
+              is not done until someone encounters it.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /steps -->
     </div>
-    <!-- [REPLACE: stat 03] -->
-    <div class="about__stat">
-      <p class="about__stat-label">Education</p>
-      <p class="about__stat-value">BA</p>
-      <p class="about__stat-desc">Frederick Univ. + Sevilla</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTACT — classified ad / telegram
+  ═══════════════════════════════════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="wrap">
+
+      <div class="contact-header reveal">
+        <p class="contact-classified">Classified Transmission — Eyes Only</p>
+        <h2 class="contact-title">OPEN<br />CHANNEL</h2>
+        <div class="contact-urgent" aria-hidden="true">
+          <span class="stamp large" style="--stamp-delay:0.3s">URGENT</span>
+        </div>
+      </div>
+
+      <div class="contact-inner">
+
+        <!-- Contact information -->
+        <div class="contact-info-block reveal r1" aria-label="Contact details">
+          <strong>// TRANSMISSION ADDRESS</strong><br />
+          <!-- REPLACE WITH YOUR EMAIL -->
+          <a href="mailto:t.stefanou@fameline.com.cy">t.stefanou@fameline.com.cy</a><br />
+          <br />
+          <strong>// LOCATION</strong><br />
+          Limassol / Nicosia, Cyprus<br />
+          Available for remote projects worldwide<br />
+          <br />
+          <strong>// CHANNELS</strong><br />
+          <!-- REPLACE THESE LINKS WITH YOUR ACTUAL PROFILES -->
+          <a href="#" aria-label="Behance profile">Behance</a>&nbsp;&nbsp;
+          <a href="#" aria-label="Dribbble profile">Dribbble</a>&nbsp;&nbsp;
+          <a href="#" aria-label="LinkedIn profile">LinkedIn</a>&nbsp;&nbsp;
+          <a href="#" aria-label="Instagram profile">Instagram</a><br />
+          <br />
+          <strong>// STATUS</strong><br />
+          <span style="color:var(--accent)">OPEN FOR PROJECTS · 2026</span><br />
+          Brand identity, web design, editorial,<br />
+          social media, creative direction.
+        </div>
+
+        <!-- Contact form -->
+        <form class="contact-form reveal r2" id="contact-form" novalidate
+              aria-label="Contact form">
+          <div class="field">
+            <label class="field-label" for="c-name">Your Name</label>
+            <input class="field-input" type="text" id="c-name" name="name"
+                   placeholder="Alex Papadopoulos" required />
+          </div>
+          <div class="field">
+            <label class="field-label" for="c-email">Email</label>
+            <input class="field-input" type="email" id="c-email" name="email"
+                   placeholder="alex@company.com" required />
+          </div>
+          <div class="field">
+            <label class="field-label" for="c-type">Project Type</label>
+            <select class="field-input" id="c-type" name="type" style="background:transparent;">
+              <option value="">Select…</option>
+              <option>Brand Identity</option>
+              <option>Web Design</option>
+              <option>Editorial</option>
+              <option>Social Media</option>
+              <option>Motion Graphics</option>
+              <option>Full Creative Direction</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label" for="c-msg">Message</label>
+            <textarea class="field-input" id="c-msg" name="message"
+                      placeholder="What are you building?" required></textarea>
+          </div>
+          <button type="submit" class="btn-stamp primary"
+                  style="align-self:flex-start;margin-top:0.5rem">
+            Send Signal
+          </button>
+          <p id="form-msg" style="display:none;font-family:var(--ff-mono);
+             font-size:0.7rem;letter-spacing:0.1em;color:var(--sepia);
+             margin-top:0.5rem;" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="contact-tagline">
+          "Send a signal. I will rearrange the paper."
+        </p>
+
+      </div><!-- /contact-inner -->
     </div>
-  </div>
+  </section>
 
-</section>
-
-
-<!-- ══════════════════════════════════════════════════════
-     FOOTER / CONTACT
-     ══════════════════════════════════════════════════════ -->
-<footer class="footer" id="contact" aria-label="Contact and footer">
-
-  <!-- Accent block -->
-  <div class="footer__accent" aria-hidden="true">
-    <div class="footer__accent-sq"></div>
-  </div>
-
-  <div class="footer__center">
-    <span class="footer__name">Timonas Stefanou</span>
-    <span class="footer__location">Limassol &mdash; Cyprus</span>
-
-    <div class="footer__links">
-      <a href="mailto:conceptionsdetm@gmail.com" class="footer__link">conceptionsdetm@gmail.com</a>
-      <span class="footer__sep">·</span>
-      <a href="tel:+35799212155" class="footer__link">+357 99 212155</a>
-      <span class="footer__sep">·</span>
-      <a href="https://www.instagram.com/timo_steph/" target="_blank" rel="noopener noreferrer" class="footer__link">Instagram</a>
-      <span class="footer__sep">·</span>
-      <a href="https://www.linkedin.com/in/cdtm" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn</a>
-      <span class="footer__sep">·</span>
-      <a href="https://www.twitch.tv/narkouinox" target="_blank" rel="noopener noreferrer" class="footer__link">Twitch</a>
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <span class="footer-logo">T·S</span>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="#about"   class="footer-link">About</a>
+          <a href="#work"    class="footer-link">Work</a>
+          <a href="#contact" class="footer-link">Contact</a>
+          <!-- REPLACE HREF WITH YOUR ACTUAL BEHANCE/PORTFOLIO LINK -->
+          <a href="#" class="footer-link" target="_blank" rel="noopener">Behance</a>
+        </nav>
+        <span class="footer-copy">© 2026 Timonas Stefanou · Limassol, Cyprus</span>
+      </div>
     </div>
-  </div>
+  </footer>
 
-  <span class="footer__year">2025</span>
-
-</footer>
-
-
-<script>
-/* ── Scroll reveal via IntersectionObserver ─────────── */
-(function () {
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.07 });
-
-  document.querySelectorAll('.section').forEach(function (el) {
-    observer.observe(el);
-  });
-})();
-
-/* ── Nav: highlight active section link on scroll ───── */
-(function () {
-  var sections  = document.querySelectorAll('section[id], footer[id]');
-  var allLinks  = document.querySelectorAll('.nav__links a, .hero__nav a');
-
-  var sectObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      var id = entry.target.getAttribute('id');
-      allLinks.forEach(function (a) {
-        var isActive = a.getAttribute('href') === '#' + id;
-        a.style.opacity = isActive ? '1'   : '0.38';
-        a.style.color   = isActive ? 'var(--red)' : '';
-      });
-    });
-  }, { threshold: 0.4 });
-
-  sections.forEach(function (s) { sectObserver.observe(s); });
-})();
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
