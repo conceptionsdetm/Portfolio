@@ -18,6 +18,7 @@ export interface Project {
   cover: string;
   images: string[];
   pdf?: string;
+  pdfMaterials?: string;
   pdfTablet?: string;
   pdfMobile?: string;
   previewImg?: string;
@@ -560,6 +561,8 @@ export const projects: Project[] = [
     year: "2025–2026",
     cover: "/work/fluxotic/cover.jpg",
     logoImg: "/work/fluxotic/logo.png",
+    // pdf: "PASTE_GOOGLE_DRIVE_PREVIEW_URL_HERE",           // Fluxotic E-Shop Design.pdf
+    // pdfMaterials: "PASTE_GOOGLE_DRIVE_PREVIEW_URL_HERE", // Fluxotic E-Shop Design Materials.pdf
     images: [
       "/work/fluxotic/cover.jpg",
       "/work/fluxotic/banner-ad.jpg",
