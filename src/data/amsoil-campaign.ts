@@ -121,6 +121,52 @@ export const amsoilCampaign: CampaignMonth[] = [
         images: [`${B}/jun-p1/1.jpg`, `${B}/jun-p1/2.jpg`, `${B}/jun-p1/3.jpg`, `${B}/jun-p1/4.jpg`, `${B}/jun-p1/5.jpg`, `${B}/jun-p1/6.jpg`],
         story: `${B}/jun-p1/story.jpg`,
       },
+      {
+        id: "jun-p2",
+        title: "Change Your Oil Less",
+        images: [`${B}/jun-p2/1.jpg`, `${B}/jun-p2/2.jpg`, `${B}/jun-p2/3.jpg`, `${B}/jun-p2/4.jpg`, `${B}/jun-p2/5.jpg`, `${B}/jun-p2/6.jpg`, `${B}/jun-p2/7.jpg`],
+        story: `${B}/jun-p2/story.jpg`,
+      },
+      {
+        id: "jun-p3",
+        title: "Deep Water. Deeper Protection.",
+        images: [`${B}/jun-p3/1.jpg`, `${B}/jun-p3/2.jpg`, `${B}/jun-p3/3.jpg`, `${B}/jun-p3/4.jpg`, `${B}/jun-p3/5.jpg`, `${B}/jun-p3/6.jpg`, `${B}/jun-p3/7.jpg`],
+        story: `${B}/jun-p3/story.jpg`,
+      },
+      {
+        id: "jun-p4",
+        title: "Summer Rides of Cyprus",
+        images: [`${B}/jun-p4/1.jpg`, `${B}/jun-p4/2.jpg`, `${B}/jun-p4/3.jpg`, `${B}/jun-p4/4.jpg`, `${B}/jun-p4/5.jpg`, `${B}/jun-p4/6.jpg`, `${B}/jun-p4/7.jpg`],
+        story: `${B}/jun-p4/story.jpg`,
+      },
+      {
+        id: "jun-p7",
+        title: "Your Cooling System Is Working Overtime",
+        images: [`${B}/jun-p7/1.jpg`, `${B}/jun-p7/2.jpg`, `${B}/jun-p7/3.jpg`, `${B}/jun-p7/4.jpg`, `${B}/jun-p7/5.jpg`, `${B}/jun-p7/6.jpg`],
+        story: `${B}/jun-p7/story.jpg`,
+      },
+      {
+        id: "jun-p9",
+        title: "Jeep Invasion 5 — Nicosia 2026",
+        images: [`${B}/jun-p9/1.jpg`],
+        story: `${B}/jun-p9/story.jpg`,
+      },
+    ],
+  },
+  {
+    label: "July 2026",
+    posts: [
+      {
+        id: "jul-p2",
+        title: "Heat Education",
+        video: `${B}/jul-p2/video.mp4`,
+      },
+      {
+        id: "jul-p3",
+        title: "Blog Advertisement",
+        images: [`${B}/jul-p3/1.jpg`, `${B}/jul-p3/2.jpg`, `${B}/jul-p3/3.jpg`, `${B}/jul-p3/4.jpg`, `${B}/jul-p3/5.jpg`, `${B}/jul-p3/6.jpg`, `${B}/jul-p3/7.jpg`, `${B}/jul-p3/8.jpg`],
+        story: `${B}/jul-p3/story.jpg`,
+      },
     ],
   },
   {
