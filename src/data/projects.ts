@@ -493,6 +493,88 @@ export const projects: Project[] = [
       "Good Luck social media post",
     ],
   },
+
+  // ─── NEW 2026 ────────────────────────────────────────────────────────────────
+
+  {
+    slug: "navichem-brand",
+    title: "Navichem Group — Multi-Brand Identity System",
+    client: "Navichem Marine Chemicals",
+    category: ["branding", "print", "website"],
+    tags: ["Brand Identity", "Multi-Brand", "Maritime", "Stationery", "Website Design"],
+    year: "2025–2026",
+    cover: "/work/navichem/cover.jpg",
+    logoImg: "/work/navichem/logo.png",
+    images: [
+      "/work/navichem/cover.jpg",
+      "/work/navichem/letterhead-navichem.jpg",
+      "/work/navichem/letterhead-vchem.jpg",
+      "/work/navichem/letterhead-unichem.jpg",
+      "/work/navichem/letterhead-mblchem.jpg",
+      "/work/navichem/letterhead-shipchem.jpg",
+    ],
+    summary:
+      "A complete multi-brand identity system for the Navichem Group — five distinct brands (Navichem, V.Chem, Unichem, MBLChem, Shipchem), full stationery suite, and website design across the group.",
+    description:
+      "Navichem required a comprehensive brand architecture covering the entire group: the parent brand Navichem Marine Chemicals and four specialist sub-brands — V.Chem, Unichem, MBLChem, and Shipchem. Each brand received its own distinct logo, colour palette, and full stationery system (letterheads, envelopes) while maintaining visual coherence across the group. The project also included website design assets for Navichem, establishing the brand's digital presence with a modern maritime aesthetic.",
+    deliverables: [
+      "5 brand logo systems (Navichem, V.Chem, Unichem, MBLChem, Shipchem)",
+      "Letterhead design for all 5 brands",
+      "Envelope design for all 5 brands",
+      "Brand colour and typography guidelines",
+      "Website design (hero, product pages, company profile)",
+    ],
+  },
+
+  {
+    slug: "lubedesk-advertising",
+    title: "LubeDesk — Digital & Print Advertising",
+    client: "LubeDesk",
+    category: ["print"],
+    tags: ["Advertising", "Digital Ads", "Print", "OOH", "Maritime"],
+    year: "2026",
+    cover: "/work/lubedesk/advert-digital.jpg",
+    images: [
+      "/work/lubedesk/advert-digital.jpg",
+      "/work/lubedesk/advert-static.jpg",
+    ],
+    summary:
+      "Digital and out-of-home advertising campaign for LubeDesk.com — full-format digital ads (320×512 and 1080×1920) and a large-format OOH print ad for bus shelter and scroll placements.",
+    description:
+      "LubeDesk needed advertising collateral to drive awareness and signups for their marine lubricants procurement platform. I designed a full campaign across digital and print formats: animated and static digital ads optimised for social and display placement, and a large-format 130×200cm OOH design for bus shelter and scroll advertising. The visual language carries the brand's navy and teal palette into a bold, high-contrast advertising aesthetic.",
+    deliverables: [
+      "Digital ad — 320×512px (static + animated)",
+      "Digital ad — 1080×1920px full format",
+      "OOH print ad — 130×200cm (bus shelter)",
+      "OOH print ad — 129×198cm (scroll)",
+      "Print-ready and digital-optimised files",
+    ],
+  },
+
+  {
+    slug: "armonia-social",
+    title: "Armonia — Career Day Social Media Campaign",
+    client: "Armonia Trading & Commercial Applications",
+    category: ["social-media"],
+    tags: ["Social Media", "Event", "Maritime", "Career", "Recruitment"],
+    year: "2026",
+    cover: "/work/armonia/career-day-1.jpg",
+    logoImg: "/work/armonia/logo.png",
+    images: [
+      "/work/armonia/career-day-1.jpg",
+      "/work/armonia/career-day-2.jpg",
+      "/work/armonia/career-day-3.jpg",
+    ],
+    summary:
+      "Social media post series for Armonia's participation in the 56th Career Day in Piraeus — bold event-promotion design targeting maritime and commercial professionals.",
+    description:
+      "Armonia participated in the 56th Career Day at Castor Place, Piraeus (23 May 2026), one of Greece's largest career fairs. I designed the social media promotion campaign to drive registrations and brand awareness at the event — bold, high-contrast posts communicating the key event details (30 companies, 900+ positions) while maintaining Armonia's professional corporate identity.",
+    deliverables: [
+      "Social media post series (3 formats)",
+      "Event detail and call-to-action design",
+      "Brand-consistent visual treatment",
+    ],
+  },
 ];
 
 export const categories = [
