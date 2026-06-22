@@ -11,7 +11,6 @@ export interface Client {
   shortName: string;
   industry: string;
   logo?: string;
-  logoMaxHeight?: number;
   logoInitials: string;
   logoInitialsBg: string;
   logoInitialsColor: string;
@@ -180,7 +179,6 @@ export const clients: Client[] = [
     shortName: "LubeDesk",
     industry: "Maritime · Lubricants",
     logo: "/work/lubedesk/logo.png",
-    logoMaxHeight: 110,
     logoInitials: "LD",
     logoInitialsBg: "#EEF6F6",
     logoInitialsColor: "#1B3F6B",
@@ -200,7 +198,6 @@ export const clients: Client[] = [
     shortName: "Navichem",
     industry: "Maritime · Chemical Supply",
     logo: "/work/navichem/logo.png",
-    logoMaxHeight: 140,
     logoInitials: "NC",
     logoInitialsBg: "#EEF4FB",
     logoInitialsColor: "#1B6BB5",
