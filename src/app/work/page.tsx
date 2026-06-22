@@ -84,7 +84,7 @@ export default function WorkPage() {
                     src={assetPath(client.logo)}
                     alt={client.name}
                     loading={i < 9 ? "eager" : "lazy"}
-                    style={{ maxHeight: 60, maxWidth: "78%", objectFit: "contain" }}
+                    style={{ maxHeight: client.logoMaxHeight ?? 60, maxWidth: "78%", objectFit: "contain" }}
                   />
                 ) : (
                   <div
