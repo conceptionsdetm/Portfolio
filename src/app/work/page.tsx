@@ -78,10 +78,7 @@ export default function WorkPage() {
             >
               <span className="bauhaus-client-card__num">№ {String(i + 1).padStart(2, "0")}</span>
 
-              <div
-                className="bauhaus-client-card__logo"
-                style={{ background: client.logoInitialsBg }}
-              >
+              <div className="bauhaus-client-card__logo">
                 {client.logo ? (
                   <img
                     src={assetPath(client.logo)}
