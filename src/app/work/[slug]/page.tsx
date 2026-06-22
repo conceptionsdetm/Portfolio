@@ -200,6 +200,38 @@ export default function WorkDetailPage({ params }: Props) {
                 <ProjectGallery images={project.images} title={project.title} />
               </>
             )}
+
+            {/* Design Materials PDF — shown whenever pdfMaterials is set, below main content */}
+            {project.pdfMaterials && (
+              <RevealOnScroll>
+                <h2 className="font-display font-black text-xl text-paper mt-16 mb-4">Design Materials</h2>
+                <p className="font-mono text-[8px] tracking-[0.32em] uppercase text-paper/28 mb-5">
+                  Asset library — photography, icons, brand references
+                </p>
+                <div className="w-full bg-zinc-900 border border-paper/6" style={{ height: "75vh" }}>
+                  <object
+                    data={assetPath(project.pdfMaterials)}
+                    type="application/pdf"
+                    className="w-full h-full"
+                    aria-label={`${project.title} — Design Materials`}
+                  >
+                    <div className="flex flex-col items-center justify-center h-full gap-5 text-center px-8">
+                      <p className="font-mono text-[9px] tracking-[0.38em] uppercase text-paper/28">
+                        PDF viewer not supported in this browser.
+                      </p>
+                      <a
+                        href={assetPath(project.pdfMaterials)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-8 py-3 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase hover:bg-paper transition-colors duration-200"
+                      >
+                        Open Materials in New Tab
+                      </a>
+                    </div>
+                  </object>
+                </div>
+              </RevealOnScroll>
+            )}
           </div>
 
           {/* Right: sidebar */}

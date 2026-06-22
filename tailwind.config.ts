@@ -9,19 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display:  ["var(--font-display)",  "Roboto",     "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
-        body:     ["var(--font-body)",     "Open Sans",  "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
-        mono:     ["var(--font-mono)",     "monospace"],
-        grotesk:  ["var(--font-grotesk)",  "Open Sans",  "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+        display: ["'Barlow Condensed'", "sans-serif"],
+        body:    ["'Space Grotesk'", "system-ui", "sans-serif"],
+        mono:    ["'IBM Plex Mono'", "monospace"],
+        grotesk: ["'Space Grotesk'", "system-ui", "sans-serif"],
       },
       colors: {
-        gold:       "#FFDD00",
-        ink:        "#000000",
+        cream:      "#F5F0E8",
+        ink:        "#1A1A1A",
         paper:      "#FFFFFF",
         muted:      "#888888",
-        vermillion: "#BE1622",
-        blue:       "#00539F",
-        border:     "rgba(0,0,0,0.12)",
+        vermillion: "#D62B2B",
+        blue:       "#1A3FA0",
+        gold:       "#F5C400",
+        border:     "rgba(26,26,26,0.12)",
       },
       animation: {
         "fade-up":   "fadeUp .7s cubic-bezier(.22,1,.36,1) forwards",

@@ -2,12 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
-import Logo from "@/components/ui/Logo";
+import { useState } from "react";
 import CVModal from "@/components/ui/CVModal";
 
 const links = [
-  { href: "/",        label: "Home" },
   { href: "/work",    label: "Work" },
   { href: "/about",   label: "About" },
   { href: "/contact", label: "Contact" },
@@ -15,60 +13,68 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [cvOpen, setCvOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-paper/96 backdrop-blur-md border-b border-ink/8" : "bg-transparent"
-        }`}
-      >
-        <div className="px-8 md:px-14 h-16">
-          <div className="max-w-7xl mx-auto w-full h-full flex items-center justify-between">
+      <header className="bauhaus-nav">
 
-            {/* Logo — left */}
-            <Logo size="md" />
+        {/* Left: red block with asterisk + blue accent strip */}
+        <div className="bauhaus-nav__block" style={{ display: "flex", padding: 0 }}>
+          <Link href="/" style={{
+            flex: 1,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            background: "var(--red)",
+          }}>
+            <svg width="32" height="32" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="27" y="3"  width="6" height="54" fill="#F5C400"/>
+              <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(45 30 30)"/>
+              <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(90 30 30)"/>
+              <rect x="27" y="3"  width="6" height="54" fill="#F5C400" transform="rotate(135 30 30)"/>
+            </svg>
+          </Link>
+          <div aria-hidden="true" style={{
+            width: 18,
+            background: "var(--blue)",
+            borderLeft: "var(--grid-line)",
+          }} />
+        </div>
 
-            {/* Nav links — always visible */}
-            <nav className="flex items-center gap-5 md:gap-8 md:absolute md:left-1/2 md:-translate-x-1/2">
-              {links.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className={`font-grotesk font-medium text-[8px] md:text-[9px] tracking-[0.35em] uppercase transition-colors duration-200 relative group ${
-                    pathname === l.href ? "text-vermillion" : "text-ink/45 hover:text-ink"
-                  }`}
-                >
-                  {l.label}
-                  <span
-                    className={`absolute -bottom-0.5 left-0 h-px bg-vermillion transition-all duration-300 ${
-                      pathname === l.href ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  />
-                </Link>
-              ))}
-            </nav>
-
-            {/* CV button — desktop only */}
-            <button
-              onClick={() => setCvOpen(true)}
-              className="hidden md:block px-5 py-2 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase hover:bg-paper transition-colors duration-200"
+        {/* Centre: nav links */}
+        <nav className="bauhaus-nav__links" aria-label="Primary navigation">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className={pathname.startsWith(l.href) ? "active" : ""}
             >
-              View CV
-            </button>
-          </div>
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Right: CV button */}
+        <div className="bauhaus-nav__right">
+          <button
+            onClick={() => setCvOpen(true)}
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 9,
+              letterSpacing: "0.3em",
+              textTransform: "uppercase",
+              padding: "0.5rem 1.25rem",
+              background: "var(--yellow)",
+              color: "var(--black)",
+              border: "none",
+              cursor: "pointer",
+              whiteSpace: "nowrap",
+            }}
+          >
+            View CV
+          </button>
         </div>
       </header>
 
-      {/* CV Modal */}
       {cvOpen && <CVModal onClose={() => setCvOpen(false)} />}
     </>
   );
