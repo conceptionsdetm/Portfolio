@@ -177,7 +177,7 @@ export const projects: Project[] = [
     year: "2025",
     cover: "/work/northtide/cover.jpg",
     logoHero: "/work/northtide/logo.png",
-    images: ["/work/northtide/cover.jpg", "/work/northtide/hero.jpg", "/work/northtide/full-page.jpg"],
+    images: ["/work/northtide/cover.jpg", "/work/northtide/hero.jpg", "/work/northtide/full-page.jpg", "/work/northtide/letterhead.jpg"],
     previewImg: "/work/northtide/preview-desktop.jpg",
     previewImgTablet: "/work/northtide/preview-tablet.jpg",
     previewImgMobile: "/work/northtide/preview-mobile.jpg",
@@ -284,15 +284,17 @@ export const projects: Project[] = [
     year: "2025–2026",
     cover: "/work/fameline-stationery/envelope-dl.jpg",
     images: [
+      "/work/fameline-stationery/letterhead.jpg",
       "/work/fameline-stationery/envelope-dl.jpg",
       "/work/fameline-stationery/envelope-a4.png",
       "/work/fameline-stationery/notepad.png",
     ],
     summary:
-      "Branded corporate stationery for Fameline Holding Group — DL envelope, A4 envelope, and notepad, each carrying the group's identity with precision and refinement.",
+      "Branded corporate stationery for Fameline Holding Group — letterhead, DL envelope, A4 envelope, and notepad, each carrying the group's identity with precision and refinement.",
     description:
-      "Corporate stationery is where brand identity meets daily professional life. For Fameline Holding Group, I designed a cohesive suite of printed materials — DL and A4 envelopes and a branded notepad — ensuring that every piece of correspondence carries the group's visual identity consistently. The designs were produced as print-ready files with mockup presentations for stakeholder approval.",
+      "Corporate stationery is where brand identity meets daily professional life. For Fameline Holding Group, I designed a cohesive suite of printed materials — a formal letterhead, DL and A4 envelopes, and a branded notepad — ensuring that every piece of correspondence carries the group's visual identity consistently. The designs were produced as print-ready files with mockup presentations for stakeholder approval.",
     deliverables: [
+      "Letterhead design (print-ready)",
       "DL envelope design (print-ready)",
       "A4 envelope design (print-ready)",
       "Corporate notepad design",
