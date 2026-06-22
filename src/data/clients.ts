@@ -105,9 +105,9 @@ export const clients: Client[] = [
     industry: "Defence · Security",
     logo: "/work/fameline-website/logo.png",
     logoInitials: "FMS",
-    logoInitialsBg: "#EEF0F8",
-    logoInitialsColor: "#1A2744",
-    accentColor: "#1A2744",
+    logoInitialsBg: "#FFFFFF",
+    logoInitialsColor: "#1A1A1A",
+    accentColor: "#B22222",
     services: [
       { label: "Website Design", category: "website" },
     ],
