@@ -552,6 +552,37 @@ export const projects: Project[] = [
   },
 
   {
+    slug: "fluxotic-website",
+    title: "Fluxotic — E-Commerce Website Design",
+    client: "Fluxotic",
+    category: ["website"],
+    tags: ["Web Design", "E-Commerce", "Automotive", "UI/UX", "Product Design"],
+    year: "2025–2026",
+    cover: "/work/fluxotic/cover.jpg",
+    logoImg: "/work/fluxotic/logo.png",
+    images: [
+      "/work/fluxotic/cover.jpg",
+      "/work/fluxotic/banner-ad.jpg",
+      "/work/fluxotic/category-cars.jpg",
+      "/work/fluxotic/category-moto.jpg",
+      "/work/fluxotic/category-4x4.jpg",
+    ],
+    summary:
+      "Full e-commerce website design for Fluxotic — an automotive lubricants and fluids retailer — including homepage, category pages, blog, banners, and all supporting design assets.",
+    description:
+      "Fluxotic required a complete e-commerce website to launch their automotive lubricants and fluids retail platform. I designed the full site: homepage with hero banner and category navigation, product category pages (vehicles, oils, activities), blog section, and all visual assets — hero banners, advertising banners, category photography, payment icons, and brand SVG icons. The design system uses a bold, high-energy aesthetic suited to the motorsports and automotive audience, with a dark, premium feel throughout.",
+    deliverables: [
+      "Homepage design (hero, categories, featured products)",
+      "Product category page templates",
+      "Blog page and post templates",
+      "Hero and advertising banner designs",
+      "Category photography art direction",
+      "Brand icon set (SVG)",
+      "Full website asset library",
+    ],
+  },
+
+  {
     slug: "armonia-social",
     title: "Armonia — Career Day Social Media Campaign",
     client: "Armonia Trading & Commercial Applications",

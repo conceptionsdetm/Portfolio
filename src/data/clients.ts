@@ -231,6 +231,25 @@ export const clients: Client[] = [
     year: "2026",
   },
   {
+    slug: "fluxotic",
+    name: "Fluxotic",
+    shortName: "Fluxotic",
+    industry: "Automotive · E-commerce",
+    logo: "/work/fluxotic/logo.png",
+    logoInitials: "FX",
+    logoInitialsBg: "#F5F0E8",
+    logoInitialsColor: "#1A1A1A",
+    accentColor: "#1A1A1A",
+    services: [
+      { label: "Website Design", category: "website" },
+    ],
+    projectSlugs: ["fluxotic-website"],
+    overview:
+      "Full e-commerce website design for Fluxotic — an automotive lubricants and fluids retailer, covering homepage, product category pages, blog, and all supporting design assets.",
+    year: "2025–2026",
+  },
+
+  {
     slug: "mie-group",
     name: "MIE Group",
     shortName: "MIE",
