@@ -438,18 +438,18 @@ p, li, td, th {
 }
 .bauhaus-client-card__industry {
   font-family: var(--font-mono);
-  font-size: 7px;
-  letter-spacing: 0.3em;
+  font-size: 9px;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(26,26,26,0.55);
+  color: rgba(26,26,26,0.72);
   margin-top: 0.3rem;
 }
 .bauhaus-client-card__services {
   font-family: var(--font-mono);
-  font-size: 7px;
+  font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(26,26,26,0.45);
+  color: rgba(26,26,26,0.58);
   margin-top: 0.2rem;
 }
 .bauhaus-client-card__arrow {
