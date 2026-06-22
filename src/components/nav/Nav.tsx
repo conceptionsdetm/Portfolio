@@ -16,7 +16,6 @@ const links = [
 export default function Nav() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
   const [cvOpen, setCvOpen] = useState(false);
 
   useEffect(() => {
@@ -38,13 +37,13 @@ export default function Nav() {
             {/* Logo — left */}
             <Logo size="md" />
 
-            {/* Nav links — centre */}
-            <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+            {/* Nav links — always visible */}
+            <nav className="flex items-center gap-5 md:gap-8 md:absolute md:left-1/2 md:-translate-x-1/2">
               {links.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`font-grotesk font-medium text-[9px] tracking-[0.35em] uppercase transition-colors duration-200 relative group ${
+                  className={`font-grotesk font-medium text-[8px] md:text-[9px] tracking-[0.35em] uppercase transition-colors duration-200 relative group ${
                     pathname === l.href ? "text-vermillion" : "text-ink/45 hover:text-ink"
                   }`}
                 >
@@ -58,50 +57,15 @@ export default function Nav() {
               ))}
             </nav>
 
-            {/* CV button — right */}
+            {/* CV button — desktop only */}
             <button
               onClick={() => setCvOpen(true)}
               className="hidden md:block px-5 py-2 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase hover:bg-paper transition-colors duration-200"
             >
               View CV
             </button>
-
-            {/* Mobile hamburger */}
-            <button
-              className="md:hidden flex flex-col gap-1.5 p-2"
-              onClick={() => setOpen(!open)}
-              aria-label="Toggle menu"
-            >
-              <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "opacity-0" : ""}`} />
-              <span className={`block h-px w-5 bg-ink transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
-            </button>
           </div>
         </div>
-
-        {/* Mobile menu */}
-        {open && (
-          <div className="md:hidden bg-paper/98 backdrop-blur-md border-t border-ink/8 px-8 py-8 flex flex-col gap-6">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className={`font-grotesk font-medium text-[11px] tracking-[0.35em] uppercase ${
-                  pathname === l.href ? "text-vermillion" : "text-ink/55"
-                }`}
-              >
-                {l.label}
-              </Link>
-            ))}
-            <button
-              onClick={() => { setOpen(false); setCvOpen(true); }}
-              className="mt-2 self-start px-5 py-2.5 bg-gold text-ink font-mono text-[9px] tracking-[0.3em] uppercase"
-            >
-              View CV
-            </button>
-          </div>
-        )}
       </header>
 
       {/* CV Modal */}
