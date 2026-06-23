@@ -597,6 +597,67 @@ body::before {
 
 .about-col p { margin-bottom: 1.2em; }
 
+.about-col strong {
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Mono label above each column section */
+.about-eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--sepia);
+  margin-bottom: 1.1rem !important;
+}
+
+/* Large Impact punchy statement */
+.about-loud {
+  font-family: var(--ff-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin-bottom: 1.3rem !important;
+}
+
+/* Red pull-quote blockquote */
+.about-pull {
+  font-family: var(--ff-display);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  border-left: 3px solid var(--accent);
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin: 1.5rem 0 !important;
+  line-height: 1.5;
+}
+
+/* Sub-line inside pull quote — italic serif */
+.about-pull-sub {
+  display: block;
+  font-family: var(--ff-serif);
+  font-size: 0.8rem;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--sepia);
+  margin-top: 0.3rem;
+}
+
+/* Italic philosophy line — sepia with left rule */
+.about-insight {
+  font-style: italic;
+  color: var(--sepia);
+  border-left: 3px solid rgba(92,74,42,0.3);
+  padding-left: 1rem;
+}
+
 .about-col-2 {
   position: relative;
   padding-top: 1rem;
@@ -1117,27 +1178,13 @@ textarea.field-input:focus { border-color: var(--accent); }
   font-size: 1.2rem;
   letter-spacing: 0.05em;
   color: var(--paper);
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 6px;
-  z-index: 0;
+  display: inline-block;
+  padding: 4px 7px;
+  outline: 2px solid var(--paper);
+  outline-offset: 0;
+  box-shadow: 4px 4px 0 0 var(--accent);
   text-decoration: none;
-}
-.footer-logo::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--accent);
-  transform: translate(4px, 4px);
-  z-index: -1;
-}
-.footer-logo::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 2px solid var(--paper);
-  z-index: 1;
+  cursor: none;
 }
 .footer-copy {
   font-family: var(--ff-mono);
