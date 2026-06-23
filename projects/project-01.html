@@ -3,9 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Blank Poster Study — Timonas Stefanou" />
-  <title>Blank Poster Study — Timonas Stefanou</title>
+  <meta name="description" content="Fameline Holding Group Rebranding — Timonas Stefanou" />
+  <title>Rebranding — Fameline Holding Group · Timonas Stefanou</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    .deliverable-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .deliverable-card {
+      background: var(--paper);
+      border: 1px solid rgba(0,0,0,.1);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .deliverable-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.12);
+    }
+    .deliverable-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+    .deliverable-card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+    }
+    .deliverable-num {
+      font-family: var(--ff-mono);
+      font-size: .7rem;
+      letter-spacing: .15em;
+      color: var(--accent);
+      margin-bottom: .4rem;
+    }
+    .deliverable-title {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      letter-spacing: .06em;
+      color: var(--text);
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+    .deliverable-desc {
+      font-family: var(--ff-serif);
+      font-size: .92rem;
+      line-height: 1.65;
+      color: var(--sepia);
+    }
+    .deliverable-full { margin-top: 2.5rem; }
+    .deliverable-full img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 520px;
+      object-fit: cover;
+    }
+    .deliverable-full .deliverable-card-body {
+      background: var(--paper);
+      border: 1px solid rgba(0,0,0,.1);
+      border-top: none;
+    }
+    .proj-overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 3rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 760px) {
+      .proj-overview-grid { grid-template-columns: 1fr; }
+      .deliverable-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body class="project-page">
 
@@ -20,7 +91,7 @@
       <a href="../index.html#process" class="nav-link">Process</a>
       <a href="../index.html#contact" class="nav-link">Contact</a>
     </nav>
-    <a href="../index.html#contact" class="nav-cta">Hire Me</a>
+    <a href="../Timonas-Stefanou-CV-2025.pdf" class="nav-cta" target="_blank" rel="noopener">View CV</a>
     <button class="nav-toggle" id="navToggle"
             aria-label="Open navigation" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -31,27 +102,15 @@
   <section class="proj-hero" aria-label="Project header">
     <div class="proj-hero-text">
       <a href="../index.html#work" class="proj-back">Back to Work</a>
-      <p class="proj-eyebrow">
-        <!-- REPLACE: Update category and year -->
-        Poster Design · Print · [YEAR]
-      </p>
+      <p class="proj-eyebrow">Brand Identity · Rebranding · 2025</p>
       <h1 class="proj-title">
-        BLANK<br />POSTER<br />STUDY
+        FAMELINE<br />HOLDING<br />GROUP
       </h1>
     </div>
-    <div class="proj-hero-visual">
-      <!-- Visual — Project 01: dark charcoal (editorial/poster feel) -->
-      <div class="visual-block"
-           style="background: linear-gradient(135deg, #111111 0%, #2d2d2d 50%, #111111 100%);">
-        <!--
-          ADD HERO IMAGE:
-          Remove the <div class="visual-block"> above.
-          Add: <img src="../images/project-01-hero.jpg"
-                    alt="[Brief alt description]"
-                    style="width:100%;height:100%;object-fit:cover;" />
-        -->
-        ADD HERO IMAGE HERE
-      </div>
+    <div class="proj-hero-visual" style="background:#f7f6ee;display:flex;align-items:center;justify-content:center;padding:3rem;">
+      <img src="images/fameline-rebranding/logo.png"
+           alt="Fameline Holding Group logo"
+           style="max-width:85%;max-height:200px;object-fit:contain;" />
     </div>
   </section>
 
@@ -59,22 +118,19 @@
   <div class="proj-meta" aria-label="Project details">
     <div class="proj-meta-item">
       <div class="proj-meta-label">Client</div>
-      <!-- REPLACE: Client name -->
-      <div class="proj-meta-value">[CLIENT NAME]</div>
+      <div class="proj-meta-value">Fameline Holding Group</div>
     </div>
     <div class="proj-meta-item">
       <div class="proj-meta-label">Category</div>
-      <div class="proj-meta-value">Poster Design · Print</div>
+      <div class="proj-meta-value">Brand Identity · Rebranding</div>
     </div>
     <div class="proj-meta-item">
       <div class="proj-meta-label">Year</div>
-      <!-- REPLACE: Year -->
-      <div class="proj-meta-value">[YEAR]</div>
+      <div class="proj-meta-value">2025</div>
     </div>
     <div class="proj-meta-item">
       <div class="proj-meta-label">Tools</div>
-      <!-- REPLACE: Tools used -->
-      <div class="proj-meta-value">[ILLUSTRATOR / FIGMA]</div>
+      <div class="proj-meta-value">Illustrator · InDesign · Photoshop · After Effects</div>
     </div>
   </div>
 
@@ -84,29 +140,26 @@
       <h2 class="proj-heading reveal">Overview</h2>
       <div class="proj-overview-grid">
         <div class="proj-overview-body reveal r1">
-          <!--
-            WRITE PROJECT DESCRIPTION:
-            - What was the brief / problem to solve?
-            - What approach did you take?
-            - What makes this project distinctive?
-            - What was the outcome?
-          -->
-          <p>[WRITE PROJECT OVERVIEW HERE — 2 to 4 paragraphs describing
-          the brief, your approach, and the outcome.]</p>
-          <p>[SECOND PARAGRAPH — go deeper into the design decisions,
-          what you tried, what you rejected, what you landed on and why.]</p>
-          <p>[THIRD PARAGRAPH — final outcome, client reaction,
-          what you learned, or what you would do differently.]</p>
+          <p>Fameline Holding Group undertook a full visual identity relaunch — a rebranding exercise that unified the group's communication across every touchpoint, from printed stationery to digital presence, internal signage, and event assets.</p>
+          <p>The challenge was to create a cohesive, authoritative identity system that could flex across the group's diverse subsidiaries while maintaining a clear and premium holding-company voice. Every deliverable was designed in parallel, ensuring consistency across print, digital, and environmental applications.</p>
+          <p>Below is the complete Launch Plan — each deliverable presented individually in order of production.</p>
         </div>
         <div class="proj-overview-aside reveal r2">
           <strong>Deliverables</strong><br />
-          <!-- REPLACE: List what you actually delivered -->
-          [DELIVERABLE 01]<br />
-          [DELIVERABLE 02]<br />
-          [DELIVERABLE 03]<br />
+          Letterhead<br />
+          Business Cards<br />
+          A4 &amp; DL Envelopes<br />
+          Compliments Slip<br />
+          Notepads<br />
+          LinkedIn Banner<br />
+          Email Signatures<br />
+          Desktop Backgrounds<br />
+          Teams Backdrop<br />
+          Rollup Banner<br />
+          Presentation Template<br />
+          Social Media Campaign<br />
           <br />
           <strong>Links</strong><br />
-          <!-- REPLACE with real links when available -->
           <a href="#" target="_blank" rel="noopener" style="color:var(--accent)">
             View on Behance →
           </a>
@@ -115,149 +168,183 @@
     </div>
   </section>
 
-  <!-- IMAGE GALLERY -->
-  <section class="proj-section" style="background:var(--paper);" aria-label="Project images">
+  <!-- 01 LETTERHEAD -->
+  <section class="proj-section" style="background:var(--paper);" aria-label="Letterhead">
     <div class="wrap">
-      <h2 class="proj-heading reveal">The Work</h2>
-
-      <!-- Full-width image — main showcase -->
-      <div class="gallery-full reveal r1">
-        <div class="img-placeholder">
-          <!--
-            ADD IMAGE:
-            <img src="../images/project-01-01.jpg"
-                 alt="[Description of what's shown]"
-                 style="width:100%;height:100%;object-fit:cover;" />
-          -->
-          ADD IMAGE HERE — main showcase
-        </div>
-      </div>
-
-      <!-- 3-column grid of 6 images -->
-      <div class="gallery-grid">
-        <div class="img-placeholder reveal">
-          <!-- ADD IMAGE: project-01-02.jpg -->
-          ADD IMAGE HERE
-        </div>
-        <div class="img-placeholder reveal r1">
-          <!-- ADD IMAGE: project-01-03.jpg -->
-          ADD IMAGE HERE
-        </div>
-        <div class="img-placeholder reveal r2">
-          <!-- ADD IMAGE: project-01-04.jpg -->
-          ADD IMAGE HERE
-        </div>
-        <div class="img-placeholder reveal">
-          <!-- ADD IMAGE: project-01-05.jpg -->
-          ADD IMAGE HERE
-        </div>
-        <div class="img-placeholder reveal r1">
-          <!-- ADD IMAGE: project-01-06.jpg -->
-          ADD IMAGE HERE
-        </div>
-        <div class="img-placeholder reveal r2">
-          <!-- ADD IMAGE: project-01-07.jpg -->
-          ADD IMAGE HERE
-        </div>
-        <!--
-          HOW TO ADD MORE IMAGES:
-          Copy one <div class="img-placeholder"> block.
-          Replace the comment with: <img src="../images/project-01-08.jpg" alt="..." />
-          The grid adds rows automatically.
-        -->
-      </div>
-    </div>
-  </section>
-
-  <!-- DESIGN PROCESS -->
-  <section class="proj-section" style="background:var(--ground);" aria-label="Process">
-    <div class="wrap">
-      <h2 class="proj-heading reveal">Process Notes</h2>
-      <div class="process-notes">
-        <div class="process-note reveal">
-          <div class="process-note-num" aria-hidden="true">01</div>
-          <div class="process-note-title">Research</div>
-          <p class="process-note-body">
-            <!-- REPLACE: Describe research phase for this project -->
-            [WRITE RESEARCH NOTES]
-          </p>
-        </div>
-        <div class="process-note reveal r1">
-          <div class="process-note-num" aria-hidden="true">02</div>
-          <div class="process-note-title">Concept</div>
-          <p class="process-note-body">
-            <!-- REPLACE: What ideas did you explore? -->
-            [WRITE CONCEPT NOTES]
-          </p>
-        </div>
-        <div class="process-note reveal r2">
-          <div class="process-note-num" aria-hidden="true">03</div>
-          <div class="process-note-title">Execution</div>
-          <p class="process-note-body">
-            <!-- REPLACE: How was it executed? -->
-            [WRITE EXECUTION NOTES]
+      <h2 class="proj-heading reveal">01 — Letterhead</h2>
+      <div class="deliverable-full reveal r1">
+        <img src="images/fameline-rebranding/letterhead.jpg" alt="FHG Letterhead design" />
+        <div class="deliverable-card-body">
+          <p class="deliverable-desc">
+            The official A4 letterhead for Fameline Holding Group. Designed with the new brand identity, featuring the updated logo, corporate typography, and the distinctive brand stripe. Produced in both contact and no-contact variants for internal and external use.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DETAILS -->
-  <section class="proj-section" style="background:var(--paper);" aria-label="Details">
+  <!-- 02 BUSINESS CARDS -->
+  <section class="proj-section" style="background:var(--ground);" aria-label="Business Cards">
     <div class="wrap">
-      <h2 class="proj-heading reveal">Details</h2>
-      <p class="proj-overview-body reveal r1" style="max-width:620px;">
-        <!-- REPLACE: Technical details, constraints, print specs, etc. -->
-        [WRITE ADDITIONAL DETAILS HERE — print specs, technical constraints,
-        special materials, or anything else worth noting.]
-      </p>
+      <h2 class="proj-heading reveal">02 — Business Cards</h2>
+      <div class="deliverable-full reveal r1">
+        <img src="images/fameline-rebranding/business-cards.png" alt="FHG Business Cards mockup" style="max-height:420px;object-fit:contain;background:#e8e7e0;" />
+        <div class="deliverable-card-body" style="background:var(--ground);border-color:rgba(0,0,0,.08);">
+          <p class="deliverable-desc">
+            Business card system for the Holding Group, featuring the updated brand mark, corporate colour palette, and standardised layout across all group personnel. Printed in high-quality stock with a clean, professional finish.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CREDITS -->
-  <section class="proj-section" style="background:var(--ground);" aria-label="Credits">
+  <!-- 03 & 04 ENVELOPES -->
+  <section class="proj-section" style="background:var(--paper);" aria-label="Envelopes">
     <div class="wrap">
-      <h2 class="proj-heading reveal">Credits</h2>
-      <div class="credits-grid reveal r1">
-        <div>
-          <div class="credit-row">
-            <span class="credit-label">Design</span>
-            <span class="credit-value">Timonas Stefanou</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Client</span>
-            <!-- REPLACE -->
-            <span class="credit-value">[CLIENT NAME]</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Year</span>
-            <!-- REPLACE -->
-            <span class="credit-value">[YEAR]</span>
+      <h2 class="proj-heading reveal">03 &amp; 04 — A4 &amp; DL Envelopes</h2>
+      <div class="deliverable-grid">
+        <div class="deliverable-card reveal r1">
+          <img src="images/fameline-rebranding/envelope-a4.jpg" alt="FHG A4 Envelope" />
+          <div class="deliverable-card-body">
+            <div class="deliverable-num">03</div>
+            <div class="deliverable-title">A4 Envelope</div>
+            <p class="deliverable-desc">Large-format envelope for documents and printed materials, branded with the FHG identity and return address layout.</p>
           </div>
         </div>
-        <div>
-          <div class="credit-row">
-            <span class="credit-label">Photography</span>
-            <!-- REPLACE: Photographer or "Own work" -->
-            <span class="credit-value">[PHOTOGRAPHER]</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Tools</span>
-            <!-- REPLACE -->
-            <span class="credit-value">[TOOLS USED]</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Status</span>
-            <!-- REPLACE: Delivered / In Progress / Personal -->
-            <span class="credit-value">[STATUS]</span>
+        <div class="deliverable-card reveal r2">
+          <img src="images/fameline-rebranding/envelope-dl.jpg" alt="FHG DL Envelope" />
+          <div class="deliverable-card-body">
+            <div class="deliverable-num">04</div>
+            <div class="deliverable-title">DL Envelope</div>
+            <p class="deliverable-desc">Standard DL envelope for correspondence — matching brand language and print-ready specifications.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NEXT PROJECT — links to Project 02 -->
-  <a href="project-02.html" class="proj-next" aria-label="Next project: Untitled Identity System">
+  <!-- 05 COMPLIMENTS SLIP -->
+  <section class="proj-section" style="background:var(--ground);" aria-label="Compliments Slip">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">05 — Compliments Slip</h2>
+      <div class="deliverable-full reveal r1">
+        <img src="images/fameline-rebranding/compliments-slip.jpg" alt="FHG Compliments Slip" style="max-height:400px;object-fit:contain;background:#e8e7e0;" />
+        <div class="deliverable-card-body" style="background:var(--ground);border-color:rgba(0,0,0,.08);">
+          <p class="deliverable-desc">
+            A compact compliments slip designed for inclusion with physical correspondence. Carries the full brand identity in a concise format — logo, stripe, and minimal contact information.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 NOTEPAD -->
+  <section class="proj-section" style="background:var(--paper);" aria-label="Notepad">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">06 — A4 Notepad</h2>
+      <div class="deliverable-full reveal r1">
+        <img src="images/fameline-rebranding/notepad.png" alt="FHG A4 Notepad" style="max-height:480px;object-fit:contain;background:#f0efe8;" />
+        <div class="deliverable-card-body">
+          <p class="deliverable-desc">
+            Branded A4 notepad for the group — featuring the FHG logo, brand stripe, and a clean grid layout suitable for meeting notes and internal use. Produced in pad format for desk placement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 LINKEDIN BANNER -->
+  <section class="proj-section" style="background:var(--ground);" aria-label="LinkedIn Banner">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">07 — LinkedIn Banner</h2>
+      <div class="deliverable-full reveal r1">
+        <img src="images/fameline-rebranding/linkedin-banner.jpg" alt="FHG LinkedIn Banner" style="max-height:300px;" />
+        <div class="deliverable-card-body" style="background:var(--ground);border-color:rgba(0,0,0,.08);">
+          <p class="deliverable-desc">
+            LinkedIn cover banner for the official Fameline Holding Group company page. Designed to platform dimensions of 1584 × 396 px, communicating the group's new visual identity to a professional digital audience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 EMAIL SIGNATURES -->
+  <section class="proj-section" style="background:var(--paper);" aria-label="Email Signatures">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">08 — Email Signatures</h2>
+      <div class="deliverable-full reveal r1">
+        <img src="images/fameline-rebranding/email-signature.jpg" alt="FHG Email Signature" style="max-height:360px;object-fit:contain;background:#f7f6ee;" />
+        <div class="deliverable-card-body">
+          <p class="deliverable-desc">
+            Standardised HTML email signature system deployed across all Fameline Holding Group personnel. Features the new brand logo and stripe, ensuring every outgoing email carries a consistent professional identity. Available in variants for each subsidiary.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 DESKTOP BACKGROUND -->
+  <section class="proj-section" style="background:var(--ground);" aria-label="Desktop Background">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">09 — Desktop Backgrounds</h2>
+      <div class="deliverable-full reveal r1">
+        <img src="images/fameline-rebranding/desktop-bg.jpg" alt="FHG Desktop Background" style="max-height:420px;" />
+        <div class="deliverable-card-body" style="background:var(--ground);border-color:rgba(0,0,0,.08);">
+          <p class="deliverable-desc">
+            Branded desktop wallpaper for use across all group workstations. Multiple variants produced — including vessel imagery with central logo, and an abstracted brand pattern — ensuring internal screens reflect the new identity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 TEAMS BACKDROP -->
+  <section class="proj-section" style="background:var(--paper);" aria-label="Teams Backdrop">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">10 — Teams Backdrop</h2>
+      <div class="deliverable-full reveal r1">
+        <img src="images/fameline-rebranding/teams-backdrop.jpg" alt="FHG Microsoft Teams virtual backdrop" style="max-height:460px;" />
+        <div class="deliverable-card-body">
+          <p class="deliverable-desc">
+            A branded virtual background for Microsoft Teams video calls. Multiple backdrops were produced using generative imagery blended with the FHG visual identity — maintaining a professional, on-brand appearance for all virtual meetings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 ROLLUP BANNER -->
+  <section class="proj-section" style="background:var(--ground);" aria-label="Rollup Banner">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">11 — Rollup Banner</h2>
+      <div class="deliverable-full reveal r1">
+        <img src="images/fameline-rebranding/rollup-banner.jpg" alt="FHG Rollup Banner" style="max-height:540px;object-fit:contain;background:#e8e7e0;" />
+        <div class="deliverable-card-body" style="background:var(--ground);border-color:rgba(0,0,0,.08);">
+          <p class="deliverable-desc">
+            Freestanding rollup banner for events, exhibitions, and reception areas. Designed to standard 85 × 200 cm dimensions, showcasing the refreshed FHG brand at full scale. Four presentation variants were explored before final approval.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 PRESENTATION TEMPLATE -->
+  <section class="proj-section" style="background:var(--paper);" aria-label="Presentation Template">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">12 — Strategy Presentation Template</h2>
+      <div class="deliverable-full reveal r1">
+        <img src="images/fameline-rebranding/presentation-template.jpg" alt="FHG Presentation Template slide background" style="max-height:440px;" />
+        <div class="deliverable-card-body">
+          <p class="deliverable-desc">
+            A fully rebranded PowerPoint template for internal and external presentations. Slide backgrounds, typography, and layout guides were redesigned to reflect the new brand system — ensuring all future presentations carry a consistent FHG identity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT PROJECT -->
+  <a href="project-02.html" class="proj-next" aria-label="Next project">
     <div>
       <div class="proj-next-label">Next Project</div>
       <div class="proj-next-title">Untitled Identity System</div>
