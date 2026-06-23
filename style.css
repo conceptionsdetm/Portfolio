@@ -719,6 +719,169 @@ body::before {
   margin-top: 2rem;
 }
 
+/* ── 10b. THE FILE (Record) ───────────────────────────────── */
+.record {
+  background: var(--paper);
+  border-top: 3px double var(--text);
+}
+
+.record-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 3px double var(--text);
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+.record-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+
+.record-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.record-eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--sepia);
+  margin-bottom: 1.5rem;
+}
+
+.record-entry {
+  margin-bottom: 1.2rem;
+}
+
+.record-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.15rem;
+}
+
+.record-company {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.record-date {
+  font-family: var(--ff-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: var(--sepia);
+  white-space: nowrap;
+}
+
+.record-role {
+  font-family: var(--ff-serif);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.record-duties {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--ff-serif);
+  font-size: 0.83rem;
+  line-height: 1.75;
+  color: var(--text-2, #3D3D3D);
+}
+
+.record-duties li {
+  padding-left: 1rem;
+  position: relative;
+}
+
+.record-duties li::before {
+  content: '\2014';
+  position: absolute;
+  left: 0;
+  color: var(--sepia);
+}
+
+.record-rule {
+  height: 1px;
+  background: var(--sepia);
+  opacity: 0.25;
+  margin: 1.5rem 0;
+}
+
+/* Software proficiency bars */
+.sw-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.sw-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--ff-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.sw-row > span:first-child {
+  width: 88px;
+  flex-shrink: 0;
+}
+
+.sw-bar {
+  flex: 1;
+  height: 2px;
+  background: rgba(10,10,10,0.12);
+  position: relative;
+  overflow: visible;
+}
+
+.sw-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: var(--w, 70%);
+  background: var(--accent);
+}
+
+/* Hobby scraps */
+.hobby-heap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .record-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
 /* ── 11. SKILLS ───────────────────────────────────────────── */
 .skills {
   background: var(--ground);
