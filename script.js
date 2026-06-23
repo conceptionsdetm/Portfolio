@@ -192,8 +192,14 @@
     if (m) el.dataset.rot = m[1];
   });
 
-  /* ── 12. CV MODAL ───────────────────────────────────────── */
+  /* ── 12. CV MODAL — PDF.js renderer ────────────────────── */
   (function () {
+    /* Load PDF.js from CDN */
+    var pdfScript = document.createElement("script");
+    pdfScript.src = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+    document.head.appendChild(pdfScript);
+
+    /* ── Build overlay ── */
     var modal = document.createElement("div");
     modal.id = "cv-modal";
     modal.setAttribute("role", "dialog");
@@ -204,14 +210,13 @@
       "position:fixed",
       "inset:0",
       "z-index:9000",
-      "background:rgba(10,10,10,.92)",
+      "background:rgba(10,10,10,.93)",
       "flex-direction:column",
       "align-items:center",
-      "justify-content:center",
-      "padding:1.5rem"
+      "padding:1.25rem 1.25rem 0"
     ].join(";");
 
-    /* Toolbar */
+    /* ── Toolbar ── */
     var toolbar = document.createElement("div");
     toolbar.style.cssText = [
       "display:flex",
@@ -219,19 +224,17 @@
       "justify-content:space-between",
       "gap:1rem",
       "width:100%",
-      "max-width:860px",
-      "margin-bottom:.75rem"
+      "max-width:820px",
+      "margin-bottom:.75rem",
+      "flex-shrink:0"
     ].join(";");
 
-    var leftBtns = document.createElement("div");
-    leftBtns.style.cssText = "display:flex;gap:.75rem;align-items:center;";
-
-    function makeBtn(text, isAnchor) {
-      var el = document.createElement(isAnchor ? "a" : "button");
+    function makeBtn(text, tag) {
+      var el = document.createElement(tag || "button");
       el.textContent = text;
       el.style.cssText = [
         "font-family:'Courier New',monospace",
-        "font-size:.75rem",
+        "font-size:.72rem",
         "letter-spacing:.12em",
         "text-transform:uppercase",
         "color:#EDEDDE",
@@ -241,99 +244,67 @@
         "cursor:pointer",
         "text-decoration:none",
         "white-space:nowrap",
-        "transition:background .2s,color .2s,border-color .2s"
+        "transition:background .15s,color .15s"
       ].join(";");
       el.addEventListener("mouseenter", function () {
-        el.style.background = "#EDEDDE";
-        el.style.color = "#0A0A0A";
-        el.style.borderColor = "#EDEDDE";
+        el.style.background = "#EDEDDE"; el.style.color = "#0A0A0A";
       });
       el.addEventListener("mouseleave", function () {
-        el.style.background = "transparent";
-        el.style.color = "#EDEDDE";
-        el.style.borderColor = "#EDEDDE";
+        el.style.background = "transparent"; el.style.color = "#EDEDDE";
       });
       return el;
     }
 
-    var dlBtn   = makeBtn("↓ Download", true);
-    dlBtn.download = "Timonas-Stefanou-CV-2025.pdf";
+    var leftBtns = document.createElement("div");
+    leftBtns.style.cssText = "display:flex;gap:.6rem;";
 
-    var tabBtn  = makeBtn("↗ Open in tab", true);
-    tabBtn.target  = "_blank";
-    tabBtn.rel     = "noopener";
+    var dlBtn  = makeBtn("↓ Download", "a");
+    dlBtn.setAttribute("download", "Timonas-Stefanou-CV-2025.pdf");
 
     var closeBtn = makeBtn("✕ Close");
     closeBtn.setAttribute("aria-label", "Close CV viewer");
 
     leftBtns.appendChild(dlBtn);
-    leftBtns.appendChild(tabBtn);
     toolbar.appendChild(leftBtns);
     toolbar.appendChild(closeBtn);
 
-    /* PDF viewer — use <embed> for broader browser support */
-    var embed = document.createElement("embed");
-    embed.id   = "cv-embed";
-    embed.type = "application/pdf";
-    embed.setAttribute("title", "CV — Timonas Stefanou");
-    embed.style.cssText = [
+    /* ── Scrollable canvas container ── */
+    var canvasWrap = document.createElement("div");
+    canvasWrap.style.cssText = [
       "width:100%",
-      "max-width:860px",
-      "height:82vh",
-      "border:none",
-      "background:#fff"
+      "max-width:820px",
+      "flex:1",
+      "overflow-y:auto",
+      "overflow-x:hidden",
+      "background:#fff",
+      "display:flex",
+      "flex-direction:column",
+      "align-items:center",
+      "gap:2px",
+      "padding:0"
     ].join(";");
 
-    /* Fallback shown if browser can't render the PDF inline */
-    var fallback = document.createElement("div");
-    fallback.id = "cv-fallback";
-    fallback.style.cssText = [
-      "display:none",
-      "width:100%",
-      "max-width:860px",
-      "height:82vh",
-      "background:#1a1a1a",
-      "color:#EDEDDE",
+    /* Loading indicator */
+    var loader = document.createElement("div");
+    loader.style.cssText = [
+      "padding:3rem",
       "font-family:'Courier New',monospace",
-      "font-size:.85rem",
-      "letter-spacing:.08em",
-      "align-items:center",
-      "justify-content:center",
-      "flex-direction:column",
-      "gap:1.25rem",
-      "text-align:center",
-      "border:1px dashed rgba(237,237,222,.2)"
+      "font-size:.8rem",
+      "letter-spacing:.15em",
+      "color:#888",
+      "text-transform:uppercase"
     ].join(";");
-    fallback.innerHTML = "<span>Your browser cannot display the PDF inline.</span>";
+    loader.textContent = "Loading…";
 
     modal.appendChild(toolbar);
-    modal.appendChild(embed);
-    modal.appendChild(fallback);
+    modal.appendChild(canvasWrap);
     document.body.appendChild(modal);
 
-    function openModal(pdfPath) {
-      /* Resolve an absolute URL so embed.src and links are always correct */
-      var abs = new URL(pdfPath, window.location.href).href;
-      embed.src = abs;
-      dlBtn.href  = abs;
-      tabBtn.href = abs;
-      embed.style.display  = "block";
-      fallback.style.display = "none";
-      modal.style.display = "flex";
-      document.body.style.overflow = "hidden";
-      closeBtn.focus();
-
-      /* If embed fails to load (e.g. Safari blocking inline PDF), show fallback */
-      embed.onerror = function () {
-        embed.style.display = "none";
-        fallback.style.display = "flex";
-      };
-    }
-
+    /* ── Close helpers ── */
     function closeModal() {
       modal.style.display = "none";
       document.body.style.overflow = "";
-      embed.src = "";
+      canvasWrap.innerHTML = "";
     }
 
     closeBtn.addEventListener("click", closeModal);
@@ -343,6 +314,69 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && modal.style.display !== "none") closeModal();
     });
+
+    /* ── Render PDF with PDF.js ── */
+    function renderPDF(absUrl) {
+      canvasWrap.innerHTML = "";
+      canvasWrap.appendChild(loader);
+
+      var pdfjsLib = window["pdfjs-dist/build/pdf"];
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+      pdfjsLib.getDocument(absUrl).promise.then(function (pdf) {
+        canvasWrap.innerHTML = "";
+        var total = pdf.numPages;
+
+        function renderPage(n) {
+          return pdf.getPage(n).then(function (page) {
+            /* Scale to fit the 820px container */
+            var baseVP  = page.getViewport({ scale: 1 });
+            var scale   = Math.min(820, canvasWrap.clientWidth || 820) / baseVP.width;
+            var vp      = page.getViewport({ scale: scale });
+
+            var canvas  = document.createElement("canvas");
+            canvas.width  = vp.width;
+            canvas.height = vp.height;
+            canvas.style.cssText = "width:100%;height:auto;display:block;";
+
+            return page.render({ canvasContext: canvas.getContext("2d"), viewport: vp })
+              .promise.then(function () { canvasWrap.appendChild(canvas); });
+          });
+        }
+
+        /* Render pages sequentially */
+        var chain = Promise.resolve();
+        for (var i = 1; i <= total; i++) {
+          chain = chain.then(renderPage.bind(null, i));
+        }
+        return chain;
+      }).catch(function () {
+        canvasWrap.innerHTML = "";
+        var err = document.createElement("p");
+        err.style.cssText = "padding:2rem;font-family:'Courier New',monospace;font-size:.8rem;color:#c00;";
+        err.textContent = "Could not load the PDF. Try the Download button above.";
+        canvasWrap.appendChild(err);
+      });
+    }
+
+    /* ── Open modal ── */
+    function openModal(pdfPath) {
+      var abs = new URL(pdfPath, window.location.href).href;
+      dlBtn.href = abs;
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+      canvasWrap.scrollTop = 0;
+
+      /* Wait for PDF.js to finish loading if needed */
+      if (window["pdfjs-dist/build/pdf"]) {
+        renderPDF(abs);
+      } else {
+        canvasWrap.innerHTML = "";
+        canvasWrap.appendChild(loader);
+        pdfScript.onload = function () { renderPDF(abs); };
+      }
+    }
 
     document.querySelectorAll(".cv-trigger").forEach(function (a) {
       a.addEventListener("click", function (e) {
