@@ -352,7 +352,7 @@ body::before {
 /* Collage fragments around the headline */
 .hero-scrap-1 {
   position: absolute;
-  top: 4rem;
+  top: 7rem;
   right: var(--gutter);
   z-index: 4;
   transform: rotate(4deg);
