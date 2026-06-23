@@ -347,7 +347,7 @@ body::before {
   display: block;
   text-align: right;
   padding-right: 2%;
-  margin-top: -0.25em;
+  margin-top: -0.5em;
 }
 
 /* Collage fragments around the headline */
