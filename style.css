@@ -1468,7 +1468,7 @@ textarea.field-input:focus { border-color: var(--accent); }
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--text);
-  margin-top: 2.5rem;
+  margin-top: 0.75cm;
   margin-bottom: 1rem;
 }
 
