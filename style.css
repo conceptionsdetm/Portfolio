@@ -1446,10 +1446,11 @@ textarea.field-input:focus { border-color: var(--accent); }
   top: 1.5rem;
   left: clamp(1.25rem, 4vw, 2.5rem);
   font-family: var(--ff-mono);
-  font-size: 0.62rem;
+  font-size: 0.72rem;
+  font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--grey);
+  color: var(--text);
   cursor: none;
   display: flex;
   align-items: center;
@@ -1462,10 +1463,11 @@ textarea.field-input:focus { border-color: var(--accent); }
 
 .proj-eyebrow {
   font-family: var(--ff-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.3em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--sepia);
+  color: var(--text);
   margin-bottom: 1rem;
 }
 
