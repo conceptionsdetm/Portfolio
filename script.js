@@ -204,103 +204,136 @@
       "position:fixed",
       "inset:0",
       "z-index:9000",
-      "background:rgba(10,10,10,.88)",
+      "background:rgba(10,10,10,.92)",
       "flex-direction:column",
       "align-items:center",
       "justify-content:center",
       "padding:1.5rem"
     ].join(";");
 
+    /* Toolbar */
     var toolbar = document.createElement("div");
     toolbar.style.cssText = [
       "display:flex",
       "align-items:center",
       "justify-content:space-between",
+      "gap:1rem",
       "width:100%",
-      "max-width:900px",
+      "max-width:860px",
       "margin-bottom:.75rem"
     ].join(";");
 
-    var dlBtn = document.createElement("a");
-    dlBtn.id = "cv-download-btn";
+    var leftBtns = document.createElement("div");
+    leftBtns.style.cssText = "display:flex;gap:.75rem;align-items:center;";
+
+    function makeBtn(text, isAnchor) {
+      var el = document.createElement(isAnchor ? "a" : "button");
+      el.textContent = text;
+      el.style.cssText = [
+        "font-family:'Courier New',monospace",
+        "font-size:.75rem",
+        "letter-spacing:.12em",
+        "text-transform:uppercase",
+        "color:#EDEDDE",
+        "background:transparent",
+        "border:1px dashed #EDEDDE",
+        "padding:.4rem .9rem",
+        "cursor:pointer",
+        "text-decoration:none",
+        "white-space:nowrap",
+        "transition:background .2s,color .2s,border-color .2s"
+      ].join(";");
+      el.addEventListener("mouseenter", function () {
+        el.style.background = "#EDEDDE";
+        el.style.color = "#0A0A0A";
+        el.style.borderColor = "#EDEDDE";
+      });
+      el.addEventListener("mouseleave", function () {
+        el.style.background = "transparent";
+        el.style.color = "#EDEDDE";
+        el.style.borderColor = "#EDEDDE";
+      });
+      return el;
+    }
+
+    var dlBtn   = makeBtn("↓ Download", true);
     dlBtn.download = "Timonas-Stefanou-CV-2025.pdf";
-    dlBtn.textContent = "Download PDF";
-    dlBtn.style.cssText = [
-      "font-family:'Courier New',monospace",
-      "font-size:.8rem",
-      "letter-spacing:.12em",
-      "text-transform:uppercase",
-      "color:#EDEDDE",
-      "border:1px dashed #EDEDDE",
-      "padding:.45rem 1rem",
-      "text-decoration:none",
-      "transition:background .2s,color .2s"
-    ].join(";");
-    dlBtn.addEventListener("mouseenter", function () {
-      dlBtn.style.background = "#D4000A";
-      dlBtn.style.borderColor = "#D4000A";
-      dlBtn.style.color = "#EDEDDE";
-    });
-    dlBtn.addEventListener("mouseleave", function () {
-      dlBtn.style.background = "transparent";
-      dlBtn.style.borderColor = "#EDEDDE";
-      dlBtn.style.color = "#EDEDDE";
-    });
 
-    var closeBtn = document.createElement("button");
-    closeBtn.textContent = "✕ Close";
+    var tabBtn  = makeBtn("↗ Open in tab", true);
+    tabBtn.target  = "_blank";
+    tabBtn.rel     = "noopener";
+
+    var closeBtn = makeBtn("✕ Close");
     closeBtn.setAttribute("aria-label", "Close CV viewer");
-    closeBtn.style.cssText = [
-      "font-family:'Courier New',monospace",
-      "font-size:.8rem",
-      "letter-spacing:.12em",
-      "text-transform:uppercase",
-      "color:#EDEDDE",
-      "background:transparent",
-      "border:1px dashed #EDEDDE",
-      "padding:.45rem 1rem",
-      "cursor:pointer",
-      "transition:background .2s,color .2s"
-    ].join(";");
-    closeBtn.addEventListener("mouseenter", function () {
-      closeBtn.style.background = "#EDEDDE";
-      closeBtn.style.color = "#0A0A0A";
-    });
-    closeBtn.addEventListener("mouseleave", function () {
-      closeBtn.style.background = "transparent";
-      closeBtn.style.color = "#EDEDDE";
-    });
 
-    toolbar.appendChild(dlBtn);
+    leftBtns.appendChild(dlBtn);
+    leftBtns.appendChild(tabBtn);
+    toolbar.appendChild(leftBtns);
     toolbar.appendChild(closeBtn);
 
-    var frame = document.createElement("iframe");
-    frame.id = "cv-frame";
-    frame.setAttribute("title", "CV — Timonas Stefanou");
-    frame.style.cssText = [
+    /* PDF viewer — use <embed> for broader browser support */
+    var embed = document.createElement("embed");
+    embed.id   = "cv-embed";
+    embed.type = "application/pdf";
+    embed.setAttribute("title", "CV — Timonas Stefanou");
+    embed.style.cssText = [
       "width:100%",
-      "max-width:900px",
-      "height:80vh",
+      "max-width:860px",
+      "height:82vh",
       "border:none",
       "background:#fff"
     ].join(";");
 
+    /* Fallback shown if browser can't render the PDF inline */
+    var fallback = document.createElement("div");
+    fallback.id = "cv-fallback";
+    fallback.style.cssText = [
+      "display:none",
+      "width:100%",
+      "max-width:860px",
+      "height:82vh",
+      "background:#1a1a1a",
+      "color:#EDEDDE",
+      "font-family:'Courier New',monospace",
+      "font-size:.85rem",
+      "letter-spacing:.08em",
+      "align-items:center",
+      "justify-content:center",
+      "flex-direction:column",
+      "gap:1.25rem",
+      "text-align:center",
+      "border:1px dashed rgba(237,237,222,.2)"
+    ].join(";");
+    fallback.innerHTML = "<span>Your browser cannot display the PDF inline.</span>";
+
     modal.appendChild(toolbar);
-    modal.appendChild(frame);
+    modal.appendChild(embed);
+    modal.appendChild(fallback);
     document.body.appendChild(modal);
 
     function openModal(pdfPath) {
-      frame.src = pdfPath + "#toolbar=1&navpanes=0";
-      dlBtn.href = pdfPath;
+      /* Resolve an absolute URL so embed.src and links are always correct */
+      var abs = new URL(pdfPath, window.location.href).href;
+      embed.src = abs;
+      dlBtn.href  = abs;
+      tabBtn.href = abs;
+      embed.style.display  = "block";
+      fallback.style.display = "none";
       modal.style.display = "flex";
       document.body.style.overflow = "hidden";
       closeBtn.focus();
+
+      /* If embed fails to load (e.g. Safari blocking inline PDF), show fallback */
+      embed.onerror = function () {
+        embed.style.display = "none";
+        fallback.style.display = "flex";
+      };
     }
 
     function closeModal() {
       modal.style.display = "none";
       document.body.style.overflow = "";
-      frame.src = "";
+      embed.src = "";
     }
 
     closeBtn.addEventListener("click", closeModal);
