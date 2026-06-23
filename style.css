@@ -1114,8 +1114,9 @@ body::before {
 
 .card-category {
   font-family: var(--ff-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.25em;
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
 }
