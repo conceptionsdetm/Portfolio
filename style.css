@@ -322,7 +322,7 @@ body::before {
   font-family: var(--ff-display);
   font-size: clamp(3.5rem, 11vw, 9rem);
   line-height: 0.88;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.015em;
   text-transform: uppercase;
   color: var(--text);
   display: block;
@@ -331,7 +331,7 @@ body::before {
   font-family: var(--ff-display);
   font-size: clamp(3rem, 9vw, 7.5rem);
   line-height: 0.9;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.015em;
   text-transform: uppercase;
   color: var(--text);
   display: block;
@@ -341,7 +341,7 @@ body::before {
   font-family: var(--ff-display);
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--accent);
   display: block;
@@ -989,7 +989,7 @@ body::before {
   font-size: clamp(2.5rem, 6vw, 5rem);
   text-transform: uppercase;
   line-height: 0.9;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
 }
 
 /* ====================================================
@@ -1127,7 +1127,7 @@ body::before {
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   text-transform: uppercase;
   line-height: 0.95;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
   color: var(--paper);
 }
 
@@ -1174,6 +1174,7 @@ body::before {
   text-transform: uppercase;
   margin-bottom: 3.5rem;
   line-height: 0.95;
+  letter-spacing: 0.04em;
 }
 
 /* Scattered step cards — JS adds offsets */
@@ -1490,7 +1491,7 @@ textarea.field-input:focus { border-color: var(--accent); }
   font-size: clamp(2.5rem, 6vw, 5rem);
   text-transform: uppercase;
   line-height: 0.9;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.025em;
 }
 
 /* Visual / hero color block — right side */
@@ -1699,6 +1700,7 @@ textarea.field-input:focus { border-color: var(--accent); }
   text-transform: uppercase;
   line-height: 0.95;
   margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
 }
 
 /* ── 17. ANIMATIONS ───────────────────────────────────────── */
