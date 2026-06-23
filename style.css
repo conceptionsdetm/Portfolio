@@ -728,6 +728,7 @@ body::before {
 .dada-word {
   display: inline-flex;
   align-items: baseline;
+  gap: 0.08em;
 }
 .dada-name .gl {
   display: inline-block;
