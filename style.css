@@ -716,8 +716,6 @@ body::before {
   margin-bottom: 3rem;
   border-bottom: 1px solid rgba(10, 10, 10, 0.18);
 }
-.record-profile-text { max-width: none; }
-
 .dada-name {
   display: flex;
   flex-wrap: wrap;
@@ -762,7 +760,7 @@ body::before {
   font-size: 0.98rem;
   line-height: 1.65;
   color: var(--text);
-  max-width: 46ch;
+  max-width: none;
 }
 
 @media (max-width: 700px) {
