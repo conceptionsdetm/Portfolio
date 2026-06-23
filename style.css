@@ -200,12 +200,14 @@ body::before {
   font-family: var(--ff-display);
   font-size: 1.4rem;
   letter-spacing: 0.05em;
-  color: var(--text);
+  color: var(--paper);
+  background: var(--text);
   position: relative;
   display: inline-flex;
   align-items: center;
   padding: 4px 7px;
   z-index: 0;
+  text-decoration: none;
 }
 /* Red offset square behind the logo */
 .nav-logo::before {
@@ -216,12 +218,12 @@ body::before {
   transform: translate(4px, 4px);
   z-index: -1;
 }
-/* Black border square on top */
+/* White border square on top */
 .nav-logo::after {
   content: '';
   position: absolute;
   inset: 0;
-  border: 2px solid var(--text);
+  border: 2px solid var(--paper);
   z-index: 1;
 }
 
@@ -1178,6 +1180,7 @@ textarea.field-input:focus { border-color: var(--accent); }
   font-size: 1.2rem;
   letter-spacing: 0.05em;
   color: var(--paper);
+  background: var(--text);
   display: inline-block;
   padding: 4px 7px;
   outline: 2px solid var(--paper);
