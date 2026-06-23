@@ -736,29 +736,30 @@ body::before {
 }
 .dada-name .gl {
   display: inline-block;
+  font-family: var(--ff-display);
   color: var(--text);
   line-height: 0.75;
 }
 
-/* DADA: each letter its own typeface, scale, tilt, baseline jump */
+/* DADA: one typeface (same as THE FILE), varied scale, tilt, baseline jump */
 /* TIMONAS */
-.dada-word:nth-child(1) .gl:nth-child(1) { font-family: var(--ff-display); font-size: 3.4rem; transform: rotate(-8deg); }
-.dada-word:nth-child(1) .gl:nth-child(2) { font-family: var(--ff-mono);    font-size: 2rem;   transform: rotate(5deg)  translateY(-0.35em); color: var(--accent); }
-.dada-word:nth-child(1) .gl:nth-child(3) { font-family: var(--ff-serif); font-style: italic; font-size: 2.9rem; transform: rotate(-3deg); }
-.dada-word:nth-child(1) .gl:nth-child(4) { font-family: var(--ff-display); font-size: 2.2rem; transform: rotate(11deg) translateY(-0.2em); }
-.dada-word:nth-child(1) .gl:nth-child(5) { font-family: var(--ff-mono);    font-size: 3.1rem; transform: rotate(-5deg); }
-.dada-word:nth-child(1) .gl:nth-child(6) { font-family: var(--ff-serif);   font-size: 2.4rem; transform: rotate(7deg);  color: var(--accent); }
-.dada-word:nth-child(1) .gl:nth-child(7) { font-family: var(--ff-display); font-size: 2.7rem; transform: rotate(-11deg) translateY(-0.15em); }
+.dada-word:nth-child(1) .gl:nth-child(1) { font-size: 3.4rem; transform: rotate(-8deg); }
+.dada-word:nth-child(1) .gl:nth-child(2) { font-size: 2rem;   transform: rotate(5deg)  translateY(-0.35em); color: var(--accent); }
+.dada-word:nth-child(1) .gl:nth-child(3) { font-size: 2.9rem; transform: rotate(-3deg); }
+.dada-word:nth-child(1) .gl:nth-child(4) { font-size: 2.2rem; transform: rotate(11deg) translateY(-0.2em); }
+.dada-word:nth-child(1) .gl:nth-child(5) { font-size: 3.1rem; transform: rotate(-5deg); }
+.dada-word:nth-child(1) .gl:nth-child(6) { font-size: 2.4rem; transform: rotate(7deg);  color: var(--accent); }
+.dada-word:nth-child(1) .gl:nth-child(7) { font-size: 2.7rem; transform: rotate(-11deg) translateY(-0.15em); }
 
 /* STEFANOU */
-.dada-word:nth-child(2) .gl:nth-child(1) { font-family: var(--ff-serif); font-style: italic; font-size: 2.6rem; transform: rotate(7deg); }
-.dada-word:nth-child(2) .gl:nth-child(2) { font-family: var(--ff-display); font-size: 3.3rem; transform: rotate(-6deg); color: var(--accent); }
-.dada-word:nth-child(2) .gl:nth-child(3) { font-family: var(--ff-mono);    font-size: 2rem;   transform: rotate(4deg)  translateY(-0.3em); }
-.dada-word:nth-child(2) .gl:nth-child(4) { font-family: var(--ff-display); font-size: 2.9rem; transform: rotate(-9deg); }
-.dada-word:nth-child(2) .gl:nth-child(5) { font-family: var(--ff-serif);   font-size: 2.3rem; transform: rotate(8deg)  translateY(-0.1em); }
-.dada-word:nth-child(2) .gl:nth-child(6) { font-family: var(--ff-mono);    font-size: 3rem;   transform: rotate(-4deg); color: var(--accent); }
-.dada-word:nth-child(2) .gl:nth-child(7) { font-family: var(--ff-display); font-size: 2.4rem; transform: rotate(12deg) translateY(-0.25em); }
-.dada-word:nth-child(2) .gl:nth-child(8) { font-family: var(--ff-serif); font-style: italic; font-size: 2.7rem; transform: rotate(-7deg); }
+.dada-word:nth-child(2) .gl:nth-child(1) { font-size: 2.6rem; transform: rotate(7deg); }
+.dada-word:nth-child(2) .gl:nth-child(2) { font-size: 3.3rem; transform: rotate(-6deg); color: var(--accent); }
+.dada-word:nth-child(2) .gl:nth-child(3) { font-size: 2rem;   transform: rotate(4deg)  translateY(-0.3em); }
+.dada-word:nth-child(2) .gl:nth-child(4) { font-size: 2.9rem; transform: rotate(-9deg); }
+.dada-word:nth-child(2) .gl:nth-child(5) { font-size: 2.3rem; transform: rotate(8deg)  translateY(-0.1em); }
+.dada-word:nth-child(2) .gl:nth-child(6) { font-size: 3rem;   transform: rotate(-4deg); color: var(--accent); }
+.dada-word:nth-child(2) .gl:nth-child(7) { font-size: 2.4rem; transform: rotate(12deg) translateY(-0.25em); }
+.dada-word:nth-child(2) .gl:nth-child(8) { font-size: 2.7rem; transform: rotate(-7deg); }
 
 .record-profile-text {
   font-family: var(--ff-serif);
