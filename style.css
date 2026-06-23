@@ -722,32 +722,43 @@ body::before {
   border-bottom: 1px solid rgba(10, 10, 10, 0.18);
 }
 
-.record-name {
+.dada-name {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.15em 0.5rem;
-  line-height: 1;
+  align-items: flex-end;
+  gap: 0.4em 1.4rem;
+  line-height: 0.8;
   text-transform: uppercase;
 }
-.dada-name-a {
-  font-family: var(--ff-serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(2rem, 4.6vw, 3.4rem);
-  letter-spacing: 0.01em;
+.dada-word {
+  display: inline-flex;
+  align-items: flex-end;
+}
+.dada-name .gl {
+  display: inline-block;
   color: var(--text);
-  transform: rotate(-3deg);
+  line-height: 0.75;
 }
-.dada-name-b {
-  font-family: var(--ff-mono);
-  font-weight: 400;
-  font-size: clamp(1.6rem, 3.8vw, 2.7rem);
-  letter-spacing: -0.01em;
-  color: var(--accent);
-  border-bottom: 3px solid var(--text);
-  transform: rotate(2deg) translateY(0.1em);
-}
+
+/* DADA: each letter its own typeface, scale, tilt, baseline jump */
+/* TIMONAS */
+.dada-word:nth-child(1) .gl:nth-child(1) { font-family: var(--ff-display); font-size: 3.4rem; transform: rotate(-8deg); }
+.dada-word:nth-child(1) .gl:nth-child(2) { font-family: var(--ff-mono);    font-size: 2rem;   transform: rotate(5deg)  translateY(-0.35em); color: var(--accent); }
+.dada-word:nth-child(1) .gl:nth-child(3) { font-family: var(--ff-serif); font-style: italic; font-size: 2.9rem; transform: rotate(-3deg); }
+.dada-word:nth-child(1) .gl:nth-child(4) { font-family: var(--ff-display); font-size: 2.2rem; transform: rotate(11deg) translateY(-0.2em); }
+.dada-word:nth-child(1) .gl:nth-child(5) { font-family: var(--ff-mono);    font-size: 3.1rem; transform: rotate(-5deg); }
+.dada-word:nth-child(1) .gl:nth-child(6) { font-family: var(--ff-serif);   font-size: 2.4rem; transform: rotate(7deg);  color: var(--accent); }
+.dada-word:nth-child(1) .gl:nth-child(7) { font-family: var(--ff-display); font-size: 2.7rem; transform: rotate(-11deg) translateY(-0.15em); }
+
+/* STEFANOU */
+.dada-word:nth-child(2) .gl:nth-child(1) { font-family: var(--ff-serif); font-style: italic; font-size: 2.6rem; transform: rotate(7deg); }
+.dada-word:nth-child(2) .gl:nth-child(2) { font-family: var(--ff-display); font-size: 3.3rem; transform: rotate(-6deg); color: var(--accent); }
+.dada-word:nth-child(2) .gl:nth-child(3) { font-family: var(--ff-mono);    font-size: 2rem;   transform: rotate(4deg)  translateY(-0.3em); }
+.dada-word:nth-child(2) .gl:nth-child(4) { font-family: var(--ff-display); font-size: 2.9rem; transform: rotate(-9deg); }
+.dada-word:nth-child(2) .gl:nth-child(5) { font-family: var(--ff-serif);   font-size: 2.3rem; transform: rotate(8deg)  translateY(-0.1em); }
+.dada-word:nth-child(2) .gl:nth-child(6) { font-family: var(--ff-mono);    font-size: 3rem;   transform: rotate(-4deg); color: var(--accent); }
+.dada-word:nth-child(2) .gl:nth-child(7) { font-family: var(--ff-display); font-size: 2.4rem; transform: rotate(12deg) translateY(-0.25em); }
+.dada-word:nth-child(2) .gl:nth-child(8) { font-family: var(--ff-serif); font-style: italic; font-size: 2.7rem; transform: rotate(-7deg); }
 
 .record-profile-text {
   font-family: var(--ff-serif);
