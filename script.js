@@ -319,4 +319,112 @@
     });
   }());
 
+  /* ── 13. IMAGE LIGHTBOX ─────────────────────────────────── */
+  (function () {
+    /* Build overlay once */
+    var lb = document.createElement("div");
+    lb.id = "img-lightbox";
+    lb.setAttribute("role", "dialog");
+    lb.setAttribute("aria-modal", "true");
+    lb.setAttribute("aria-label", "Image viewer");
+    lb.style.cssText = [
+      "display:none",
+      "position:fixed",
+      "inset:0",
+      "z-index:9100",
+      "background:rgba(10,10,10,.93)",
+      "flex-direction:column",
+      "align-items:center",
+      "justify-content:center",
+      "padding:1.5rem",
+      "cursor:zoom-out"
+    ].join(";");
+
+    var lbImg = document.createElement("img");
+    lbImg.id = "img-lightbox-img";
+    lbImg.setAttribute("alt", "");
+    lbImg.style.cssText = [
+      "max-width:92vw",
+      "max-height:88vh",
+      "object-fit:contain",
+      "box-shadow:0 8px 60px rgba(0,0,0,.6)",
+      "cursor:default"
+    ].join(";");
+
+    var lbClose = document.createElement("button");
+    lbClose.textContent = "✕ Close";
+    lbClose.setAttribute("aria-label", "Close image viewer");
+    lbClose.style.cssText = [
+      "position:absolute",
+      "top:1.25rem",
+      "right:1.25rem",
+      "font-family:'Courier New',monospace",
+      "font-size:.75rem",
+      "letter-spacing:.12em",
+      "text-transform:uppercase",
+      "color:#EDEDDE",
+      "background:transparent",
+      "border:1px dashed #EDEDDE",
+      "padding:.4rem .9rem",
+      "cursor:pointer",
+      "transition:background .2s,color .2s"
+    ].join(";");
+    lbClose.addEventListener("mouseenter", function () {
+      lbClose.style.background = "#EDEDDE";
+      lbClose.style.color = "#0A0A0A";
+    });
+    lbClose.addEventListener("mouseleave", function () {
+      lbClose.style.background = "transparent";
+      lbClose.style.color = "#EDEDDE";
+    });
+
+    var lbCaption = document.createElement("p");
+    lbCaption.style.cssText = [
+      "margin-top:1rem",
+      "font-family:'Courier New',monospace",
+      "font-size:.72rem",
+      "letter-spacing:.1em",
+      "color:rgba(237,237,222,.55)",
+      "text-transform:uppercase"
+    ].join(";");
+
+    lb.appendChild(lbClose);
+    lb.appendChild(lbImg);
+    lb.appendChild(lbCaption);
+    document.body.appendChild(lb);
+
+    function openLightbox(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt || "";
+      lbCaption.textContent = alt || "";
+      lb.style.display = "flex";
+      document.body.style.overflow = "hidden";
+      lbClose.focus();
+    }
+    function closeLightbox() {
+      lb.style.display = "none";
+      document.body.style.overflow = "";
+      lbImg.src = "";
+    }
+
+    lbClose.addEventListener("click", closeLightbox);
+    lb.addEventListener("click", function (e) {
+      if (e.target === lb) closeLightbox();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && lb.style.display !== "none") closeLightbox();
+    });
+    /* Stop clicks on the image itself from bubbling to the backdrop */
+    lbImg.addEventListener("click", function (e) { e.stopPropagation(); });
+
+    /* Wire up all deliverable images */
+    document.querySelectorAll(".deliverable-full img, .deliverable-card img").forEach(function (img) {
+      img.style.cursor = "zoom-in";
+      img.setAttribute("title", "Click to enlarge");
+      img.addEventListener("click", function () {
+        openLightbox(img.src, img.alt);
+      });
+    });
+  }());
+
 })();
