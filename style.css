@@ -706,13 +706,14 @@ body::before {
 
 .record-profile {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 2.5rem 3.5rem;
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: start;
   padding-bottom: 2.5rem;
   margin-bottom: 3rem;
   border-bottom: 1px solid rgba(10, 10, 10, 0.18);
 }
+.record-profile-text { max-width: 62ch; }
 
 .dada-name {
   display: flex;
