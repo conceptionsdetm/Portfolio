@@ -202,29 +202,13 @@ body::before {
   letter-spacing: 0.05em;
   color: var(--paper);
   background: var(--text);
-  position: relative;
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   padding: 4px 7px;
-  z-index: 0;
+  outline: 2px solid var(--paper);
+  outline-offset: 0;
+  box-shadow: 4px 4px 0 0 var(--accent);
   text-decoration: none;
-}
-/* Red offset square behind the logo */
-.nav-logo::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--accent);
-  transform: translate(4px, 4px);
-  z-index: -1;
-}
-/* White border square on top */
-.nav-logo::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 2px solid var(--paper);
-  z-index: 1;
+  cursor: none;
 }
 
 .nav-links {
@@ -323,23 +307,6 @@ body::before {
   padding-bottom: 6rem;
 }
 
-.hero-mark-wrap {
-  margin-bottom: 2.5rem;
-}
-
-.hero-mark {
-  font-family: var(--ff-display);
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  letter-spacing: 0.05em;
-  color: var(--paper);
-  background: var(--text);
-  display: inline-block;
-  padding: 8px 16px;
-  outline: 2px solid var(--paper);
-  outline-offset: 0;
-  box-shadow: 8px 8px 0 0 var(--accent);
-  user-select: none;
-}
 
 /* The headline — AESTHETIC RISK:
    "STRAIGHT" is massive (Impact 20vw), "LINE" breaks alone
@@ -420,7 +387,7 @@ body::before {
 }
 .hero-stamp-1 {
   position: absolute;
-  top: 2.5rem;
+  top: 9rem;
   left: 5%;
   z-index: 5;
   transform: rotate(-8deg);
