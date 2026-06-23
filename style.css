@@ -323,6 +323,24 @@ body::before {
   padding-bottom: 6rem;
 }
 
+.hero-mark-wrap {
+  margin-bottom: 2.5rem;
+}
+
+.hero-mark {
+  font-family: var(--ff-display);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  letter-spacing: 0.05em;
+  color: var(--paper);
+  background: var(--text);
+  display: inline-block;
+  padding: 8px 16px;
+  outline: 2px solid var(--paper);
+  outline-offset: 0;
+  box-shadow: 8px 8px 0 0 var(--accent);
+  user-select: none;
+}
+
 /* The headline — AESTHETIC RISK:
    "STRAIGHT" is massive (Impact 20vw), "LINE" breaks alone
    at half the size, right-aligned. The reader is disoriented
