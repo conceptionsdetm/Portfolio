@@ -200,13 +200,14 @@ body::before {
   font-family: var(--ff-display);
   font-size: 1.4rem;
   letter-spacing: 0.05em;
+  line-height: 1;
   color: var(--paper);
-  background: var(--text);
+  background: var(--accent);
   display: inline-block;
-  padding: 4px 7px;
+  padding: 5px 8px;
   outline: 2px solid var(--paper);
   outline-offset: 0;
-  box-shadow: 4px 4px 0 0 var(--accent);
+  box-shadow: 4px 4px 0 0 var(--text);
   text-decoration: none;
   cursor: none;
 }
@@ -1327,13 +1328,14 @@ textarea.field-input:focus { border-color: var(--accent); }
   font-family: var(--ff-display);
   font-size: 1.2rem;
   letter-spacing: 0.05em;
+  line-height: 1;
   color: var(--paper);
-  background: var(--text);
+  background: var(--accent);
   display: inline-block;
-  padding: 4px 7px;
+  padding: 5px 8px;
   outline: 2px solid var(--paper);
   outline-offset: 0;
-  box-shadow: 4px 4px 0 0 var(--accent);
+  box-shadow: 4px 4px 0 0 var(--text);
   text-decoration: none;
   cursor: none;
 }
