@@ -346,7 +346,7 @@ body::before {
   color: var(--accent);
   display: block;
   text-align: left;
-  padding-left: 10%;
+  padding-left: 34%;
   margin-top: -0.15em;
 }
 
