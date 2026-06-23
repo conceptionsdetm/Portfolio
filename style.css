@@ -202,14 +202,27 @@ body::before {
   letter-spacing: 0.05em;
   color: var(--text);
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 7px;
+  z-index: 0;
 }
+/* Red offset square behind the logo */
+.nav-logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: translate(4px, 4px);
+  z-index: -1;
+}
+/* Black border square on top */
 .nav-logo::after {
   content: '';
   position: absolute;
-  inset: -4px;
+  inset: 0;
   border: 2px solid var(--text);
-  transform: rotate(-2deg);
+  z-index: 1;
 }
 
 .nav-links {
