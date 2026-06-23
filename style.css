@@ -317,12 +317,11 @@ body::before {
 .hero-headline {
   position: relative;
   z-index: 3;
-  padding-top: 2.6rem;
 }
 .hero-line-1 {
   font-family: var(--ff-display);
   font-size: clamp(3.5rem, 11vw, 9rem);
-  line-height: 0.82;
+  line-height: 0.88;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--text);
@@ -336,8 +335,7 @@ body::before {
   text-transform: uppercase;
   color: var(--text);
   display: block;
-  padding-left: 14%;
-  margin-top: -0.22em;
+  padding-left: 10%;
 }
 .hero-line-3 {
   font-family: var(--ff-display);
@@ -347,12 +345,9 @@ body::before {
   text-transform: uppercase;
   color: var(--accent);
   display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-align: right;
-  transform: rotate(-11deg);
-  transform-origin: right center;
+  text-align: left;
+  padding-left: 34%;
+  margin-top: -0.15em;
 }
 
 /* Collage fragments around the headline */
@@ -1798,17 +1793,9 @@ textarea.field-input:focus { border-color: var(--accent); }
   .hero-stamp-1, .hero-stamp-2, .hero-arrow, .hero-ref {
     display: none;
   }
-  .hero-headline { padding-top: 0; }
   .hero-line-1 { font-size: clamp(2.8rem, 14vw, 6rem); }
-  .hero-line-2 { font-size: clamp(2.2rem, 11vw, 5rem); padding-left: 5%; margin-top: -0.1em; }
-  .hero-line-3 {
-    font-size: clamp(1.6rem, 8vw, 3rem);
-    position: static;
-    transform: none;
-    text-align: left;
-    padding-left: 5%;
-    margin-top: 0.1em;
-  }
+  .hero-line-2 { font-size: clamp(2.2rem, 11vw, 5rem); padding-left: 5%; }
+  .hero-line-3 { font-size: clamp(1.6rem, 8vw, 3rem); }
 
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
