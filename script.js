@@ -192,4 +192,131 @@
     if (m) el.dataset.rot = m[1];
   });
 
+  /* ── 12. CV MODAL ───────────────────────────────────────── */
+  (function () {
+    var modal = document.createElement("div");
+    modal.id = "cv-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-label", "CV viewer");
+    modal.style.cssText = [
+      "display:none",
+      "position:fixed",
+      "inset:0",
+      "z-index:9000",
+      "background:rgba(10,10,10,.88)",
+      "flex-direction:column",
+      "align-items:center",
+      "justify-content:center",
+      "padding:1.5rem"
+    ].join(";");
+
+    var toolbar = document.createElement("div");
+    toolbar.style.cssText = [
+      "display:flex",
+      "align-items:center",
+      "justify-content:space-between",
+      "width:100%",
+      "max-width:900px",
+      "margin-bottom:.75rem"
+    ].join(";");
+
+    var dlBtn = document.createElement("a");
+    dlBtn.id = "cv-download-btn";
+    dlBtn.download = "Timonas-Stefanou-CV-2025.pdf";
+    dlBtn.textContent = "Download PDF";
+    dlBtn.style.cssText = [
+      "font-family:'Courier New',monospace",
+      "font-size:.8rem",
+      "letter-spacing:.12em",
+      "text-transform:uppercase",
+      "color:#EDEDDE",
+      "border:1px dashed #EDEDDE",
+      "padding:.45rem 1rem",
+      "text-decoration:none",
+      "transition:background .2s,color .2s"
+    ].join(";");
+    dlBtn.addEventListener("mouseenter", function () {
+      dlBtn.style.background = "#D4000A";
+      dlBtn.style.borderColor = "#D4000A";
+      dlBtn.style.color = "#EDEDDE";
+    });
+    dlBtn.addEventListener("mouseleave", function () {
+      dlBtn.style.background = "transparent";
+      dlBtn.style.borderColor = "#EDEDDE";
+      dlBtn.style.color = "#EDEDDE";
+    });
+
+    var closeBtn = document.createElement("button");
+    closeBtn.textContent = "✕ Close";
+    closeBtn.setAttribute("aria-label", "Close CV viewer");
+    closeBtn.style.cssText = [
+      "font-family:'Courier New',monospace",
+      "font-size:.8rem",
+      "letter-spacing:.12em",
+      "text-transform:uppercase",
+      "color:#EDEDDE",
+      "background:transparent",
+      "border:1px dashed #EDEDDE",
+      "padding:.45rem 1rem",
+      "cursor:pointer",
+      "transition:background .2s,color .2s"
+    ].join(";");
+    closeBtn.addEventListener("mouseenter", function () {
+      closeBtn.style.background = "#EDEDDE";
+      closeBtn.style.color = "#0A0A0A";
+    });
+    closeBtn.addEventListener("mouseleave", function () {
+      closeBtn.style.background = "transparent";
+      closeBtn.style.color = "#EDEDDE";
+    });
+
+    toolbar.appendChild(dlBtn);
+    toolbar.appendChild(closeBtn);
+
+    var frame = document.createElement("iframe");
+    frame.id = "cv-frame";
+    frame.setAttribute("title", "CV — Timonas Stefanou");
+    frame.style.cssText = [
+      "width:100%",
+      "max-width:900px",
+      "height:80vh",
+      "border:none",
+      "background:#fff"
+    ].join(";");
+
+    modal.appendChild(toolbar);
+    modal.appendChild(frame);
+    document.body.appendChild(modal);
+
+    function openModal(pdfPath) {
+      frame.src = pdfPath + "#toolbar=1&navpanes=0";
+      dlBtn.href = pdfPath;
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+      frame.src = "";
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.style.display !== "none") closeModal();
+    });
+
+    document.querySelectorAll(".cv-trigger").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        openModal(a.dataset.cv);
+      });
+    });
+  }());
+
 })();
