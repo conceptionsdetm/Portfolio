@@ -1115,8 +1115,29 @@ textarea.field-input:focus { border-color: var(--accent); }
 .footer-logo {
   font-family: var(--ff-display);
   font-size: 1.2rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--paper);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 6px;
+  z-index: 0;
+  text-decoration: none;
+}
+.footer-logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: translate(4px, 4px);
+  z-index: -1;
+}
+.footer-logo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--paper);
+  z-index: 1;
 }
 .footer-copy {
   font-family: var(--ff-mono);
