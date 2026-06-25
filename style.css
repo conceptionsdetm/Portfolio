@@ -470,11 +470,15 @@ body::before {
   transform: rotate(2deg);
 }
 
-/* Clickable portrait -> Instagram */
+/* Clickable portrait -> Instagram (whole placeholder) */
 .hero-photo-link {
-  position: relative;
   display: block;
   cursor: none;
+  text-decoration: none;
+}
+.hero-photo-frame {
+  position: relative;
+  display: block;
 }
 .hero-photo-link img {
   transition: transform 0.25s ease, filter 0.25s ease;
