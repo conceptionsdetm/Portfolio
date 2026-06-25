@@ -427,7 +427,7 @@ body::before {
 /* Dada collage portrait */
 .hero-photo {
   position: absolute;
-  top: 38%;
+  top: 32%;
   right: 6%;
   width: clamp(190px, 21vw, 310px);
   margin: 0;
@@ -468,6 +468,47 @@ body::before {
   margin-top: 12px;
   border: 1px solid var(--text);
   transform: rotate(2deg);
+}
+
+/* Clickable portrait -> Instagram */
+.hero-photo-link {
+  position: relative;
+  display: block;
+  cursor: none;
+}
+.hero-photo-link img {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+.hero-photo-link:hover img,
+.hero-photo-link:focus-visible img {
+  transform: scale(1.02);
+  filter: grayscale(0) contrast(1.08);
+}
+.hero-photo-hover {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem;
+  font-family: var(--ff-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--accent);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+.hero-photo-link:hover .hero-photo-hover,
+.hero-photo-link:focus-visible .hero-photo-hover {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-cta {
