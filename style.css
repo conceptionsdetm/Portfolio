@@ -427,7 +427,7 @@ body::before {
 /* Dada collage portrait */
 .hero-photo {
   position: absolute;
-  top: 24%;
+  top: 38%;
   right: 6%;
   width: clamp(190px, 21vw, 310px);
   margin: 0;
