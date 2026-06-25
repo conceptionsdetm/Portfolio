@@ -89,6 +89,40 @@
     }
   }
 
+  /* ── 4b. SOFTWARE % COUNTERS ────────────────────────────── */
+  /* Counts each percentage up from 0 as the bars scroll into view,
+     in sync with the CSS bar-fill animation. */
+  var swBars = document.querySelectorAll(".sw-bars");
+  if (swBars.length) {
+    function countUp(container) {
+      var pcts = container.querySelectorAll(".sw-pct");
+      pcts.forEach(function (el) {
+        var target = parseInt(el.getAttribute("data-pct"), 10) || 0;
+        if (prefersReduced) { el.textContent = target + "%"; return; }
+        var startTs = null;
+        var duration = 1100;
+        function step(ts) {
+          if (startTs === null) startTs = ts;
+          var p = Math.min((ts - startTs) / duration, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(eased * target) + "%";
+          if (p < 1) { requestAnimationFrame(step); }
+        }
+        requestAnimationFrame(step);
+      });
+    }
+    if (prefersReduced) {
+      swBars.forEach(countUp);
+    } else {
+      var swObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { countUp(e.target); swObs.unobserve(e.target); }
+        });
+      }, { threshold: 0.25 });
+      swBars.forEach(function (el) { swObs.observe(el); });
+    }
+  }
+
   /* ── 5. GLITCH TEXT ─────────────────────────────────────── */
   /* Triggers on hero headline: a brief clip-path glitch
      fires once on load, then randomly every 8–18 seconds */
