@@ -960,8 +960,9 @@ body::before {
   align-items: center;
   gap: 0.8rem;
   font-family: var(--ff-mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text);
 }
@@ -994,12 +995,13 @@ body::before {
 }
 
 .sw-pct {
-  width: 34px;
+  width: 38px;
   flex-shrink: 0;
   text-align: right;
   font-family: var(--ff-mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.04em;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: var(--accent);
   font-variant-numeric: tabular-nums;
 }
