@@ -475,6 +475,11 @@ body::before {
   display: block;
   cursor: none;
   text-decoration: none;
+  transition: transform 0.25s ease;
+}
+.hero-photo-link:hover,
+.hero-photo-link:focus-visible {
+  transform: translateY(-5px);
 }
 .hero-photo-frame {
   position: relative;
@@ -485,34 +490,36 @@ body::before {
 }
 .hero-photo-link:hover img,
 .hero-photo-link:focus-visible img {
-  transform: scale(1.02);
   filter: grayscale(0) contrast(1.08);
 }
+/* Full-image overlay so the entire photo reads as the target */
 .hero-photo-hover {
   position: absolute;
-  left: 8px;
-  right: 8px;
-  bottom: 8px;
+  inset: 8px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.55rem;
+  padding: 0.7rem;
   font-family: var(--ff-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--paper);
-  background: var(--accent);
+  background: linear-gradient(to top, rgba(212, 0, 10, 0.9) 0%, rgba(212, 0, 10, 0.18) 55%, rgba(212, 0, 10, 0) 100%);
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.25s ease;
   pointer-events: none;
 }
 .hero-photo-link:hover .hero-photo-hover,
 .hero-photo-link:focus-visible .hero-photo-hover {
   opacity: 1;
-  transform: translateY(0);
+}
+/* Tag also reacts so the lower half clearly belongs to the link */
+.hero-photo-link:hover .hero-photo-tag,
+.hero-photo-link:focus-visible .hero-photo-tag {
+  background: var(--accent);
+  color: var(--paper);
 }
 
 .hero-cta {
