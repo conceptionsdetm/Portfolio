@@ -424,6 +424,52 @@ body::before {
   text-transform: uppercase;
 }
 
+/* Dada collage portrait */
+.hero-photo {
+  position: absolute;
+  top: 24%;
+  right: 6%;
+  width: clamp(190px, 21vw, 310px);
+  margin: 0;
+  z-index: 2;
+  transform: rotate(-4deg);
+  text-align: center;
+}
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 8px solid var(--paper);
+  box-shadow: 10px 10px 0 0 var(--accent), 0 16px 36px rgba(0, 0, 0, 0.28);
+  filter: grayscale(0.12) contrast(1.04);
+}
+/* torn tape strip across the top */
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 96px;
+  height: 26px;
+  transform: translateX(-50%) rotate(-5deg);
+  background: rgba(212, 0, 10, 0.22);
+  border: 1px dashed rgba(10, 10, 10, 0.35);
+  z-index: 3;
+}
+.hero-photo-tag {
+  font-family: var(--ff-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: var(--paper);
+  display: inline-block;
+  padding: 3px 9px;
+  margin-top: 12px;
+  border: 1px solid var(--text);
+  transform: rotate(2deg);
+}
+
 .hero-cta {
   margin-top: 3.5rem;
   display: flex;
@@ -1808,7 +1854,8 @@ textarea.field-input:focus { border-color: var(--accent); }
   .proj-meta { grid-template-columns: repeat(2, 1fr); }
 
   .hero-scrap-1, .hero-scrap-2, .hero-scrap-3,
-  .hero-stamp-1, .hero-stamp-2, .hero-arrow, .hero-ref {
+  .hero-stamp-1, .hero-stamp-2, .hero-arrow, .hero-ref,
+  .hero-photo {
     display: none;
   }
   .hero-line-1 { font-size: clamp(2.8rem, 14vw, 6rem); }
