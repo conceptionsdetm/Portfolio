@@ -455,6 +455,7 @@ body::before {
   background: rgba(212, 0, 10, 0.22);
   border: 1px dashed rgba(10, 10, 10, 0.35);
   z-index: 3;
+  pointer-events: none;
 }
 .hero-photo-tag {
   font-family: var(--ff-mono);
@@ -475,18 +476,13 @@ body::before {
   display: block;
   cursor: none;
   text-decoration: none;
-  transition: transform 0.25s ease;
-}
-.hero-photo-link:hover,
-.hero-photo-link:focus-visible {
-  transform: translateY(-5px);
 }
 .hero-photo-frame {
   position: relative;
   display: block;
 }
 .hero-photo-link img {
-  transition: transform 0.25s ease, filter 0.25s ease;
+  transition: filter 0.25s ease;
 }
 .hero-photo-link:hover img,
 .hero-photo-link:focus-visible img {
