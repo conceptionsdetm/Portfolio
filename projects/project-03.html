@@ -308,11 +308,13 @@
         stage.innerHTML = '';
         if (m.type === 'video') {
           var v = document.createElement('video');
-          v.src = m.src; v.controls = true; v.autoplay = true; v.playsInline = true; v.setAttribute('playsinline','');
-          v.volume = 0.5;
-          v.addEventListener('loadedmetadata', function () { v.volume = 0.5; });
-          v.addEventListener('play', function () { v.volume = 0.5; });
+          v.src = m.src; v.controls = true; v.playsInline = true; v.setAttribute('playsinline','');
+          v.muted = false; v.volume = 0.5;
+          v.addEventListener('loadedmetadata', function () { v.muted = false; v.volume = 0.5; });
           stage.appendChild(v);
+          /* opened via a click/key — user gesture allows sound */
+          var pr = v.play();
+          if (pr && pr.catch) { pr.catch(function () { /* will play with sound on user press */ }); }
         } else {
           var im = document.createElement('img'); im.src = m.src; im.alt = cur._title; stage.appendChild(im);
         }
