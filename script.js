@@ -528,4 +528,21 @@
     });
   }());
 
+  /* ── SCROLL PASS-THROUGH ────────────────────────────────── */
+  /* When an inner scroll frame (PDF / website previews) reaches its
+     top or bottom, let the wheel keep scrolling the page instead of
+     getting trapped inside the frame. */
+  var scrollFrames = document.querySelectorAll(".web-scroll, .board-scroll, .device-frame");
+  scrollFrames.forEach(function (el) {
+    el.addEventListener("wheel", function (e) {
+      var atTop = el.scrollTop <= 0;
+      var atBottom = Math.ceil(el.scrollTop + el.clientHeight) >= el.scrollHeight;
+      var scrollable = el.scrollHeight > el.clientHeight + 1;
+      if (!scrollable || (e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom)) {
+        window.scrollBy(0, e.deltaY);
+        e.preventDefault();
+      }
+    }, { passive: false });
+  });
+
 })();
