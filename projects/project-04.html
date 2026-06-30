@@ -36,6 +36,10 @@
     .frame:hover .zoomcue { opacity: 1; }
     .sm-cap { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sepia); margin-top: 0.5rem; line-height: 1.4; }
     .sm-cap b { color: var(--text); font-weight: 700; }
+    .sm-month { margin-bottom: 3rem; }
+    .sm-month-head { display: flex; align-items: baseline; gap: 1rem; border-bottom: 2px solid var(--text); padding-bottom: 0.6rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .sm-month-name { font-family: var(--ff-display); font-size: clamp(1.5rem, 4vw, 2.4rem); letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); }
+    .sm-month-count { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
     .cal-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1.25rem; }
     .cal-month { border: 1px solid rgba(0,0,0,.12); background: var(--paper); padding: 1.1rem 1.25rem; }
     .cal-month h3 { font-family: var(--ff-display); font-size: 1.2rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
@@ -179,15 +183,77 @@
   <section class="proj-section" style="background:var(--ground);" aria-label="Content Calendar">
     <div class="wrap">
       <h2 class="proj-heading reveal">The Content Calendar</h2>
-      <p class="reveal r1" style="font-family:var(--ff-serif);color:var(--sepia);max-width:660px;margin-bottom:1.5rem;">The monthly social programme, Dec 2025 &ndash; Jun 2026, built around recurring content pillars.</p>
-      <div class="cal-list reveal r1">
-        <div class="cal-month"><h3>December 2025</h3><ul><li>The Experience Begins</li><li>Implant Shapes, Simplified <span class="pill">Video</span></li><li>Confidence is a Luxury</li><li>Myth vs Reality: Bigger is Better <span class="pill">Video</span></li><li>The 8-Step Procedure</li><li>Meet the Doctors</li></ul></div>
-        <div class="cal-month"><h3>January 2026</h3><ul><li>The Experience Series &middot; Clarity</li><li>For Every Woman&rsquo;s Story</li><li>Luxury Meets Technology</li><li>Self-Love Isn&rsquo;t a Trend</li><li>Myth vs Reality: Implants Look Fake</li><li>Benefits of MiaFemtech</li></ul></div>
-        <div class="cal-month"><h3>February 2026</h3><ul><li>The Experience Series &middot; Comfort First</li><li>Size Explained in 15 Seconds</li><li>The Empowered Consultation Guide</li><li>Behind the Brand &middot; Precision Tech</li><li>The Experience Series &middot; The Feeling</li></ul></div>
-        <div class="cal-month"><h3>March 2026</h3><ul><li>Understanding Options</li><li>Round vs Anatomical <span class="pill">Video</span></li><li>Elegance Begins Within</li><li>Myth vs Reality: Recovery Is Painful</li><li>Behind the Brand &middot; Material Integrity</li><li>The Experience Series &middot; Confidence</li></ul></div>
-        <div class="cal-month"><h3>April 2026</h3><ul><li>The Experience Series &middot; Alignment</li><li>What Happens During Surgery</li><li>Luxury Confidence</li><li>Myth vs Reality: All Implants Look the Same</li><li>Behind the Brand &middot; Quality Testing</li><li>Decision Moment</li></ul></div>
-        <div class="cal-month"><h3>May 2026</h3><ul><li>The Experience Series &middot; Preparing Yourself</li><li>Luxury Confidence in Every Detail</li><li>Motiva Flora Awards</li></ul></div>
-        <div class="cal-month"><h3>June 2026</h3><ul><li>Monthly series continues</li></ul></div>
+      <p class="reveal r1" style="font-family:var(--ff-serif);color:var(--sepia);max-width:660px;margin-bottom:1.5rem;">The monthly social programme, Dec 2025 &ndash; Jun 2026, around recurring pillars &mdash; The Experience Series, Myth vs Reality, Behind the Brand. <b>Click a post to open it full size.</b></p>
+
+      <!-- DECEMBER -->
+      <div class="sm-month reveal r1">
+        <div class="sm-month-head"><span class="sm-month-name">December</span><span class="sm-month-count">2025 &middot; Launch</span></div>
+        <div class="sm-grid">
+          <div class="post" data-base="images/miafemtech/social/calendar/dec/post-3-confidence-is-a-luxury/" data-count="1" data-title="Confidence is a Luxury"><div class="frame"></div><span class="sm-cap"><b>Confidence</b><br />is a Luxury</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/dec/post-5-the-feel-good-checklist-pre-consultation/" data-count="1" data-title="The Feel-Good Checklist"><div class="frame"></div><span class="sm-cap"><b>Feel-Good Checklist</b><br />Pre-Consultation</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/dec/post-7-soft-luxury/" data-count="1" data-title="Soft Luxury"><div class="frame"></div><span class="sm-cap"><b>Soft</b><br />Luxury</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/dec/post-8-choosing-your-surgeon-meet-the-doctors/" data-count="2" data-title="Meet the Doctors"><div class="frame"></div><span class="sm-cap"><b>Meet</b><br />the Doctors</span></div>
+        </div>
+      </div>
+
+      <!-- JANUARY -->
+      <div class="sm-month reveal r1">
+        <div class="sm-month-head"><span class="sm-month-name">January</span><span class="sm-month-count">2026 &middot; The Experience Series</span></div>
+        <div class="sm-grid">
+          <div class="post" data-base="images/miafemtech/social/calendar/jan/post-2-for-every-woman-s-story/" data-count="0" data-story="1" data-title="For Every Woman's Story"><div class="frame"></div><span class="sm-cap"><b>For Every</b><br />Woman&rsquo;s Story</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/jan/post-3-luxury-meets-technology/" data-count="2" data-title="Luxury Meets Technology"><div class="frame"></div><span class="sm-cap"><b>Luxury Meets</b><br />Technology</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/jan/post-4-self-love-isn-t-a-trend/" data-count="1" data-title="Self-Love Isn't a Trend"><div class="frame"></div><span class="sm-cap"><b>Self-Love</b><br />Isn&rsquo;t a Trend</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/jan/post-6-how-to-describe-your-aesthetic-goals/" data-count="1" data-title="Describe Your Aesthetic Goals"><div class="frame"></div><span class="sm-cap"><b>Describe Your</b><br />Aesthetic Goals</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/jan/post-8-benefits-of-miafemtech-cyprus/" data-count="2" data-title="Benefits of MiaFemtech"><div class="frame"></div><span class="sm-cap"><b>Benefits of</b><br />MiaFemtech</span></div>
+        </div>
+      </div>
+
+      <!-- FEBRUARY -->
+      <div class="sm-month reveal r1">
+        <div class="sm-month-head"><span class="sm-month-name">February</span><span class="sm-month-count">2026 &middot; Behind the Brand</span></div>
+        <div class="sm-grid">
+          <div class="post" data-base="images/miafemtech/social/calendar/feb/post-5-the-empowered-consultation-guide/" data-count="1" data-title="The Empowered Consultation Guide"><div class="frame"></div><span class="sm-cap"><b>Empowered</b><br />Consultation Guide</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/feb/post-7-behind-the-brand-precision-technology/" data-count="2" data-title="Behind the Brand: Precision Technology"><div class="frame"></div><span class="sm-cap"><b>Behind the Brand</b><br />Precision Tech</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/feb/post-8-the-experience-series-part-4-the-feeling/" data-count="1" data-title="The Experience Series: The Feeling"><div class="frame"></div><span class="sm-cap"><b>Experience Series</b><br />The Feeling</span></div>
+        </div>
+      </div>
+
+      <!-- MARCH -->
+      <div class="sm-month reveal r1">
+        <div class="sm-month-head"><span class="sm-month-name">March</span><span class="sm-month-count">2026 &middot; Options &amp; Confidence</span></div>
+        <div class="sm-grid">
+          <div class="post" data-base="images/miafemtech/social/calendar/mar/post-1-the-experience-series-part-5-understanding-options/" data-count="1" data-story="1" data-title="Understanding Options"><div class="frame"></div><span class="sm-cap"><b>Understanding</b><br />Options</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/mar/post-5-aesthetic-goal-boards/" data-count="0" data-story="1" data-title="Aesthetic Goal Boards"><div class="frame"></div><span class="sm-cap"><b>Aesthetic</b><br />Goal Boards</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/mar/post-6-behind-the-brand-material-integrity/" data-count="1" data-title="Behind the Brand: Material Integrity"><div class="frame"></div><span class="sm-cap"><b>Behind the Brand</b><br />Material Integrity</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/mar/post-8-the-experience-series-part-6-confidence/" data-count="1" data-title="The Experience Series: Confidence"><div class="frame"></div><span class="sm-cap"><b>Experience Series</b><br />Confidence</span></div>
+        </div>
+      </div>
+
+      <!-- APRIL -->
+      <div class="sm-month reveal r1">
+        <div class="sm-month-head"><span class="sm-month-name">April</span><span class="sm-month-count">2026 &middot; Alignment</span></div>
+        <div class="sm-grid">
+          <div class="post" data-base="images/miafemtech/social/calendar/apr/post-1-the-experience-series-part-7-alignment/" data-count="1" data-story="1" data-title="The Experience Series: Alignment"><div class="frame"></div><span class="sm-cap"><b>Experience Series</b><br />Alignment</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/apr/post-5-5-questions-to-ask-in-your-consultation/" data-count="1" data-title="5 Questions to Ask"><div class="frame"></div><span class="sm-cap"><b>5 Questions</b><br />to Ask</span></div>
+        </div>
+      </div>
+
+      <!-- MAY -->
+      <div class="sm-month reveal r1">
+        <div class="sm-month-head"><span class="sm-month-name">May</span><span class="sm-month-count">2026 &middot; Motiva Flora</span></div>
+        <div class="sm-grid">
+          <div class="post" data-base="images/miafemtech/social/calendar/may/post-8/" data-count="4" data-title="May Campaign"><div class="frame"></div><span class="sm-cap"><b>Campaign</b><br />Carousel</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/may/post-5/" data-count="0" data-story="2" data-title="May Story"><div class="frame"></div><span class="sm-cap"><b>Story</b><br />Set</span></div>
+        </div>
+      </div>
+
+      <!-- JUNE -->
+      <div class="sm-month reveal r1">
+        <div class="sm-month-head"><span class="sm-month-name">June</span><span class="sm-month-count">2026 &middot; Ongoing</span></div>
+        <div class="sm-grid">
+          <div class="post" data-base="images/miafemtech/social/calendar/jun/post-1/" data-count="2" data-title="June Post 1"><div class="frame"></div><span class="sm-cap"><b>June</b><br />Carousel</span></div>
+          <div class="post" data-base="images/miafemtech/social/calendar/jun/post-8/" data-count="2" data-title="June Post 8"><div class="frame"></div><span class="sm-cap"><b>June</b><br />Carousel</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -256,9 +322,12 @@
         var media = [];
         var base = post.getAttribute('data-base'); var count = parseInt(post.getAttribute('data-count'), 10) || 0;
         var img = post.getAttribute('data-img'); var video = post.getAttribute('data-video');
+        var storyN = parseInt(post.getAttribute('data-story'), 10) || 0;
+        var storyBase = post.getAttribute('data-storybase') || (base ? base + 'story/' : null);
         if (base && count) { for (var i = 1; i <= count; i++) media.push({ type:'img', src: base + i + '.jpg', kind:'Post ' + i + '/' + count }); }
         if (img) media.push({ type:'img', src: img, kind:'Post' });
         if (video) media.push({ type:'video', src: video, kind:'Video' });
+        if (storyBase && storyN) { for (var s = 1; s <= storyN; s++) media.push({ type:'img', src: storyBase + s + '.jpg', kind: storyN > 1 ? 'Story ' + s + '/' + storyN : 'Story' }); }
         post._media = media; post._title = title;
         var cover;
         if (media[0] && media[0].type === 'video') { cover = document.createElement('video'); cover.src = media[0].src + '#t=0.1'; cover.preload='metadata'; cover.muted=true; cover.playsInline=true; cover.setAttribute('playsinline',''); }
@@ -267,6 +336,7 @@
         var badges = document.createElement('div'); badges.className='badges';
         if (count > 1) { var b=document.createElement('span'); b.className='badge'; b.textContent='1/'+count; badges.appendChild(b); }
         if (video) { var bv=document.createElement('span'); bv.className='badge vid'; bv.textContent='▶'; badges.appendChild(bv); }
+        if (storyN) { var bs=document.createElement('span'); bs.className='badge'; bs.textContent='STORY'; badges.appendChild(bs); }
         frame.appendChild(badges);
         var cue=document.createElement('span'); cue.className='zoomcue'; cue.textContent='Click to expand'; frame.appendChild(cue);
         frame.addEventListener('click', function(){ openLB(post); });
