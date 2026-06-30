@@ -1,80 +1,132 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Editorial Experiment â€” Timonas Stefanou" />
-  <title>Editorial Experiment â€” Timonas Stefanou</title>
+  <meta name="description" content="Amsoil Cyprus &mdash; Social Media Campaign Design by Timonas Stefanou" />
+  <title>Amsoil Cyprus &mdash; Social Media &mdash; Timonas Stefanou</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Monthly social grids */
+    .sm-month { margin-bottom: 3.5rem; }
+    .sm-month-head {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      border-bottom: 2px solid var(--text);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .sm-month-name {
+      font-family: var(--ff-display);
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .sm-month-count {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .sm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 1.25rem;
+    }
+    .sm-item { display: flex; flex-direction: column; }
+    .sm-item img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      border: 1px solid rgba(0,0,0,.12);
+      background: #111;
+    }
+    .sm-cap {
+      font-family: var(--ff-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--sepia);
+      margin-top: 0.5rem;
+      line-height: 1.4;
+    }
+    .sm-cap b { color: var(--text); font-weight: 700; }
+    /* Framed scrollable board (brainstorming) */
+    .board {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.14);
+      box-shadow: 0 16px 50px rgba(0,0,0,.14);
+    }
+    .board-bar {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 0.9rem; background: #2a2a2a;
+    }
+    .board-bar span { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+    .board-bar span:nth-child(2){ background:#febc2e; } .board-bar span:nth-child(3){ background:#28c840; }
+    .board-bar .board-url { margin-left:.6rem; font-family:var(--ff-mono); font-size:.6rem; letter-spacing:.08em; color:rgba(255,255,255,.6); }
+    .board-scroll { max-height: 70vh; overflow-y: auto; }
+    .board-scroll img { width: 100%; display: block; }
+    .sm-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 760px; }
+    .sm-two img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; border:1px solid rgba(0,0,0,.12); }
+    .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    @media (max-width: 760px){ .proj-overview-grid{grid-template-columns:1fr;} .sm-two{grid-template-columns:1fr;} }
+  </style>
 </head>
 <body class="project-page">
 
   <div class="cursor" aria-hidden="true"></div>
 
-  <!-- NAVIGATION -->
   <header class="nav">
-    <a href="../index.html" class="nav-logo" aria-label="Back to home">CD·TM</a>
+    <a href="../index.html" class="nav-logo" aria-label="Back to home">CD&middot;TM</a>
     <nav class="nav-links" aria-label="Main navigation" id="navLinks">
-      <a href="../index.html#about"   class="nav-link">About</a>
+      <a href="../index.html#record"  class="nav-link">About</a>
       <a href="../index.html#work"    class="nav-link">Work</a>
       <a href="../index.html#process" class="nav-link">Process</a>
       <a href="../index.html#contact" class="nav-link">Contact</a>
     </nav>
     <a href="#" class="nav-cta cv-trigger" data-cv="../Timonas-Stefanou-CV-2025.pdf" aria-label="View my CV">View CV</a>
-    <button class="nav-toggle" id="navToggle"
-            aria-label="Open navigation" aria-expanded="false">
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  <!-- PROJECT HERO -->
+  <!-- HERO -->
   <section class="proj-hero" aria-label="Project header">
     <div class="proj-hero-text">
       <a href="../index.html#work" class="proj-back">Back to Work</a>
-      <p class="proj-eyebrow">
-        <!-- REPLACE: Category and year -->
-        Editorial Design Â· [YEAR]
-      </p>
-      <h1 class="proj-title">
-        EDITORIAL<br />EXPERIMENT
-      </h1>
+      <p class="proj-eyebrow">Social Media Design &middot; Campaign &middot; 2026</p>
+      <h1 class="proj-title">AMSOIL<br />CYPRUS</h1>
     </div>
-    <div class="proj-hero-visual">
-      <!-- Visual â€” Project 03: deep red (editorial tension) -->
-      <div class="visual-block"
-           style="background: linear-gradient(135deg, #3d0000 0%, #8b1a00 60%, #3d0000 100%);">
-        <!--
-          ADD HERO IMAGE:
-          Remove the <div class="visual-block"> above.
-          Add: <img src="../images/project-03-hero.jpg"
-                    alt="[Brief alt description]"
-                    style="width:100%;height:100%;object-fit:cover;" />
-        -->
-        ADD HERO IMAGE HERE
-      </div>
+    <div class="proj-hero-visual" style="background:#f7f6ee;display:flex;align-items:center;justify-content:center;padding:3rem;">
+      <img src="images/amsoil/logo.png" alt="Amsoil logo" style="max-width:85%;max-height:140px;object-fit:contain;" />
     </div>
   </section>
 
-  <!-- PROJECT METADATA -->
+  <!-- METADATA -->
   <div class="proj-meta" aria-label="Project details">
     <div class="proj-meta-item">
       <div class="proj-meta-label">Client</div>
-      <!-- REPLACE: Client name -->
-      <div class="proj-meta-value">[CLIENT NAME]</div>
+      <div class="proj-meta-value">Amsoil Cyprus &middot; Ollets Ltd</div>
     </div>
     <div class="proj-meta-item">
       <div class="proj-meta-label">Category</div>
-      <div class="proj-meta-value">Editorial Design</div>
+      <div class="proj-meta-value">Social Media Design</div>
     </div>
     <div class="proj-meta-item">
       <div class="proj-meta-label">Year</div>
-      <!-- REPLACE: Year -->
-      <div class="proj-meta-value">[YEAR]</div>
+      <div class="proj-meta-value">2026</div>
     </div>
     <div class="proj-meta-item">
       <div class="proj-meta-label">Tools</div>
-      <!-- REPLACE: Tools used -->
-      <div class="proj-meta-value">[INDESIGN / ILLUSTRATOR]</div>
+      <div class="proj-meta-value">Illustrator &middot; Photoshop &middot; After Effects</div>
     </div>
   </div>
 
@@ -84,164 +136,184 @@
       <h2 class="proj-heading reveal">Overview</h2>
       <div class="proj-overview-grid">
         <div class="proj-overview-body reveal r1">
-          <p>[WRITE PROJECT OVERVIEW HERE â€” describe the publication, the
-          editorial direction, and what you were experimenting with
-          typographically or compositionally.]</p>
-          <p>[SECOND PARAGRAPH â€” explain the design choices: grid structure,
-          typefaces chosen and why, the relationship between text and image,
-          and what makes this editorial work distinctive.]</p>
-          <p>[THIRD PARAGRAPH â€” outcomes: was it published? How many pages?
-          Who was the audience? What did the project teach you?]</p>
+          <p>An ongoing social-media campaign for Amsoil Cyprus &mdash; the synthetic-lubricants brand distributed on the island by Ollets Ltd. I run the monthly content calendar end to end: concept, copy direction, design and motion, across Instagram and Facebook.</p>
+          <p>The work is organised as a rolling monthly calendar. Each month mixes product spotlights, educational posts, seasonal angles, ambassador features and live-event coverage &mdash; all held together by one bold, high-contrast Amsoil visual language built for the feed.</p>
+          <p>Below is the strategy board the campaign is built on, the monthly creations grouped by month, and the Classic Car Festival activation. Several posts also ship as motion / video pieces.</p>
         </div>
         <div class="proj-overview-aside reveal r2">
-          <strong>Deliverables</strong><br />
-          <!-- REPLACE -->
-          [DELIVERABLE 01]<br />
-          [DELIVERABLE 02]<br />
-          [DELIVERABLE 03]<br />
+          <strong>Scope</strong><br />
+          Monthly content calendar<br />
+          Instagram + Facebook<br />
+          Product &amp; educational posts<br />
+          Ambassador series<br />
+          Event activations<br />
+          Motion / video posts<br />
           <br />
-          <strong>Links</strong><br />
-          <a href="#" target="_blank" rel="noopener" style="color:var(--accent)">
-            View on Behance â†’
-          </a>
+          <strong>Cadence</strong><br />
+          Apr &ndash; Jul 2026 shown
         </div>
       </div>
     </div>
   </section>
 
-  <!-- IMAGE GALLERY -->
-  <section class="proj-section" style="background:var(--paper);" aria-label="Project images">
+  <!-- STRATEGY BOARD -->
+  <section class="proj-section" style="background:var(--paper);" aria-label="Strategy">
     <div class="wrap">
-      <h2 class="proj-heading reveal">The Work</h2>
+      <h2 class="proj-heading reveal">The Strategy</h2>
+      <p class="reveal r1" style="font-family:var(--ff-serif);color:var(--sepia);max-width:620px;margin-bottom:1.5rem;">
+        The brainstorming board that maps the campaign &mdash; pillars, themes, tone and the content mix the monthly calendar draws from.
+      </p>
+      <div class="board reveal r1">
+        <div class="board-bar" aria-hidden="true"><span></span><span></span><span></span><span class="board-url">amsoil &mdash; social media brainstorming</span></div>
+        <div class="board-scroll"><img src="images/amsoil/brainstorming.jpg" alt="Amsoil social media brainstorming board" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
 
-      <div class="gallery-full reveal r1">
-        <div class="img-placeholder">
-          <!-- ADD IMAGE: project-03-01.jpg (spread or cover) -->
-          ADD IMAGE HERE â€” main showcase
+  <!-- MONTHLY CREATIONS -->
+  <section class="proj-section" style="background:var(--ground);" aria-label="Monthly creations">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Calendar</h2>
+
+      <!-- APRIL -->
+      <div class="sm-month reveal r1">
+        <div class="sm-month-head"><span class="sm-month-name">April</span><span class="sm-month-count">2026 &middot; Product &amp; Education</span></div>
+        <div class="sm-grid">
+          <div class="sm-item"><img src="images/amsoil/april/april-post-1-product-spotlight-signature-series-5w-30.jpg" alt="Signature Series 5W-30 spotlight" loading="lazy" /><span class="sm-cap"><b>Product Spotlight</b><br />Signature Series 5W-30</span></div>
+          <div class="sm-item"><img src="images/amsoil/april/april-post-2-blog-feature-head-gaskets.jpg" alt="Head Gaskets blog feature" loading="lazy" /><span class="sm-cap"><b>Blog Feature</b><br />Head Gaskets</span></div>
+          <div class="sm-item"><img src="images/amsoil/april/april-post-3-severe-gear-serious-protection.jpg" alt="Severe Gear protection" loading="lazy" /><span class="sm-cap"><b>Severe Gear</b><br />Serious Protection</span></div>
+          <div class="sm-item"><img src="images/amsoil/april/april-post-5-trusted-by-cyprus-workshops.jpg" alt="Trusted by Cyprus workshops" loading="lazy" /><span class="sm-cap"><b>Trusted by</b><br />Cyprus Workshops</span></div>
+          <div class="sm-item"><img src="images/amsoil/april/april-post-6.jpg" alt="Why synthetic oil" loading="lazy" /><span class="sm-cap"><b>Why Synthetic Oil?</b><br />GR feature</span></div>
+          <div class="sm-item"><img src="images/amsoil/april/april-post-7-all-season-diesel-protection-in-one-bottle.jpg" alt="All-season diesel protection" loading="lazy" /><span class="sm-cap"><b>Diesel Protection</b><br />All-Season, One Bottle</span></div>
         </div>
       </div>
 
-      <div class="gallery-grid">
-        <div class="img-placeholder reveal">
-          <!-- ADD IMAGE: project-03-02.jpg -->
-          ADD IMAGE HERE
+      <!-- MAY -->
+      <div class="sm-month reveal r1">
+        <div class="sm-month-head"><span class="sm-month-name">May</span><span class="sm-month-count">2026 &middot; Summer &amp; Ambassadors</span></div>
+        <div class="sm-grid">
+          <div class="sm-item"><img src="images/amsoil/may/may-post-1-built-for-extreme-heat.jpg" alt="Built for extreme heat" loading="lazy" /><span class="sm-cap"><b>Built for</b><br />Extreme Heat</span></div>
+          <div class="sm-item"><img src="images/amsoil/may/may-post-2-protection-beyond-the-shore.jpg" alt="Protection beyond the shore" loading="lazy" /><span class="sm-cap"><b>Protection</b><br />Beyond the Shore</span></div>
+          <div class="sm-item"><img src="images/amsoil/may/may-post-3-is-your-car-ready-for-cyprus-summer.jpg" alt="Is your car ready for Cyprus summer" loading="lazy" /><span class="sm-cap"><b>Cyprus Summer</b><br />Is Your Car Ready?</span></div>
+          <div class="sm-item"><img src="images/amsoil/may/may-post-4-european-precision-american-engineering.jpg" alt="European precision American engineering" loading="lazy" /><span class="sm-cap"><b>European Precision</b><br />American Engineering</span></div>
+          <div class="sm-item"><img src="images/amsoil/may/may-post-5-performance-trust-amsoil-part-1-moisis-ajami.jpg" alt="Ambassador Moisis Ajami" loading="lazy" /><span class="sm-cap"><b>Ambassador &middot; Pt.1</b><br />Moisis Ajami</span></div>
+          <div class="sm-item"><img src="images/amsoil/may/may-post-7-prepare-your-engine.jpg" alt="Prepare your engine" loading="lazy" /><span class="sm-cap"><b>Prepare</b><br />Your Engine</span></div>
+          <div class="sm-item"><img src="images/amsoil/may/may-post-9-performance-trust-amsoil-part-2-c-evripidou.jpg" alt="Ambassador C. Evripidou" loading="lazy" /><span class="sm-cap"><b>Ambassador &middot; Pt.2</b><br />C. Evripidou</span></div>
         </div>
-        <div class="img-placeholder reveal r1">
-          <!-- ADD IMAGE: project-03-03.jpg -->
-          ADD IMAGE HERE
+      </div>
+
+      <!-- JUNE -->
+      <div class="sm-month reveal r1">
+        <div class="sm-month-head"><span class="sm-month-name">June</span><span class="sm-month-count">2026 &middot; Events &amp; Seasonal</span></div>
+        <div class="sm-grid">
+          <div class="sm-item"><img src="images/amsoil/june/june-post-1-0w-20-spotlight.jpg" alt="0W-20 spotlight" loading="lazy" /><span class="sm-cap"><b>Spotlight</b><br />0W-20</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-2-change-your-oil-less.jpg" alt="Change your oil less" loading="lazy" /><span class="sm-cap"><b>Change Your</b><br />Oil Less</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-3-deep-water-deeper-protection.jpg" alt="Deep water deeper protection" loading="lazy" /><span class="sm-cap"><b>Deep Water</b><br />Deeper Protection</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-4-summer-rides-of-cyprus.jpg" alt="Summer rides of Cyprus" loading="lazy" /><span class="sm-cap"><b>Summer Rides</b><br />of Cyprus</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-5-performance-trust-amsoil-part-3-theofilos-tsappis.jpg" alt="Ambassador Theofilos Tsappis" loading="lazy" /><span class="sm-cap"><b>Ambassador &middot; Pt.3</b><br />Theofilos Tsappis</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-6-premium-grease-for-every-application.jpg" alt="Premium grease" loading="lazy" /><span class="sm-cap"><b>Premium Grease</b><br />Every Application</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-7-your-cooling-system-is-working-overtime.jpg" alt="Cooling system working overtime" loading="lazy" /><span class="sm-cap"><b>Cooling System</b><br />Working Overtime</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-8-summer-protection-special-prices.jpg" alt="Summer protection special prices" loading="lazy" /><span class="sm-cap"><b>Summer Protection</b><br />Special Prices</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-9-jeep-invasion-5-nicosia-2026.jpg" alt="Jeep Invasion 5 Nicosia" loading="lazy" /><span class="sm-cap"><b>Event</b><br />Jeep Invasion 5</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-10-car-show-14-6-2026.jpg" alt="Car Show June 2026" loading="lazy" /><span class="sm-cap"><b>Event</b><br />Car Show 14.06</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-11-drift-event.jpg" alt="Drift event June" loading="lazy" /><span class="sm-cap"><b>Event</b><br />Drift Championship</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-extra-christos-kouta-birthday.jpg" alt="Christos Kouta birthday" loading="lazy" /><span class="sm-cap"><b>Ambassador</b><br />Christos Kouta &middot; Birthday</span></div>
+          <div class="sm-item"><img src="images/amsoil/june/june-post-extra-christos-petrou-birthday.jpg" alt="Christos Petrou birthday" loading="lazy" /><span class="sm-cap"><b>Ambassador</b><br />Christos Petrou &middot; Birthday</span></div>
         </div>
-        <div class="img-placeholder reveal r2">
-          <!-- ADD IMAGE: project-03-04.jpg -->
-          ADD IMAGE HERE
-        </div>
-        <div class="img-placeholder reveal">
-          <!-- ADD IMAGE: project-03-05.jpg -->
-          ADD IMAGE HERE
-        </div>
-        <div class="img-placeholder reveal r1">
-          <!-- ADD IMAGE: project-03-06.jpg -->
-          ADD IMAGE HERE
-        </div>
-        <div class="img-placeholder reveal r2">
-          <!-- ADD IMAGE: project-03-07.jpg -->
-          ADD IMAGE HERE
+      </div>
+
+      <!-- JULY -->
+      <div class="sm-month reveal r1">
+        <div class="sm-month-head"><span class="sm-month-name">July</span><span class="sm-month-count">2026 &middot; Promo &amp; Launches</span></div>
+        <div class="sm-grid">
+          <div class="sm-item"><img src="images/amsoil/july/july-post-1-july-promo.jpg" alt="July promo" loading="lazy" /><span class="sm-cap"><b>July</b><br />Promo</span></div>
+          <div class="sm-item"><img src="images/amsoil/july/july-post-3-blog-page.jpg" alt="Blog page" loading="lazy" /><span class="sm-cap"><b>Blog</b><br />Page Feature</span></div>
+          <div class="sm-item"><img src="images/amsoil/july/july-post-4-drift-event.jpg" alt="Drift event July" loading="lazy" /><span class="sm-cap"><b>Event</b><br />Drift Round 2</span></div>
+          <div class="sm-item"><img src="images/amsoil/july/july-post-5-turbo-protection-product-spotlight.jpg" alt="Turbo protection spotlight" loading="lazy" /><span class="sm-cap"><b>Spotlight</b><br />Turbo Protection</span></div>
+          <div class="sm-item"><img src="images/amsoil/july/july-post-6-introducing-dirtisland.jpg" alt="Introducing DirtIsland" loading="lazy" /><span class="sm-cap"><b>Launch</b><br />#DirtIsland</span></div>
+          <div class="sm-item"><img src="images/amsoil/july/july-post-7-brake-fluid.jpg" alt="Brake fluid" loading="lazy" /><span class="sm-cap"><b>Product</b><br />Brake Fluid</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DESIGN PROCESS -->
+  <!-- CLASSIC CAR FESTIVAL -->
+  <section class="proj-section" style="background:var(--paper);" aria-label="Classic Car Festival">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Classic Car Festival</h2>
+      <p class="reveal r1" style="font-family:var(--ff-serif);color:var(--sepia);max-width:620px;margin-bottom:1.5rem;">
+        Activation for Amsoil&rsquo;s sponsorship of the Larnaca &amp; Famagusta Classic Cars Club festival &mdash; an event invitation and announcement post tied to Z-ROD synthetic motor oil for classic and muscle cars.
+      </p>
+      <div class="sm-two reveal r1">
+        <div class="sm-item"><img src="images/amsoil/classic-car-post.jpg" alt="Classic Car Festival post" loading="lazy" /><span class="sm-cap"><b>Announcement Post</b></span></div>
+        <div class="sm-item"><img src="images/amsoil/classic-car-invitation.jpg" alt="Classic Car Festival invitation" loading="lazy" /><span class="sm-cap"><b>Event Invitation</b></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
   <section class="proj-section" style="background:var(--ground);" aria-label="Process">
     <div class="wrap">
       <h2 class="proj-heading reveal">Process Notes</h2>
       <div class="process-notes">
         <div class="process-note reveal">
           <div class="process-note-num" aria-hidden="true">01</div>
-          <div class="process-note-title">Research</div>
-          <p class="process-note-body">[WRITE RESEARCH NOTES]</p>
+          <div class="process-note-title">Calendar</div>
+          <p class="process-note-body">Plan each month from the strategy board &mdash; balancing product spotlights, education, seasonal hooks, ambassadors and events.</p>
         </div>
         <div class="process-note reveal r1">
           <div class="process-note-num" aria-hidden="true">02</div>
-          <div class="process-note-title">Concept</div>
-          <p class="process-note-body">[WRITE CONCEPT NOTES]</p>
+          <div class="process-note-title">System</div>
+          <p class="process-note-body">One Amsoil visual language &mdash; bold type, high-contrast product photography and the red/blue brand mark &mdash; applied consistently across every post.</p>
         </div>
         <div class="process-note reveal r2">
           <div class="process-note-num" aria-hidden="true">03</div>
-          <div class="process-note-title">Execution</div>
-          <p class="process-note-body">[WRITE EXECUTION NOTES]</p>
+          <div class="process-note-title">Static + Motion</div>
+          <p class="process-note-body">Deliver each slot for Instagram and Facebook as static carousels and, where it lands harder, as animated / video pieces.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- DETAILS -->
-  <section class="proj-section" style="background:var(--paper);" aria-label="Details">
-    <div class="wrap">
-      <h2 class="proj-heading reveal">Details</h2>
-      <p class="proj-overview-body reveal r1" style="max-width:620px;">
-        [WRITE ADDITIONAL DETAILS â€” print specifications, paper stock,
-        binding method, print run, or anything technical.]
-      </p>
     </div>
   </section>
 
   <!-- CREDITS -->
-  <section class="proj-section" style="background:var(--ground);" aria-label="Credits">
+  <section class="proj-section" style="background:var(--paper);" aria-label="Credits">
     <div class="wrap">
       <h2 class="proj-heading reveal">Credits</h2>
       <div class="credits-grid reveal r1">
         <div>
-          <div class="credit-row">
-            <span class="credit-label">Design</span>
-            <span class="credit-value">Timonas Stefanou</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Client</span>
-            <span class="credit-value">[CLIENT NAME]</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Year</span>
-            <span class="credit-value">[YEAR]</span>
-          </div>
+          <div class="credit-row"><span class="credit-label">Design</span><span class="credit-value">Timonas Stefanou</span></div>
+          <div class="credit-row"><span class="credit-label">Client</span><span class="credit-value">Amsoil Cyprus &middot; Ollets Ltd</span></div>
+          <div class="credit-row"><span class="credit-label">Year</span><span class="credit-value">2026</span></div>
         </div>
         <div>
-          <div class="credit-row">
-            <span class="credit-label">Photography</span>
-            <span class="credit-value">[PHOTOGRAPHER]</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Tools</span>
-            <span class="credit-value">[TOOLS USED]</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Status</span>
-            <span class="credit-value">[STATUS]</span>
-          </div>
+          <div class="credit-row"><span class="credit-label">Channels</span><span class="credit-value">Instagram &middot; Facebook</span></div>
+          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Illustrator &middot; Photoshop &middot; AE</span></div>
+          <div class="credit-row"><span class="credit-label">Scope</span><span class="credit-value">Monthly calendar</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NEXT PROJECT â€” links to Project 04 -->
+  <!-- NEXT PROJECT -->
   <a href="project-04.html" class="proj-next" aria-label="Next project: Motion Collage Test">
     <div>
       <div class="proj-next-label">Next Project</div>
       <div class="proj-next-title">Motion Collage Test</div>
     </div>
-    <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">â†’</span>
+    <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">&rarr;</span>
   </a>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap">
       <div class="footer-inner">
-        <a href="../index.html" class="footer-logo">CD·TM</a>
+        <a href="../index.html" class="footer-logo">CD&middot;TM</a>
         <nav class="footer-links" aria-label="Footer links">
-          <a href="../index.html#about"   class="footer-link">About</a>
+          <a href="../index.html#record"  class="footer-link">About</a>
           <a href="../index.html#work"    class="footer-link">Work</a>
           <a href="../index.html#contact" class="footer-link">Contact</a>
         </nav>
-        <span class="footer-copy">Â© 2026 Timonas Stefanou</span>
+        <span class="footer-copy">&copy; 2026 Timonas Stefanou</span>
       </div>
     </div>
   </footer>
@@ -249,8 +321,3 @@
   <script src="../script.js"></script>
 </body>
 </html>
-
-
-
-
-
