@@ -1,287 +1,166 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Motion Collage Test â€” Timonas Stefanou" />
-  <title>Motion Collage Test â€” Timonas Stefanou</title>
+  <meta name="description" content="MiaFemtech Cyprus Landing Page &mdash; Web Design by Timonas Stefanou" />
+  <title>MiaFemtech Landing Page &mdash; Timonas Stefanou</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    .web-screen { max-width: 940px; margin: 0 auto 1rem; background: #fff; border: 1px solid rgba(0,0,0,.14); box-shadow: 0 16px 50px rgba(0,0,0,.14); }
+    .web-bar { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.9rem; background: #2a2a2a; }
+    .web-bar span { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; display: inline-block; }
+    .web-bar span:nth-child(2) { background: #febc2e; } .web-bar span:nth-child(3) { background: #28c840; }
+    .web-bar .web-url { margin-left: 0.6rem; flex: 1; font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.06em; color: rgba(255,255,255,.6); background: #1c1c1c; border-radius: 4px; padding: 0.35rem 0.7rem; }
+    .web-scroll { max-height: 74vh; overflow-y: auto; background: #fff; } .web-scroll img { width: 100%; display: block; }
+    .web-hint { text-align: center; font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sepia); margin-bottom: 2.5rem; }
+    .devices { display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start; justify-content: center; }
+    .device { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+    .device-frame { border: 1px solid rgba(0,0,0,.14); background: #fff; box-shadow: 0 12px 36px rgba(0,0,0,.12); max-height: 70vh; overflow-y: auto; }
+    .device-frame img { display: block; }
+    .device.tablet .device-frame { width: min(440px, 80vw); } .device.tablet img { width: 100%; }
+    .device.mobile .device-frame { width: min(240px, 60vw); } .device.mobile img { width: 100%; }
+    .device-label { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sepia); }
+    .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    @media (max-width: 760px){ .proj-overview-grid{grid-template-columns:1fr;} }
+  </style>
 </head>
 <body class="project-page">
 
   <div class="cursor" aria-hidden="true"></div>
 
-  <!-- NAVIGATION -->
   <header class="nav">
-    <a href="../index.html" class="nav-logo" aria-label="Back to home">CD·TM</a>
+    <a href="../index.html" class="nav-logo" aria-label="Back to home">CD&middot;TM</a>
     <nav class="nav-links" aria-label="Main navigation" id="navLinks">
-      <a href="../index.html#about"   class="nav-link">About</a>
+      <a href="../index.html#record"  class="nav-link">About</a>
       <a href="../index.html#work"    class="nav-link">Work</a>
       <a href="../index.html#process" class="nav-link">Process</a>
       <a href="../index.html#contact" class="nav-link">Contact</a>
     </nav>
     <a href="#" class="nav-cta cv-trigger" data-cv="../Timonas-Stefanou-CV-2025.pdf" aria-label="View my CV">View CV</a>
-    <button class="nav-toggle" id="navToggle"
-            aria-label="Open navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
 
-  <!-- PROJECT HERO -->
   <section class="proj-hero" aria-label="Project header">
     <div class="proj-hero-text">
       <a href="../index.html#work" class="proj-back">Back to Work</a>
-      <p class="proj-eyebrow">
-        <!-- REPLACE: Category and year -->
-        Motion Graphics Â· [YEAR]
-      </p>
-      <h1 class="proj-title">
-        MOTION<br />COLLAGE<br />TEST
-      </h1>
+      <p class="proj-eyebrow">Web Design &middot; Landing Page &middot; 2026</p>
+      <h1 class="proj-title">MIA FEMTECH<br />LANDING PAGE</h1>
     </div>
-    <div class="proj-hero-visual">
-      <!-- Visual â€” Project 04: deep teal (motion/digital) -->
-      <div class="visual-block"
-           style="background: linear-gradient(135deg, #001c18 0%, #1d6b5f 60%, #001c18 100%);">
-        <!--
-          ADD HERO IMAGE OR VIDEO:
-          Option A (static image):
-          <img src="../images/project-04-hero.jpg"
-               alt="[Description]"
-               style="width:100%;height:100%;object-fit:cover;" />
-
-          Option B (video loop):
-          <video autoplay muted loop playsinline
-                 style="width:100%;height:100%;object-fit:cover;">
-            <source src="../images/project-04-hero.mp4" type="video/mp4" />
-          </video>
-        -->
-        ADD HERO IMAGE / VIDEO HERE
-      </div>
+    <div class="proj-hero-visual" style="background:#f3e2e2;display:flex;align-items:center;justify-content:center;padding:3rem;">
+      <img src="images/miafemtech/mia-logo.png" alt="Mia Femtech logo" style="max-width:78%;max-height:120px;object-fit:contain;" />
     </div>
   </section>
 
-  <!-- PROJECT METADATA -->
   <div class="proj-meta" aria-label="Project details">
-    <div class="proj-meta-item">
-      <div class="proj-meta-label">Client</div>
-      <!-- REPLACE: Client name -->
-      <div class="proj-meta-value">[CLIENT NAME]</div>
-    </div>
-    <div class="proj-meta-item">
-      <div class="proj-meta-label">Category</div>
-      <div class="proj-meta-value">Motion Graphics</div>
-    </div>
-    <div class="proj-meta-item">
-      <div class="proj-meta-label">Year</div>
-      <!-- REPLACE: Year -->
-      <div class="proj-meta-value">[YEAR]</div>
-    </div>
-    <div class="proj-meta-item">
-      <div class="proj-meta-label">Tools</div>
-      <!-- REPLACE: Tools used -->
-      <div class="proj-meta-value">[AFTER EFFECTS / PREMIERE]</div>
-    </div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">MiaFemtech Cyprus &middot; MediSera</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Web &middot; Landing Page</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2026</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Adobe Illustrator</div></div>
   </div>
 
-  <!-- OVERVIEW -->
   <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
     <div class="wrap">
       <h2 class="proj-heading reveal">Overview</h2>
       <div class="proj-overview-grid">
         <div class="proj-overview-body reveal r1">
-          <p>[WRITE PROJECT OVERVIEW HERE â€” describe the motion piece:
-          what was it for, what platform was it shown on, and what
-          was the brief or concept?]</p>
-          <p>[SECOND PARAGRAPH â€” explain the motion design decisions:
-          timing, rhythm, typography in motion, colour palette,
-          and how the visual language was chosen.]</p>
-          <p>[THIRD PARAGRAPH â€” outcomes: where was it published or screened?
-          What was the audience reaction? What would you do differently?]</p>
+          <p>A single-page launch site for MiaFemtech Cyprus &mdash; the minimally-invasive breast aesthetics brand &mdash; announcing its next-generation biocompatible implants. The page had to feel premium, reassuring and unmistakably feminine, while walking a prospective patient from headline to consultation booking in one scroll.</p>
+          <p>I designed the full landing page end to end: hero, product story, the 8-step procedure, benefits, an interactive Before &amp; After, surgeon profiles and contact &mdash; built on the Mia brand system of soft blush gradients, fine floral linework and an elegant serif voice, with a single rose accent driving every call to action.</p>
+          <p>The design was delivered as a complete responsive set &mdash; desktop, tablet and mobile &mdash; with a full guidelines spec (typography, colour and assets) for hand-off to development.</p>
         </div>
         <div class="proj-overview-aside reveal r2">
           <strong>Deliverables</strong><br />
-          <!-- REPLACE -->
-          [DELIVERABLE 01]<br />
-          [DELIVERABLE 02]<br />
-          [DELIVERABLE 03]<br />
+          Desktop landing page<br />
+          Tablet &amp; mobile layouts<br />
+          8-step procedure section<br />
+          Before &amp; After module<br />
+          Surgeon profiles<br />
+          Full guidelines spec<br />
           <br />
-          <strong>Links</strong><br />
-          <!-- REPLACE with Vimeo/YouTube/Behance link -->
-          <a href="#" target="_blank" rel="noopener" style="color:var(--accent)">
-            Watch on Vimeo â†’
-          </a><br />
-          <a href="#" target="_blank" rel="noopener" style="color:var(--accent)">
-            View on Behance â†’
-          </a>
+          <strong>Scope</strong><br />
+          One-page responsive site
         </div>
       </div>
     </div>
   </section>
 
-  <!-- IMAGE / VIDEO GALLERY -->
-  <section class="proj-section" style="background:var(--paper);" aria-label="Project images">
+  <section class="proj-section" style="background:var(--paper);" aria-label="The website">
     <div class="wrap">
-      <h2 class="proj-heading reveal">The Work</h2>
-
-      <!-- Full-width â€” good for a video embed or wide still -->
-      <div class="gallery-full reveal r1">
-        <div class="img-placeholder">
-          <!--
-            ADD VIDEO OR IMAGE:
-            For video embed (Vimeo):
-            <div style="padding:56.25% 0 0 0;position:relative;">
-              <iframe src="https://player.vimeo.com/video/YOUR_ID"
-                      style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                      frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            For direct video file:
-            <video controls style="width:100%;height:auto;">
-              <source src="../images/project-04-reel.mp4" type="video/mp4" />
-            </video>
-          -->
-          ADD VIDEO / MAIN IMAGE HERE
-        </div>
-      </div>
-
-      <!-- Stills from the motion piece -->
-      <div class="gallery-grid">
-        <div class="img-placeholder reveal">
-          <!-- ADD IMAGE: still / frame from the animation -->
-          ADD STILL HERE
-        </div>
-        <div class="img-placeholder reveal r1">
-          <!-- ADD IMAGE: still / frame from the animation -->
-          ADD STILL HERE
-        </div>
-        <div class="img-placeholder reveal r2">
-          <!-- ADD IMAGE: still / frame from the animation -->
-          ADD STILL HERE
-        </div>
-        <div class="img-placeholder reveal">
-          <!-- ADD IMAGE: storyboard / keyframe / sketch -->
-          ADD STORYBOARD HERE
-        </div>
-        <div class="img-placeholder reveal r1">
-          <!-- ADD IMAGE: colour palette / moodboard -->
-          ADD MOODBOARD HERE
-        </div>
-        <div class="img-placeholder reveal r2">
-          <!-- ADD IMAGE: typography test / motion type -->
-          ADD TYPE STUDY HERE
-        </div>
+      <h2 class="proj-heading reveal">The Website</h2>
+      <p class="web-hint reveal r1">Scroll inside the frame to view the full landing page &darr;</p>
+      <div class="web-screen reveal r1">
+        <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span><span class="web-url">miafemtech.com.cy</span></div>
+        <div class="web-scroll"><img src="images/miafemtech/landing/website.jpg" alt="MiaFemtech landing page full design" loading="lazy" /></div>
       </div>
     </div>
   </section>
 
-  <!-- DESIGN PROCESS -->
+  <section class="proj-section" style="background:var(--ground);" aria-label="Responsive">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Responsive</h2>
+      <p class="reveal r1" style="font-family:var(--ff-serif);color:var(--sepia);max-width:620px;margin-bottom:1.5rem;">The same experience designed for tablet and mobile &mdash; scroll each device to explore.</p>
+      <div class="devices reveal r1">
+        <div class="device tablet"><div class="device-frame"><img src="images/miafemtech/landing/tablet.jpg" alt="MiaFemtech tablet layout" loading="lazy" /></div><span class="device-label">Tablet</span></div>
+        <div class="device mobile"><div class="device-frame"><img src="images/miafemtech/landing/mobile.jpg" alt="MiaFemtech mobile layout" loading="lazy" /></div><span class="device-label">Mobile</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Guidelines">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Guidelines</h2>
+      <p class="web-hint reveal r1">Annotated spec &mdash; typography, colour &amp; assets for development hand-off &darr;</p>
+      <div class="web-screen reveal r1">
+        <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span><span class="web-url">mia femtech &mdash; landing page guidelines</span></div>
+        <div class="web-scroll"><img src="images/miafemtech/landing/guidelines.jpg" alt="MiaFemtech landing page guidelines and spec" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
   <section class="proj-section" style="background:var(--ground);" aria-label="Process">
     <div class="wrap">
       <h2 class="proj-heading reveal">Process Notes</h2>
       <div class="process-notes">
-        <div class="process-note reveal">
-          <div class="process-note-num" aria-hidden="true">01</div>
-          <div class="process-note-title">Storyboard</div>
-          <p class="process-note-body">
-            <!-- REPLACE: Describe the storyboarding process -->
-            [WRITE STORYBOARD / PLANNING NOTES â€” how did you plan
-            the sequence? What was the script or narrative structure?]
-          </p>
-        </div>
-        <div class="process-note reveal r1">
-          <div class="process-note-num" aria-hidden="true">02</div>
-          <div class="process-note-title">Style Frames</div>
-          <p class="process-note-body">
-            <!-- REPLACE: Describe the visual development -->
-            [WRITE STYLE FRAME NOTES â€” what look and feel did you
-            develop? What visual language guides the piece?]
-          </p>
-        </div>
-        <div class="process-note reveal r2">
-          <div class="process-note-num" aria-hidden="true">03</div>
-          <div class="process-note-title">Animation</div>
-          <p class="process-note-body">
-            <!-- REPLACE: Describe the animation approach -->
-            [WRITE ANIMATION NOTES â€” what tools, plugins, or techniques
-            were used? What was the biggest challenge to solve?]
-          </p>
-        </div>
+        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">Brand System</div><p class="process-note-body">Worked within the Mia brand &mdash; soft blush gradients, floral linework and an elegant serif &mdash; to keep the launch on-brand and reassuring.</p></div>
+        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">One-Scroll Story</div><p class="process-note-body">Structured the page as a single narrative: headline &rarr; product &rarr; how it works &rarr; benefits &rarr; before/after &rarr; surgeons &rarr; book a consultation.</p></div>
+        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">Responsive + Spec</div><p class="process-note-body">Delivered desktop, tablet and mobile layouts plus an annotated guidelines document for a clean development hand-off.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- DETAILS -->
-  <section class="proj-section" style="background:var(--paper);" aria-label="Details">
-    <div class="wrap">
-      <h2 class="proj-heading reveal">Details</h2>
-      <p class="proj-overview-body reveal r1" style="max-width:620px;">
-        [WRITE ADDITIONAL DETAILS â€” duration, format specs, platform
-        it was shown on, aspect ratio, audio/sound design notes,
-        or any technical constraints you worked within.]
-      </p>
-    </div>
-  </section>
-
-  <!-- CREDITS -->
-  <section class="proj-section" style="background:var(--ground);" aria-label="Credits">
+  <section class="proj-section" style="background:var(--paper);" aria-label="Credits">
     <div class="wrap">
       <h2 class="proj-heading reveal">Credits</h2>
       <div class="credits-grid reveal r1">
         <div>
-          <div class="credit-row">
-            <span class="credit-label">Design &amp; Animation</span>
-            <span class="credit-value">Timonas Stefanou</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Client</span>
-            <span class="credit-value">[CLIENT NAME]</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Year</span>
-            <span class="credit-value">[YEAR]</span>
-          </div>
+          <div class="credit-row"><span class="credit-label">Design</span><span class="credit-value">Timonas Stefanou</span></div>
+          <div class="credit-row"><span class="credit-label">Client</span><span class="credit-value">MiaFemtech Cyprus &middot; MediSera</span></div>
+          <div class="credit-row"><span class="credit-label">Year</span><span class="credit-value">2026</span></div>
         </div>
         <div>
-          <div class="credit-row">
-            <span class="credit-label">Sound</span>
-            <!-- REPLACE: Sound designer or "Original composition" -->
-            <span class="credit-value">[SOUND DESIGNER / N/A]</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Tools</span>
-            <span class="credit-value">[AFTER EFFECTS / PREMIERE]</span>
-          </div>
-          <div class="credit-row">
-            <span class="credit-label">Duration</span>
-            <!-- REPLACE: e.g. "0:45" -->
-            <span class="credit-value">[DURATION]</span>
-          </div>
+          <div class="credit-row"><span class="credit-label">Category</span><span class="credit-value">Web &middot; Landing Page</span></div>
+          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Adobe Illustrator</span></div>
+          <div class="credit-row"><span class="credit-label">Scope</span><span class="credit-value">Responsive one-pager</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NEXT PROJECT â€” loops back to Project 01 -->
-  <a href="project-01.html" class="proj-next" aria-label="Back to first project: Blank Poster Study">
-    <div>
-      <div class="proj-next-label">Back to First Project</div>
-      <div class="proj-next-title">Blank Poster Study</div>
-    </div>
-    <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">â†’</span>
+  <a href="project-05.html" class="proj-next" aria-label="Next project: MiaFemtech Social Media">
+    <div><div class="proj-next-label">Next Project</div><div class="proj-next-title">MiaFemtech &mdash; Social Media</div></div>
+    <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">&rarr;</span>
   </a>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap">
       <div class="footer-inner">
-        <a href="../index.html" class="footer-logo">CD·TM</a>
+        <a href="../index.html" class="footer-logo">CD&middot;TM</a>
         <nav class="footer-links" aria-label="Footer links">
-          <a href="../index.html#about"   class="footer-link">About</a>
+          <a href="../index.html#record"  class="footer-link">About</a>
           <a href="../index.html#work"    class="footer-link">Work</a>
           <a href="../index.html#contact" class="footer-link">Contact</a>
         </nav>
-        <span class="footer-copy">Â© 2026 Timonas Stefanou</span>
+        <span class="footer-copy">&copy; 2026 Timonas Stefanou</span>
       </div>
     </div>
   </footer>
@@ -289,8 +168,3 @@
   <script src="../script.js"></script>
 </body>
 </html>
-
-
-
-
-
