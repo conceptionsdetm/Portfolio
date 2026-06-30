@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MiaFemtech Cyprus Landing Page &mdash; Web Design by Timonas Stefanou" />
-  <title>MiaFemtech Landing Page &mdash; Timonas Stefanou</title>
+  <meta name="description" content="MiaFemtech Cyprus &mdash; Landing Page &amp; Social Media by Timonas Stefanou" />
+  <title>MiaFemtech &mdash; Timonas Stefanou</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
+    /* Web scroll frames (landing + guidelines) */
     .web-screen { max-width: 940px; margin: 0 auto 1rem; background: #fff; border: 1px solid rgba(0,0,0,.14); box-shadow: 0 16px 50px rgba(0,0,0,.14); }
     .web-bar { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.9rem; background: #2a2a2a; }
     .web-bar span { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; display: inline-block; }
@@ -21,8 +22,39 @@
     .device.tablet .device-frame { width: min(440px, 80vw); } .device.tablet img { width: 100%; }
     .device.mobile .device-frame { width: min(240px, 60vw); } .device.mobile img { width: 100%; }
     .device-label { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sepia); }
+    /* Social grid + cards */
+    .sm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+    .post { display: flex; flex-direction: column; }
+    .frame { position: relative; aspect-ratio: 1 / 1; background: #efe3e3; border: 1px solid rgba(0,0,0,.12); overflow: hidden; cursor: none; }
+    .frame img, .frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .frame:after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background .2s; }
+    .frame:hover:after { background: rgba(0,0,0,.1); }
+    .badges { position: absolute; top: 8px; right: 8px; z-index: 2; display: flex; gap: 5px; }
+    .badge { font-family: var(--ff-mono); font-size: 0.55rem; letter-spacing: 0.08em; background: rgba(0,0,0,.62); color: #fff; padding: 2px 7px; }
+    .badge.vid { background: var(--accent); }
+    .zoomcue { position: absolute; bottom: 8px; left: 8px; z-index: 2; font-family: var(--ff-mono); font-size: 0.5rem; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:rgba(0,0,0,.5); padding:2px 7px; opacity:0; transition:opacity .2s; }
+    .frame:hover .zoomcue { opacity: 1; }
+    .sm-cap { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sepia); margin-top: 0.5rem; line-height: 1.4; }
+    .sm-cap b { color: var(--text); font-weight: 700; }
+    .cal-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1.25rem; }
+    .cal-month { border: 1px solid rgba(0,0,0,.12); background: var(--paper); padding: 1.1rem 1.25rem; }
+    .cal-month h3 { font-family: var(--ff-display); font-size: 1.2rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .cal-month ul { list-style: none; }
+    .cal-month li { font-family: var(--ff-serif); font-size: 0.85rem; color: var(--sepia); padding: 0.18rem 0; border-bottom: 1px dotted rgba(0,0,0,.1); }
+    .pill { display:inline-block; font-family:var(--ff-mono); font-size:.5rem; letter-spacing:.1em; text-transform:uppercase; background:var(--accent); color:#fff; padding:1px 5px; margin-left:4px; vertical-align:middle; }
     .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
-    @media (max-width: 760px){ .proj-overview-grid{grid-template-columns:1fr;} }
+    /* Lightbox */
+    .lb { position: fixed; inset: 0; z-index: 9500; background: rgba(10,10,10,.92); display: none; align-items: center; justify-content: center; }
+    .lb.open { display: flex; }
+    .lb-stage { position: relative; max-width: 94vw; max-height: 90vh; display: flex; align-items: center; justify-content: center; }
+    .lb-stage img, .lb-stage video { max-width: 94vw; max-height: 86vh; width: auto; height: auto; display: block; box-shadow: 0 20px 70px rgba(0,0,0,.5); background:#000; }
+    .lb-nav { position: fixed; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border: none; border-radius: 50%; background: rgba(255,255,255,.12); color: #fff; font-family: var(--ff-display); font-size: 1.8rem; display: flex; align-items: center; justify-content: center; cursor: none; }
+    .lb-nav:hover { background: var(--accent); } .lb-prev { left: 3vw; } .lb-next { right: 3vw; }
+    .lb-close { position: fixed; top: 3vh; right: 3vw; width: 44px; height: 44px; border: none; background: rgba(255,255,255,.12); color: #fff; font-family: var(--ff-display); font-size: 1.4rem; cursor: none; }
+    .lb-close:hover { background: var(--accent); }
+    .lb-meta { position: fixed; bottom: 3vh; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem; font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; }
+    .lb-meta .lb-kind { background: var(--accent); padding: 2px 9px; }
+    @media (max-width: 760px){ .proj-overview-grid{grid-template-columns:1fr;} .lb-nav{width:40px;height:40px;font-size:1.3rem;} }
   </style>
 </head>
 <body class="project-page">
@@ -44,8 +76,8 @@
   <section class="proj-hero" aria-label="Project header">
     <div class="proj-hero-text">
       <a href="../index.html#work" class="proj-back">Back to Work</a>
-      <p class="proj-eyebrow">Web Design &middot; Landing Page &middot; 2026</p>
-      <h1 class="proj-title">MIA FEMTECH<br />LANDING PAGE</h1>
+      <p class="proj-eyebrow">Landing Page &amp; Social Media &middot; 2026</p>
+      <h1 class="proj-title">MIA FEMTECH</h1>
     </div>
     <div class="proj-hero-visual" style="background:#f3e2e2;display:flex;align-items:center;justify-content:center;padding:3rem;">
       <img src="images/miafemtech/mia-logo.png" alt="Mia Femtech logo" style="max-width:78%;max-height:120px;object-fit:contain;" />
@@ -54,9 +86,9 @@
 
   <div class="proj-meta" aria-label="Project details">
     <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">MiaFemtech Cyprus &middot; MediSera</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Web &middot; Landing Page</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Web &middot; Social Media</div></div>
     <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2026</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Adobe Illustrator</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; Photoshop &middot; AE</div></div>
   </div>
 
   <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
@@ -64,26 +96,29 @@
       <h2 class="proj-heading reveal">Overview</h2>
       <div class="proj-overview-grid">
         <div class="proj-overview-body reveal r1">
-          <p>A single-page launch site for MiaFemtech Cyprus &mdash; the minimally-invasive breast aesthetics brand &mdash; announcing its next-generation biocompatible implants. The page had to feel premium, reassuring and unmistakably feminine, while walking a prospective patient from headline to consultation booking in one scroll.</p>
-          <p>I designed the full landing page end to end: hero, product story, the 8-step procedure, benefits, an interactive Before &amp; After, surgeon profiles and contact &mdash; built on the Mia brand system of soft blush gradients, fine floral linework and an elegant serif voice, with a single rose accent driving every call to action.</p>
-          <p>The design was delivered as a complete responsive set &mdash; desktop, tablet and mobile &mdash; with a full guidelines spec (typography, colour and assets) for hand-off to development.</p>
+          <p>An end-to-end design programme for MiaFemtech Cyprus &mdash; the minimally-invasive breast aesthetics brand &mdash; spanning a premium launch landing page and an ongoing social-media campaign, all built on the Mia brand system of soft blush gradients, fine floral linework and an elegant serif voice.</p>
+          <p>The <b>landing page</b> walks a prospective patient from headline to consultation in one responsive scroll. The <b>social media</b> runs as a monthly content calendar across recurring pillars &mdash; The Experience Series, Myth vs Reality, Behind the Brand &mdash; alongside campaign moments like the Motiva Flora Awards and launch videos.</p>
+          <p>Below: the website &amp; responsive layouts, the guidelines spec, the Motiva Flora Awards activation, the video reels, and the running content calendar.</p>
         </div>
         <div class="proj-overview-aside reveal r2">
-          <strong>Deliverables</strong><br />
+          <strong>Web</strong><br />
           Desktop landing page<br />
           Tablet &amp; mobile layouts<br />
-          8-step procedure section<br />
-          Before &amp; After module<br />
-          Surgeon profiles<br />
           Full guidelines spec<br />
           <br />
-          <strong>Scope</strong><br />
-          One-page responsive site
+          <strong>Social</strong><br />
+          Monthly content calendar<br />
+          Motiva Flora Awards<br />
+          Video / reels &middot; Google Ads<br />
+          <br />
+          <strong>Cadence</strong><br />
+          Dec 2025 &ndash; Jun 2026
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ============ LANDING PAGE ============ -->
   <section class="proj-section" style="background:var(--paper);" aria-label="The website">
     <div class="wrap">
       <h2 class="proj-heading reveal">The Website</h2>
@@ -117,18 +152,58 @@
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--ground);" aria-label="Process">
+  <!-- ============ SOCIAL MEDIA ============ -->
+  <section class="proj-section" style="background:var(--ground);" aria-label="Motiva Flora Awards">
     <div class="wrap">
-      <h2 class="proj-heading reveal">Process Notes</h2>
-      <div class="process-notes">
-        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">Brand System</div><p class="process-note-body">Worked within the Mia brand &mdash; soft blush gradients, floral linework and an elegant serif &mdash; to keep the launch on-brand and reassuring.</p></div>
-        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">One-Scroll Story</div><p class="process-note-body">Structured the page as a single narrative: headline &rarr; product &rarr; how it works &rarr; benefits &rarr; before/after &rarr; surgeons &rarr; book a consultation.</p></div>
-        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">Responsive + Spec</div><p class="process-note-body">Delivered desktop, tablet and mobile layouts plus an annotated guidelines document for a clean development hand-off.</p></div>
+      <h2 class="proj-heading reveal">Motiva Flora Awards</h2>
+      <p class="reveal r1" style="font-family:var(--ff-serif);color:var(--sepia);max-width:620px;margin-bottom:1.5rem;">Social activation celebrating Motiva&rsquo;s Flora award-winning implant &mdash; announcement posts and a TikTok video. <b>Click to expand.</b></p>
+      <div class="sm-grid reveal r1">
+        <div class="post" data-base="images/miafemtech/social/motiva-flora/" data-count="3" data-title="Mia x Motiva Flora Awards"><div class="frame"></div><span class="sm-cap"><b>Awards Posts</b><br />Mia &times; Motiva Flora</span></div>
+        <div class="post" data-video="images/miafemtech/social/video/motiva-flora-awards.mp4" data-title="Motiva Flora Awards &mdash; TikTok"><div class="frame"></div><span class="sm-cap"><b>TikTok &middot; Video</b><br />Motiva Flora Awards</span></div>
+        <div class="post" data-img="images/miafemtech/social/motiva-flora/implant.jpg" data-title="Motiva Flora Implant"><div class="frame"></div><span class="sm-cap"><b>Product</b><br />Motiva Flora Implant</span></div>
       </div>
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--paper);" aria-label="Credits">
+  <section class="proj-section" style="background:var(--paper);" aria-label="Video">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Video</h2>
+      <p class="reveal r1" style="font-family:var(--ff-serif);color:var(--sepia);max-width:620px;margin-bottom:1.5rem;">Reels for Instagram &amp; TikTok &mdash; the Motiva Flora Awards spot and the &ldquo;Coming Soon&rdquo; recruitment teaser.</p>
+      <div class="sm-grid reveal r1">
+        <div class="post" data-video="images/miafemtech/social/video/motiva-flora-awards.mp4" data-title="Motiva Flora Awards &mdash; TikTok"><div class="frame"></div><span class="sm-cap"><b>Reel</b><br />Motiva Flora Awards</span></div>
+        <div class="post" data-video="images/miafemtech/social/video/recruitment.mp4" data-title="Coming Soon &mdash; Recruitment"><div class="frame"></div><span class="sm-cap"><b>Reel</b><br />Coming Soon &middot; Recruitment</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Content Calendar">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Content Calendar</h2>
+      <p class="reveal r1" style="font-family:var(--ff-serif);color:var(--sepia);max-width:660px;margin-bottom:1.5rem;">The monthly social programme, Dec 2025 &ndash; Jun 2026, built around recurring content pillars. <span class="pill">In production</span></p>
+      <div class="cal-list reveal r1">
+        <div class="cal-month"><h3>December 2025</h3><ul><li>The Experience Begins</li><li>Implant Shapes, Simplified <span class="pill">Video</span></li><li>Confidence is a Luxury</li><li>Myth vs Reality: Bigger is Better <span class="pill">Video</span></li><li>The 8-Step Procedure</li><li>Meet the Doctors</li></ul></div>
+        <div class="cal-month"><h3>January 2026</h3><ul><li>The Experience Series &middot; Clarity</li><li>For Every Woman&rsquo;s Story</li><li>Luxury Meets Technology</li><li>Self-Love Isn&rsquo;t a Trend</li><li>Myth vs Reality: Implants Look Fake</li><li>Benefits of MiaFemtech</li></ul></div>
+        <div class="cal-month"><h3>February 2026</h3><ul><li>The Experience Series &middot; Comfort First</li><li>Size Explained in 15 Seconds</li><li>The Empowered Consultation Guide</li><li>Behind the Brand &middot; Precision Tech</li><li>The Experience Series &middot; The Feeling</li></ul></div>
+        <div class="cal-month"><h3>March 2026</h3><ul><li>Understanding Options</li><li>Round vs Anatomical <span class="pill">Video</span></li><li>Elegance Begins Within</li><li>Myth vs Reality: Recovery Is Painful</li><li>Behind the Brand &middot; Material Integrity</li><li>The Experience Series &middot; Confidence</li></ul></div>
+        <div class="cal-month"><h3>April 2026</h3><ul><li>The Experience Series &middot; Alignment</li><li>What Happens During Surgery</li><li>Luxury Confidence</li><li>Myth vs Reality: All Implants Look the Same</li><li>Behind the Brand &middot; Quality Testing</li><li>Decision Moment</li></ul></div>
+        <div class="cal-month"><h3>May 2026</h3><ul><li>The Experience Series &middot; Preparing Yourself</li><li>Luxury Confidence in Every Detail</li><li>Motiva Flora Awards</li><li>&hellip; in production</li></ul></div>
+        <div class="cal-month"><h3>June 2026</h3><ul><li>Monthly series continues</li><li>&hellip; in production</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Process">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Process Notes</h2>
+      <div class="process-notes">
+        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">Brand System</div><p class="process-note-body">Soft blush palette, elegant serif and floral linework from the Mia brand system &mdash; calm, premium and reassuring across web and social.</p></div>
+        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">One-Scroll Site</div><p class="process-note-body">A single responsive landing page taking a patient from headline to booking &mdash; with a full guidelines spec for hand-off.</p></div>
+        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">Monthly Social</div><p class="process-note-body">A rolling calendar of carousels, posts and reels across recurring pillars, plus activations like the Motiva Flora Awards.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Credits">
     <div class="wrap">
       <h2 class="proj-heading reveal">Credits</h2>
       <div class="credits-grid reveal r1">
@@ -138,16 +213,16 @@
           <div class="credit-row"><span class="credit-label">Year</span><span class="credit-value">2026</span></div>
         </div>
         <div>
-          <div class="credit-row"><span class="credit-label">Category</span><span class="credit-value">Web &middot; Landing Page</span></div>
-          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Adobe Illustrator</span></div>
-          <div class="credit-row"><span class="credit-label">Scope</span><span class="credit-value">Responsive one-pager</span></div>
+          <div class="credit-row"><span class="credit-label">Scope</span><span class="credit-value">Web &amp; Social</span></div>
+          <div class="credit-row"><span class="credit-label">Channels</span><span class="credit-value">Web &middot; Instagram &middot; TikTok</span></div>
+          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Illustrator &middot; Photoshop &middot; AE</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <a href="project-05.html" class="proj-next" aria-label="Next project: MiaFemtech Social Media">
-    <div><div class="proj-next-label">Next Project</div><div class="proj-next-title">MiaFemtech &mdash; Social Media</div></div>
+  <a href="../index.html#work" class="proj-next" aria-label="Back to all work">
+    <div><div class="proj-next-label">Back to</div><div class="proj-next-title">All Work</div></div>
     <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">&rarr;</span>
   </a>
 
@@ -165,6 +240,54 @@
     </div>
   </footer>
 
+  <div class="lb" id="lb" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&lsaquo;</button>
+    <div class="lb-stage" id="lbStage"></div>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&rsaquo;</button>
+    <div class="lb-meta"><span class="lb-kind" id="lbKind"></span><span id="lbTitle"></span><span id="lbIdx"></span></div>
+  </div>
+
+  <script>
+    (function () {
+      document.querySelectorAll('.post').forEach(function (post) {
+        var frame = post.querySelector('.frame');
+        var title = post.getAttribute('data-title') || 'MiaFemtech';
+        var media = [];
+        var base = post.getAttribute('data-base'); var count = parseInt(post.getAttribute('data-count'), 10) || 0;
+        var img = post.getAttribute('data-img'); var video = post.getAttribute('data-video');
+        if (base && count) { for (var i = 1; i <= count; i++) media.push({ type:'img', src: base + i + '.jpg', kind:'Post ' + i + '/' + count }); }
+        if (img) media.push({ type:'img', src: img, kind:'Post' });
+        if (video) media.push({ type:'video', src: video, kind:'Video' });
+        post._media = media; post._title = title;
+        var cover;
+        if (media[0] && media[0].type === 'video') { cover = document.createElement('video'); cover.src = media[0].src + '#t=0.1'; cover.preload='metadata'; cover.muted=true; cover.playsInline=true; cover.setAttribute('playsinline',''); }
+        else { cover = document.createElement('img'); cover.loading='lazy'; cover.alt=title; cover.src = media[0]?media[0].src:''; }
+        frame.appendChild(cover);
+        var badges = document.createElement('div'); badges.className='badges';
+        if (count > 1) { var b=document.createElement('span'); b.className='badge'; b.textContent='1/'+count; badges.appendChild(b); }
+        if (video) { var bv=document.createElement('span'); bv.className='badge vid'; bv.textContent='▶'; badges.appendChild(bv); }
+        frame.appendChild(badges);
+        var cue=document.createElement('span'); cue.className='zoomcue'; cue.textContent='Click to expand'; frame.appendChild(cue);
+        frame.addEventListener('click', function(){ openLB(post); });
+      });
+      var lb=document.getElementById('lb'), stage=document.getElementById('lbStage');
+      var lbKind=document.getElementById('lbKind'), lbTitle=document.getElementById('lbTitle'), lbIdx=document.getElementById('lbIdx');
+      var cur=null, ci=0;
+      function renderLB(){ var m=cur._media[ci]; stage.innerHTML='';
+        if(m.type==='video'){ var v=document.createElement('video'); v.src=m.src; v.controls=true; v.playsInline=true; v.setAttribute('playsinline',''); v.muted=false; v.volume=0.5; v.addEventListener('loadedmetadata',function(){v.muted=false;v.volume=0.5;}); stage.appendChild(v); var pr=v.play(); if(pr&&pr.catch)pr.catch(function(){}); }
+        else { var im=document.createElement('img'); im.src=m.src; im.alt=cur._title; stage.appendChild(im); }
+        lbKind.textContent=m.kind; lbTitle.textContent=cur._title; lbIdx.textContent=(ci+1)+' / '+cur._media.length; }
+      function openLB(post){ if(!post._media.length) return; cur=post; ci=0; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; renderLB(); }
+      function closeLB(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); stage.innerHTML=''; document.body.style.overflow=''; cur=null; }
+      function step(d){ if(!cur) return; ci=(ci+d+cur._media.length)%cur._media.length; renderLB(); }
+      document.getElementById('lbPrev').addEventListener('click', function(e){ e.stopPropagation(); step(-1); });
+      document.getElementById('lbNext').addEventListener('click', function(e){ e.stopPropagation(); step(1); });
+      document.getElementById('lbClose').addEventListener('click', closeLB);
+      lb.addEventListener('click', function(e){ if(e.target===lb) closeLB(); });
+      document.addEventListener('keydown', function(e){ if(!lb.classList.contains('open')) return; if(e.key==='Escape')closeLB(); else if(e.key==='ArrowLeft')step(-1); else if(e.key==='ArrowRight')step(1); });
+    })();
+  </script>
   <script src="../script.js"></script>
 </body>
 </html>
