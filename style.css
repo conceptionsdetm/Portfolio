@@ -1560,7 +1560,7 @@ textarea.field-input:focus { border-color: var(--accent); }
   padding: clamp(2rem, 5vw, 4rem);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   background: var(--ground);
   border-right: 2px solid var(--text);
   position: relative;
