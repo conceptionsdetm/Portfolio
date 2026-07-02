@@ -40,6 +40,12 @@
     .sm-month-head { display: flex; align-items: baseline; gap: 1rem; border-bottom: 2px solid var(--text); padding-bottom: 0.6rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
     .sm-month-name { font-family: var(--ff-display); font-size: clamp(1.5rem, 4vw, 2.4rem); letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); }
     .sm-month-count { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+    /* Google Ads gallery (mixed banner sizes) */
+    .gad-grid { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; justify-content: center; }
+    .post.gad { width: auto; }
+    .post.gad .frame { aspect-ratio: auto; background: #fff; display: flex; align-items: center; justify-content: center; padding: 0.4rem; }
+    .post.gad .frame:after { display: none; }
+    .post.gad .frame img { position: static; width: auto; height: auto; max-width: min(88vw, 360px); max-height: 300px; object-fit: contain; }
     .cal-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1.25rem; }
     .cal-month { border: 1px solid rgba(0,0,0,.12); background: var(--paper); padding: 1.1rem 1.25rem; }
     .cal-month h3 { font-family: var(--ff-display); font-size: 1.2rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
@@ -267,7 +273,23 @@
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--paper);" aria-label="Process">
+  <section class="proj-section" style="background:var(--paper);" aria-label="Google Ads">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Google Ads</h2>
+      <p class="reveal r1" style="font-family:var(--ff-serif);color:var(--sepia);max-width:620px;margin-bottom:1.75rem;">Responsive Google display-ad sets across standard banner sizes &mdash; two campaigns, &ldquo;Experience, at your pace&rdquo; and &ldquo;Implant Shapes, Simplified.&rdquo; <b>Click to expand.</b></p>
+      <div class="gad-grid reveal r1">
+        <div class="post gad" data-img="images/miafemtech/social/google-ads/ad2-8.jpg" data-title="Google Ad &mdash; Experience, at your pace (leaderboard)"><div class="frame"></div></div>
+        <div class="post gad" data-img="images/miafemtech/social/google-ads/ad2-4.jpg" data-title="Google Ad &mdash; Experience, at your pace (half-page)"><div class="frame"></div></div>
+        <div class="post gad" data-img="images/miafemtech/social/google-ads/ad2-5.jpg" data-title="Google Ad &mdash; Experience, at your pace (skyscraper)"><div class="frame"></div></div>
+        <div class="post gad" data-img="images/miafemtech/social/google-ads/ad2-1.jpg" data-title="Google Ad &mdash; Experience, at your pace (rectangle)"><div class="frame"></div></div>
+        <div class="post gad" data-img="images/miafemtech/social/google-ads/ad3-8.jpg" data-title="Google Ad &mdash; Implant Shapes, Simplified (leaderboard)"><div class="frame"></div></div>
+        <div class="post gad" data-img="images/miafemtech/social/google-ads/ad3-4.jpg" data-title="Google Ad &mdash; Implant Shapes, Simplified (half-page)"><div class="frame"></div></div>
+        <div class="post gad" data-img="images/miafemtech/social/google-ads/ad3-5.jpg" data-title="Google Ad &mdash; Implant Shapes, Simplified (skyscraper)"><div class="frame"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Process">
     <div class="wrap">
       <h2 class="proj-heading reveal">Process Notes</h2>
       <div class="process-notes">
