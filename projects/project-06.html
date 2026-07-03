@@ -96,8 +96,30 @@
   <section class="proj-section" style="background:var(--paper);" aria-label="Brand Guidelines">
     <div class="wrap">
       <h2 class="proj-heading reveal">Brand Guidelines</h2>
-      <p class="web-hint reveal r1">18-page brand book &mdash; click any page to flip through full size</p>
-      <div class="deck-grid reveal r1" id="deck"></div>
+      <p class="web-hint reveal r1">Scroll through the 18-page brand book &darr;</p>
+      <div class="web-screen reveal r1" style="max-width:1000px;">
+        <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span><span class="web-url">albaflux &mdash; brand guidelines v2</span></div>
+        <div class="web-scroll">
+          <img src="images/albaflux/guidelines/1.jpg" alt="Albaflux brand guidelines page 1" loading="lazy" />
+          <img src="images/albaflux/guidelines/2.jpg" alt="Albaflux brand guidelines page 2" loading="lazy" />
+          <img src="images/albaflux/guidelines/3.jpg" alt="Albaflux brand guidelines page 3" loading="lazy" />
+          <img src="images/albaflux/guidelines/4.jpg" alt="Albaflux brand guidelines page 4" loading="lazy" />
+          <img src="images/albaflux/guidelines/5.jpg" alt="Albaflux brand guidelines page 5" loading="lazy" />
+          <img src="images/albaflux/guidelines/6.jpg" alt="Albaflux brand guidelines page 6" loading="lazy" />
+          <img src="images/albaflux/guidelines/7.jpg" alt="Albaflux brand guidelines page 7" loading="lazy" />
+          <img src="images/albaflux/guidelines/8.jpg" alt="Albaflux brand guidelines page 8" loading="lazy" />
+          <img src="images/albaflux/guidelines/9.jpg" alt="Albaflux brand guidelines page 9" loading="lazy" />
+          <img src="images/albaflux/guidelines/10.jpg" alt="Albaflux brand guidelines page 10" loading="lazy" />
+          <img src="images/albaflux/guidelines/11.jpg" alt="Albaflux brand guidelines page 11" loading="lazy" />
+          <img src="images/albaflux/guidelines/12.jpg" alt="Albaflux brand guidelines page 12" loading="lazy" />
+          <img src="images/albaflux/guidelines/13.jpg" alt="Albaflux brand guidelines page 13" loading="lazy" />
+          <img src="images/albaflux/guidelines/14.jpg" alt="Albaflux brand guidelines page 14" loading="lazy" />
+          <img src="images/albaflux/guidelines/15.jpg" alt="Albaflux brand guidelines page 15" loading="lazy" />
+          <img src="images/albaflux/guidelines/16.jpg" alt="Albaflux brand guidelines page 16" loading="lazy" />
+          <img src="images/albaflux/guidelines/17.jpg" alt="Albaflux brand guidelines page 17" loading="lazy" />
+          <img src="images/albaflux/guidelines/18.jpg" alt="Albaflux brand guidelines page 18" loading="lazy" />
+        </div>
+      </div>
     </div>
   </section>
 
@@ -160,39 +182,6 @@
     </div>
   </footer>
 
-  <div class="lb" id="lb" aria-hidden="true">
-    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
-    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&lsaquo;</button>
-    <div class="lb-stage" id="lbStage"></div>
-    <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&rsaquo;</button>
-    <div class="lb-meta" id="lbMeta"></div>
-  </div>
-
-  <script>
-    (function () {
-      var TOTAL = 18, base = "images/albaflux/guidelines/";
-      var deck = document.getElementById("deck");
-      var pages = [];
-      for (var i = 1; i <= TOTAL; i++) {
-        pages.push(base + i + ".jpg");
-        var d = document.createElement("div"); d.className = "gitem"; d.dataset.idx = (i - 1);
-        d.innerHTML = '<div class="gframe"><img loading="lazy" alt="Albaflux brand guidelines page ' + i + '" src="' + base + i + '.jpg"><span class="pnum">' + i + '/' + TOTAL + '</span></div>';
-        deck.appendChild(d);
-        d.addEventListener("click", function () { open(parseInt(this.dataset.idx, 10)); });
-      }
-      var lb = document.getElementById("lb"), stage = document.getElementById("lbStage"), meta = document.getElementById("lbMeta");
-      var ci = 0;
-      function render() { stage.innerHTML = ""; var im = document.createElement("img"); im.src = pages[ci]; im.alt = "Albaflux brand guidelines page " + (ci + 1); stage.appendChild(im); meta.textContent = "Page " + (ci + 1) + " / " + TOTAL; }
-      function open(i) { ci = i; lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; render(); }
-      function close() { lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); stage.innerHTML = ""; document.body.style.overflow = ""; }
-      function step(dd) { ci = (ci + dd + TOTAL) % TOTAL; render(); }
-      document.getElementById("lbPrev").addEventListener("click", function (e) { e.stopPropagation(); step(-1); });
-      document.getElementById("lbNext").addEventListener("click", function (e) { e.stopPropagation(); step(1); });
-      document.getElementById("lbClose").addEventListener("click", close);
-      lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
-      document.addEventListener("keydown", function (e) { if (!lb.classList.contains("open")) return; if (e.key === "Escape") close(); else if (e.key === "ArrowLeft") step(-1); else if (e.key === "ArrowRight") step(1); });
-    })();
-  </script>
   <script src="../script.js"></script>
 </body>
 </html>
