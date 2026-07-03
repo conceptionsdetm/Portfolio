@@ -41,11 +41,15 @@
     .sm-month-name { font-family: var(--ff-display); font-size: clamp(1.5rem, 4vw, 2.4rem); letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); }
     .sm-month-count { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
     /* Google Ads gallery (mixed banner sizes) */
-    .gad-grid { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; justify-content: center; }
+    .gad-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; justify-content: center; }
     .post.gad { width: auto; }
-    .post.gad .frame { aspect-ratio: auto; background: #fff; display: flex; align-items: center; justify-content: center; padding: 0.4rem; }
+    .post.gad .frame { aspect-ratio: auto; background: #fff; border: 1px solid rgba(0,0,0,.1); box-shadow: 0 8px 26px rgba(0,0,0,.07); display: flex; align-items: center; justify-content: center; padding: 0.9rem; }
     .post.gad .frame:after { display: none; }
-    .post.gad .frame img { position: static; width: auto; height: auto; max-width: min(88vw, 360px); max-height: 300px; object-fit: contain; }
+    .post.gad .frame img { position: static; display: block; width: auto; height: auto; object-fit: contain; }
+    .post.gad.wide { flex: 1 1 100%; }
+    .post.gad.wide .frame img { max-width: min(92vw, 720px); max-height: 230px; }
+    .post.gad.box .frame img { max-width: min(90vw, 320px); max-height: 300px; }
+    .post.gad.tall .frame img { max-width: min(60vw, 190px); max-height: 430px; }
     .cal-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1.25rem; }
     .cal-month { border: 1px solid rgba(0,0,0,.12); background: var(--paper); padding: 1.1rem 1.25rem; }
     .cal-month h3 { font-family: var(--ff-display); font-size: 1.2rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
@@ -246,34 +250,13 @@
     <div class="wrap">
       <h2 class="proj-heading reveal">Google Ads</h2>
       <p class="reveal r1" style="font-family:var(--ff-serif);color:var(--sepia);max-width:620px;margin-bottom:1.75rem;">Google display ads across standard banner sizes &mdash; the finished exports from each campaign. <b>Click to expand.</b></p>
-      <div class="sm-month reveal r1">
-        <div class="sm-month-head"><span class="sm-month-name">Google Ad 1</span><span class="sm-month-count">The Experience Begins</span></div>
-        <div class="gad-grid">
-          <div class="post gad" data-img="images/miafemtech/social/google-ads/ad1-728x90.jpg" data-title="Google Ad 1 &mdash; 728&times;90"><div class="frame"></div></div>
-        </div>
-      </div>
-
-      <div class="sm-month reveal r1">
-        <div class="sm-month-head"><span class="sm-month-name">Google Ad 2</span><span class="sm-month-count">Experience, at your pace</span></div>
-        <div class="gad-grid">
-          <div class="post gad" data-img="images/miafemtech/social/google-ads/ad2-970x250.jpg" data-title="Google Ad 2 &mdash; 970&times;250"><div class="frame"></div></div>
-          <div class="post gad" data-img="images/miafemtech/social/google-ads/ad2-336x280.jpg" data-title="Google Ad 2 &mdash; 336&times;280"><div class="frame"></div></div>
-        </div>
-      </div>
-
-      <div class="sm-month reveal r1">
-        <div class="sm-month-head"><span class="sm-month-name">Google Ad 3</span><span class="sm-month-count">Implant Shapes, Simplified</span></div>
-        <div class="gad-grid">
-          <div class="post gad" data-img="images/miafemtech/social/google-ads/ad3-970x90.jpg" data-title="Google Ad 3 &mdash; 970&times;90"><div class="frame"></div></div>
-        </div>
-      </div>
-
-      <div class="sm-month reveal r1">
-        <div class="sm-month-head"><span class="sm-month-name">Google Ad 5</span><span class="sm-month-count">Display Banners</span></div>
-        <div class="gad-grid">
-          <div class="post gad" data-img="images/miafemtech/social/google-ads/ad5-728x90.jpg" data-title="Google Ad 5 &mdash; 728&times;90"><div class="frame"></div></div>
-          <div class="post gad" data-img="images/miafemtech/social/google-ads/ad5-160x600.jpg" data-title="Google Ad 5 &mdash; 160&times;600"><div class="frame"></div></div>
-        </div>
+      <div class="gad-grid reveal r1">
+        <div class="post gad wide" data-img="images/miafemtech/social/google-ads/ad2-970x250.jpg" data-title="Google Ad &mdash; 970&times;250"><div class="frame"></div></div>
+        <div class="post gad wide" data-img="images/miafemtech/social/google-ads/ad3-970x90.jpg" data-title="Google Ad &mdash; 970&times;90"><div class="frame"></div></div>
+        <div class="post gad wide" data-img="images/miafemtech/social/google-ads/ad1-728x90.jpg" data-title="Google Ad &mdash; 728&times;90"><div class="frame"></div></div>
+        <div class="post gad wide" data-img="images/miafemtech/social/google-ads/ad5-728x90.jpg" data-title="Google Ad &mdash; 728&times;90"><div class="frame"></div></div>
+        <div class="post gad box" data-img="images/miafemtech/social/google-ads/ad2-336x280.jpg" data-title="Google Ad &mdash; 336&times;280"><div class="frame"></div></div>
+        <div class="post gad tall" data-img="images/miafemtech/social/google-ads/ad5-160x600.jpg" data-title="Google Ad &mdash; 160&times;600"><div class="frame"></div></div>
       </div>
     </div>
   </section>
