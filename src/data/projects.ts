@@ -1,0 +1,626 @@
+export type Category =
+  | "social-media"
+  | "website"
+  | "branding"
+  | "email-campaigns"
+  | "print"
+  | "motion"
+  | "apparel"
+  | "exhibition";
+
+export interface Project {
+  slug: string;
+  title: string;
+  client: string;
+  category: Category[];
+  tags: string[];
+  year: string;
+  cover: string;
+  images: string[];
+  pdf?: string;
+  pdfMaterials?: string;
+  pdfTablet?: string;
+  pdfMobile?: string;
+  previewImg?: string;
+  previewImgTablet?: string;
+  previewImgMobile?: string;
+  url?: string;
+  ctaLabel?: string;
+  ctaColor?: string;
+  ctaTextColor?: string;
+  ctaFontFamily?: string;
+  ctaFontWeight?: number;
+  /** Wide nav/header crop from the design PDF — displayed full-width in hero */
+  logoHero?: string;
+  /** Isolated logo PNG (standalone logo PDF) — displayed centred on dark bg */
+  logoImg?: string;
+  summary: string;
+  description: string;
+  deliverables: string[];
+}
+
+export const projects: Project[] = [
+  {
+    slug: "mia-femtech-social",
+    title: "MIA FemTech — Social Media Campaign",
+    client: "MIA FemTech Cyprus",
+    category: ["social-media"],
+    tags: ["Social Media", "Brand Identity", "Campaign", "Healthcare", "Luxury"],
+    year: "2025–2026",
+    cover: "/work/mia-femtech/post-01.jpg",
+    logoImg: "/work/mia-femtech-social/logo.png",
+    images: ["/work/mia-femtech/post-01.jpg"],
+    url: "https://mia-femtech.medisera.eu/",
+    ctaLabel: "Visit MIA FemTech",
+    ctaColor: "#C4687A",
+    ctaTextColor: "#FFFFFF",
+    ctaFontFamily: "'Cormorant Garamond', serif",
+    ctaFontWeight: 600,
+    summary:
+      "A premium content strategy and full social media campaign for Cyprus's leading FemTech clinic, positioning breast augmentation as a journey of confidence and self-care.",
+    description:
+      "MIA FemTech approached me to build a consistent, luxury social media identity across Instagram from scratch. The challenge was balancing clinical credibility with emotional resonance — making women feel seen, safe, and inspired. Every post was designed around 'The Experience Series' narrative, guiding the audience through awareness, education, and decision-making. The visual language uses soft tones, editorial typography, and intentional whitespace to create a premium, trustworthy aesthetic consistent with the brand's positioning.",
+    deliverables: [
+      "Monthly social media calendars (Dec 2025 – Apr 2026)",
+      "Instagram carousels, single posts, and stories",
+      "Google Ads display creatives",
+      "Video social content",
+      "Brand tone-of-voice guidelines",
+    ],
+  },
+
+  {
+    slug: "amsoil-social",
+    title: "AMSOIL — Social Media Campaign",
+    client: "AMSOIL Cyprus Distributor",
+    category: ["social-media"],
+    tags: ["Social Media", "Automotive", "Campaign", "Product Design", "Performance"],
+    year: "2025–2026",
+    cover: "/work/amsoil/post-01.jpg",
+    logoImg: "/work/amsoil/logo.png",
+    images: ["/work/amsoil/post-01.jpg"],
+    url: "https://amsoil.com.cy/",
+    ctaLabel: "Visit AMSOIL Cyprus",
+    ctaColor: "#D01F2B",
+    ctaTextColor: "#FFFFFF",
+    ctaFontFamily: "'Inter', sans-serif",
+    ctaFontWeight: 600,
+    summary:
+      "A bold, performance-driven social media campaign for AMSOIL's Cyprus distributor — communicating premium motor oil quality to an automotive enthusiast audience.",
+    description:
+      "AMSOIL needed a social media presence that spoke directly to car enthusiasts and professional mechanics in Cyprus. The design approach centers on power and precision — dark backgrounds, bold typography, and cinematic product photography that positions AMSOIL as the premium choice in synthetic lubricants. Monthly content calendars cover product spotlights, technical blog features, and influencer partnerships, each designed to educate and convert a niche, high-intent audience.",
+    deliverables: [
+      "Monthly social media calendars (Apr – Jun 2026)",
+      "Instagram carousels, single posts & Reels",
+      "Educational product spotlights",
+      "Influencer collaboration creatives",
+      "Story formats and highlights covers",
+      "Classic Car Festival 2026 campaign",
+    ],
+  },
+
+  {
+    slug: "mia-femtech-website",
+    title: "MIA FemTech — Website Design",
+    client: "MIA FemTech Cyprus",
+    category: ["website"],
+    tags: ["Web Design", "UI/UX", "Landing Page", "Healthcare", "Mobile-First"],
+    year: "2025",
+    cover: "/work/mia-femtech/website-cover.jpg",
+    logoImg: "/work/mia-femtech-social/logo.png",
+    images: ["/work/mia-femtech/website-cover.jpg"],
+    previewImg: "/work/mia-femtech/preview-desktop.jpg",
+    previewImgTablet: "/work/mia-femtech/preview-tablet.jpg",
+    previewImgMobile: "/work/mia-femtech/preview-mobile.jpg",
+    url: "https://mia-femtech.medisera.eu/",
+    ctaLabel: "Visit MIA FemTech Live",
+    ctaColor: "#C4687A",
+    ctaTextColor: "#ffffff",
+    ctaFontFamily: "'Roboto', sans-serif",
+    ctaFontWeight: 400,
+    summary:
+      "A responsive multi-device website design for MIA FemTech — crafted to convert visitors into consultation bookings through trust, luxury, and clear information hierarchy.",
+    description:
+      "The MIA FemTech website design required a careful balance: premium aesthetic that commands trust, paired with clear navigation to guide patients toward booking a consultation. I designed the full landing page at desktop, tablet, and mobile breakpoints — ensuring the experience felt intentional across all devices. The typography hierarchy and imagery selections were guided by the brand's luxury healthcare positioning.",
+    deliverables: [
+      "Desktop landing page design",
+      "Tablet responsive layout",
+      "Mobile responsive layout",
+      "Component design system",
+      "Typography and spacing guidelines",
+    ],
+  },
+
+  {
+    slug: "fameline-social",
+    title: "Fameline Holding Group — Corporate Social Media",
+    client: "Fameline Holding Group",
+    category: ["social-media"],
+    tags: ["Social Media", "Corporate", "Campaign", "Event", "B2B"],
+    year: "2025–2026",
+    cover: "/work/fameline-social/impa.jpg",
+    images: [
+      "/work/fameline-social/impa.jpg",
+      "/work/fameline-social/meet-buyer-1.jpg",
+      "/work/fameline-social/meet-buyer-2.jpg",
+      "/work/fameline-social/meet-buyer-3.jpg",
+      "/work/fameline-social/save-the-date.jpg",
+      "/work/fameline-social/blood-donation.jpg",
+      "/work/fameline-social/hearts-of-gold.jpg",
+      "/work/fameline-social/charity.jpg",
+      "/work/fameline-social/movember.jpg",
+      "/work/fameline-social/xmas.jpg",
+      "/work/fameline-social/marathon.jpg",
+      "/work/fameline-social/tsikno.jpg",
+    ],
+    summary:
+      "Ongoing corporate social media content for Fameline Holding Group — spanning international trade events, corporate campaigns, charity initiatives, and internal culture posts.",
+    description:
+      "Fameline Holding Group required a consistent, professional social media presence across a wide variety of content types: international trade event promotions (IMPA London 2025), internal 'Meet the Buyer' team spotlights, CSR initiatives (Blood Donation, International Day of Charity), cultural events (Movember, Christmas), and group-wide communications. Each post maintains brand consistency while adapting tone to the content's purpose — from authoritative to celebratory.",
+    deliverables: [
+      "Trade event social posts (IMPA London 2025)",
+      "Meet the Buyer series — team member spotlights",
+      "CSR campaign posts (charity, blood donation)",
+      "Cultural and seasonal event posts",
+      "Internal communications graphics",
+    ],
+  },
+
+  // ─── WEBSITE DESIGN ─────────────────────────────────────────────────────────
+
+  {
+    slug: "northtide-website",
+    title: "NorthTide — Landing Page Design",
+    client: "NorthTide Cargo Logistics",
+    category: ["website", "branding"],
+    tags: ["Web Design", "UI/UX", "Maritime", "Corporate", "Responsive"],
+    year: "2025",
+    cover: "/work/northtide/cover.jpg",
+    logoHero: "/work/northtide/logo.png",
+    images: ["/work/northtide/cover.jpg", "/work/northtide/hero.jpg", "/work/northtide/full-page.jpg", "/work/northtide/letterhead.jpg"],
+    previewImg: "/work/northtide/preview-desktop.jpg",
+    previewImgTablet: "/work/northtide/preview-tablet.jpg",
+    previewImgMobile: "/work/northtide/preview-mobile.jpg",
+    url: "https://northtide.global/",
+    ctaLabel: "Visit NorthTide Live",
+    ctaColor: "#0ABFBC",
+    ctaTextColor: "#ffffff",
+    ctaFontFamily: "'Roboto Slab', serif",
+    ctaFontWeight: 700,
+    summary:
+      "A corporate landing page for NorthTide Cargo Logistics designed across desktop, tablet, and mobile — communicating reliability and global reach in maritime freight.",
+    description:
+      "NorthTide required a landing page that positioned them as a credible, modern player in the cargo logistics industry. The design prioritises clarity and trust signals, with a structured layout that communicates key services at a glance. The responsive design system ensures consistent brand presentation from widescreen monitors to mobile devices.",
+    deliverables: [
+      "Desktop landing page",
+      "Tablet breakpoint design",
+      "Mobile phone layout",
+      "Brand colour and typography system",
+    ],
+  },
+
+  {
+    slug: "fameline-website",
+    title: "Fameline Mission Solutions — Website Design",
+    client: "Fameline Mission Solutions",
+    category: ["website", "branding"],
+    tags: ["Web Design", "Corporate", "Defence", "UI/UX", "Multi-page"],
+    year: "2025",
+    cover: "/work/fameline-website/website-cover.jpg",
+    logoHero: "/work/fameline-website/logo.png",
+    images: ["/work/fameline-website/website-cover.jpg"],
+    previewImg: "/work/fameline-website/preview-desktop.jpg",
+    previewImgTablet: "/work/fameline-website/preview-tablet.jpg",
+    previewImgMobile: "/work/fameline-website/preview-mobile.jpg",
+    ctaLabel: "T.B.A — To Be Announced",
+    ctaColor: "#1A2744",
+    ctaTextColor: "#FFFFFF",
+    ctaFontFamily: "'Roboto', sans-serif",
+    ctaFontWeight: 500,
+    summary:
+      "A premium corporate website design for Fameline Mission Solutions — a defence and security solutions provider requiring gravitas, authority, and precision in every pixel.",
+    description:
+      "Fameline Mission Solutions operates in the defence and security sector — an industry where visual communication must project authority and technical competence. The website design uses deep navy tones, precise grid layouts, and structured information hierarchy to communicate expertise. Designed across landing page and services page, both with desktop and mobile variants.",
+    deliverables: [
+      "Landing page (desktop + mobile)",
+      "Services page (desktop + mobile)",
+      "Brand application guidelines",
+    ],
+  },
+
+  {
+    slug: "albaflux-website",
+    title: "Albaflux — Landing Page",
+    client: "Albaflux",
+    category: ["website", "branding"],
+    tags: ["Web Design", "Landing Page", "Maritime", "Brand Identity"],
+    year: "2025",
+    cover: "/work/posidonia/event-03.jpg",
+    logoHero: "/work/albaflux-website/logo.png",
+    images: ["/work/posidonia/event-03.jpg"],
+    pdf: "/pdfs/albaflux-web.pdf",
+    summary:
+      "A clean, conversion-focused landing page for Albaflux, complementing the brand's comprehensive identity system.",
+    description:
+      "Designed in conjunction with the Albaflux brand guidelines, this landing page translates the brand system into a digital experience. The design uses the established colour palette and typography to create a cohesive online presence that extends the brand's credibility.",
+    deliverables: ["Single-page landing design", "Brand system integration"],
+  },
+
+  // ─── BRANDING & IDENTITY ────────────────────────────────────────────────────
+
+  {
+    slug: "albaflux-brand",
+    title: "Albaflux — Brand Identity System",
+    client: "Albaflux",
+    category: ["branding"],
+    tags: ["Brand Identity", "Brand Guidelines", "Maritime", "Corporate Identity"],
+    year: "2025",
+    cover: "/work/bwss/campaign-0.jpg",
+    logoHero: "/work/albaflux-brand/logo.png",
+    images: [
+      "/work/bwss/campaign-0.jpg",
+      "/work/bwss/campaign-1.jpg",
+      "/work/bwss/campaign-2.jpg",
+    ],
+    summary:
+      "A complete brand identity system for Albaflux — including logo design, colour palette, typography standards, and a comprehensive brand guidelines document.",
+    description:
+      "The Albaflux brand identity was built to position the company as a credible, professional operator in the maritime and chemical supply sector. The guidelines document covers every touchpoint: logo usage rules, colour systems, typographic hierarchy, email signatures, and application examples. The result is a coherent identity that can scale confidently across print, digital, and corporate communications.",
+    deliverables: [
+      "Logo design (all variants)",
+      "Brand guidelines PDF",
+      "Colour and typography system",
+      "Email signature design",
+      "Corporate stationery",
+    ],
+  },
+
+  {
+    slug: "fameline-stationery",
+    title: "Fameline Holding Group — Corporate Stationery",
+    client: "Fameline Holding Group",
+    category: ["branding", "print"],
+    tags: ["Print Design", "Stationery", "Brand Identity", "Corporate", "Mockup"],
+    year: "2025–2026",
+    cover: "/work/fameline-stationery/envelope-dl.jpg",
+    images: [
+      "/work/fameline-stationery/letterhead.jpg",
+      "/work/fameline-stationery/envelope-dl.jpg",
+      "/work/fameline-stationery/envelope-a4.png",
+      "/work/fameline-stationery/notepad.png",
+    ],
+    summary:
+      "Branded corporate stationery for Fameline Holding Group — letterhead, DL envelope, A4 envelope, and notepad, each carrying the group's identity with precision and refinement.",
+    description:
+      "Corporate stationery is where brand identity meets daily professional life. For Fameline Holding Group, I designed a cohesive suite of printed materials — a formal letterhead, DL and A4 envelopes, and a branded notepad — ensuring that every piece of correspondence carries the group's visual identity consistently. The designs were produced as print-ready files with mockup presentations for stakeholder approval.",
+    deliverables: [
+      "Letterhead design (print-ready)",
+      "DL envelope design (print-ready)",
+      "A4 envelope design (print-ready)",
+      "Corporate notepad design",
+      "Mockup presentations",
+    ],
+  },
+
+  // ─── EMAIL CAMPAIGNS ────────────────────────────────────────────────────────
+
+  {
+    slug: "bwss-email-campaign",
+    title: "BWSS — Email Marketing Campaign",
+    client: "BWSS (Ballast Water Solutions)",
+    category: ["email-campaigns"],
+    tags: ["Email Marketing", "Campaign", "Maritime", "LinkedIn", "B2B"],
+    year: "2025",
+    cover: "/work/bwss-email/header-01.jpg",
+    logoImg: "/work/bwss-email/logo.png",
+    images: [
+      "/work/bwss-email/header-00.jpg",
+      "/work/bwss-email/header-01.jpg",
+      "/work/bwss-email/linkedin-01.jpg",
+      "/work/bwss-email/header-02.jpg",
+      "/work/bwss-email/linkedin-02.jpg",
+      "/work/bwss-email/header-03.jpg",
+      "/work/bwss-email/linkedin-03.jpg",
+      "/work/bwss-email/header-04.jpg",
+      "/work/bwss-email/linkedin-04.jpg",
+      "/work/bwss-email/header-05.jpg",
+    ],
+    summary:
+      "A five-campaign email and LinkedIn marketing series for BWSS — educating maritime operators on ballast water management regulations and BWSS's solution portfolio.",
+    description:
+      "BWSS needed a professional content marketing campaign to reach maritime operators and decision-makers across five critical compliance topics. Each campaign includes a header visual and LinkedIn post — designed to capture attention in crowded inboxes and feeds. The visual approach uses authority signals: clean layouts, bold headlines, and industry-specific photography to position BWSS as the expert voice in ballast water treatment.",
+    deliverables: [
+      "5 email campaign headers",
+      "5 LinkedIn post designs",
+      "Campaign copywriting and visual direction",
+      "Case study creative assets",
+    ],
+  },
+
+  // ─── EXHIBITIONS ────────────────────────────────────────────────────────────
+
+  {
+    slug: "posidonia-exhibition",
+    title: "Posidonia 2024 — Exhibition Motion & Branding",
+    client: "BWSS / Euploia / Armonia",
+    category: ["motion", "exhibition"],
+    tags: ["Motion Graphics", "After Effects", "Exhibition", "Maritime", "Event Branding"],
+    year: "2024",
+    cover: "/work/posidonia/event-01.jpg",
+    logoImg: "/work/posidonia/logo.png",
+    images: [
+      "/work/posidonia/event-01.jpg",
+      "/work/posidonia/event-02.jpg",
+      "/work/posidonia/event-03.jpg",
+    ],
+    summary:
+      "Full exhibition branding and motion graphics for three maritime companies at Posidonia 2024 — one of the world's largest shipping trade shows — including LED wall videos, teaser campaigns, and save-the-date animations.",
+    description:
+      "Posidonia is the world's largest maritime exhibition. For 2024, I created complete exhibition identities for three Fameline Group companies: BWSS (Ballast Water Solutions), Euploia, and Armonia. The scope included animated teaser videos distributed on social media before the event, save-the-date motion pieces, and full-resolution LED wall content displayed live at the exhibition stands in Athens. Each brand's motion language was distinct while maintaining the professional standards expected at an international trade event.",
+    deliverables: [
+      "LED wall video content (looping, event-ready)",
+      "Social media teaser videos (MP4)",
+      "Save-the-date animated videos",
+      "After Effects source projects",
+      "Exhibition booth branding assets",
+    ],
+  },
+
+  // ─── APPAREL & KITS ─────────────────────────────────────────────────────────
+
+  {
+    slug: "sinomed-apparel",
+    title: "SinoMed — Corporate Jacket Range",
+    client: "SinoMed",
+    category: ["apparel"],
+    tags: ["Apparel Design", "Corporate Branding", "Jacket", "Mockup", "Colourways"],
+    year: "2024–2026",
+    cover: "/work/sinomed/jacket-06.jpg",
+    images: [
+      "/work/sinomed/jacket-06.jpg",
+      "/work/sinomed/jacket-07.jpg",
+      "/work/sinomed/jacket-01.jpg",
+      "/work/sinomed/jacket-02.jpg",
+      "/work/sinomed/jacket-03.jpg",
+      "/work/sinomed/jacket-04.jpg",
+      "/work/sinomed/jacket-05.jpg",
+    ],
+    summary:
+      "A full range of branded corporate jackets for SinoMed — seven colourway variants designed to give the brand a strong, consistent presence across staff and corporate events.",
+    description:
+      "SinoMed required a professional jacket range that could serve both frontline staff and corporate occasions. I developed seven distinct colourway combinations — black, blue, and grey base jackets each paired with white, blue, grey, or red-white logo treatments — giving SinoMed full flexibility for different contexts. Each design was produced as a photo-realistic mockup for client approval before going to print production.",
+    deliverables: [
+      "7 jacket colourway designs",
+      "Logo placement and sizing specifications",
+      "Photo-realistic mockup presentations",
+      "Print-ready artwork files",
+    ],
+  },
+
+  {
+    slug: "lubedesk-apparel",
+    title: "LubeDesk — Corporate Jacket Range",
+    client: "LubeDesk",
+    category: ["apparel"],
+    tags: ["Apparel Design", "Corporate Branding", "Jacket", "Mockup", "Maritime"],
+    year: "2024–2026",
+    cover: "/work/lubedesk/jacket-03.jpg",
+    images: [
+      "/work/lubedesk/jacket-03.jpg",
+      "/work/lubedesk/jacket-04.jpg",
+      "/work/lubedesk/jacket-01.jpg",
+      "/work/lubedesk/jacket-02.jpg",
+    ],
+    summary:
+      "Four branded jacket variants for LubeDesk — black and blue colourways with complementary logo treatments, designed for professional maritime industry use.",
+    description:
+      "LubeDesk needed corporate apparel that would represent the brand consistently across maritime industry settings. I designed four jacket variants across two base colours (black and blue) with white, grey, and blue logo treatments, offering versatility for different environments and occasions. Each design was presented as a detailed mockup and produced as print-ready artwork.",
+    deliverables: [
+      "4 jacket colourway designs",
+      "Logo placement specifications",
+      "Mockup presentations",
+      "Print-ready artwork",
+    ],
+  },
+
+  {
+    slug: "mie-football",
+    title: "MIE Group — Football Kit Design",
+    client: "MIE Group",
+    category: ["apparel"],
+    tags: ["Apparel Design", "Sports Kit", "Football", "Corporate", "Mockup"],
+    year: "2025",
+    cover: "/work/mie-football/full-kit.jpg",
+    images: [
+      "/work/mie-football/full-kit.jpg",
+      "/work/mie-football/front.jpg",
+      "/work/mie-football/back.jpg",
+    ],
+    summary:
+      "A complete branded football kit for MIE Group — jersey front and back with full kit mockup, designed for corporate sporting events and team identity.",
+    description:
+      "MIE Group commissioned a branded football kit for corporate team events. The design translates the brand's identity onto sportswear — balancing visibility of the logo on dynamic sportswear with a clean, athletic aesthetic. The kit was presented as a full set mockup showing front jersey, back jersey with name/number area, and the complete outfit.",
+    deliverables: [
+      "Football jersey design (front + back)",
+      "Full kit mockup presentation",
+      "Print-ready artwork files",
+    ],
+  },
+
+  {
+    slug: "marathon-tshirt",
+    title: "Fameline Group — Marathon T-Shirt 2026",
+    client: "Fameline Holding Group",
+    category: ["apparel", "print"],
+    tags: ["Apparel Design", "Event", "T-Shirt", "Marathon", "Print"],
+    year: "2026",
+    cover: "/work/marathon/front.jpg",
+    images: [
+      "/work/marathon/front.jpg",
+      "/work/marathon/back.jpg",
+    ],
+    summary:
+      "Official event t-shirt design for the Fameline Holding Group team at the Limassol Marathon 2026 — front and back, print-ready for the event.",
+    description:
+      "Fameline Holding Group entered a team in the Limassol Marathon 2026 and required a branded event t-shirt for all participants. The design was created for the Fameline identity, optimised for on-body legibility and comfort during a running event. Both front and back were designed and delivered as print-ready files in time for the event.",
+    deliverables: [
+      "T-shirt front design (print-ready)",
+      "T-shirt back design (print-ready)",
+      "Mockup presentation for approvals",
+    ],
+  },
+
+  {
+    slug: "fameline-volleyball",
+    title: "Famelions — Volleyball Kit Design",
+    client: "Fameline Holding Group",
+    category: ["apparel"],
+    tags: ["Apparel Design", "Sports Kit", "Volleyball", "Corporate", "Mockup"],
+    year: "2025",
+    cover: "/work/fameline-volley/tank-front.jpg",
+    logoImg: "/work/fameline-volley/logo.png",
+    images: [
+      "/work/fameline-volley/tank-front.jpg",
+      "/work/fameline-volley/tank-back.jpg",
+      "/work/fameline-volley/shorts.jpg",
+      "/work/fameline-volley/good-luck.jpg",
+    ],
+    summary:
+      "Complete volleyball kit design for the Famelions — Fameline Holding Group's internal sports team — including tank top, shorts, and a campaign-style 'Good Luck' social post.",
+    description:
+      "The Famelions needed a full volleyball kit that unified the team's identity for their 2025 season. I designed the complete kit: tank top (front and back) and shorts, all carrying the Famelions brand. Alongside the kit, I produced a social media 'Good Luck Team' post to mark the season launch — demonstrating how apparel design and social communications reinforce each other.",
+    deliverables: [
+      "Volleyball tank top (front + back)",
+      "Shorts design",
+      "Full kit mockup",
+      "Good Luck social media post",
+    ],
+  },
+
+  // ─── NEW 2026 ────────────────────────────────────────────────────────────────
+
+  {
+    slug: "navichem-brand",
+    title: "Navichem Group — Multi-Brand Identity System",
+    client: "Navichem Marine Chemicals",
+    category: ["branding", "print", "website"],
+    tags: ["Brand Identity", "Multi-Brand", "Maritime", "Stationery", "Website Design"],
+    year: "2025–2026",
+    cover: "/work/navichem/cover.jpg",
+    logoImg: "/work/navichem/logo.png",
+    images: [
+      "/work/navichem/cover.jpg",
+      "/work/navichem/letterhead-navichem.jpg",
+      "/work/navichem/letterhead-vchem.jpg",
+      "/work/navichem/letterhead-unichem.jpg",
+      "/work/navichem/letterhead-mblchem.jpg",
+      "/work/navichem/letterhead-shipchem.jpg",
+    ],
+    summary:
+      "A complete multi-brand identity system for the Navichem Group — five distinct brands (Navichem, V.Chem, Unichem, MBLChem, Shipchem), full stationery suite, and website design across the group.",
+    description:
+      "Navichem required a comprehensive brand architecture covering the entire group: the parent brand Navichem Marine Chemicals and four specialist sub-brands — V.Chem, Unichem, MBLChem, and Shipchem. Each brand received its own distinct logo, colour palette, and full stationery system (letterheads, envelopes) while maintaining visual coherence across the group. The project also included website design assets for Navichem, establishing the brand's digital presence with a modern maritime aesthetic.",
+    deliverables: [
+      "5 brand logo systems (Navichem, V.Chem, Unichem, MBLChem, Shipchem)",
+      "Letterhead design for all 5 brands",
+      "Envelope design for all 5 brands",
+      "Brand colour and typography guidelines",
+      "Website design (hero, product pages, company profile)",
+    ],
+  },
+
+  {
+    slug: "lubedesk-advertising",
+    title: "LubeDesk — Digital & Print Advertising",
+    client: "LubeDesk",
+    category: ["print"],
+    tags: ["Advertising", "Digital Ads", "Print", "OOH", "Maritime"],
+    year: "2026",
+    cover: "/work/lubedesk/advert-digital.jpg",
+    images: [
+      "/work/lubedesk/advert-digital.jpg",
+      "/work/lubedesk/advert-static.jpg",
+    ],
+    summary:
+      "Digital and out-of-home advertising campaign for LubeDesk.com — full-format digital ads (320×512 and 1080×1920) and a large-format OOH print ad for bus shelter and scroll placements.",
+    description:
+      "LubeDesk needed advertising collateral to drive awareness and signups for their marine lubricants procurement platform. I designed a full campaign across digital and print formats: animated and static digital ads optimised for social and display placement, and a large-format 130×200cm OOH design for bus shelter and scroll advertising. The visual language carries the brand's navy and teal palette into a bold, high-contrast advertising aesthetic.",
+    deliverables: [
+      "Digital ad — 320×512px (static + animated)",
+      "Digital ad — 1080×1920px full format",
+      "OOH print ad — 130×200cm (bus shelter)",
+      "OOH print ad — 129×198cm (scroll)",
+      "Print-ready and digital-optimised files",
+    ],
+  },
+
+  {
+    slug: "fluxotic-website",
+    title: "Fluxotic — E-Commerce Website Design",
+    client: "Fluxotic",
+    category: ["website"],
+    tags: ["Web Design", "E-Commerce", "Automotive", "UI/UX", "Product Design"],
+    year: "2025–2026",
+    cover: "/work/fluxotic/cover.jpg",
+    logoImg: "/work/fluxotic/logo.png",
+    // pdf: "PASTE_GOOGLE_DRIVE_PREVIEW_URL_HERE",           // Fluxotic E-Shop Design.pdf
+    // pdfMaterials: "PASTE_GOOGLE_DRIVE_PREVIEW_URL_HERE", // Fluxotic E-Shop Design Materials.pdf
+    images: [
+      "/work/fluxotic/cover.jpg",
+      "/work/fluxotic/banner-ad.jpg",
+      "/work/fluxotic/category-cars.jpg",
+      "/work/fluxotic/category-moto.jpg",
+      "/work/fluxotic/category-4x4.jpg",
+    ],
+    summary:
+      "Full e-commerce website design for Fluxotic — an automotive lubricants and fluids retailer — including homepage, category pages, blog, banners, and all supporting design assets.",
+    description:
+      "Fluxotic required a complete e-commerce website to launch their automotive lubricants and fluids retail platform. I designed the full site: homepage with hero banner and category navigation, product category pages (vehicles, oils, activities), blog section, and all visual assets — hero banners, advertising banners, category photography, payment icons, and brand SVG icons. The design system uses a bold, high-energy aesthetic suited to the motorsports and automotive audience, with a dark, premium feel throughout.",
+    deliverables: [
+      "Homepage design (hero, categories, featured products)",
+      "Product category page templates",
+      "Blog page and post templates",
+      "Hero and advertising banner designs",
+      "Category photography art direction",
+      "Brand icon set (SVG)",
+      "Full website asset library",
+    ],
+  },
+
+  {
+    slug: "armonia-social",
+    title: "Armonia — Career Day Social Media Campaign",
+    client: "Armonia Trading & Commercial Applications",
+    category: ["social-media"],
+    tags: ["Social Media", "Event", "Maritime", "Career", "Recruitment"],
+    year: "2026",
+    cover: "/work/armonia/career-day-1.jpg",
+    logoImg: "/work/armonia/logo.png",
+    images: [
+      "/work/armonia/career-day-1.jpg",
+      "/work/armonia/career-day-2.jpg",
+      "/work/armonia/career-day-3.jpg",
+    ],
+    summary:
+      "Social media post series for Armonia's participation in the 56th Career Day in Piraeus — bold event-promotion design targeting maritime and commercial professionals.",
+    description:
+      "Armonia participated in the 56th Career Day at Castor Place, Piraeus (23 May 2026), one of Greece's largest career fairs. I designed the social media promotion campaign to drive registrations and brand awareness at the event — bold, high-contrast posts communicating the key event details (30 companies, 900+ positions) while maintaining Armonia's professional corporate identity.",
+    deliverables: [
+      "Social media post series (3 formats)",
+      "Event detail and call-to-action design",
+      "Brand-consistent visual treatment",
+    ],
+  },
+];
+
+export const categories = [
+  { id: "all",             label: "All Work" },
+  { id: "social-media",   label: "Social Media" },
+  { id: "website",        label: "Website Design" },
+  { id: "branding",       label: "Brand Identity" },
+  { id: "email-campaigns",label: "Email Campaigns" },
+  { id: "apparel",        label: "Apparel & Kits" },
+  { id: "print",          label: "Print & Stationery" },
+  { id: "exhibition",     label: "Exhibitions" },
+  { id: "motion",         label: "Motion" },
+] as const;
