@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Heri me Heri (Hand in Hand Children's Charity) &mdash; charity &amp; CSR design by Timonas Stefanou" />
+  <title>Heri me Heri &mdash; Timonas Stefanou</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:2.5rem; }
+    .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    /* Identity */
+    .id-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:1.5rem; align-items:stretch; }
+    .id-cell { border:1px solid rgba(0,0,0,.12); box-shadow:0 8px 22px rgba(0,0,0,.06); display:flex; align-items:center; justify-content:center; padding:2.4rem; position:relative; background:#fff; }
+    .id-cell img { max-width:78%; max-height:260px; object-fit:contain; }
+    .id-cell .lc-tag { position:absolute; bottom:10px; left:12px; font-family:var(--ff-mono); font-size:.52rem; letter-spacing:.12em; text-transform:uppercase; color:var(--sepia); }
+    .palette { display:flex; gap:0; margin-top:1.5rem; border:1px solid rgba(0,0,0,.12); }
+    .swatch { flex:1; height:88px; display:flex; align-items:flex-end; padding:.5rem .7rem; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.08em; }
+    /* Bundle */
+    .bundle-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; margin-top:1.5rem; }
+    .bundle-post { background:#fff; border:1px solid rgba(0,0,0,.12); box-shadow:0 14px 40px rgba(0,0,0,.14); padding:.9rem; cursor:none; }
+    .bundle-post img { width:100%; height:auto; display:block; }
+    .bundle-note img.bl { max-width:170px; height:auto; display:block; margin-bottom:1.2rem; }
+    /* Poster */
+    .poster-wrap { display:flex; justify-content:center; margin-top:1.5rem; }
+    .poster { background:#fff; border:1px solid rgba(0,0,0,.12); box-shadow:0 16px 44px rgba(0,0,0,.16); padding:1rem; max-width:420px; cursor:none; }
+    .poster img { width:100%; height:auto; display:block; }
+    .cap { margin-top:.8rem; text-align:center; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.12em; text-transform:uppercase; color:var(--sepia); }
+    /* Lightbox */
+    .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
+    .lb.open { display:flex; }
+    .lb img { max-width:92vw; max-height:90vh; width:auto; height:auto; display:block; box-shadow:0 20px 70px rgba(0,0,0,.5); }
+    .lb-close { position:fixed; top:3vh; right:3vw; width:44px; height:44px; border:none; background:rgba(255,255,255,.14); color:#fff; font-family:var(--ff-display); font-size:1.4rem; cursor:none; }
+    .lb-close:hover { background:var(--accent); }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .id-grid{grid-template-columns:1fr;} .bundle-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body class="project-page">
+
+  <div class="cursor" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="../index.html" class="nav-logo" aria-label="Back to home">CD&middot;TM</a>
+    <nav class="nav-links" aria-label="Main navigation" id="navLinks">
+      <a href="../index.html#record"  class="nav-link">About</a>
+      <a href="../index.html#work"    class="nav-link">Work</a>
+      <a href="../index.html#process" class="nav-link">Process</a>
+      <a href="../index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#" class="nav-cta cv-trigger" data-cv="../Timonas-Stefanou-CV-2025.pdf" aria-label="View my CV">View CV</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <section class="proj-hero" aria-label="Project header">
+    <div class="proj-hero-text">
+      <a href="../index.html#work" class="proj-back">Back to Work</a>
+      <p class="proj-eyebrow">Charity &amp; CSR &middot; 2026</p>
+      <h1 class="proj-title">HERI ME HERI</h1>
+    </div>
+    <div class="proj-hero-visual" style="background:#fff;display:flex;align-items:center;justify-content:center;padding:2.2rem;">
+      <img src="images/heri-me-heri/logo.png" alt="Heri me Heri (Hand in Hand) dove-and-hand logo" style="max-width:72%;max-height:200px;object-fit:contain;" />
+    </div>
+  </section>
+
+  <div class="proj-meta" aria-label="Project details">
+    <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">Heri me Heri &middot; Hand in Hand</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Charity &middot; CSR</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2026</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; Photoshop</div></div>
+  </div>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Overview</h2>
+      <div class="proj-overview-grid">
+        <div class="proj-overview-body reveal r1">
+          <p>&ldquo;&Chi;&#941;&rho;&iota; &mu;&epsilon; &Chi;&#941;&rho;&iota;&rdquo; &mdash; <b>Hand in Hand Children&rsquo;s Charity Foundation</b> &mdash; supports children and families in need across Cyprus, under the promise &ldquo;one smile at a time.&rdquo;</p>
+          <p>Fameline Holding Group proudly backs the foundation, and the design work runs across its <b>identity</b>, its <b>roll-up banners and collateral</b>, and the group&rsquo;s own giving campaign, <b>Bundle of Joy</b> &mdash; food and essentials packed for families in need.</p>
+          <p>Click the campaign post or the banner to view them full size.</p>
+        </div>
+        <div class="proj-overview-aside reveal r2">
+          <strong>Deliverables</strong><br />
+          Logo &amp; identity<br />
+          Roll-up banner<br />
+          Bundle of Joy campaign<br />
+          Social &amp; print collateral<br />
+          <br />
+          <strong>Scope</strong><br />
+          Charity &amp; CSR
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Identity">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Mark</h2>
+      <p class="web-hint reveal r1">A single line drawing a hand, a dove and a heart</p>
+      <div class="id-grid reveal r1">
+        <div class="id-cell"><img data-lb src="images/heri-me-heri/logo.png" alt="Heri me Heri dove-and-hand logo" /><span class="lc-tag">Χέρι με Χέρι &middot; Logo</span></div>
+        <div class="id-cell" style="background:#2b5ca8;"><img data-lb src="images/heri-me-heri/bundle-logo.png" alt="Bundle of Joy logo" style="max-height:220px;" /><span class="lc-tag" style="color:rgba(255,255,255,.55);">Bundle of Joy &middot; Campaign mark</span></div>
+      </div>
+      <div class="palette reveal r2" aria-label="Brand palette">
+        <div class="swatch" style="background:#2b5ca8;color:#fff;">Hand&nbsp;Blue&nbsp;#2B5CA8</div>
+        <div class="swatch" style="background:#e8917a;color:#3a1d16;">Warm&nbsp;Coral&nbsp;#E8917A</div>
+        <div class="swatch" style="background:#e12b57;color:#fff;">Joy&nbsp;Pink&nbsp;#E12B57</div>
+        <div class="swatch" style="background:#f7f6ee;color:#2b5ca8;">Paper&nbsp;#F7F6EE</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Bundle of Joy">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Bundle of Joy</h2>
+      <p class="web-hint reveal r1">Fameline&rsquo;s giving campaign for the foundation</p>
+      <div class="bundle-grid reveal r1">
+        <div class="bundle-post"><img data-lb src="images/heri-me-heri/bundle.jpg" alt="Bundle of Joy 2025 campaign post" loading="eager" /></div>
+        <div class="bundle-note">
+          <img class="bl" src="images/heri-me-heri/bundle-logo.png" alt="Bundle of Joy logo" />
+          <p><b>Bundle of Joy</b> packs boxes of food and everyday essentials for families supported by the foundation &mdash; each one hand-decorated by children.</p>
+          <p>The campaign post pairs a warm, crafted look with the Fameline and Hand in Hand marks: <i>&ldquo;Creating joy, one bundle at a time.&rdquo;</i></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Roll-up banner">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Banner</h2>
+      <p class="web-hint reveal r1">Roll-up banner &mdash; &ldquo;one smile at a time&rdquo;</p>
+      <div class="poster-wrap reveal r1">
+        <div class="poster"><img data-lb src="images/heri-me-heri/poster.jpg" alt="Hand in Hand Children's Charity Foundation roll-up banner" loading="lazy" /><div class="cap">Roll-up banner</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Process">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Process Notes</h2>
+      <div class="process-notes">
+        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">The Mark</div><p class="process-note-body">One continuous line resolves into a hand, a dove and a heart &mdash; connection and care in a single gesture.</p></div>
+        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">The Tone</div><p class="process-note-body">Soft blue and warm coral, gentle and hopeful rather than clinical &mdash; charity that feels human.</p></div>
+        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">The Giving</div><p class="process-note-body">Carried into the Bundle of Joy campaign and roll-up banners so the cause shows up warmly, on-screen and on the ground.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Credits">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Credits</h2>
+      <div class="credits-grid reveal r1">
+        <div>
+          <div class="credit-row"><span class="credit-label">Design</span><span class="credit-value">Timonas Stefanou</span></div>
+          <div class="credit-row"><span class="credit-label">Charity</span><span class="credit-value">Hand in Hand Foundation</span></div>
+          <div class="credit-row"><span class="credit-label">Year</span><span class="credit-value">2026</span></div>
+        </div>
+        <div>
+          <div class="credit-row"><span class="credit-label">Supported by</span><span class="credit-value">Fameline Holding Group</span></div>
+          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Illustrator &middot; Photoshop</span></div>
+          <div class="credit-row"><span class="credit-label">Deliverables</span><span class="credit-value">Identity + Campaign + Banner</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="../index.html#work" class="proj-next" aria-label="Back to all work">
+    <div><div class="proj-next-label">Back to</div><div class="proj-next-title">All Work</div></div>
+    <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">&rarr;</span>
+  </a>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo">CD&middot;TM</a>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html#record"  class="footer-link">About</a>
+          <a href="../index.html#work"    class="footer-link">Work</a>
+          <a href="../index.html#contact" class="footer-link">Contact</a>
+        </nav>
+        <span class="footer-copy">&copy; 2026 Timonas Stefanou</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lb" id="lb" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <img id="lbImg" src="" alt="" />
+  </div>
+
+  <script>
+    (function () {
+      var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg");
+      function open(src, alt) { lbImg.src = src; lbImg.alt = alt || ""; lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; }
+      function close() { lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); lbImg.src = ""; document.body.style.overflow = ""; }
+      document.querySelectorAll("img[data-lb]").forEach(function (im) {
+        im.addEventListener("click", function () { open(im.getAttribute("src"), im.getAttribute("alt")); });
+      });
+      document.getElementById("lbClose").addEventListener("click", close);
+      lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && lb.classList.contains("open")) close(); });
+    })();
+  </script>
+  <script src="../script.js"></script>
+</body>
+</html>
