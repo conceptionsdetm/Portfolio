@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Movember 2025 &mdash; men's health awareness campaign by Timonas Stefanou" />
+  <title>Movember 2025 &mdash; Timonas Stefanou</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:2.5rem; }
+    .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    /* Campaign grid */
+    .g3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+    .g3 .cell { position:relative; aspect-ratio:1/1; overflow:hidden; border:1px solid rgba(0,0,0,.12); box-shadow:0 8px 22px rgba(0,0,0,.08); cursor:none; background:#26262a; }
+    .g3 .cell img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
+    .g3 .cell:hover img { transform:scale(1.04); }
+    /* Event grid (portrait) */
+    .g4 { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:1.5rem; }
+    .g4 .cell { position:relative; aspect-ratio:3/4; overflow:hidden; border:1px solid rgba(0,0,0,.12); box-shadow:0 8px 22px rgba(0,0,0,.08); cursor:none; background:#26262a; }
+    .g4 .cell img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
+    .g4 .cell:hover img { transform:scale(1.04); }
+    /* Video row */
+    .vid-row { display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; margin-top:1.5rem; }
+    .vid-item { width:300px; max-width:100%; }
+    .vid-item video { width:100%; height:auto; display:block; background:#000; border:1px solid rgba(0,0,0,.2); box-shadow:0 14px 40px rgba(0,0,0,.2); }
+    .vid-cap { margin-top:.8rem; text-align:center; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.12em; text-transform:uppercase; color:var(--sepia); }
+    /* Lightbox */
+    .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
+    .lb.open { display:flex; }
+    .lb img { max-width:92vw; max-height:90vh; width:auto; height:auto; display:block; box-shadow:0 20px 70px rgba(0,0,0,.5); }
+    .lb-close { position:fixed; top:3vh; right:3vw; width:44px; height:44px; border:none; background:rgba(255,255,255,.14); color:#fff; font-family:var(--ff-display); font-size:1.4rem; cursor:none; }
+    .lb-close:hover { background:var(--accent); }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .g3{grid-template-columns:1fr;} .g4{grid-template-columns:1fr 1fr;} }
+  </style>
+</head>
+<body class="project-page">
+
+  <div class="cursor" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="../index.html" class="nav-logo" aria-label="Back to home">CD&middot;TM</a>
+    <nav class="nav-links" aria-label="Main navigation" id="navLinks">
+      <a href="../index.html#record"  class="nav-link">About</a>
+      <a href="../index.html#work"    class="nav-link">Work</a>
+      <a href="../index.html#process" class="nav-link">Process</a>
+      <a href="../index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#" class="nav-cta cv-trigger" data-cv="../Timonas-Stefanou-CV-2025.pdf" aria-label="View my CV">View CV</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <section class="proj-hero" aria-label="Project header">
+    <div class="proj-hero-text">
+      <a href="../index.html#work" class="proj-back">Back to Work</a>
+      <p class="proj-eyebrow">Awareness &amp; Campaign &middot; 2025</p>
+      <h1 class="proj-title">MOVEMBER 2025</h1>
+    </div>
+    <div class="proj-hero-visual" style="background:#26262a;display:flex;align-items:center;justify-content:center;padding:2.6rem;">
+      <img src="images/movember/logo.png" alt="Movember Cyprus moustache badge" style="max-width:62%;max-height:180px;object-fit:contain;" />
+    </div>
+  </section>
+
+  <div class="proj-meta" aria-label="Project details">
+    <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">Fameline Holding Group</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Awareness &middot; Campaign</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2025</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; After Effects</div></div>
+  </div>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Overview</h2>
+      <div class="proj-overview-grid">
+        <div class="proj-overview-body reveal r1">
+          <p><b>Movember</b> is the global movement for men&rsquo;s health &mdash; prostate and testicular cancer, mental health and suicide prevention. For 2025, Fameline Holding Group ran its own campaign under the line <i>&ldquo;Men&rsquo;s health matters, get involved.&rdquo;</i></p>
+          <p>The work spans <b>awareness posts</b>, an animated <b>invitation</b> to an in-house fundraiser &mdash; a 2v2 table-football tournament with a pop-up barbershop, DJ and cocktails &mdash; and a <b>thank-you reel</b> once the moustaches came off.</p>
+          <p>Click any post or photo to view it full size.</p>
+        </div>
+        <div class="proj-overview-aside reveal r2">
+          <strong>Deliverables</strong><br />
+          Awareness posts<br />
+          Animated invitation<br />
+          Thank-you reel<br />
+          Event &amp; profile assets<br />
+          <br />
+          <strong>Scope</strong><br />
+          Awareness &amp; motion
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="The campaign">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Campaign</h2>
+      <p class="web-hint reveal r1">Awareness &amp; the fundraiser invitation</p>
+      <div class="g3 reveal r1">
+        <div class="cell"><img data-lb src="images/movember/campaign/social.jpg" alt="Movember awareness post" loading="eager" /></div>
+        <div class="cell"><img data-lb src="images/movember/campaign/invitation.jpg" alt="Movember event invitation post" loading="lazy" /></div>
+        <div class="cell"><img data-lb src="images/movember/campaign/profile.jpg" alt="Movember profile picture" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="In motion">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">In Motion</h2>
+      <p class="web-hint reveal r1">Animated invitation &amp; the thank-you reel</p>
+      <div class="vid-row reveal r1">
+        <div class="vid-item">
+          <video class="mov-video" controls playsinline preload="metadata"><source src="images/movember/video/animation.mp4" type="video/mp4" /></video>
+          <div class="vid-cap">Animated invitation</div>
+        </div>
+        <div class="vid-item">
+          <video class="mov-video" controls playsinline preload="metadata"><source src="images/movember/video/reel.mp4" type="video/mp4" /></video>
+          <div class="vid-cap">Thank-you reel</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="The day">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Day</h2>
+      <p class="web-hint reveal r1">The pop-up barbershop &amp; the fundraiser</p>
+      <div class="g4 reveal r1">
+        <div class="cell"><img data-lb src="images/movember/event/1.jpg" alt="Movember event photo 1" loading="lazy" /></div>
+        <div class="cell"><img data-lb src="images/movember/event/2.jpg" alt="Movember event photo 2" loading="lazy" /></div>
+        <div class="cell"><img data-lb src="images/movember/event/3.jpg" alt="Movember event photo 3" loading="lazy" /></div>
+        <div class="cell"><img data-lb src="images/movember/event/4.jpg" alt="Movember event photo 4" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Process">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Process Notes</h2>
+      <div class="process-notes">
+        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">The Look</div><p class="process-note-body">Charcoal and Movember gold with a bold moustache motif for the event, and a calmer blue awareness cut for the men&rsquo;s-health message.</p></div>
+        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">The Motion</div><p class="process-note-body">An animated invitation built in After Effects to push the fundraiser across screens, from social to the office TVs.</p></div>
+        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">The Day</div><p class="process-note-body">A pop-up barbershop, table football, DJ and cocktails &mdash; captured and cut into a thank-you reel for everyone who took part.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Credits">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Credits</h2>
+      <div class="credits-grid reveal r1">
+        <div>
+          <div class="credit-row"><span class="credit-label">Design</span><span class="credit-value">Timonas Stefanou</span></div>
+          <div class="credit-row"><span class="credit-label">Client</span><span class="credit-value">Fameline Holding Group</span></div>
+          <div class="credit-row"><span class="credit-label">Year</span><span class="credit-value">2025</span></div>
+        </div>
+        <div>
+          <div class="credit-row"><span class="credit-label">Cause</span><span class="credit-value">Men&rsquo;s Health &middot; Movember</span></div>
+          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Illustrator &middot; After Effects</span></div>
+          <div class="credit-row"><span class="credit-label">Deliverables</span><span class="credit-value">Posts + Motion + Reel</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="../index.html#work" class="proj-next" aria-label="Back to all work">
+    <div><div class="proj-next-label">Back to</div><div class="proj-next-title">All Work</div></div>
+    <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">&rarr;</span>
+  </a>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo">CD&middot;TM</a>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html#record"  class="footer-link">About</a>
+          <a href="../index.html#work"    class="footer-link">Work</a>
+          <a href="../index.html#contact" class="footer-link">Contact</a>
+        </nav>
+        <span class="footer-copy">&copy; 2026 Timonas Stefanou</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lb" id="lb" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <img id="lbImg" src="" alt="" />
+  </div>
+
+  <script>
+    (function () {
+      document.querySelectorAll("video.mov-video").forEach(function (v) {
+        v.volume = 0.5;
+        v.addEventListener("play", function () { v.volume = 0.5; });
+      });
+    })();
+    (function () {
+      var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg");
+      function open(src, alt) { lbImg.src = src; lbImg.alt = alt || ""; lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; }
+      function close() { lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); lbImg.src = ""; document.body.style.overflow = ""; }
+      document.querySelectorAll("img[data-lb]").forEach(function (im) {
+        im.addEventListener("click", function () { open(im.getAttribute("src"), im.getAttribute("alt")); });
+      });
+      document.getElementById("lbClose").addEventListener("click", close);
+      lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && lb.classList.contains("open")) close(); });
+    })();
+  </script>
+  <script src="../script.js"></script>
+</body>
+</html>
