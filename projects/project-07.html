@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VessGuard &mdash; Brand Identity &amp; PPE Brochure by Timonas Stefanou" />
+  <title>VessGuard &mdash; Timonas Stefanou</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .web-screen { max-width: 760px; margin: 0 auto 1rem; background: #fff; border: 1px solid rgba(0,0,0,.14); box-shadow: 0 16px 50px rgba(0,0,0,.14); }
+    .web-bar { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.9rem; background: #2a2a2a; }
+    .web-bar span { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; display: inline-block; }
+    .web-bar span:nth-child(2){ background:#febc2e; } .web-bar span:nth-child(3){ background:#28c840; }
+    .web-bar .web-url { margin-left:.6rem; flex:1; font-family:var(--ff-mono); font-size:.62rem; letter-spacing:.06em; color:rgba(255,255,255,.6); background:#1c1c1c; border-radius:4px; padding:.35rem .7rem; }
+    .web-scroll { max-height: 80vh; overflow-y: auto; background:#fff; } .web-scroll img { width:100%; height:auto; display:block; }
+    .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:2.5rem; }
+    .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    /* Logo system */
+    .logo-system { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:1.5rem; }
+    .logo-cell { border:1px solid rgba(0,0,0,.12); box-shadow:0 8px 22px rgba(0,0,0,.06); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:2.2rem; position:relative; }
+    .logo-cell img { max-width:80%; max-height:70%; object-fit:contain; }
+    .logo-cell.light { background:#f7f6ee; }
+    .logo-cell.dark  { background:#1f2024; }
+    .logo-cell.mark  { background:#fff; }
+    .logo-cell .lc-tag { position:absolute; bottom:10px; left:12px; font-family:var(--ff-mono); font-size:.52rem; letter-spacing:.12em; text-transform:uppercase; color:var(--sepia); }
+    .logo-cell.dark .lc-tag { color:rgba(255,255,255,.5); }
+    .palette { display:flex; gap:0; margin-top:2.5rem; border:1px solid rgba(0,0,0,.12); }
+    .swatch { flex:1; height:88px; display:flex; align-items:flex-end; padding:.5rem .7rem; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.08em; }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .logo-system{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body class="project-page">
+
+  <div class="cursor" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="../index.html" class="nav-logo" aria-label="Back to home">CD&middot;TM</a>
+    <nav class="nav-links" aria-label="Main navigation" id="navLinks">
+      <a href="../index.html#record"  class="nav-link">About</a>
+      <a href="../index.html#work"    class="nav-link">Work</a>
+      <a href="../index.html#process" class="nav-link">Process</a>
+      <a href="../index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#" class="nav-cta cv-trigger" data-cv="../Timonas-Stefanou-CV-2025.pdf" aria-label="View my CV">View CV</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <section class="proj-hero" aria-label="Project header">
+    <div class="proj-hero-text">
+      <a href="../index.html#work" class="proj-back">Back to Work</a>
+      <p class="proj-eyebrow">Brand Identity &amp; Print &middot; 2026</p>
+      <h1 class="proj-title">VESSGUARD</h1>
+    </div>
+    <div class="proj-hero-visual" style="background:#f7f6ee;display:flex;align-items:center;justify-content:center;padding:3rem;">
+      <img src="images/vessguard/logo.png" alt="VessGuard logo" style="max-width:80%;max-height:92px;object-fit:contain;" />
+    </div>
+  </section>
+
+  <div class="proj-meta" aria-label="Project details">
+    <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">VessGuard</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Brand Identity &middot; Print</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2026</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; InDesign</div></div>
+  </div>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Overview</h2>
+      <div class="proj-overview-grid">
+        <div class="proj-overview-body reveal r1">
+          <p>VessGuard is a marine-grade PPE brand &mdash; the crew&rsquo;s guardian, protecting seafarers from deck to port with quality-assured safety gear.</p>
+          <p>The work pairs a <b>logo system</b> built on a shield-and-&ldquo;VG&rdquo; mark with a <b>product brochure</b> that carries the brand across boiler suits, safety footwear, gloves, parkas and certified coveralls &mdash; industrial confidence in charcoal and signal red.</p>
+          <p>Scroll the brochure below to read it end to end.</p>
+        </div>
+        <div class="proj-overview-aside reveal r2">
+          <strong>Deliverables</strong><br />
+          Logo &amp; mark system<br />
+          Colour &amp; wordmark<br />
+          9-page PPE brochure<br />
+          Product layouts<br />
+          <br />
+          <strong>Scope</strong><br />
+          Brand + print
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Logo system">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Mark</h2>
+      <p class="web-hint reveal r1">A shield forming &ldquo;VG&rdquo; &mdash; a guard for the crew</p>
+      <div class="logo-system reveal r1">
+        <div class="logo-cell light"><img src="images/vessguard/logo.png" alt="VessGuard horizontal logo, colour" /><span class="lc-tag">Horizontal &middot; Colour</span></div>
+        <div class="logo-cell dark"><img src="images/vessguard/logo-white.png" alt="VessGuard horizontal logo, reversed white" /><span class="lc-tag">Reversed &middot; White</span></div>
+        <div class="logo-cell mark"><img src="images/vessguard/logo-center.png" alt="VessGuard stacked shield mark" /><span class="lc-tag">Stacked &middot; Mark</span></div>
+      </div>
+      <div class="palette reveal r2" aria-label="Brand palette">
+        <div class="swatch" style="background:#1f2024;color:rgba(255,255,255,.85);">Graphite&nbsp;#1F2024</div>
+        <div class="swatch" style="background:#c8102e;color:#fff;">Signal&nbsp;Red&nbsp;#C8102E</div>
+        <div class="swatch" style="background:#f7f6ee;color:#1f2024;">Paper&nbsp;#F7F6EE</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="PPE brochure">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Brochure</h2>
+      <p class="web-hint reveal r1">Scroll through the 9-page PPE brochure &darr;</p>
+      <div class="web-screen reveal r1">
+        <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span><span class="web-url">vessguard &mdash; ppe brochure v2</span></div>
+        <div class="web-scroll">
+          <img src="images/vessguard/brochure/1.jpg" alt="VessGuard PPE brochure page 1" loading="eager" />
+          <img src="images/vessguard/brochure/2.jpg" alt="VessGuard PPE brochure page 2" loading="lazy" />
+          <img src="images/vessguard/brochure/3.jpg" alt="VessGuard PPE brochure page 3" loading="lazy" />
+          <img src="images/vessguard/brochure/4.jpg" alt="VessGuard PPE brochure page 4" loading="lazy" />
+          <img src="images/vessguard/brochure/5.jpg" alt="VessGuard PPE brochure page 5" loading="lazy" />
+          <img src="images/vessguard/brochure/6.jpg" alt="VessGuard PPE brochure page 6" loading="lazy" />
+          <img src="images/vessguard/brochure/7.jpg" alt="VessGuard PPE brochure page 7" loading="lazy" />
+          <img src="images/vessguard/brochure/8.jpg" alt="VessGuard PPE brochure page 8" loading="lazy" />
+          <img src="images/vessguard/brochure/9.jpg" alt="VessGuard PPE brochure page 9" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Process">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Process Notes</h2>
+      <div class="process-notes">
+        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">The Mark</div><p class="process-note-body">A shield built from a &ldquo;V&rdquo; and a &ldquo;G&rdquo; &mdash; protection made literal, split black and signal red for a safety-first read.</p></div>
+        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">System</div><p class="process-note-body">Graphite and signal red with a bold condensed sans, plus technical crosshair marks that nod to spec sheets and inspection tags.</p></div>
+        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">Applied</div><p class="process-note-body">Carried into a 9-page product brochure &mdash; hero PPE photography, certified coveralls and clear product layouts for the sales team.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Credits">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Credits</h2>
+      <div class="credits-grid reveal r1">
+        <div>
+          <div class="credit-row"><span class="credit-label">Design</span><span class="credit-value">Timonas Stefanou</span></div>
+          <div class="credit-row"><span class="credit-label">Client</span><span class="credit-value">VessGuard</span></div>
+          <div class="credit-row"><span class="credit-label">Year</span><span class="credit-value">2026</span></div>
+        </div>
+        <div>
+          <div class="credit-row"><span class="credit-label">Scope</span><span class="credit-value">Brand &amp; Print</span></div>
+          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Illustrator &middot; InDesign</span></div>
+          <div class="credit-row"><span class="credit-label">Deliverables</span><span class="credit-value">Logo + Brochure</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="../index.html#work" class="proj-next" aria-label="Back to all work">
+    <div><div class="proj-next-label">Back to</div><div class="proj-next-title">All Work</div></div>
+    <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">&rarr;</span>
+  </a>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo">CD&middot;TM</a>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html#record"  class="footer-link">About</a>
+          <a href="../index.html#work"    class="footer-link">Work</a>
+          <a href="../index.html#contact" class="footer-link">Contact</a>
+        </nav>
+        <span class="footer-copy">&copy; 2026 Timonas Stefanou</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
