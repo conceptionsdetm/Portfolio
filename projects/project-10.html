@@ -110,10 +110,10 @@
       <p class="web-hint reveal r1" style="margin-top:3.5rem;">Swipe the LinkedIn carousel &mdash; the bags, hand-decorated by children</p>
       <div class="car reveal r1" data-car>
         <div class="car-track" id="carTrack">
-          <img data-lb src="images/heri-me-heri/carousel/1.jpg" alt="Bundle of Joy carousel slide 1" loading="lazy" />
-          <img data-lb src="images/heri-me-heri/carousel/2.jpg" alt="Bundle of Joy carousel slide 2" loading="lazy" />
-          <img data-lb src="images/heri-me-heri/carousel/3.jpg" alt="Bundle of Joy carousel slide 3" loading="lazy" />
-          <img data-lb src="images/heri-me-heri/carousel/4.jpg" alt="Bundle of Joy carousel slide 4" loading="lazy" />
+          <img src="images/heri-me-heri/carousel/1.jpg" alt="Bundle of Joy carousel slide 1" loading="lazy" />
+          <img src="images/heri-me-heri/carousel/2.jpg" alt="Bundle of Joy carousel slide 2" loading="lazy" />
+          <img src="images/heri-me-heri/carousel/3.jpg" alt="Bundle of Joy carousel slide 3" loading="lazy" />
+          <img src="images/heri-me-heri/carousel/4.jpg" alt="Bundle of Joy carousel slide 4" loading="lazy" />
         </div>
         <button class="car-btn car-prev" id="carPrev" aria-label="Previous slide">&lsaquo;</button>
         <button class="car-btn car-next" id="carNext" aria-label="Next slide">&rsaquo;</button>
@@ -180,7 +180,7 @@
       var fp = document.getElementById("flipPost");
       if (fp) {
         var img = document.getElementById("bundleImg");
-        var srcs = ["images/heri-me-heri/bundle-1.jpg", "images/heri-me-heri/bundle-2.jpg", "images/heri-me-heri/bundle-3.jpg"];
+        var srcs = ["images/heri-me-heri/bundle-1.jpg", "images/heri-me-heri/bundle-3.jpg", "images/heri-me-heri/bundle-2.jpg"];
         var i = 0, busy = false;
         srcs.forEach(function (s) { var p = new Image(); p.src = s; });
         fp.addEventListener("click", function () {
@@ -195,6 +195,7 @@
       if (track) {
         var slides = track.querySelectorAll("img"), dotsWrap = document.getElementById("carDots"), idx = 0;
         slides.forEach(function (_, i) { var b = document.createElement("button"); if (i === 0) b.className = "active"; b.setAttribute("aria-label", "Go to slide " + (i + 1)); b.addEventListener("click", function () { go(i); }); dotsWrap.appendChild(b); });
+        slides.forEach(function (im) { im.style.cursor = "none"; im.title = "Click to change"; im.addEventListener("click", function () { go((idx + 1) % slides.length); }); });
         function go(i) { idx = Math.max(0, Math.min(slides.length - 1, i)); track.scrollTo({ left: idx * track.clientWidth, behavior: "smooth" }); update(); }
         function update() { dotsWrap.querySelectorAll("button").forEach(function (b, i) { b.className = i === idx ? "active" : ""; }); }
         document.getElementById("carPrev").addEventListener("click", function () { go(idx - 1); });
