@@ -29,6 +29,12 @@
     .event-card { background:#fff; border:1px solid rgba(0,0,0,.12); box-shadow:0 12px 30px rgba(0,0,0,.1); padding:1rem; cursor:none; }
     .event-card img { width:100%; height:auto; display:block; border:1px solid rgba(0,0,0,.08); }
     .cap { margin-top:.8rem; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.12em; text-transform:uppercase; color:var(--sepia); }
+    /* Sponsor */
+    .sponsor-grid { display:grid; grid-template-columns:360px 1fr; gap:3rem; align-items:center; margin-top:1.5rem; }
+    .sponsor-post { background:#fff; border:1px solid rgba(0,0,0,.12); box-shadow:0 14px 40px rgba(0,0,0,.14); padding:.9rem; cursor:none; }
+    .sponsor-post img { width:100%; height:auto; display:block; }
+    .sponsor-note strong { display:block; font-family:var(--ff-mono); font-size:.6rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .sponsor-badge { display:inline-block; margin-top:1.4rem; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sepia); border:1px solid rgba(0,0,0,.2); padding:.55rem .9rem; }
     /* Lightbox */
     .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
     .lb.open { display:flex; }
@@ -88,6 +94,9 @@
           Custom volleyball kits<br />
           Feather flags &amp; cooler wraps<br />
           <br />
+          <strong>Also by me</strong><br />
+          Secured LEON Beer sponsor<br />
+          <br />
           <strong>Scope</strong><br />
           Campaign + event
         </div>
@@ -111,7 +120,23 @@
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--ground);" aria-label="The kit">
+  <section class="proj-section" style="background:var(--ground);" aria-label="The sponsor">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Sponsor</h2>
+      <p class="web-hint reveal r1">A partnership I brought to the team &mdash; LEON Beer</p>
+      <div class="sponsor-grid reveal r1">
+        <div class="sponsor-post"><img data-lb src="images/famelions/sponsor.jpg" alt="Famelions x LEON Beer sponsor announcement" loading="lazy" /></div>
+        <div class="sponsor-note">
+          <strong>Sponsorship secured by me</strong>
+          <p>Beyond the design, I personally reached out to and secured <b>LEON Beer</b> as the Famelions&rsquo; sponsor &mdash; the first outside partner brought on board for the team, bringing brand support to a charity cause for the Fameline Holding Group.</p>
+          <p>The win was then announced with a dedicated &ldquo;Big News&rdquo; post carrying both marks side by side.</p>
+          <span class="sponsor-badge">Partnership &middot; Sourced &amp; Closed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="The kit">
     <div class="wrap">
       <h2 class="proj-heading reveal">The Kit</h2>
       <p class="web-hint reveal r1">Custom yellow-and-black beach-volley jerseys</p>
@@ -123,7 +148,7 @@
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--paper);" aria-label="Event branding">
+  <section class="proj-section" style="background:var(--ground);" aria-label="Event branding">
     <div class="wrap">
       <h2 class="proj-heading reveal">On the Sand</h2>
       <p class="web-hint reveal r1">Feather flags &amp; cooler-box graphics for game day</p>
@@ -137,7 +162,7 @@
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--ground);" aria-label="Process">
+  <section class="proj-section" style="background:var(--paper);" aria-label="Process">
     <div class="wrap">
       <h2 class="proj-heading reveal">Process Notes</h2>
       <div class="process-notes">
@@ -148,7 +173,7 @@
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--paper);" aria-label="Credits">
+  <section class="proj-section" style="background:var(--ground);" aria-label="Credits">
     <div class="wrap">
       <h2 class="proj-heading reveal">Credits</h2>
       <div class="credits-grid reveal r1">
