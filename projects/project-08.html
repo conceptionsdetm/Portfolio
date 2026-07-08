@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Navichem &mdash; Brand Identity, Product Labels &amp; Catalogue by Timonas Stefanou" />
+  <title>Navichem &mdash; Timonas Stefanou</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .web-screen { max-width: 760px; margin: 0 auto 1rem; background: #fff; border: 1px solid rgba(0,0,0,.14); box-shadow: 0 16px 50px rgba(0,0,0,.14); }
+    .web-bar { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.9rem; background: #2a2a2a; }
+    .web-bar span { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; display: inline-block; }
+    .web-bar span:nth-child(2){ background:#febc2e; } .web-bar span:nth-child(3){ background:#28c840; }
+    .web-bar .web-url { margin-left:.6rem; flex:1; font-family:var(--ff-mono); font-size:.62rem; letter-spacing:.06em; color:rgba(255,255,255,.6); background:#1c1c1c; border-radius:4px; padding:.35rem .7rem; }
+    .web-scroll { max-height: 80vh; overflow-y: auto; background:#fff; } .web-scroll img { width:100%; height:auto; display:block; }
+    .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:2.5rem; }
+    .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    /* Logo system */
+    .logo-system { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:1.5rem; }
+    .logo-cell { border:1px solid rgba(0,0,0,.12); box-shadow:0 8px 22px rgba(0,0,0,.06); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:2.2rem; position:relative; }
+    .logo-cell img { max-width:82%; max-height:72%; object-fit:contain; }
+    .logo-cell.light { background:#f7f6ee; }
+    .logo-cell.navy  { background:#0e2340; }
+    .logo-cell.mark  { background:#fff; }
+    .logo-cell .lc-tag { position:absolute; bottom:10px; left:12px; font-family:var(--ff-mono); font-size:.52rem; letter-spacing:.12em; text-transform:uppercase; color:var(--sepia); }
+    .logo-cell.navy .lc-tag { color:rgba(255,255,255,.5); }
+    .palette { display:flex; gap:0; margin-top:2.5rem; border:1px solid rgba(0,0,0,.12); }
+    .swatch { flex:1; height:88px; display:flex; align-items:flex-end; padding:.5rem .7rem; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.08em; }
+    /* Labels */
+    .label-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1.5rem; }
+    .label-item { background:#fff; border:1px solid rgba(0,0,0,.12); box-shadow:0 12px 34px rgba(0,0,0,.1); padding:1rem; }
+    .label-item img { width:100%; height:auto; display:block; border:1px solid rgba(0,0,0,.08); }
+    .label-cap { margin-top:.8rem; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sepia); display:flex; justify-content:space-between; }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .logo-system{grid-template-columns:1fr;} .label-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body class="project-page">
+
+  <div class="cursor" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="../index.html" class="nav-logo" aria-label="Back to home">CD&middot;TM</a>
+    <nav class="nav-links" aria-label="Main navigation" id="navLinks">
+      <a href="../index.html#record"  class="nav-link">About</a>
+      <a href="../index.html#work"    class="nav-link">Work</a>
+      <a href="../index.html#process" class="nav-link">Process</a>
+      <a href="../index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#" class="nav-cta cv-trigger" data-cv="../Timonas-Stefanou-CV-2025.pdf" aria-label="View my CV">View CV</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <section class="proj-hero" aria-label="Project header">
+    <div class="proj-hero-text">
+      <a href="../index.html#work" class="proj-back">Back to Work</a>
+      <p class="proj-eyebrow">Brand Identity &amp; Packaging &middot; 2026</p>
+      <h1 class="proj-title">NAVICHEM</h1>
+    </div>
+    <div class="proj-hero-visual" style="background:#f7f6ee;display:flex;align-items:center;justify-content:center;padding:3rem;">
+      <img src="images/navichem/logo.png" alt="Navichem logo" style="max-width:82%;max-height:86px;object-fit:contain;" />
+    </div>
+  </section>
+
+  <div class="proj-meta" aria-label="Project details">
+    <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">Navichem</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Brand Identity &middot; Packaging</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2026</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; InDesign</div></div>
+  </div>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Overview</h2>
+      <div class="proj-overview-grid">
+        <div class="proj-overview-body reveal r1">
+          <p>Navichem is a marine-chemicals brand supplying cleaning, water-treatment and maintenance products to ships worldwide. The identity had to feel scientific and trustworthy while reading clearly on a moving deck.</p>
+          <p>The mark is a wave-and-current &ldquo;N&rdquo; set in a sphere &mdash; the sea in motion. From there the system runs across <b>GHS-compliant product labels</b>, a <b>marine product catalogue</b> and full stationery, in deep navy and marine cyan.</p>
+          <p>Scroll the catalogue below to read it end to end.</p>
+        </div>
+        <div class="proj-overview-aside reveal r2">
+          <strong>Deliverables</strong><br />
+          Logo &amp; mark system<br />
+          Product labels (GHS)<br />
+          Marine catalogue<br />
+          Stationery<br />
+          <br />
+          <strong>Scope</strong><br />
+          Brand + packaging
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Logo system">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Mark</h2>
+      <p class="web-hint reveal r1">A wave-and-current &ldquo;N&rdquo; &mdash; the sea in motion</p>
+      <div class="logo-system reveal r1">
+        <div class="logo-cell light"><img src="images/navichem/logo.png" alt="Navichem horizontal logo, colour" /><span class="lc-tag">Horizontal &middot; Colour</span></div>
+        <div class="logo-cell navy"><img src="images/navichem/logo-white.png" alt="Navichem horizontal logo, reversed white" /><span class="lc-tag">Reversed &middot; White</span></div>
+        <div class="logo-cell mark"><img src="images/navichem/logo-vertical.png" alt="Navichem stacked vertical logo" /><span class="lc-tag">Stacked &middot; Vertical</span></div>
+      </div>
+      <div class="palette reveal r2" aria-label="Brand palette">
+        <div class="swatch" style="background:#0e2340;color:rgba(255,255,255,.85);">Deep&nbsp;Navy&nbsp;#0E2340</div>
+        <div class="swatch" style="background:#29abe2;color:#0e2340;">Marine&nbsp;Cyan&nbsp;#29ABE2</div>
+        <div class="swatch" style="background:#4a4a4a;color:#fff;">Slate&nbsp;#4A4A4A</div>
+        <div class="swatch" style="background:#f7f6ee;color:#0e2340;">Paper&nbsp;#F7F6EE</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Product labels">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Product Labels</h2>
+      <p class="web-hint reveal r1">GHS-compliant packaging &mdash; hazard pictograms, statements &amp; net volume</p>
+      <div class="label-grid reveal r1">
+        <div class="label-item">
+          <img src="images/navichem/labels/oil-remover.jpg" alt="Navichem Oil Remover-S degreasing solvent label" loading="lazy" />
+          <div class="label-cap"><span>Oil Remover-S &middot; Degreasing Solvent</span><span>25&nbsp;LT</span></div>
+        </div>
+        <div class="label-item">
+          <img src="images/navichem/labels/pre-wash.jpg" alt="Navichem Pre-Wash HD label" loading="lazy" />
+          <div class="label-cap"><span>Pre-Wash HD &middot; Heavy-Duty Cleaner</span><span>25&nbsp;LT</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Marine catalogue">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Catalogue</h2>
+      <p class="web-hint reveal r1">Scroll through the 10-page marine product catalogue &darr;</p>
+      <div class="web-screen reveal r1">
+        <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span><span class="web-url">navichem &mdash; marine product catalogue v4</span></div>
+        <div class="web-scroll">
+          <img src="images/navichem/catalog/1.jpg" alt="Navichem marine product catalogue page 1" loading="eager" />
+          <img src="images/navichem/catalog/2.jpg" alt="Navichem marine product catalogue page 2" loading="lazy" />
+          <img src="images/navichem/catalog/3.jpg" alt="Navichem marine product catalogue page 3" loading="lazy" />
+          <img src="images/navichem/catalog/4.jpg" alt="Navichem marine product catalogue page 4" loading="lazy" />
+          <img src="images/navichem/catalog/5.jpg" alt="Navichem marine product catalogue page 5" loading="lazy" />
+          <img src="images/navichem/catalog/6.jpg" alt="Navichem marine product catalogue page 6" loading="lazy" />
+          <img src="images/navichem/catalog/7.jpg" alt="Navichem marine product catalogue page 7" loading="lazy" />
+          <img src="images/navichem/catalog/8.jpg" alt="Navichem marine product catalogue page 8" loading="lazy" />
+          <img src="images/navichem/catalog/9.jpg" alt="Navichem marine product catalogue page 9" loading="lazy" />
+          <img src="images/navichem/catalog/10.jpg" alt="Navichem marine product catalogue page 10" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Process">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Process Notes</h2>
+      <div class="process-notes">
+        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">The Mark</div><p class="process-note-body">Two currents wrap into an &ldquo;N&rdquo; inside a sphere &mdash; water in motion, a globe of marine reach, refined over six proposal rounds.</p></div>
+        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">System</div><p class="process-note-body">Deep navy and marine cyan with a clean geometric sans, built to stay legible from a product drum to a catalogue spread.</p></div>
+        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">Applied</div><p class="process-note-body">Taken onto GHS-compliant labels &mdash; pictograms, hazard statements and net volume &mdash; and a 10-page marine product catalogue.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Credits">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Credits</h2>
+      <div class="credits-grid reveal r1">
+        <div>
+          <div class="credit-row"><span class="credit-label">Design</span><span class="credit-value">Timonas Stefanou</span></div>
+          <div class="credit-row"><span class="credit-label">Client</span><span class="credit-value">Navichem</span></div>
+          <div class="credit-row"><span class="credit-label">Year</span><span class="credit-value">2026</span></div>
+        </div>
+        <div>
+          <div class="credit-row"><span class="credit-label">Scope</span><span class="credit-value">Brand &amp; Packaging</span></div>
+          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Illustrator &middot; InDesign</span></div>
+          <div class="credit-row"><span class="credit-label">Deliverables</span><span class="credit-value">Logo + Labels + Catalogue</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="../index.html#work" class="proj-next" aria-label="Back to all work">
+    <div><div class="proj-next-label">Back to</div><div class="proj-next-title">All Work</div></div>
+    <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">&rarr;</span>
+  </a>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo">CD&middot;TM</a>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html#record"  class="footer-link">About</a>
+          <a href="../index.html#work"    class="footer-link">Work</a>
+          <a href="../index.html#contact" class="footer-link">Contact</a>
+        </nav>
+        <span class="footer-copy">&copy; 2026 Timonas Stefanou</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
