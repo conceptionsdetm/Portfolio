@@ -10,7 +10,7 @@
     .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:2.5rem; }
     .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
     /* Campaign grid */
-    .g3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+    .g3 { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:1.5rem; max-width:760px; margin-left:auto; margin-right:auto; }
     .g3 .cell { position:relative; aspect-ratio:1/1; overflow:hidden; border:1px solid rgba(0,0,0,.12); box-shadow:0 8px 22px rgba(0,0,0,.08); cursor:none; background:#26262a; }
     .g3 .cell img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
     .g3 .cell:hover img { transform:scale(1.04); }
@@ -97,7 +97,6 @@
       <div class="g3 reveal r1">
         <div class="cell"><img data-lb src="images/movember/campaign/social.jpg" alt="Movember awareness post" loading="eager" /></div>
         <div class="cell"><img data-lb src="images/movember/campaign/invitation.jpg" alt="Movember event invitation post" loading="lazy" /></div>
-        <div class="cell"><img data-lb src="images/movember/campaign/profile.jpg" alt="Movember profile picture" loading="lazy" /></div>
       </div>
     </div>
   </section>
