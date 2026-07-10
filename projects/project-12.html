@@ -3,32 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BoltCargo Logistics &mdash; corporate presentation design by Timonas Stefanou" />
-  <title>BoltCargo Logistics &mdash; Timonas Stefanou</title>
+  <meta name="description" content="Blue Sky Cargo Logistics &mdash; brand identity and corporate profile design by Timonas Stefanou" />
+  <title>Blue Sky Cargo Logistics &mdash; Timonas Stefanou</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
     .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:2.5rem; }
     .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    .brand-tag { font-family:var(--ff-display); font-size:clamp(1.3rem,3vw,2rem); line-height:1.25; color:#012169; margin:0 0 1.4rem; max-width:22ch; }
+    .brand-tag em { color:#1b9bd9; font-style:normal; }
+    /* Logo system */
+    .logo-system { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:1.5rem; }
+    .logo-cell { border:1px solid rgba(0,0,0,.12); box-shadow:0 8px 22px rgba(0,0,0,.06); aspect-ratio:3/2; display:flex; align-items:center; justify-content:center; padding:2rem; position:relative; }
+    .logo-cell img { max-width:82%; max-height:64%; object-fit:contain; }
+    .logo-cell.light { background:#fff; }
+    .logo-cell.dark  { background:#012169; }
+    .logo-cell.mono  { background:#f2f1e8; }
+    .logo-cell .lc-tag { position:absolute; bottom:10px; left:12px; font-family:var(--ff-mono); font-size:.52rem; letter-spacing:.12em; text-transform:uppercase; color:var(--sepia); }
+    .logo-cell.dark .lc-tag { color:rgba(255,255,255,.55); }
+    .palette { display:flex; gap:0; margin-top:2.5rem; border:1px solid rgba(0,0,0,.12); }
+    .swatch { flex:1; height:92px; display:flex; align-items:flex-end; padding:.5rem .7rem; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.08em; }
+    .full-fig { margin:1.5rem auto 0; max-width:900px; border:1px solid rgba(0,0,0,.12); box-shadow:0 12px 34px rgba(0,0,0,.10); background:#fff; }
+    .full-fig img { width:100%; height:auto; display:block; cursor:zoom-in; }
+    .fig-cap { text-align:center; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.14em; text-transform:uppercase; color:var(--sepia); margin-top:1rem; }
+    .stationery { max-width:760px; margin:1.5rem auto 0; border:1px solid rgba(0,0,0,.12); box-shadow:0 12px 34px rgba(0,0,0,.10); background:#fff; padding:2.4rem; }
+    .stationery img { width:100%; height:auto; display:block; }
     /* Deck carousel */
-    .car { position:relative; max-width:900px; margin:1.5rem auto 0; }
-    .car-track { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; border:1px solid rgba(0,0,0,.12); box-shadow:0 16px 44px rgba(0,0,0,.16); background:#0b1a5c; scrollbar-width:none; }
+    .car { position:relative; max-width:960px; margin:1.5rem auto 0; }
+    .car-track { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; border:1px solid rgba(0,0,0,.12); box-shadow:0 16px 44px rgba(0,0,0,.16); background:#012169; scrollbar-width:none; }
     .car-track::-webkit-scrollbar { display:none; }
     .car-slide { flex:0 0 100%; scroll-snap-align:center; }
-    .car-slide img { width:100%; height:auto; display:block; cursor:none; }
-    .car-btn { position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border:none; background:rgba(11,26,92,.72); color:#fff; font-family:var(--ff-display); font-size:1.6rem; display:flex; align-items:center; justify-content:center; cursor:none; }
-    .car-btn:hover { background:var(--accent); }
+    .car-slide img { width:100%; height:auto; display:block; cursor:zoom-in; }
+    .car-btn { position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border:none; background:rgba(1,33,105,.72); color:#fff; font-family:var(--ff-display); font-size:1.6rem; display:flex; align-items:center; justify-content:center; cursor:none; }
+    .car-btn:hover { background:#0079c1; }
     .car-prev { left:10px; } .car-next { right:10px; }
     .car-dots { display:flex; flex-wrap:wrap; gap:7px; justify-content:center; margin-top:1.1rem; }
     .car-dots button { width:9px; height:9px; border-radius:50%; border:none; background:rgba(0,0,0,.22); cursor:none; padding:0; }
-    .car-dots button.active { background:var(--accent); }
-    .conf-note { text-align:center; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.14em; text-transform:uppercase; color:var(--sepia); margin-top:1.2rem; }
+    .car-dots button.active { background:#0079c1; }
     /* Lightbox */
-    .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
+    .lb { position:fixed; inset:0; z-index:9500; background:rgba(6,14,32,.94); display:none; align-items:center; justify-content:center; }
     .lb.open { display:flex; }
     .lb img { max-width:94vw; max-height:90vh; width:auto; height:auto; display:block; box-shadow:0 20px 70px rgba(0,0,0,.5); }
     .lb-close { position:fixed; top:3vh; right:3vw; width:44px; height:44px; border:none; background:rgba(255,255,255,.14); color:#fff; font-family:var(--ff-display); font-size:1.4rem; cursor:none; }
-    .lb-close:hover { background:var(--accent); }
-    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} }
+    .lb-close:hover { background:#0079c1; }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .logo-system{grid-template-columns:1fr;} .stationery{padding:1.4rem;} }
   </style>
 </head>
 <body class="project-page">
@@ -50,66 +67,101 @@
   <section class="proj-hero" aria-label="Project header">
     <div class="proj-hero-text">
       <a href="../index.html#work" class="proj-back">Back to Work</a>
-      <p class="proj-eyebrow">Presentation Design &middot; 2026</p>
-      <h1 class="proj-title">BOLTCARGO</h1>
+      <p class="proj-eyebrow">Brand Identity &middot; Presentation &middot; 2026</p>
+      <h1 class="proj-title">BLUE SKY</h1>
     </div>
     <div class="proj-hero-visual" style="background:#fff;display:flex;align-items:center;justify-content:center;padding:2.6rem;">
-      <img src="images/boltcargo/logo.png" alt="BoltCargo Logistics logo" style="max-width:82%;max-height:120px;object-fit:contain;" />
+      <img src="images/bluesky/logo.png" alt="Blue Sky Cargo Logistics logo" style="max-width:86%;max-height:118px;object-fit:contain;" />
     </div>
   </section>
 
   <div class="proj-meta" aria-label="Project details">
-    <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">BoltCargo Logistics</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Presentation Design</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">Blue Sky Cargo Logistics</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Brand &middot; Print &middot; Presentation</div></div>
     <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2026</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; InDesign</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; InDesign &middot; Photoshop</div></div>
   </div>
 
   <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
     <div class="wrap">
       <h2 class="proj-heading reveal">Overview</h2>
+      <p class="brand-tag reveal r1">Delivering peace of mind to ship managers, <em>one vessel at a time.</em></p>
       <div class="proj-overview-grid">
         <div class="proj-overview-body reveal r1">
-          <p>A corporate presentation for <b>BoltCargo Logistics</b> &mdash; a logistics partner supporting ship managers, vessel by vessel. The deck introduces the company, its services and its network to prospective clients.</p>
-          <p>The design pairs a confident blue-to-teal system with clean typographic hierarchy, aerial vessel photography and a signature &ldquo;B&rdquo; bolt mark carried across ten 16:9 slides.</p>
-          <p><i>Figures, records and body copy are intentionally blurred here for client confidentiality &mdash; the layout and visual system are shown as designed.</i></p>
+          <p><b>Blue Sky Cargo Logistics</b> (BSCL) is a Limassol-based marine logistics partner that acts as an embedded, independent control tower for ship managers &mdash; handling freight forwarding, spare-parts coordination, warehousing and last-mile delivery to vessels in port or at anchorage.</p>
+          <p>The engagement covered the full identity: a logo built around a forward-moving chevron, a navy-and-sky colour system, stationery, and a ten-slide corporate profile that carries the brand from cover to contact.</p>
         </div>
         <div class="proj-overview-aside reveal r2">
           <strong>Deliverables</strong><br />
-          10-slide deck (16:9)<br />
-          Layout &amp; type system<br />
-          Data &amp; service layouts<br />
-          Cover &amp; closing<br />
+          Logo &amp; logo system<br />
+          Colour palette<br />
+          Email signature &amp; letterhead<br />
+          10-slide company profile<br />
           <br />
           <strong>Scope</strong><br />
-          Presentation design
+          Brand identity &amp; collateral
         </div>
       </div>
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--paper);" aria-label="The deck">
+  <section class="proj-section" style="background:var(--paper);" aria-label="The mark">
     <div class="wrap">
-      <h2 class="proj-heading reveal">The Deck</h2>
+      <h2 class="proj-heading reveal">The Mark</h2>
+      <p class="web-hint reveal r1">From four routes to one direction</p>
+      <div class="full-fig reveal r1">
+        <img data-lb src="images/bluesky/proposals.jpg" alt="Four Blue Sky logo proposals: two container-monogram routes and two chevron wordmarks" loading="eager" />
+      </div>
+      <p class="fig-cap reveal r1">Four proposals explored &mdash; a container monogram versus a bold wordmark. Option&nbsp;C, the forward chevron, was chosen for its momentum and scalability.</p>
+
+      <div class="logo-system reveal r1" style="margin-top:3rem;">
+        <div class="logo-cell light"><img src="images/bluesky/logo.png" alt="Primary colour logo" /><span class="lc-tag">Primary</span></div>
+        <div class="logo-cell dark"><img src="images/bluesky/logo-white.png" alt="Reversed logo on navy" /><span class="lc-tag">Reversed</span></div>
+        <div class="logo-cell mono"><img src="images/bluesky/logo-black.png" alt="Monochrome logo" /><span class="lc-tag">Monochrome</span></div>
+      </div>
+
+      <div class="palette reveal r2" aria-label="Brand palette">
+        <div class="swatch" style="background:#012169;color:rgba(255,255,255,.9);">Sky&nbsp;Navy&nbsp;#012169</div>
+        <div class="swatch" style="background:#0079c1;color:#fff;">Marine&nbsp;Blue&nbsp;#0079C1</div>
+        <div class="swatch" style="background:#1b9bd9;color:#012169;">Sky&nbsp;Blue&nbsp;#1B9BD9</div>
+        <div class="swatch" style="background:#f7f6ee;color:#012169;">Paper&nbsp;#F7F6EE</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Stationery">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Stationery</h2>
+      <p class="web-hint reveal r1">Email signature</p>
+      <div class="stationery reveal r1">
+        <img src="images/bluesky/email-signature.jpg" alt="Blue Sky Cargo Logistics email signature with logo and accent rule" loading="lazy" />
+      </div>
+      <p class="fig-cap reveal r1">A clean signature block and matching letterhead extend the chevron and the navy-to-sky rule across everyday correspondence.</p>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Company profile">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Company Profile</h2>
       <p class="web-hint reveal r1">Swipe or use the arrows &mdash; click a slide to enlarge</p>
       <div class="car reveal r1" data-car>
         <div class="car-track" id="deckTrack">
-          <div class="car-slide"><img data-lb src="images/boltcargo/deck/1.jpg" alt="BoltCargo deck slide 1" loading="eager" /></div>
-          <div class="car-slide"><img data-lb src="images/boltcargo/deck/2.jpg" alt="BoltCargo deck slide 2" loading="lazy" /></div>
-          <div class="car-slide"><img data-lb src="images/boltcargo/deck/3.jpg" alt="BoltCargo deck slide 3" loading="lazy" /></div>
-          <div class="car-slide"><img data-lb src="images/boltcargo/deck/4.jpg" alt="BoltCargo deck slide 4" loading="lazy" /></div>
-          <div class="car-slide"><img data-lb src="images/boltcargo/deck/5.jpg" alt="BoltCargo deck slide 5" loading="lazy" /></div>
-          <div class="car-slide"><img data-lb src="images/boltcargo/deck/6.jpg" alt="BoltCargo deck slide 6" loading="lazy" /></div>
-          <div class="car-slide"><img data-lb src="images/boltcargo/deck/7.jpg" alt="BoltCargo deck slide 7" loading="lazy" /></div>
-          <div class="car-slide"><img data-lb src="images/boltcargo/deck/8.jpg" alt="BoltCargo deck slide 8" loading="lazy" /></div>
-          <div class="car-slide"><img data-lb src="images/boltcargo/deck/9.jpg" alt="BoltCargo deck slide 9" loading="lazy" /></div>
-          <div class="car-slide"><img data-lb src="images/boltcargo/deck/10.jpg" alt="BoltCargo deck slide 10" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/bluesky/deck/1.jpg" alt="Blue Sky profile slide 1 &mdash; cover" loading="eager" /></div>
+          <div class="car-slide"><img data-lb src="images/bluesky/deck/2.jpg" alt="Blue Sky profile slide 2 &mdash; integrated logistics" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/bluesky/deck/3.jpg" alt="Blue Sky profile slide 3 &mdash; who we are" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/bluesky/deck/4.jpg" alt="Blue Sky profile slide 4 &mdash; what we offer" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/bluesky/deck/5.jpg" alt="Blue Sky profile slide 5 &mdash; strategic collaboration" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/bluesky/deck/6.jpg" alt="Blue Sky profile slide 6 &mdash; technology, people, commitment" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/bluesky/deck/7.jpg" alt="Blue Sky profile slide 7 &mdash; sustainable logistics" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/bluesky/deck/8.jpg" alt="Blue Sky profile slide 8 &mdash; drone-enabled logistics" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/bluesky/deck/9.jpg" alt="Blue Sky profile slide 9 &mdash; our team" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/bluesky/deck/10.jpg" alt="Blue Sky profile slide 10 &mdash; let's move forward together" loading="lazy" /></div>
         </div>
         <button class="car-btn car-prev" id="deckPrev" aria-label="Previous slide">&lsaquo;</button>
         <button class="car-btn car-next" id="deckNext" aria-label="Next slide">&rsaquo;</button>
         <div class="car-dots" id="deckDots"></div>
       </div>
-      <p class="conf-note reveal r1">Text intentionally blurred for confidentiality</p>
+      <p class="fig-cap reveal r1">Ten 16:9 slides &mdash; cover, positioning, services, technology, sustainability and contact &mdash; each built on the chevron grid.</p>
     </div>
   </section>
 
@@ -117,9 +169,9 @@
     <div class="wrap">
       <h2 class="proj-heading reveal">Process Notes</h2>
       <div class="process-notes">
-        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">The System</div><p class="process-note-body">A blue-to-teal gradient, a bold sans and a repeating &ldquo;B&rdquo; bolt watermark give the deck a consistent, energetic spine from cover to close.</p></div>
-        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">The Structure</div><p class="process-note-body">Ten 16:9 slides move from company intro to services, network and delivery &mdash; each built on a clear grid so dense information stays readable.</p></div>
-        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">The Detail</div><p class="process-note-body">Aerial vessel photography and accent rules tie the logistics story to the sea, keeping a technical subject visually engaging.</p></div>
+        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">The Direction</div><p class="process-note-body">Four routes were explored &mdash; a literal container monogram and a typographic wordmark. The forward chevron won: it reads as motion, an arrow and a cargo pennant all at once, and stays sharp at any size.</p></div>
+        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">The System</div><p class="process-note-body">A deep sky-navy paired with two brighter marine blues gives the brand both authority and openness &mdash; &ldquo;blue sky&rdquo; made literal. The chevron facet becomes a recurring graphic device across every layout.</p></div>
+        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">The Profile</div><p class="process-note-body">The company deck translates the identity into a sales tool &mdash; diagonal chevron windows frame vessel and port photography, while a strict grid keeps a service-heavy story clear and confident.</p></div>
       </div>
     </div>
   </section>
@@ -130,13 +182,13 @@
       <div class="credits-grid reveal r1">
         <div>
           <div class="credit-row"><span class="credit-label">Design</span><span class="credit-value">Timonas Stefanou</span></div>
-          <div class="credit-row"><span class="credit-label">Client</span><span class="credit-value">BoltCargo Logistics</span></div>
+          <div class="credit-row"><span class="credit-label">Client</span><span class="credit-value">Blue Sky Cargo Logistics</span></div>
           <div class="credit-row"><span class="credit-label">Year</span><span class="credit-value">2026</span></div>
         </div>
         <div>
-          <div class="credit-row"><span class="credit-label">Scope</span><span class="credit-value">Presentation</span></div>
-          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Illustrator &middot; InDesign</span></div>
-          <div class="credit-row"><span class="credit-label">Deliverables</span><span class="credit-value">10-slide deck</span></div>
+          <div class="credit-row"><span class="credit-label">Scope</span><span class="credit-value">Brand &middot; Print &middot; Presentation</span></div>
+          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Illustrator &middot; InDesign &middot; Photoshop</span></div>
+          <div class="credit-row"><span class="credit-label">Deliverables</span><span class="credit-value">Identity, stationery &amp; 10-slide profile</span></div>
         </div>
       </div>
     </div>
