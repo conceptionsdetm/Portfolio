@@ -28,9 +28,15 @@
     .swatch { flex:1; height:88px; display:flex; align-items:flex-end; padding:.5rem .7rem; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.08em; }
     /* Labels */
     .label-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1.5rem; }
-    .label-item { background:#fff; border:1px solid rgba(0,0,0,.12); box-shadow:0 12px 34px rgba(0,0,0,.1); padding:1rem; }
+    .label-item { background:#fff; border:1px solid rgba(0,0,0,.12); box-shadow:0 12px 34px rgba(0,0,0,.1); padding:1rem; cursor:none; }
     .label-item img { width:100%; height:auto; display:block; border:1px solid rgba(0,0,0,.08); }
-    .label-cap { margin-top:.8rem; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sepia); display:flex; justify-content:space-between; }
+    .label-cap { margin-top:.8rem; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sepia); display:flex; justify-content:space-between; gap:1rem; }
+    /* Lightbox */
+    .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
+    .lb.open { display:flex; }
+    .lb img { max-width:94vw; max-height:90vh; width:auto; height:auto; display:block; box-shadow:0 20px 70px rgba(0,0,0,.5); }
+    .lb-close { position:fixed; top:3vh; right:3vw; width:44px; height:44px; border:none; background:rgba(255,255,255,.14); color:#fff; font-family:var(--ff-display); font-size:1.4rem; cursor:none; }
+    .lb-close:hover { background:var(--accent); }
     @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .logo-system{grid-template-columns:1fr;} .label-grid{grid-template-columns:1fr;} }
   </style>
 </head>
@@ -112,16 +118,27 @@
   <section class="proj-section" style="background:var(--ground);" aria-label="Product labels">
     <div class="wrap">
       <h2 class="proj-heading reveal">Product Labels</h2>
-      <p class="web-hint reveal r1">GHS-compliant packaging &mdash; hazard pictograms, statements &amp; net volume</p>
+      <p class="web-hint reveal r1">A full product range &mdash; GHS-compliant, with UN codes, pictograms &amp; net volume. Click any label to view it.</p>
       <div class="label-grid reveal r1">
-        <div class="label-item">
-          <img src="images/navichem/labels/oil-remover.jpg" alt="Navichem Oil Remover-S degreasing solvent label" loading="lazy" />
-          <div class="label-cap"><span>Oil Remover-S &middot; Degreasing Solvent</span><span>25&nbsp;LT</span></div>
-        </div>
-        <div class="label-item">
-          <img src="images/navichem/labels/pre-wash.jpg" alt="Navichem Pre-Wash HD label" loading="lazy" />
-          <div class="label-cap"><span>Pre-Wash HD &middot; Heavy-Duty Cleaner</span><span>25&nbsp;LT</span></div>
-        </div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/1.jpg" alt="Navichem Oil Remover-S label" loading="lazy" /><div class="label-cap"><span>Oil Remover-S</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/2.jpg" alt="Navichem Pre-Wash HD label" loading="lazy" /><div class="label-cap"><span>Pre-Wash HD</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/3.jpg" alt="Navichem Separator Cleaner label" loading="lazy" /><div class="label-cap"><span>Separator Cleaner</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/4.jpg" alt="Navichem Descaler label" loading="lazy" /><div class="label-cap"><span>Descaler</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/5.jpg" alt="Navichem Euroclean label" loading="lazy" /><div class="label-cap"><span>Euroclean</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/6.jpg" alt="Navichem Condensamine label" loading="lazy" /><div class="label-cap"><span>Condensamine</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/7.jpg" alt="Navichem Alkalinity Control label" loading="lazy" /><div class="label-cap"><span>Alkalinity Control</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/8.jpg" alt="Navichem A.C.C. label" loading="lazy" /><div class="label-cap"><span>A.C.C.</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/9.jpg" alt="Navichem Adico-NC-L label" loading="lazy" /><div class="label-cap"><span>Adico-NC-L</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/10.jpg" alt="Navichem Carbon Remover NP label" loading="lazy" /><div class="label-cap"><span>Carbon Remover NP</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/11.jpg" alt="Navichem Kem-DP-FOT label" loading="lazy" /><div class="label-cap"><span>Kem-DP-FOT</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/12.jpg" alt="Navichem Kem-ET label" loading="lazy" /><div class="label-cap"><span>Kem-ET</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/13.jpg" alt="Navichem Kem-Fos-L label" loading="lazy" /><div class="label-cap"><span>Kem-Fos-L</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/14.jpg" alt="Navichem Lectrokleen-Fast label" loading="lazy" /><div class="label-cap"><span>Lectrokleen-Fast</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/15.jpg" alt="Navichem Kerozene label" loading="lazy" /><div class="label-cap"><span>Kerozene</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/16.jpg" alt="Navichem Oil Dispenser label" loading="lazy" /><div class="label-cap"><span>Oil Dispenser</span><span>25&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/17.jpg" alt="Navichem ARR-Liquid Plus label" loading="lazy" /><div class="label-cap"><span>ARR-Liquid Plus</span><span>200&nbsp;L</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/18.jpg" alt="Navichem Chlorine Tablets 5kg label" loading="lazy" /><div class="label-cap"><span>Chlorine Tablets</span><span>5&nbsp;kg</span></div></div>
+        <div class="label-item"><img data-lb src="images/navichem/labels/19.jpg" alt="Navichem Chlorine Tablets 10kg label" loading="lazy" /><div class="label-cap"><span>Chlorine Tablets</span><span>10&nbsp;kg</span></div></div>
       </div>
     </div>
   </section>
@@ -129,9 +146,9 @@
   <section class="proj-section" style="background:var(--paper);" aria-label="Marine catalogue">
     <div class="wrap">
       <h2 class="proj-heading reveal">The Catalogue</h2>
-      <p class="web-hint reveal r1">Scroll through the 10-page marine product catalogue &darr;</p>
+      <p class="web-hint reveal r1">Scroll through the 13-page marine product catalogue &darr;</p>
       <div class="web-screen reveal r1">
-        <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span><span class="web-url">navichem &mdash; marine product catalogue v4</span></div>
+        <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span><span class="web-url">navichem &mdash; marine product catalogue</span></div>
         <div class="web-scroll">
           <img src="images/navichem/catalog/1.jpg" alt="Navichem marine product catalogue page 1" loading="eager" />
           <img src="images/navichem/catalog/2.jpg" alt="Navichem marine product catalogue page 2" loading="lazy" />
@@ -143,6 +160,9 @@
           <img src="images/navichem/catalog/8.jpg" alt="Navichem marine product catalogue page 8" loading="lazy" />
           <img src="images/navichem/catalog/9.jpg" alt="Navichem marine product catalogue page 9" loading="lazy" />
           <img src="images/navichem/catalog/10.jpg" alt="Navichem marine product catalogue page 10" loading="lazy" />
+          <img src="images/navichem/catalog/11.jpg" alt="Navichem marine product catalogue page 11" loading="lazy" />
+          <img src="images/navichem/catalog/12.jpg" alt="Navichem marine product catalogue page 12" loading="lazy" />
+          <img src="images/navichem/catalog/13.jpg" alt="Navichem marine product catalogue page 13" loading="lazy" />
         </div>
       </div>
     </div>
@@ -196,6 +216,24 @@
     </div>
   </footer>
 
+  <div class="lb" id="lb" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <img id="lbImg" src="" alt="" />
+  </div>
+
+  <script>
+    (function () {
+      var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg");
+      function open(src, alt) { lbImg.src = src; lbImg.alt = alt || ""; lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; }
+      function close() { lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); lbImg.src = ""; document.body.style.overflow = ""; }
+      document.querySelectorAll("img[data-lb]").forEach(function (im) {
+        im.addEventListener("click", function () { open(im.getAttribute("src"), im.getAttribute("alt")); });
+      });
+      document.getElementById("lbClose").addEventListener("click", close);
+      lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && lb.classList.contains("open")) close(); });
+    })();
+  </script>
   <script src="../script.js"></script>
 </body>
 </html>
