@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BoltCargo Logistics &mdash; corporate presentation design by Timonas Stefanou" />
+  <title>BoltCargo Logistics &mdash; Timonas Stefanou</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:2.5rem; }
+    .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    /* Deck carousel */
+    .car { position:relative; max-width:900px; margin:1.5rem auto 0; }
+    .car-track { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; border:1px solid rgba(0,0,0,.12); box-shadow:0 16px 44px rgba(0,0,0,.16); background:#0b1a5c; scrollbar-width:none; }
+    .car-track::-webkit-scrollbar { display:none; }
+    .car-slide { flex:0 0 100%; scroll-snap-align:center; }
+    .car-slide img { width:100%; height:auto; display:block; cursor:none; }
+    .car-btn { position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border:none; background:rgba(11,26,92,.72); color:#fff; font-family:var(--ff-display); font-size:1.6rem; display:flex; align-items:center; justify-content:center; cursor:none; }
+    .car-btn:hover { background:var(--accent); }
+    .car-prev { left:10px; } .car-next { right:10px; }
+    .car-dots { display:flex; flex-wrap:wrap; gap:7px; justify-content:center; margin-top:1.1rem; }
+    .car-dots button { width:9px; height:9px; border-radius:50%; border:none; background:rgba(0,0,0,.22); cursor:none; padding:0; }
+    .car-dots button.active { background:var(--accent); }
+    .conf-note { text-align:center; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.14em; text-transform:uppercase; color:var(--sepia); margin-top:1.2rem; }
+    /* Lightbox */
+    .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
+    .lb.open { display:flex; }
+    .lb img { max-width:94vw; max-height:90vh; width:auto; height:auto; display:block; box-shadow:0 20px 70px rgba(0,0,0,.5); }
+    .lb-close { position:fixed; top:3vh; right:3vw; width:44px; height:44px; border:none; background:rgba(255,255,255,.14); color:#fff; font-family:var(--ff-display); font-size:1.4rem; cursor:none; }
+    .lb-close:hover { background:var(--accent); }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body class="project-page">
+
+  <div class="cursor" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="../index.html" class="nav-logo" aria-label="Back to home">CD&middot;TM</a>
+    <nav class="nav-links" aria-label="Main navigation" id="navLinks">
+      <a href="../index.html#record"  class="nav-link">About</a>
+      <a href="../index.html#work"    class="nav-link">Work</a>
+      <a href="../index.html#process" class="nav-link">Process</a>
+      <a href="../index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#" class="nav-cta cv-trigger" data-cv="../Timonas-Stefanou-CV-2025.pdf" aria-label="View my CV">View CV</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <section class="proj-hero" aria-label="Project header">
+    <div class="proj-hero-text">
+      <a href="../index.html#work" class="proj-back">Back to Work</a>
+      <p class="proj-eyebrow">Presentation Design &middot; 2026</p>
+      <h1 class="proj-title">BOLTCARGO</h1>
+    </div>
+    <div class="proj-hero-visual" style="background:#fff;display:flex;align-items:center;justify-content:center;padding:2.6rem;">
+      <img src="images/boltcargo/logo.png" alt="BoltCargo Logistics logo" style="max-width:82%;max-height:120px;object-fit:contain;" />
+    </div>
+  </section>
+
+  <div class="proj-meta" aria-label="Project details">
+    <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">BoltCargo Logistics</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Presentation Design</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2026</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; InDesign</div></div>
+  </div>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Overview</h2>
+      <div class="proj-overview-grid">
+        <div class="proj-overview-body reveal r1">
+          <p>A corporate presentation for <b>BoltCargo Logistics</b> &mdash; a logistics partner supporting ship managers, vessel by vessel. The deck introduces the company, its services and its network to prospective clients.</p>
+          <p>The design pairs a confident blue-to-teal system with clean typographic hierarchy, aerial vessel photography and a signature &ldquo;B&rdquo; bolt mark carried across ten 16:9 slides.</p>
+          <p><i>Figures, records and body copy are intentionally blurred here for client confidentiality &mdash; the layout and visual system are shown as designed.</i></p>
+        </div>
+        <div class="proj-overview-aside reveal r2">
+          <strong>Deliverables</strong><br />
+          10-slide deck (16:9)<br />
+          Layout &amp; type system<br />
+          Data &amp; service layouts<br />
+          Cover &amp; closing<br />
+          <br />
+          <strong>Scope</strong><br />
+          Presentation design
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="The deck">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Deck</h2>
+      <p class="web-hint reveal r1">Swipe or use the arrows &mdash; click a slide to enlarge</p>
+      <div class="car reveal r1" data-car>
+        <div class="car-track" id="deckTrack">
+          <div class="car-slide"><img data-lb src="images/boltcargo/deck/1.jpg" alt="BoltCargo deck slide 1" loading="eager" /></div>
+          <div class="car-slide"><img data-lb src="images/boltcargo/deck/2.jpg" alt="BoltCargo deck slide 2" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/boltcargo/deck/3.jpg" alt="BoltCargo deck slide 3" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/boltcargo/deck/4.jpg" alt="BoltCargo deck slide 4" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/boltcargo/deck/5.jpg" alt="BoltCargo deck slide 5" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/boltcargo/deck/6.jpg" alt="BoltCargo deck slide 6" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/boltcargo/deck/7.jpg" alt="BoltCargo deck slide 7" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/boltcargo/deck/8.jpg" alt="BoltCargo deck slide 8" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/boltcargo/deck/9.jpg" alt="BoltCargo deck slide 9" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/boltcargo/deck/10.jpg" alt="BoltCargo deck slide 10" loading="lazy" /></div>
+        </div>
+        <button class="car-btn car-prev" id="deckPrev" aria-label="Previous slide">&lsaquo;</button>
+        <button class="car-btn car-next" id="deckNext" aria-label="Next slide">&rsaquo;</button>
+        <div class="car-dots" id="deckDots"></div>
+      </div>
+      <p class="conf-note reveal r1">Text intentionally blurred for confidentiality</p>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Process">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Process Notes</h2>
+      <div class="process-notes">
+        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">The System</div><p class="process-note-body">A blue-to-teal gradient, a bold sans and a repeating &ldquo;B&rdquo; bolt watermark give the deck a consistent, energetic spine from cover to close.</p></div>
+        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">The Structure</div><p class="process-note-body">Ten 16:9 slides move from company intro to services, network and delivery &mdash; each built on a clear grid so dense information stays readable.</p></div>
+        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">The Detail</div><p class="process-note-body">Aerial vessel photography and accent rules tie the logistics story to the sea, keeping a technical subject visually engaging.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Credits">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Credits</h2>
+      <div class="credits-grid reveal r1">
+        <div>
+          <div class="credit-row"><span class="credit-label">Design</span><span class="credit-value">Timonas Stefanou</span></div>
+          <div class="credit-row"><span class="credit-label">Client</span><span class="credit-value">BoltCargo Logistics</span></div>
+          <div class="credit-row"><span class="credit-label">Year</span><span class="credit-value">2026</span></div>
+        </div>
+        <div>
+          <div class="credit-row"><span class="credit-label">Scope</span><span class="credit-value">Presentation</span></div>
+          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Illustrator &middot; InDesign</span></div>
+          <div class="credit-row"><span class="credit-label">Deliverables</span><span class="credit-value">10-slide deck</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="../index.html#work" class="proj-next" aria-label="Back to all work">
+    <div><div class="proj-next-label">Back to</div><div class="proj-next-title">All Work</div></div>
+    <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">&rarr;</span>
+  </a>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo">CD&middot;TM</a>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html#record"  class="footer-link">About</a>
+          <a href="../index.html#work"    class="footer-link">Work</a>
+          <a href="../index.html#contact" class="footer-link">Contact</a>
+        </nav>
+        <span class="footer-copy">&copy; 2026 Timonas Stefanou</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lb" id="lb" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <img id="lbImg" src="" alt="" />
+  </div>
+
+  <script>
+    (function () {
+      var track = document.getElementById("deckTrack");
+      if (track) {
+        var slides = track.querySelectorAll(".car-slide"), dotsWrap = document.getElementById("deckDots"), idx = 0;
+        slides.forEach(function (_, i) { var b = document.createElement("button"); if (i === 0) b.className = "active"; b.setAttribute("aria-label", "Go to slide " + (i + 1)); b.addEventListener("click", function () { go(i); }); dotsWrap.appendChild(b); });
+        function go(i) { idx = Math.max(0, Math.min(slides.length - 1, i)); track.scrollTo({ left: idx * track.clientWidth, behavior: "smooth" }); update(); }
+        function update() { dotsWrap.querySelectorAll("button").forEach(function (b, i) { b.className = i === idx ? "active" : ""; }); }
+        document.getElementById("deckPrev").addEventListener("click", function () { go(idx - 1); });
+        document.getElementById("deckNext").addEventListener("click", function () { go(idx + 1); });
+        var st; track.addEventListener("scroll", function () { clearTimeout(st); st = setTimeout(function () { var i = Math.round(track.scrollLeft / track.clientWidth); if (i !== idx) { idx = i; update(); } }, 80); });
+      }
+    })();
+    (function () {
+      var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg");
+      function open(src, alt) { lbImg.src = src; lbImg.alt = alt || ""; lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; }
+      function close() { lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); lbImg.src = ""; document.body.style.overflow = ""; }
+      document.querySelectorAll("img[data-lb]").forEach(function (im) { im.addEventListener("click", function () { open(im.getAttribute("src"), im.getAttribute("alt")); }); });
+      document.getElementById("lbClose").addEventListener("click", close);
+      lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && lb.classList.contains("open")) close(); });
+    })();
+  </script>
+  <script src="../script.js"></script>
+</body>
+</html>
