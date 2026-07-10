@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="North Tide &mdash; underwater marine services website and company profile design by Timonas Stefanou" />
+  <title>North Tide &mdash; Timonas Stefanou</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .web-screen { max-width: 820px; margin: 0 auto 1rem; background: #fff; border: 1px solid rgba(0,0,0,.14); box-shadow: 0 16px 50px rgba(0,0,0,.14); }
+    .web-bar { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.9rem; background: #0e2c4e; }
+    .web-bar span { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; display: inline-block; }
+    .web-bar span:nth-child(2){ background:#febc2e; } .web-bar span:nth-child(3){ background:#28c840; }
+    .web-bar .web-url { margin-left:.6rem; flex:1; font-family:var(--ff-mono); font-size:.62rem; letter-spacing:.06em; color:rgba(255,255,255,.72); background:#0a2038; border-radius:4px; padding:.35rem .7rem; }
+    .web-scroll { max-height: 80vh; overflow-y: auto; background:#fff; } .web-scroll img { width:100%; height:auto; display:block; }
+    .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:2.5rem; }
+    .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    .brand-tag { font-family:var(--ff-display); font-size:clamp(1.3rem,3vw,2rem); line-height:1.25; color:#0e2c4e; margin:0 0 1.4rem; max-width:20ch; }
+    .brand-tag em { color:#17b1af; font-style:normal; }
+    /* Deck carousel */
+    .car { position:relative; max-width:960px; margin:1.5rem auto 0; }
+    .car-track { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; border:1px solid rgba(0,0,0,.12); box-shadow:0 16px 44px rgba(0,0,0,.16); background:#0e2c4e; scrollbar-width:none; }
+    .car-track::-webkit-scrollbar { display:none; }
+    .car-slide { flex:0 0 100%; scroll-snap-align:center; }
+    .car-slide img { width:100%; height:auto; display:block; cursor:zoom-in; }
+    .car-btn { position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border:none; background:rgba(14,44,78,.72); color:#fff; font-family:var(--ff-display); font-size:1.6rem; display:flex; align-items:center; justify-content:center; cursor:none; }
+    .car-btn:hover { background:#17b1af; }
+    .car-prev { left:10px; } .car-next { right:10px; }
+    .car-dots { display:flex; flex-wrap:wrap; gap:7px; justify-content:center; margin-top:1.1rem; }
+    .car-dots button { width:9px; height:9px; border-radius:50%; border:none; background:rgba(0,0,0,.22); cursor:none; padding:0; }
+    .car-dots button.active { background:#17b1af; }
+    .fig-cap { text-align:center; font-family:var(--ff-mono); font-size:.55rem; letter-spacing:.14em; text-transform:uppercase; color:var(--sepia); margin-top:1rem; }
+    /* Lightbox */
+    .lb { position:fixed; inset:0; z-index:9500; background:rgba(6,18,32,.94); display:none; align-items:center; justify-content:center; }
+    .lb.open { display:flex; }
+    .lb img { max-width:94vw; max-height:90vh; width:auto; height:auto; display:block; box-shadow:0 20px 70px rgba(0,0,0,.5); }
+    .lb-close { position:fixed; top:3vh; right:3vw; width:44px; height:44px; border:none; background:rgba(255,255,255,.14); color:#fff; font-family:var(--ff-display); font-size:1.4rem; cursor:none; }
+    .lb-close:hover { background:#17b1af; }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body class="project-page">
+
+  <div class="cursor" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="../index.html" class="nav-logo" aria-label="Back to home">CD&middot;TM</a>
+    <nav class="nav-links" aria-label="Main navigation" id="navLinks">
+      <a href="../index.html#record"  class="nav-link">About</a>
+      <a href="../index.html#work"    class="nav-link">Work</a>
+      <a href="../index.html#process" class="nav-link">Process</a>
+      <a href="../index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#" class="nav-cta cv-trigger" data-cv="../Timonas-Stefanou-CV-2025.pdf" aria-label="View my CV">View CV</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <section class="proj-hero" aria-label="Project header">
+    <div class="proj-hero-text">
+      <a href="../index.html#work" class="proj-back">Back to Work</a>
+      <p class="proj-eyebrow">Web &middot; Presentation &middot; 2026</p>
+      <h1 class="proj-title">NORTH TIDE</h1>
+    </div>
+    <div class="proj-hero-visual" style="background:#fff;display:flex;align-items:center;justify-content:center;padding:2.6rem;">
+      <img src="images/northtide/logo.png" alt="North Tide logo" style="max-width:84%;max-height:96px;object-fit:contain;" />
+    </div>
+  </section>
+
+  <div class="proj-meta" aria-label="Project details">
+    <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">North Tide &middot; MIE Group</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Web &middot; Presentation</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2026</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; Photoshop</div></div>
+  </div>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Overview</h2>
+      <p class="brand-tag reveal r1">Diving deep for <em>vessel performance.</em></p>
+      <div class="proj-overview-grid">
+        <div class="proj-overview-body reveal r1">
+          <p><b>North Tide</b> is a marine services specialist and a member of the MIE Group, delivering underwater inspections, hull cleaning, propeller polishing, afloat repairs and Ultrasonic Thickness Measurement (UTM) to vessels worldwide &mdash; round-the-clock, through a vetted global network of class-approved contractors.</p>
+          <p>The work covered two connected deliverables: a single-page marketing website and a corporate profile presentation, both built on the same navy-and-teal system and the diagonal &ldquo;tide-line&rdquo; graphic drawn from the logo.</p>
+        </div>
+        <div class="proj-overview-aside reveal r2">
+          <strong>Deliverables</strong><br />
+          Single-page website<br />
+          Responsive layouts<br />
+          10-slide company profile<br />
+          <br />
+          <strong>Scope</strong><br />
+          Web &amp; presentation design
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="The website">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Website</h2>
+      <p class="web-hint reveal r1">Scroll inside the frame &mdash; single-page landing design</p>
+      <div class="web-screen reveal r1">
+        <div class="web-bar"><span></span><span></span><span></span><span class="web-url">northtide.com.cy</span></div>
+        <div class="web-scroll">
+          <img src="images/northtide/website.jpg" alt="North Tide single-page website: hero, who we are, our story, global port coverage map, services, why choose us, team and contact" loading="eager" />
+        </div>
+      </div>
+      <p class="fig-cap reveal r1">A one-scroll story &mdash; from a full-bleed diver hero to global port coverage, services and contact &mdash; also laid out for tablet and mobile.</p>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Company profile">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Company Profile</h2>
+      <p class="web-hint reveal r1">Swipe or use the arrows &mdash; click a slide to enlarge</p>
+      <div class="car reveal r1" data-car>
+        <div class="car-track" id="deckTrack">
+          <div class="car-slide"><img data-lb src="images/northtide/deck/1.jpg" alt="North Tide profile slide 1 &mdash; cover" loading="eager" /></div>
+          <div class="car-slide"><img data-lb src="images/northtide/deck/2.jpg" alt="North Tide profile slide 2" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/northtide/deck/3.jpg" alt="North Tide profile slide 3 &mdash; what we offer" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/northtide/deck/4.jpg" alt="North Tide profile slide 4 &mdash; underwater services consultancy" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/northtide/deck/5.jpg" alt="North Tide profile slide 5" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/northtide/deck/6.jpg" alt="North Tide profile slide 6" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/northtide/deck/7.jpg" alt="North Tide profile slide 7" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/northtide/deck/8.jpg" alt="North Tide profile slide 8" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/northtide/deck/9.jpg" alt="North Tide profile slide 9" loading="lazy" /></div>
+          <div class="car-slide"><img data-lb src="images/northtide/deck/10.jpg" alt="North Tide profile slide 10 &mdash; contact" loading="lazy" /></div>
+        </div>
+        <button class="car-btn car-prev" id="deckPrev" aria-label="Previous slide">&lsaquo;</button>
+        <button class="car-btn car-next" id="deckNext" aria-label="Next slide">&rsaquo;</button>
+        <div class="car-dots" id="deckDots"></div>
+      </div>
+      <p class="fig-cap reveal r1">Ten 16:9 slides carry the same tide-line system into a sales tool &mdash; positioning, services, global reach and contact.</p>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Process">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Process Notes</h2>
+      <div class="process-notes">
+        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">The Mark</div><p class="process-note-body">The logo splits &ldquo;North&rdquo; in navy from &ldquo;Tide&rdquo; in teal, with a chevron cut through the N &mdash; a waterline that becomes the brand&rsquo;s recurring diagonal across web and print.</p></div>
+        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">The Website</div><p class="process-note-body">One continuous scroll tells the whole story &mdash; a diver hero, the company, a world map of port coverage, services and contact &mdash; kept fast and legible, and reworked for tablet and mobile.</p></div>
+        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">The Deck</div><p class="process-note-body">The profile presentation reuses the exact colour and diagonal system so the sales conversation and the website feel like one brand from first contact to closing slide.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Credits">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Credits</h2>
+      <div class="credits-grid reveal r1">
+        <div>
+          <div class="credit-row"><span class="credit-label">Design</span><span class="credit-value">Timonas Stefanou</span></div>
+          <div class="credit-row"><span class="credit-label">Client</span><span class="credit-value">North Tide &middot; MIE Group</span></div>
+          <div class="credit-row"><span class="credit-label">Year</span><span class="credit-value">2026</span></div>
+        </div>
+        <div>
+          <div class="credit-row"><span class="credit-label">Scope</span><span class="credit-value">Web &middot; Presentation</span></div>
+          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Illustrator &middot; Photoshop</span></div>
+          <div class="credit-row"><span class="credit-label">Deliverables</span><span class="credit-value">Website &amp; 10-slide profile</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="../index.html#work" class="proj-next" aria-label="Back to all work">
+    <div><div class="proj-next-label">Back to</div><div class="proj-next-title">All Work</div></div>
+    <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">&rarr;</span>
+  </a>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo">CD&middot;TM</a>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html#record"  class="footer-link">About</a>
+          <a href="../index.html#work"    class="footer-link">Work</a>
+          <a href="../index.html#contact" class="footer-link">Contact</a>
+        </nav>
+        <span class="footer-copy">&copy; 2026 Timonas Stefanou</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lb" id="lb" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <img id="lbImg" src="" alt="" />
+  </div>
+
+  <script>
+    (function () {
+      var track = document.getElementById("deckTrack");
+      if (track) {
+        var slides = track.querySelectorAll(".car-slide"), dotsWrap = document.getElementById("deckDots"), idx = 0;
+        slides.forEach(function (_, i) { var b = document.createElement("button"); if (i === 0) b.className = "active"; b.setAttribute("aria-label", "Go to slide " + (i + 1)); b.addEventListener("click", function () { go(i); }); dotsWrap.appendChild(b); });
+        function go(i) { idx = Math.max(0, Math.min(slides.length - 1, i)); track.scrollTo({ left: idx * track.clientWidth, behavior: "smooth" }); update(); }
+        function update() { dotsWrap.querySelectorAll("button").forEach(function (b, i) { b.className = i === idx ? "active" : ""; }); }
+        document.getElementById("deckPrev").addEventListener("click", function () { go(idx - 1); });
+        document.getElementById("deckNext").addEventListener("click", function () { go(idx + 1); });
+        var st; track.addEventListener("scroll", function () { clearTimeout(st); st = setTimeout(function () { var i = Math.round(track.scrollLeft / track.clientWidth); if (i !== idx) { idx = i; update(); } }, 80); });
+      }
+    })();
+    (function () {
+      var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg");
+      function open(src, alt) { lbImg.src = src; lbImg.alt = alt || ""; lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; }
+      function close() { lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); lbImg.src = ""; document.body.style.overflow = ""; }
+      document.querySelectorAll("img[data-lb]").forEach(function (im) { im.addEventListener("click", function () { open(im.getAttribute("src"), im.getAttribute("alt")); }); });
+      document.getElementById("lbClose").addEventListener("click", close);
+      lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && lb.classList.contains("open")) close(); });
+    })();
+  </script>
+  <script src="../script.js"></script>
+</body>
+</html>
