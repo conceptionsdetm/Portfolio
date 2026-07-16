@@ -1022,13 +1022,14 @@ body::before {
 .skills {
   background: var(--ground);
   border-bottom: 2px solid var(--text);
+  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);   /* compact band */
 }
 
 /* Disciplines — auto-scrolling marquee carousel */
 .skills-marquee {
-  margin-top: 3rem;
+  margin-top: 0;
   overflow: hidden;
-  padding-block: 1.6rem;               /* room for rotation + drop shadow */
+  padding-block: 1.4rem;               /* room for rotation + drop shadow */
   -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
           mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
 }
