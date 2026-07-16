@@ -314,23 +314,41 @@
     <div class="wrap">
       <div class="section-label reveal">Disciplines</div>
 
-      <!-- Skill scraps â€” JS applies random rotations on load.
-           To add a skill: copy one <span class="skill-scrap"> element.
-           Change the text. The rotation is applied automatically. -->
-      <div class="skills-heap" role="list" aria-label="Skills and disciplines">
-        <span class="skill-scrap accent wobble" role="listitem">Brand Identity</span>
-        <span class="skill-scrap wobble"        role="listitem">Logo Design</span>
-        <span class="skill-scrap dark wobble"   role="listitem">Corporate Identity</span>
-        <span class="skill-scrap wobble"        role="listitem">Motion Graphics</span>
-        <span class="skill-scrap accent wobble" role="listitem">Video Production</span>
-        <span class="skill-scrap dark wobble"   role="listitem">Editorial Design</span>
-        <span class="skill-scrap wobble"        role="listitem">Print &amp; Stationery</span>
-        <span class="skill-scrap accent wobble" role="listitem">Social Media</span>
-        <span class="skill-scrap wobble"        role="listitem">Web Design</span>
-        <span class="skill-scrap dark wobble"   role="listitem">Digital Campaigns</span>
-        <span class="skill-scrap wobble"        role="listitem">After Effects</span>
-        <span class="skill-scrap wobble"        role="listitem">Illustrator</span>
-        <span class="skill-scrap accent wobble" role="listitem">InDesign</span>
+      <!-- Skill scraps â€” now an auto-scrolling marquee carousel.
+           JS applies random rotations on load; the track loops seamlessly
+           (two identical sets) and pauses on hover.
+           To add a skill: add one <span class="skill-scrap"> to BOTH sets. -->
+      <div class="skills-marquee reveal" aria-label="Skills and disciplines">
+        <div class="skills-track">
+          <!-- set 1 -->
+          <span class="skill-scrap accent wobble" role="listitem">Brand Identity</span>
+          <span class="skill-scrap wobble"        role="listitem">Logo Design</span>
+          <span class="skill-scrap dark wobble"   role="listitem">Corporate Identity</span>
+          <span class="skill-scrap wobble"        role="listitem">Motion Graphics</span>
+          <span class="skill-scrap accent wobble" role="listitem">Video Production</span>
+          <span class="skill-scrap dark wobble"   role="listitem">Editorial Design</span>
+          <span class="skill-scrap wobble"        role="listitem">Print &amp; Stationery</span>
+          <span class="skill-scrap accent wobble" role="listitem">Social Media</span>
+          <span class="skill-scrap wobble"        role="listitem">Web Design</span>
+          <span class="skill-scrap dark wobble"   role="listitem">Digital Campaigns</span>
+          <span class="skill-scrap wobble"        role="listitem">After Effects</span>
+          <span class="skill-scrap wobble"        role="listitem">Illustrator</span>
+          <span class="skill-scrap accent wobble" role="listitem">InDesign</span>
+          <!-- set 2 (duplicate for seamless loop) -->
+          <span class="skill-scrap accent wobble" aria-hidden="true">Brand Identity</span>
+          <span class="skill-scrap wobble"        aria-hidden="true">Logo Design</span>
+          <span class="skill-scrap dark wobble"   aria-hidden="true">Corporate Identity</span>
+          <span class="skill-scrap wobble"        aria-hidden="true">Motion Graphics</span>
+          <span class="skill-scrap accent wobble" aria-hidden="true">Video Production</span>
+          <span class="skill-scrap dark wobble"   aria-hidden="true">Editorial Design</span>
+          <span class="skill-scrap wobble"        aria-hidden="true">Print &amp; Stationery</span>
+          <span class="skill-scrap accent wobble" aria-hidden="true">Social Media</span>
+          <span class="skill-scrap wobble"        aria-hidden="true">Web Design</span>
+          <span class="skill-scrap dark wobble"   aria-hidden="true">Digital Campaigns</span>
+          <span class="skill-scrap wobble"        aria-hidden="true">After Effects</span>
+          <span class="skill-scrap wobble"        aria-hidden="true">Illustrator</span>
+          <span class="skill-scrap accent wobble" aria-hidden="true">InDesign</span>
+        </div>
       </div>
     </div>
   </section>
