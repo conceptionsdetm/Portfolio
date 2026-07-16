@@ -1020,10 +1020,12 @@ body::before {
 
 /* ── 11. SKILLS ───────────────────────────────────────────── */
 .skills {
-  background: var(--ground);
+  background: var(--paper);
   border-bottom: 2px solid var(--text);
   padding-block: clamp(1.75rem, 3.5vw, 2.75rem);   /* compact band */
 }
+/* corner tears reveal the section surface — keep them matching the new bg */
+.skills .skill-scrap:not(.accent):not(.dark)::after { background: var(--paper); }
 
 /* Disciplines — auto-scrolling marquee carousel */
 .skills-marquee {
