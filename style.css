@@ -1031,6 +1031,7 @@ body::before {
 .skills-marquee {
   margin-top: 0;
   overflow: hidden;
+  pointer-events: none;                /* non-interactive: never pauses, no hover */
   padding-block: 1.4rem;               /* room for rotation + drop shadow */
   -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
           mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
@@ -1044,9 +1045,6 @@ body::before {
 }
 /* margin (not flex gap) so both duplicated sets tile perfectly → seamless -50% loop */
 .skills-track .skill-scrap { flex: 0 0 auto; margin-right: 1rem; }
-/* Pause when the visitor hovers or focuses within the strip */
-.skills-marquee:hover .skills-track,
-.skills-track:focus-within { animation-play-state: paused; }
 
 @keyframes skills-scroll {
   from { transform: translateX(0); }
