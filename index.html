@@ -368,7 +368,12 @@
       <div class="work-header">
         <div>
           <div class="section-label">Selected Work</div>
-          <h2 class="work-title reveal">THE<br />PROJECTS</h2>
+          <h2 class="work-title reveal" aria-label="The Projects">
+          <span aria-hidden="true">
+            <span class="glitch-text" data-text="T">T</span><span class="glitch-text" data-text="H">H</span><span class="glitch-text" data-text="E">E</span><br />
+            <span class="glitch-text" data-text="P">P</span><span class="glitch-text" data-text="R">R</span><span class="glitch-text" data-text="O">O</span><span class="glitch-text" data-text="J">J</span><span class="glitch-text" data-text="E">E</span><span class="glitch-text" data-text="C">C</span><span class="glitch-text" data-text="T">T</span><span class="glitch-text" data-text="S">S</span>
+          </span>
+        </h2>
         </div>
         <span class="stamp" style="transform:rotate(-4deg)" aria-hidden="true">
           OPEN<br />FOR INSPECTION
@@ -667,39 +672,51 @@
     <div class="wrap">
 
       <div class="contact-header reveal">
-        <p class="contact-classified">Classified Transmission â€” Eyes Only</p>
-        <h2 class="contact-title">OPEN<br />CHANNEL</h2>
-        <div class="contact-urgent" aria-hidden="true">
-          <span class="stamp large" style="--stamp-delay:0.3s">URGENT</span>
+        <div class="record-header-top">
+          <div class="section-label">Get In Touch</div>
         </div>
+        <h2 class="record-name dada-name" aria-label="Contact me">
+          <span class="dada-word" aria-hidden="true">
+            <span class="gl glitch-text" data-text="C">C</span>
+            <span class="gl glitch-text" data-text="O">O</span>
+            <span class="gl glitch-text" data-text="N">N</span>
+            <span class="gl glitch-text" data-text="T">T</span>
+            <span class="gl glitch-text" data-text="A">A</span>
+            <span class="gl glitch-text" data-text="C">C</span>
+            <span class="gl glitch-text" data-text="T">T</span>
+          </span>
+          <span class="dada-word" aria-hidden="true">
+            <span class="gl glitch-text" data-text="M">M</span>
+            <span class="gl glitch-text" data-text="E">E</span>
+          </span>
+        </h2>
       </div>
 
       <div class="contact-inner">
 
         <!-- Contact information -->
         <div class="contact-info-block reveal r1" aria-label="Contact details">
-          <strong>// TRANSMISSION ADDRESS</strong><br />
+          <strong>// EMAIL ADDRESS</strong><br />
           <a href="mailto:conceptionsdetm@gmail.com">conceptionsdetm@gmail.com</a><br />
           <br />
-          <strong>// DIRECT LINE</strong><br />
+          <strong>// MOBILE PHONE</strong><br />
           <a href="tel:+35799212155">+357 99 212 155</a><br />
           <br />
           <strong>// LOCATION</strong><br />
           Limassol, Cyprus<br />
-          Available for remote projects worldwide<br />
           <br />
           <strong>// CHANNELS</strong><br />
           <a href="https://www.instagram.com/conceptions.detm" target="_blank" rel="noopener" aria-label="Instagram: conceptions.detm">Instagram</a><br />
+          <a href="https://www.linkedin.com/in/cdtm" target="_blank" rel="noopener" aria-label="LinkedIn: cdtm">LinkedIn</a><br />
+          <a href="https://www.twitch.tv/narkouinox" target="_blank" rel="noopener" aria-label="Twitch: narkouinox">Twitch</a><br />
           <br />
           <strong>// STATUS</strong><br />
-          <span style="color:var(--accent)">OPEN FOR PROJECTS &middot; 2026</span><br />
-          Brand identity &middot; Editorial &middot; Motion<br />
-          Social Media &middot; Web &middot; Corporate Identity<br />
-          Cyprus and remote. Let's talk.
+          <a href="https://www.linkedin.com/in/cdtm" target="_blank" rel="noopener"
+             style="color:var(--accent)" aria-label="Open for discussions — connect on LinkedIn">Open for Discussions.</a> Let's talk.
         </div>
 
         <!-- Contact form -->
-        <form class="contact-form reveal r2" id="contact-form" novalidate
+        <form class="contact-form reveal r2" id="contact-form"
               aria-label="Contact form">
           <div class="field">
             <label class="field-label" for="c-name">Your Name</label>
@@ -709,27 +726,19 @@
           <div class="field">
             <label class="field-label" for="c-email">Email</label>
             <input class="field-input" type="email" id="c-email" name="email"
-                   placeholder="alex@company.com" required />
-          </div>
-          <div class="field">
-            <label class="field-label" for="c-type">Project Type</label>
-            <select class="field-input" id="c-type" name="type" style="background:transparent;">
-              <option value="">Selectâ€¦</option>
-              <option>Brand Identity</option>
-              <option>Web Design</option>
-              <option>Editorial</option>
-              <option>Social Media</option>
-              <option>Motion Graphics</option>
-              <option>Full Creative Direction</option>
-            </select>
+                   placeholder="alex@company.com" required
+                   pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                   title="Please enter a valid email address, e.g. name@example.com" />
           </div>
           <div class="field">
             <label class="field-label" for="c-msg">Message</label>
             <textarea class="field-input" id="c-msg" name="message"
                       placeholder="What are you building?" required></textarea>
           </div>
-          <button type="submit" class="btn-stamp primary"
-                  style="align-self:flex-start;margin-top:0.5rem">
+          <!-- spam honeypot: bots fill this, humans never see it -->
+          <input type="text" id="c-honey" name="_honey" tabindex="-1" autocomplete="off"
+                 aria-hidden="true" style="display:none" />
+          <button type="submit" class="btn-stamp primary contact-submit">
             Send Signal
           </button>
           <p id="form-msg" style="display:none;font-family:var(--ff-mono);

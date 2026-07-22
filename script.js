@@ -79,9 +79,12 @@
     } else {
       var revealObs = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
+          /* Re-trigger every time the element enters the viewport,
+             instead of only once, so section reveals stay alive. */
           if (e.isIntersecting) {
             e.target.classList.add("visible");
-            revealObs.unobserve(e.target);
+          } else {
+            e.target.classList.remove("visible");
           }
         });
       }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
@@ -124,8 +127,8 @@
   }
 
   /* ── 5. GLITCH TEXT ─────────────────────────────────────── */
-  /* Triggers on hero headline: a brief clip-path glitch
-     fires once on load, then randomly every 8–18 seconds */
+  /* Triggers on hero headline + Dada titles: a brief clip-path glitch
+     fires shortly after load, then continuously every 3–6 seconds */
   var glitchEls = document.querySelectorAll(".glitch-text");
   if (glitchEls.length && !prefersReduced) {
     function fireGlitch() {
@@ -136,9 +139,9 @@
     }
     /* Initial glitch after 1.2s */
     setTimeout(fireGlitch, 1200);
-    /* Recurring glitch */
+    /* Recurring glitch — continuous, every 3–6 seconds */
     function scheduleGlitch() {
-      var delay = 8000 + Math.random() * 10000;
+      var delay = 3000 + Math.random() * 3000;
       setTimeout(function () { fireGlitch(); scheduleGlitch(); }, delay);
     }
     scheduleGlitch();
@@ -191,20 +194,57 @@
     });
   });
 
-  /* ── 9. CONTACT FORM SIMULATION ─────────────────────────── */
+  /* ── 9. CONTACT FORM → FORMSUBMIT (AJAX) ────────────────── */
+  /* Static site: posts the message straight to
+     conceptionsdetm@gmail.com in the background. No redirect,
+     no email app — visitor stays on the page. */
   var form    = document.getElementById("contact-form");
   var formMsg = document.getElementById("form-msg");
   if (form && formMsg) {
+    var ENDPOINT = "https://formsubmit.co/ajax/conceptionsdetm@gmail.com";
+
+    function val(id) {
+      var el = document.getElementById(id);
+      return el ? el.value.trim() : "";
+    }
+    function showMsg(text) {
+      formMsg.textContent = text;
+      formMsg.style.display = "block";
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      var name = val("c-name");
       var btn = form.querySelector("button[type='submit']");
-      if (btn) { btn.textContent = "TRANSMITTING…"; btn.disabled = true; }
-      setTimeout(function () {
-        formMsg.textContent = "// SIGNAL RECEIVED. STAND BY.";
-        formMsg.style.display = "block";
-        form.style.opacity = "0.4";
-        form.style.pointerEvents = "none";
-      }, 900);
+      var label = btn ? btn.textContent : "";
+      if (btn) { btn.textContent = "Sending…"; btn.disabled = true; }
+      showMsg("// SENDING…");
+
+      fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          name: name,
+          email: val("c-email"),
+          message: val("c-msg"),
+          _honey: val("c-honey"),
+          _subject: "New enquiry from " + (name || "portfolio site"),
+          _template: "table"
+        })
+      })
+      .then(function (r) { return r.json(); })
+      .then(function () {
+        showMsg("// MESSAGE SENT. I'LL GET BACK TO YOU AS SOON AS POSSIBLE.");
+        form.reset();
+      })
+      .catch(function () {
+        showMsg("// COULDN'T SEND RIGHT NOW — PLEASE EMAIL CONCEPTIONSDETM@GMAIL.COM DIRECTLY.");
+      })
+      .then(function () {
+        if (btn) { btn.textContent = label || "Send Signal"; btn.disabled = false; }
+      });
     });
   }
 
