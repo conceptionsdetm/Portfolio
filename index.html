@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Timonas Stefanou â€” Graphic Designer & Creative Director. Cyprus. Visual identity, editorial, motion." />
-  <title>Timonas Stefanou â€” Graphic Designer</title>
+  <meta name="description" content="Timonas Stefanou — Graphic Designer & Creative Director. Cyprus. Visual identity, editorial, motion." />
+  <title>Timonas Stefanou — Graphic Designer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -26,7 +26,7 @@
 
     <a href="#" class="nav-cta cv-trigger" data-cv="Timonas-Stefanou-CV-2025.pdf" aria-label="View my CV">View CV</a>
 
-    <!-- Mobile hamburger â€” shown on screens < 640px -->
+    <!-- Mobile hamburger — shown on screens < 640px -->
     <button class="nav-toggle" id="navToggle"
             aria-label="Open navigation" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -37,7 +37,7 @@
        HERO SECTION
        "I DESIGN AGAINST THE STRAIGHT LINE"
        AESTHETIC RISK: the headline breaks across 3 lines
-       at different sizes and alignments â€” disorienting
+       at different sizes and alignments — disorienting
        for 1 second, then suddenly legible.
   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="hero" id="hero" aria-label="Introduction">
@@ -75,7 +75,8 @@
       <a href="https://www.instagram.com/timo_steph/" target="_blank" rel="noopener"
          class="hero-photo-link" aria-label="Timonas Stefanou on Instagram (opens in new tab)">
         <span class="hero-photo-frame">
-          <img src="images/timonas-hero.jpg" alt="Timonas Stefanou portrait" />
+          <img src="images/timonas-hero.jpg" alt="Timonas Stefanou portrait"
+               fetchpriority="high" decoding="async" />
           <span class="hero-photo-hover">@timo_steph &rarr;</span>
         </span>
         <span class="hero-photo-tag">TIMONAS &middot; THE&nbsp;DESIGNER</span>
@@ -307,11 +308,11 @@
 
 
   <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       SKILLS â€” scattered paper scraps
+       SKILLS — scattered paper scraps
   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="skills section" id="skills">
     <div class="wrap">
-      <!-- Skill scraps â€” now an auto-scrolling marquee carousel.
+      <!-- Skill scraps — now an auto-scrolling marquee carousel.
            JS applies random rotations on load; the track loops seamlessly
            (two identical sets) and pauses on hover.
            To add a skill: add one <span class="skill-scrap"> to BOTH sets. -->
@@ -351,7 +352,7 @@
   </section>
 
   <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       WORK â€” Project Grid
+       WORK — Project Grid
        â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
        HOW TO ADD A NEW PROJECT:
        1. Copy ONE complete project-card block below
@@ -387,9 +388,9 @@
              href, title, category, description, and card-visual gradient -->
         <article class="project-card reveal" data-project="01">
           <a href="projects/project-01.html" class="card-link-wrap"
-             style="display:contents" aria-label="Open project: Rebranding â€” Fameline Holding Group">
+             style="display:contents" aria-label="Open project: Rebranding — Fameline Holding Group">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:2rem;background:#f7f6ee;">
-              <img src="projects/images/fameline-rebranding/logo.png"
+              <img loading="lazy" decoding="async" src="projects/images/fameline-rebranding/logo.png"
                    alt="Fameline Holding Group logo"
                    style="max-width:86%;max-height:84%;object-fit:contain;" />
               <span class="card-cat-stamp">Branding</span>
@@ -413,7 +414,7 @@
           <a href="projects/project-02.html" class="card-link-wrap"
              style="display:contents" aria-label="Open project: Fluxotic E-Shop web design">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:2rem;background:#f7f6ee;">
-              <img src="projects/images/fluxotic/logo.png" alt="Fluxotic logo"
+              <img loading="lazy" decoding="async" src="projects/images/fluxotic/logo.png" alt="Fluxotic logo"
                    style="max-width:80%;max-height:60px;object-fit:contain;" />
               <span class="card-cat-stamp">Web</span>
             </div>
@@ -436,7 +437,7 @@
           <a href="projects/project-03.html" class="card-link-wrap"
              style="display:contents" aria-label="Open project: Amsoil Cyprus social media">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:2rem;background:#f7f6ee;">
-              <img src="projects/images/amsoil/logo.png" alt="Amsoil logo"
+              <img loading="lazy" decoding="async" src="projects/images/amsoil/logo.png" alt="Amsoil logo"
                    style="max-width:78%;max-height:64px;object-fit:contain;" />
               <span class="card-cat-stamp">Social</span>
             </div>
@@ -459,7 +460,7 @@
           <a href="projects/project-04.html" class="card-link-wrap"
              style="display:contents" aria-label="Open project: MiaFemtech landing page">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:2rem;background:#f7f6ee;">
-              <img src="projects/images/miafemtech/mia-logo.png" alt="Mia Femtech logo"
+              <img loading="lazy" decoding="async" src="projects/images/miafemtech/mia-logo.png" alt="Mia Femtech logo"
                    style="max-width:72%;max-height:58px;object-fit:contain;" />
               <span class="card-cat-stamp">Web</span>
             </div>
@@ -482,7 +483,7 @@
           <a href="projects/project-06.html" class="card-link-wrap"
              style="display:contents" aria-label="Open project: Albaflux brand and website">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:2rem;background:#f7f6ee;">
-              <img src="projects/images/albaflux/logo.png" alt="Albaflux logo"
+              <img loading="lazy" decoding="async" src="projects/images/albaflux/logo.png" alt="Albaflux logo"
                    style="max-width:82%;max-height:44px;object-fit:contain;" />
               <span class="card-cat-stamp">Brand</span>
             </div>
@@ -505,7 +506,7 @@
           <a href="projects/project-07.html" class="card-link-wrap"
              style="display:contents" aria-label="Open project: VessGuard brand and PPE brochure">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:2rem;background:#f7f6ee;">
-              <img src="projects/images/vessguard/logo.png" alt="VessGuard logo"
+              <img loading="lazy" decoding="async" src="projects/images/vessguard/logo.png" alt="VessGuard logo"
                    style="max-width:80%;max-height:48px;object-fit:contain;" />
               <span class="card-cat-stamp">Print</span>
             </div>
@@ -528,7 +529,7 @@
           <a href="projects/project-08.html" class="card-link-wrap"
              style="display:contents" aria-label="Open project: Navichem brand, labels and catalogue">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:2rem;background:#f7f6ee;">
-              <img src="projects/images/navichem/logo.png" alt="Navichem logo"
+              <img loading="lazy" decoding="async" src="projects/images/navichem/logo.png" alt="Navichem logo"
                    style="max-width:80%;max-height:52px;object-fit:contain;" />
               <span class="card-cat-stamp">Packaging</span>
             </div>
@@ -551,7 +552,7 @@
           <a href="projects/project-09.html" class="card-link-wrap"
              style="display:contents" aria-label="Open project: Famelions beach-volley charity campaign">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:1.6rem;background:#fff;">
-              <img src="projects/images/famelions/logo.png" alt="Famelions crest"
+              <img loading="lazy" decoding="async" src="projects/images/famelions/logo.png" alt="Famelions crest"
                    style="max-width:62%;max-height:120px;object-fit:contain;" />
               <span class="card-cat-stamp">Event</span>
             </div>
@@ -574,7 +575,7 @@
           <a href="projects/project-10.html" class="card-link-wrap"
              style="display:contents" aria-label="Open project: Heri me Heri charity and CSR design">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:1.6rem;background:#fff;">
-              <img src="projects/images/heri-me-heri/logo.png" alt="Heri me Heri logo"
+              <img loading="lazy" decoding="async" src="projects/images/heri-me-heri/logo.png" alt="Heri me Heri logo"
                    style="max-width:60%;max-height:120px;object-fit:contain;" />
               <span class="card-cat-stamp">Charity</span>
             </div>
@@ -597,7 +598,7 @@
           <a href="projects/project-11.html" class="card-link-wrap"
              style="display:contents" aria-label="Open project: Movember 2025 men's health campaign">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:2rem;background:#26262a;">
-              <img src="projects/images/movember/logo.png" alt="Movember Cyprus logo"
+              <img loading="lazy" decoding="async" src="projects/images/movember/logo.png" alt="Movember Cyprus logo"
                    style="max-width:60%;max-height:96px;object-fit:contain;" />
               <span class="card-cat-stamp">Awareness</span>
             </div>
@@ -620,7 +621,7 @@
           <a href="projects/project-12.html" class="card-link-wrap"
              style="display:contents" aria-label="Open project: Blue Sky Cargo Logistics brand identity">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:2rem;background:#fff;">
-              <img src="projects/images/bluesky/logo.png" alt="Blue Sky Cargo Logistics logo"
+              <img loading="lazy" decoding="async" src="projects/images/bluesky/logo.png" alt="Blue Sky Cargo Logistics logo"
                    style="max-width:84%;max-height:66px;object-fit:contain;" />
               <span class="card-cat-stamp">Brand</span>
             </div>
@@ -643,7 +644,7 @@
           <a href="projects/project-13.html" class="card-link-wrap"
              style="display:contents" aria-label="Open project: North Tide website and company profile">
             <div class="card-visual" style="display:flex;align-items:center;justify-content:center;padding:2rem;background:#fff;">
-              <img src="projects/images/northtide/logo.png" alt="North Tide logo"
+              <img loading="lazy" decoding="async" src="projects/images/northtide/logo.png" alt="North Tide logo"
                    style="max-width:84%;max-height:58px;object-fit:contain;" />
               <span class="card-cat-stamp">Web</span>
             </div>
@@ -666,7 +667,7 @@
   </section>
 
   <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       CONTACT â€” classified ad / telegram
+       CONTACT — classified ad / telegram
   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="contact section" id="contact">
     <div class="wrap">
@@ -767,7 +768,7 @@
           <a href="#contact" class="footer-link">Contact</a>
           <a href="https://www.instagram.com/conceptions.detm" class="footer-link" target="_blank" rel="noopener">Instagram</a>
         </nav>
-        <span class="footer-copy">Â© 2026 Timonas Stefanou &middot; Limassol, Cyprus</span>
+        <span class="footer-copy">© 2026 Timonas Stefanou &middot; Limassol, Cyprus</span>
       </div>
     </div>
   </footer>
