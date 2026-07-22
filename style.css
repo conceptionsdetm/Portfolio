@@ -1966,50 +1966,50 @@ textarea.field-input:focus { border-color: var(--accent); }
 
   .proj-meta { grid-template-columns: repeat(2, 1fr); }
 
-  /* ── Rich mobile hero: full collage, stacked as a vertical column ── */
+  /* ── Mobile hero: desktop-style 2D collage — headline base layer,
+       photo overlapping on the right, stamps in the corners ── */
   .hero {
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1.15rem;
-    padding-top: calc(var(--nav-h, 60px) + 1.5rem);
-    padding-bottom: 2.5rem;
-    text-align: center;
-  }
-  /* neutralise desktop absolute positioning → let everything flow in a column */
-  .hero-scrap-1, .hero-scrap-2, .hero-scrap-3,
-  .hero-stamp-1, .hero-stamp-2, .hero-arrow,
-  .hero-photo, .hero-inner, .hero-scroll {
-    position: static;
-    inset: auto;
-    margin: 0;
     display: block;
+    position: relative;
+    min-height: 82vh;
+    padding: 0 0 6rem;
+    padding-top: calc(var(--nav-h, 60px) + 5.5rem);
+    overflow: hidden;
+    text-align: left;
   }
-  .hero-ref { display: none; }   /* drop tiny ref line to keep it clean */
+  .hero-ref { display: none; }
+  .hero-scrap-1, .hero-scrap-2, .hero-scrap-3,
+  .hero-stamp-1, .hero-stamp-2, .hero-arrow, .hero-photo {
+    display: block;
+    position: absolute;
+    margin: 0;
+    z-index: 5;
+  }
 
-  /* order the collage top→bottom */
-  .hero-scrap-3 { order: 1; transform: rotate(-2deg); }                                  /* GRAPHIC DESIGNER */
-  .hero-photo   { order: 2; width: min(62vw, 215px); transform: rotate(-3deg); }         /* portrait */
-  .hero-inner   { order: 3; width: 100%; min-width: 0; max-width: 100%; padding: 0; }     /* headline + CTAs */
-  .hero-stamp-1 { order: 4; transform: rotate(-8deg); }                                  /* CYPRUS 2026 */
-  .hero-scrap-1 { order: 5; max-width: 240px; text-align: left; transform: rotate(1deg); }/* chaos note */
-  .hero-scrap-2 { order: 6; transform: rotate(-3deg); }                                  /* NO. 2026 */
-  .hero-stamp-2 { order: 7; transform: rotate(4deg); }                                   /* APPROVED FOR DISORDER */
-  .hero-arrow   { order: 8; font-size: 2rem; transform: rotate(-8deg); }                 /* CD·TM */
-  .hero-scroll  { order: 9; }
+  /* top band */
+  .hero-stamp-1 { top: calc(var(--nav-h,60px) + 0.9rem); left: 4%; transform: rotate(-8deg); }            /* CYPRUS 2026 */
+  .hero-scrap-3 { top: calc(var(--nav-h,60px) + 1.4rem); left: 50%; transform: translateX(-50%) rotate(2deg); } /* GRAPHIC DESIGNER */
+  .hero-scrap-1 { top: 40%; right: 4%; max-width: 128px; font-size: 0.55rem; line-height: 1.7; transform: rotate(3deg); } /* chaos note (moved below photo) */
 
-  /* headline centred, sized conservatively so it never overflows a phone */
-  .hero-headline { text-align: center; max-width: 100%; min-width: 0; }
-  .hero-line-1, .hero-line-2, .hero-line-3 { max-width: 100%; overflow-wrap: break-word; }
-  .hero-line-1 { font-size: clamp(2.4rem, 13.5vw, 3.6rem); }
-  .hero-line-2 { font-size: clamp(2rem, 11.5vw, 3.2rem); padding-left: 0; }
-  .hero-line-3 { font-size: clamp(1.6rem, 9vw, 2.6rem); padding-left: 0; margin-top: 0.1em; }
+  /* portrait overlapping the headline on the right (like desktop) */
+  .hero-photo { top: 11%; right: 2.5%; width: 38vw; max-width: 140px; z-index: 6; transform: rotate(-4deg); text-align: center; }
 
-  /* stack hero CTAs full-width so they never run off-screen */
-  .hero-cta { flex-direction: column; align-items: stretch; gap: 0.75rem; margin-top: 1.75rem; }
-  .hero-cta .btn-stamp { width: 100%; text-align: center; }
+  /* headline = base layer, left-aligned & diagonal like desktop */
+  .hero-inner { position: relative; z-index: 2; width: 100%; padding: 0 5vw; margin: 0; }
+  .hero-headline { text-align: left; }
+  .hero-line-1 { font-size: clamp(2.6rem, 15vw, 3.6rem); }
+  .hero-line-2 { font-size: clamp(2.1rem, 12.5vw, 3.1rem); padding-left: 8%; }
+  .hero-line-3 { font-size: clamp(1.7rem, 9.5vw, 2.5rem); padding-left: 24%; margin-top: -0.1em; color: var(--accent); }
+
+  /* CTAs below the headline; wrap if the row is too tight */
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; justify-content: flex-start; }
+  .hero-cta .btn-stamp { flex: 0 0 auto; width: auto; }
+
+  /* bottom band */
+  .hero-scrap-2 { bottom: 4.75rem; left: 4%; transform: rotate(-3deg); }                                  /* NO. 2026 */
+  .hero-arrow   { bottom: 5.5rem; left: 50%; transform: translateX(-50%) rotate(-6deg); font-size: 1.6rem; } /* CD·TM */
+  .hero-stamp-2 { bottom: 3.5rem; right: 3%; transform: rotate(5deg); }                                    /* APPROVED FOR DISORDER */
+  .hero-scroll  { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); margin: 0; }
 
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
