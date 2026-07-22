@@ -1966,50 +1966,58 @@ textarea.field-input:focus { border-color: var(--accent); }
 
   .proj-meta { grid-template-columns: repeat(2, 1fr); }
 
-  /* ── Mobile hero: desktop-style 2D collage — headline base layer,
-       photo overlapping on the right, stamps in the corners ── */
+  /* ── Mobile hero: flex-column Dada collage. Natural height so nothing
+       overlaps or gets crushed; pieces reordered top→bottom with `order`
+       and scattered with rotations / alternating alignment. ── */
   .hero {
-    display: block;
-    position: relative;
-    min-height: 82vh;
-    padding: 0 0 6rem;
-    padding-top: calc(var(--nav-h, 60px) + 5.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    padding: calc(var(--nav-h, 60px) + 1.5rem) 6vw 3.5rem;
     overflow: hidden;
     text-align: left;
+    gap: 0;
   }
   .hero-ref { display: none; }
+
+  /* drop all the desktop absolute positioning back into normal flow */
   .hero-scrap-1, .hero-scrap-2, .hero-scrap-3,
-  .hero-stamp-1, .hero-stamp-2, .hero-arrow, .hero-photo {
+  .hero-stamp-1, .hero-stamp-2, .hero-arrow,
+  .hero-photo, .hero-inner, .hero-scroll {
+    position: static;
     display: block;
-    position: absolute;
     margin: 0;
-    z-index: 5;
+    max-width: 100%;
   }
 
-  /* top band */
-  .hero-stamp-1 { top: calc(var(--nav-h,60px) + 0.9rem); left: 4%; transform: rotate(-8deg); }            /* CYPRUS 2026 */
-  .hero-scrap-3 { top: calc(var(--nav-h,60px) + 1.4rem); left: 50%; transform: translateX(-50%) rotate(2deg); } /* GRAPHIC DESIGNER */
-  .hero-scrap-1 { top: 40%; right: 4%; max-width: 128px; font-size: 0.55rem; line-height: 1.7; transform: rotate(3deg); } /* chaos note (moved below photo) */
+  /* top labels */
+  .hero-stamp-1 { order: 1; align-self: flex-start; transform: rotate(-6deg); }                 /* CYPRUS 2026 */
+  .hero-scrap-3 { order: 2; align-self: flex-end; transform: rotate(2deg);
+                  margin: -1.75rem 2% 0 0; font-size: 0.7rem; letter-spacing: 0.2em; }          /* GRAPHIC DESIGNER */
 
-  /* portrait overlapping the headline on the right (like desktop) */
-  .hero-photo { top: 11%; right: 2.5%; width: 38vw; max-width: 140px; z-index: 6; transform: rotate(-4deg); text-align: center; }
-
-  /* headline = base layer, left-aligned & diagonal like desktop */
-  .hero-inner { position: relative; z-index: 2; width: 100%; padding: 0 5vw; margin: 0; }
+  /* headline + CTAs */
+  .hero-inner    { order: 3; width: 100%; padding: 0; margin: 1.5rem 0 0; }
   .hero-headline { text-align: left; }
-  .hero-line-1 { font-size: clamp(2.6rem, 15vw, 3.6rem); }
-  .hero-line-2 { font-size: clamp(2.1rem, 12.5vw, 3.1rem); padding-left: 8%; }
-  .hero-line-3 { font-size: clamp(1.7rem, 9.5vw, 2.5rem); padding-left: 24%; margin-top: -0.1em; color: var(--accent); }
-
-  /* CTAs below the headline; wrap if the row is too tight */
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; justify-content: flex-start; }
+  .hero-line-1 { font-size: clamp(2.8rem, 16vw, 4rem); }
+  .hero-line-2 { font-size: clamp(2.2rem, 13vw, 3.2rem); padding-left: 6%; }
+  .hero-line-3 { font-size: clamp(1.9rem, 11vw, 2.8rem); padding-left: 16%; margin-top: -0.05em; color: var(--accent); }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.75rem; justify-content: flex-start; }
   .hero-cta .btn-stamp { flex: 0 0 auto; width: auto; }
 
-  /* bottom band */
-  .hero-scrap-2 { bottom: 4.75rem; left: 4%; transform: rotate(-3deg); }                                  /* NO. 2026 */
-  .hero-arrow   { bottom: 5.5rem; left: 50%; transform: translateX(-50%) rotate(-6deg); font-size: 1.6rem; } /* CD·TM */
-  .hero-stamp-2 { bottom: 3.5rem; right: 3%; transform: rotate(5deg); }                                    /* APPROVED FOR DISORDER */
-  .hero-scroll  { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); margin: 0; }
+  /* portrait */
+  .hero-photo { order: 4; align-self: flex-end; width: 46vw; max-width: 190px;
+                transform: rotate(-3deg); margin: 1.75rem 2% 0 0; text-align: center; }
+
+  /* chaos note */
+  .hero-scrap-1 { order: 5; align-self: flex-start; max-width: 60%;
+                  font-size: 0.62rem; line-height: 1.7; transform: rotate(2deg); margin-top: 1.75rem; }
+
+  /* scattered bottom stamps */
+  .hero-scrap-2 { order: 6; align-self: flex-start; transform: rotate(-3deg); margin-top: 1.75rem; }   /* NO. 2026 */
+  .hero-stamp-2 { order: 7; align-self: flex-end; transform: rotate(5deg); margin: -1rem 3% 0 0; }     /* APPROVED FOR DISORDER */
+  .hero-arrow   { order: 8; align-self: center; transform: rotate(-6deg); font-size: 1.6rem; margin-top: 1.25rem; } /* CD·TM */
+  .hero-scroll  { order: 9; align-self: center; margin: 1.5rem auto 0; }
 
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
