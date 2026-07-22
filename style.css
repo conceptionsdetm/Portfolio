@@ -30,6 +30,7 @@
 
 /* ── 2. RESET ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; max-width: 100%; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -1937,7 +1938,7 @@ textarea.field-input:focus { border-color: var(--accent); }
   .cursor { display: none; }
 
   .nav-links, .nav-cta { display: none; }
-  .nav-toggle { display: flex; }
+  .nav-toggle { display: flex; padding: 8px; margin-right: -4px; }
   .nav-links.open {
     display: flex;
     position: fixed;
@@ -1970,9 +1971,13 @@ textarea.field-input:focus { border-color: var(--accent); }
   .hero-photo {
     display: none;
   }
-  .hero-line-1 { font-size: clamp(2.8rem, 14vw, 6rem); }
-  .hero-line-2 { font-size: clamp(2.2rem, 11vw, 5rem); padding-left: 5%; }
-  .hero-line-3 { font-size: clamp(1.6rem, 8vw, 3rem); }
+  .hero-line-1 { font-size: clamp(2.8rem, 13vw, 6rem); }
+  .hero-line-2 { font-size: clamp(2.2rem, 10.5vw, 5rem); padding-left: 6%; }
+  .hero-line-3 { font-size: clamp(1.5rem, 7.5vw, 3rem); padding-left: 8%; }
+
+  /* stack hero CTAs full-width so they never run off-screen */
+  .hero-cta { flex-direction: column; align-items: stretch; gap: 0.75rem; margin-top: 2.5rem; }
+  .hero-cta .btn-stamp { width: 100%; text-align: center; }
 
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
