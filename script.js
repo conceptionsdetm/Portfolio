@@ -243,7 +243,7 @@
         showMsg("// COULDN'T SEND RIGHT NOW — PLEASE EMAIL CONCEPTIONSDETM@GMAIL.COM DIRECTLY.");
       })
       .then(function () {
-        if (btn) { btn.textContent = label || "Send Signal"; btn.disabled = false; }
+        if (btn) { btn.textContent = label || "Send Email"; btn.disabled = false; }
       });
     });
   }

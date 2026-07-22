@@ -1966,17 +1966,49 @@ textarea.field-input:focus { border-color: var(--accent); }
 
   .proj-meta { grid-template-columns: repeat(2, 1fr); }
 
-  .hero-scrap-1, .hero-scrap-2, .hero-scrap-3,
-  .hero-stamp-1, .hero-stamp-2, .hero-arrow, .hero-ref,
-  .hero-photo {
-    display: none;
+  /* ── Rich mobile hero: full collage, stacked as a vertical column ── */
+  .hero {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.15rem;
+    padding-top: calc(var(--nav-h, 60px) + 1.5rem);
+    padding-bottom: 2.5rem;
+    text-align: center;
   }
-  .hero-line-1 { font-size: clamp(2.8rem, 13vw, 6rem); }
-  .hero-line-2 { font-size: clamp(2.2rem, 10.5vw, 5rem); padding-left: 6%; }
-  .hero-line-3 { font-size: clamp(1.5rem, 7.5vw, 3rem); padding-left: 8%; }
+  /* neutralise desktop absolute positioning → let everything flow in a column */
+  .hero-scrap-1, .hero-scrap-2, .hero-scrap-3,
+  .hero-stamp-1, .hero-stamp-2, .hero-arrow,
+  .hero-photo, .hero-inner, .hero-scroll {
+    position: static;
+    inset: auto;
+    margin: 0;
+    display: block;
+  }
+  .hero-ref { display: none; }   /* drop tiny ref line to keep it clean */
+
+  /* order the collage top→bottom */
+  .hero-scrap-3 { order: 1; transform: rotate(-2deg); }                                  /* GRAPHIC DESIGNER */
+  .hero-photo   { order: 2; width: min(62vw, 215px); transform: rotate(-3deg); }         /* portrait */
+  .hero-inner   { order: 3; width: 100%; min-width: 0; max-width: 100%; padding: 0; }     /* headline + CTAs */
+  .hero-stamp-1 { order: 4; transform: rotate(-8deg); }                                  /* CYPRUS 2026 */
+  .hero-scrap-1 { order: 5; max-width: 240px; text-align: left; transform: rotate(1deg); }/* chaos note */
+  .hero-scrap-2 { order: 6; transform: rotate(-3deg); }                                  /* NO. 2026 */
+  .hero-stamp-2 { order: 7; transform: rotate(4deg); }                                   /* APPROVED FOR DISORDER */
+  .hero-arrow   { order: 8; font-size: 2rem; transform: rotate(-8deg); }                 /* CD·TM */
+  .hero-scroll  { order: 9; }
+
+  /* headline centred, sized conservatively so it never overflows a phone */
+  .hero-headline { text-align: center; max-width: 100%; min-width: 0; }
+  .hero-line-1, .hero-line-2, .hero-line-3 { max-width: 100%; overflow-wrap: break-word; }
+  .hero-line-1 { font-size: clamp(2.4rem, 13.5vw, 3.6rem); }
+  .hero-line-2 { font-size: clamp(2rem, 11.5vw, 3.2rem); padding-left: 0; }
+  .hero-line-3 { font-size: clamp(1.6rem, 9vw, 2.6rem); padding-left: 0; margin-top: 0.1em; }
 
   /* stack hero CTAs full-width so they never run off-screen */
-  .hero-cta { flex-direction: column; align-items: stretch; gap: 0.75rem; margin-top: 2.5rem; }
+  .hero-cta { flex-direction: column; align-items: stretch; gap: 0.75rem; margin-top: 1.75rem; }
   .hero-cta .btn-stamp { width: 100%; text-align: center; }
 
   .footer-inner { flex-direction: column; text-align: center; }
