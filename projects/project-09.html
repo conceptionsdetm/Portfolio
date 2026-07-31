@@ -35,6 +35,11 @@
     .sponsor-post img { width:100%; height:auto; display:block; }
     .sponsor-note strong { display:block; font-family:var(--ff-mono); font-size:.6rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
     .sponsor-badge { display:inline-block; margin-top:1.4rem; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sepia); border:1px solid rgba(0,0,0,.2); padding:.55rem .9rem; }
+    /* On the court */
+    .court-hero { background:#fff; border:1px solid rgba(0,0,0,.12); box-shadow:0 12px 30px rgba(0,0,0,.1); padding:.9rem; margin-top:1.5rem; cursor:none; }
+    .court-hero img { width:100%; height:auto; display:block; }
+    .court-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:1rem; }
+    @media (max-width:760px){ .court-grid{grid-template-columns:1fr 1fr;} }
     /* Lightbox */
     .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
     .lb.open { display:flex; }
@@ -94,6 +99,7 @@
           Social campaign (7 posts)<br />
           Custom volleyball kits<br />
           Feather flags &amp; cooler wraps<br />
+          Game-day photo edits<br />
           <br />
           <strong>Also by me</strong><br />
           Secured LEON Beer sponsor<br />
@@ -163,7 +169,24 @@
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--paper);" aria-label="Process">
+  <section class="proj-section" style="background:var(--paper);" aria-label="On the court">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">On the Court</h2>
+      <p class="web-hint reveal r1">Game day &mdash; the team out on the sand in Famelions colours</p>
+      <div class="court-hero reveal r1"><img data-lb src="images/famelions/court/team.jpg" alt="The Famelions beach-volley team holding the team banner" loading="lazy" /></div>
+      <div class="court-grid reveal r1">
+        <div class="social-cell"><img data-lb src="images/famelions/court/serve-karolina.jpg" alt="Karolina serving" loading="lazy" /></div>
+        <div class="social-cell"><img data-lb src="images/famelions/court/serve-christiana.jpg" alt="Christiana serving" loading="lazy" /></div>
+        <div class="social-cell"><img data-lb src="images/famelions/court/attack-christiana.jpg" alt="Christiana attacking at the net" loading="lazy" /></div>
+        <div class="social-cell"><img data-lb src="images/famelions/court/serve-mikaella.jpg" alt="Mikaella serving" loading="lazy" /></div>
+        <div class="social-cell"><img data-lb src="images/famelions/court/pass-andreas.jpg" alt="Andreas passing" loading="lazy" /></div>
+        <div class="social-cell"><img data-lb src="images/famelions/court/game-1.jpg" alt="Famelions game-day action" loading="lazy" /></div>
+        <div class="social-cell"><img data-lb src="images/famelions/court/game-2.jpg" alt="Famelions game-day action" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Process">
     <div class="wrap">
       <h2 class="proj-heading reveal">Process Notes</h2>
       <div class="process-notes">
@@ -174,7 +197,7 @@
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--ground);" aria-label="Credits">
+  <section class="proj-section" style="background:var(--paper);" aria-label="Credits">
     <div class="wrap">
       <h2 class="proj-heading reveal">Credits</h2>
       <div class="credits-grid reveal r1">
