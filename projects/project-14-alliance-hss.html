@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alliance HSS — APM 2026 Singapore booth design and website landing page by Timonas Stefanou." />
+  <title>Alliance HSS &mdash; Timonas Stefanou</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:1.5rem; }
+    .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    .ah-feature { border:1px solid rgba(0,0,0,.14); box-shadow:0 14px 40px rgba(0,0,0,.14); margin-top:1.5rem; cursor:none; }
+    .ah-feature img { width:100%; height:auto; display:block; }
+    /* browser frame for the website */
+    .web { max-width:900px; margin:1.5rem auto 0; background:#fff; border:1px solid rgba(0,0,0,.14); box-shadow:0 16px 50px rgba(0,0,0,.16); }
+    .web-bar { display:flex; align-items:center; gap:.5rem; padding:.6rem .9rem; background:#2a2a2a; }
+    .web-bar span { width:11px; height:11px; border-radius:50%; background:#ff5f57; }
+    .web-bar span:nth-child(2){ background:#febc2e; } .web-bar span:nth-child(3){ background:#28c840; }
+    .web-url { margin-left:.6rem; font-family:var(--ff-mono); font-size:.6rem; letter-spacing:.08em; color:rgba(255,255,255,.6); }
+    .web-scroll { max-height:72vh; overflow-y:auto; } .web-scroll img { width:100%; display:block; }
+    /* Lightbox */
+    .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
+    .lb.open { display:flex; }
+    .lb img { max-width:94vw; max-height:92vh; width:auto; height:auto; display:block; box-shadow:0 20px 70px rgba(0,0,0,.5); }
+    .lb-close { position:fixed; top:3vh; right:3vw; width:44px; height:44px; border:none; background:rgba(255,255,255,.14); color:#fff; font-family:var(--ff-display); font-size:1.4rem; cursor:none; }
+    .lb-close:hover { background:var(--accent); }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} }
+  </style>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#D4000A" />
+</head>
+<body class="project-page">
+
+  <div class="cursor" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="../index.html" class="nav-logo" aria-label="Back to home">CD&middot;TM</a>
+    <nav class="nav-links" aria-label="Main navigation" id="navLinks">
+      <a href="../index.html#record"  class="nav-link">About</a>
+      <a href="../index.html#work"    class="nav-link">Work</a>
+      <a href="../index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#" class="nav-cta cv-trigger" data-cv="../Timonas-Stefanou-CV-2025.pdf" aria-label="View my CV">View CV</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <section class="proj-hero" aria-label="Project header">
+    <div class="proj-hero-text">
+      <a href="../index.html#work" class="proj-back">Back to Work</a>
+      <p class="proj-eyebrow">Event &amp; Web &middot; 2026</p>
+      <h1 class="proj-title">ALLIANCE<br />HSS</h1>
+    </div>
+    <div class="proj-hero-visual" style="padding:0;overflow:hidden;">
+      <img data-lb src="images/alliance-hss/booth.jpg" alt="Alliance HSS APM 2026 Singapore booth design" style="width:100%;height:100%;object-fit:cover;cursor:none;" />
+    </div>
+  </section>
+
+  <div class="proj-meta" aria-label="Project details">
+    <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">Alliance HSS</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Exhibition &middot; Web Design</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2026</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; Photoshop</div></div>
+  </div>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Overview</h2>
+      <div class="proj-overview-grid">
+        <div class="proj-overview-body reveal r1">
+          <p>Alliance HSS &mdash; a joint venture between Alliance Safety and HSS Marine Safety &mdash; supplies maritime safety and firefighting equipment worldwide. I handled the brand&rsquo;s key 2026 touchpoints: the <b>Asia Pacific Maritime (APM) 2026 Singapore</b> exhibition presence and the <b>website landing page</b>.</p>
+          <p>One bold, high-contrast system &mdash; navy, orange and signal yellow over real safety photography and certification marks &mdash; carried from a 3.6&times;2.4m booth wall onto the full single-page site.</p>
+          <p><b>Click any piece to view it full size.</b></p>
+        </div>
+        <div class="proj-overview-aside reveal r2">
+          <strong>Deliverables</strong><br />
+          APM 2026 booth design<br />
+          Website landing page<br />
+          Mail-signature banner<br />
+          Social announcement set<br />
+          <br />
+          <strong>Tagline</strong><br />
+          &ldquo;Because your safety is in our mind&rdquo;
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="The booth">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">APM 2026 &mdash; The Booth</h2>
+      <p class="reveal r1" style="font-family:var(--ff-serif);color:var(--sepia);max-width:620px;margin-bottom:0.5rem;">The exhibition wall for Asia Pacific Maritime 2026 in Singapore &mdash; 3.6&times;2.4m &mdash; built around the brand mark, the full accreditation line and live safety photography.</p>
+      <div class="ah-feature reveal r1"><img data-lb src="images/alliance-hss/booth.jpg" alt="Alliance HSS APM 2026 Singapore booth design" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="The website">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">The Website</h2>
+      <p class="web-hint reveal r1">Single-page landing design &mdash; scroll through it &darr;</p>
+      <div class="web reveal r1">
+        <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span><span class="web-url">alliancehss.com &mdash; landing page</span></div>
+        <div class="web-scroll"><img data-lb src="images/alliance-hss/website.jpg" alt="Alliance HSS website landing page design" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Process">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Process Notes</h2>
+      <div class="process-notes">
+        <div class="process-note reveal"><div class="process-note-num" aria-hidden="true">01</div><div class="process-note-title">System</div><p class="process-note-body">A navy / orange / yellow palette over diagonal cuts of real safety photography &mdash; instantly recognisable across booth, web and social.</p></div>
+        <div class="process-note reveal r1"><div class="process-note-num" aria-hidden="true">02</div><div class="process-note-title">Trust</div><p class="process-note-body">The full accreditation line (LRQA, LR, DNV, ClassNK, flag registries) carried through every surface to signal compliance at a glance.</p></div>
+        <div class="process-note reveal r2"><div class="process-note-num" aria-hidden="true">03</div><div class="process-note-title">Applied</div><p class="process-note-body">Scaled from a 3.6&times;2.4m exhibition wall down to a responsive web landing page without losing the punch.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Credits">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Credits</h2>
+      <div class="credits-grid reveal r1">
+        <div>
+          <div class="credit-row"><span class="credit-label">Design</span><span class="credit-value">Timonas Stefanou</span></div>
+          <div class="credit-row"><span class="credit-label">Client</span><span class="credit-value">Alliance HSS</span></div>
+          <div class="credit-row"><span class="credit-label">Year</span><span class="credit-value">2026</span></div>
+        </div>
+        <div>
+          <div class="credit-row"><span class="credit-label">Scope</span><span class="credit-value">Booth &middot; Website &middot; Social</span></div>
+          <div class="credit-row"><span class="credit-label">Event</span><span class="credit-value">APM 2026 Singapore</span></div>
+          <div class="credit-row"><span class="credit-label">Tools</span><span class="credit-value">Illustrator &middot; Photoshop</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="../index.html#work" class="proj-next" aria-label="Back to all work">
+    <div><div class="proj-next-label">Back to</div><div class="proj-next-title">All Work</div></div>
+    <span style="font-size:2rem;font-family:var(--ff-display);" aria-hidden="true">&rarr;</span>
+  </a>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo">CD&middot;TM</a>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html#record"  class="footer-link">About</a>
+          <a href="../index.html#work"    class="footer-link">Work</a>
+          <a href="../index.html#contact" class="footer-link">Contact</a>
+        </nav>
+        <span class="footer-copy">&copy; 2026 Timonas Stefanou</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lb" id="lb" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <img id="lbImg" src="" alt="" />
+  </div>
+
+  <script>
+    (function () {
+      var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg");
+      function open(src, alt) { lbImg.src = src; lbImg.alt = alt || ""; lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; }
+      function close() { lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); lbImg.src = ""; document.body.style.overflow = ""; }
+      document.querySelectorAll("img[data-lb]").forEach(function (im) {
+        im.addEventListener("click", function () { open(im.getAttribute("src"), im.getAttribute("alt")); });
+      });
+      document.getElementById("lbClose").addEventListener("click", close);
+      lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && lb.classList.contains("open")) close(); });
+    })();
+  </script>
+  <script src="../script.js"></script>
+</body>
+</html>
