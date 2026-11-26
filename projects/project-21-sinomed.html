@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SINOMED â€” design work by Timonas Stefanou." />
+  <meta name="description" content="Sinomed â€” Advertising &middot; Print &middot; Apparel design work by Timonas Stefanou." />
   <title>Sinomed &mdash; Timonas Stefanou</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
     .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    .sec-desc { font-family:var(--ff-serif); color:var(--sepia); max-width:640px; margin:0 0 .5rem; }
     .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:1.5rem; }
-    .gal { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; }
+    .gal { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; align-items:start; }
+    .gal.g3 { grid-template-columns:repeat(3,1fr); }
+    .gal.g1 { grid-template-columns:1fr; }
     .gal-cell { background:#fff; border:1px solid rgba(0,0,0,.14); box-shadow:0 10px 30px rgba(0,0,0,.12); cursor:none; overflow:hidden; }
     .gal-cell img { width:100%; height:auto; display:block; transition:transform .3s ease; }
     .gal-cell:hover img { transform:scale(1.02); }
-    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .gal{grid-template-columns:1fr;} }
+    .web { max-width:900px; margin:1.5rem auto 0; background:#fff; border:1px solid rgba(0,0,0,.14); box-shadow:0 16px 50px rgba(0,0,0,.16); }
+    .web-bar { display:flex; align-items:center; gap:.5rem; padding:.6rem .9rem; background:#2a2a2a; }
+    .web-bar span { width:11px; height:11px; border-radius:50%; background:#ff5f57; }
+    .web-bar span:nth-child(2){ background:#febc2e; } .web-bar span:nth-child(3){ background:#28c840; }
+    .web-scroll { max-height:72vh; overflow-y:auto; } .web-scroll img { width:100%; display:block; cursor:none; }
+    @media (max-width:900px){ .gal.g3{grid-template-columns:repeat(2,1fr);} }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .gal,.gal.g3{grid-template-columns:1fr;} }
     .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
     .lb.open { display:flex; }
     .lb img { max-width:94vw; max-height:92vh; width:auto; height:auto; display:block; box-shadow:0 20px 70px rgba(0,0,0,.5); }
@@ -39,17 +48,17 @@
   <section class="proj-hero" aria-label="Project header">
     <div class="proj-hero-text">
       <a href="../index.html#work" class="proj-back">Back to Work</a>
-      <p class="proj-eyebrow">Advert &middot; 2025</p>
+      <p class="proj-eyebrow">Advert &amp; Apparel &middot; 2025</p>
       <h1 class="proj-title">SINOMED</h1>
     </div>
     <div class="proj-hero-visual" style="background:#f7f6ee;display:flex;align-items:center;justify-content:center;padding:3rem;">
-      <img src="images/sinomed/logo.png" alt="Sinomed logo" style="max-width:82%;max-height:150px;object-fit:contain;" />
+      <img src="images/sinomed/logo.png" alt="Sinomed logo" style="max-width:78%;max-height:170px;object-fit:contain;" />
     </div>
   </section>
 
   <div class="proj-meta" aria-label="Project details">
     <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">Sinomed</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Advertising &middot; Print</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Advertising &middot; Print &middot; Apparel</div></div>
     <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2025</div></div>
     <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; Photoshop</div></div>
   </div>
@@ -58,19 +67,28 @@
     <div class="wrap">
       <h2 class="proj-heading reveal">Overview</h2>
       <div class="proj-overview-grid">
-        <div class="proj-overview-body reveal r1"><p>Sinomed is the authorised distributor of Sinopec marine lubricants. I designed their double-sided print advert &mdash; global port coverage, OEM approvals and a direct QR route to the Sinomed portal.</p><p><b>Click any page to view it full size.</b></p></div>
-        <div class="proj-overview-aside reveal r2"><strong>Scope</strong><br />Print advert<br /><br /><strong>Design</strong><br />Timonas Stefanou</div>
+        <div class="proj-overview-body reveal r1"><p>Sinomed is the authorised distributor of Sinopec marine lubricants. I designed their double-sided print advert &mdash; global port coverage, OEM approvals and a QR route to the Sinomed portal &mdash; and the branded sleeveless jackets.</p><p><b>Click any piece to view it full size.</b></p></div>
+        <div class="proj-overview-aside reveal r2"><strong>Deliverables</strong><br />Print Advert<br />Branded Apparel<br /><br /><strong>Design</strong><br />Timonas Stefanou</div>
+      </div>
+    </div>
+  </section>
+  <section class="proj-section" style="background:var(--ground);" aria-label="Print Advert">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Print Advert</h2>
+      <div class="gal reveal r1">
+        <div class="gal-cell"><img data-lb src="images/sinomed/1-1.jpg" alt="Sinomed &mdash; Print Advert 1" loading="lazy" width="1200" height="1743" /></div>
+        <div class="gal-cell"><img data-lb src="images/sinomed/1-2.jpg" alt="Sinomed &mdash; Print Advert 2" loading="lazy" width="1200" height="1743" /></div>
       </div>
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--paper);" aria-label="The work">
+  <section class="proj-section" style="background:var(--paper);" aria-label="Branded Apparel">
     <div class="wrap">
-      <h2 class="proj-heading reveal">The Work</h2>
-      <p class="web-hint reveal r1">Print advert &mdash; click to zoom</p>
+      <h2 class="proj-heading reveal">Branded Apparel</h2>
+      <p class="sec-desc reveal r1">Sleeveless jackets.</p>
       <div class="gal reveal r1">
-        <div class="gal-cell"><img data-lb src="images/sinomed/1.jpg" alt="Sinomed page 1" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/sinomed/2.jpg" alt="Sinomed page 2" loading="lazy" /></div>
+        <div class="gal-cell"><img data-lb src="images/sinomed/2-1.jpg" alt="Sinomed &mdash; Branded Apparel 1" loading="lazy" width="414" height="652" /></div>
+        <div class="gal-cell"><img data-lb src="images/sinomed/2-2.jpg" alt="Sinomed &mdash; Branded Apparel 2" loading="lazy" width="455" height="655" /></div>
       </div>
     </div>
   </section>

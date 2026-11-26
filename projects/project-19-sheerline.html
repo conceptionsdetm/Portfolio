@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SHEERLINE â€” design work by Timonas Stefanou." />
+  <meta name="description" content="Sheerline â€” Brochure &middot; Presentation &middot; Event design work by Timonas Stefanou." />
   <title>Sheerline &mdash; Timonas Stefanou</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
     .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    .sec-desc { font-family:var(--ff-serif); color:var(--sepia); max-width:640px; margin:0 0 .5rem; }
     .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:1.5rem; }
-    .gal { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; }
+    .gal { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; align-items:start; }
+    .gal.g3 { grid-template-columns:repeat(3,1fr); }
+    .gal.g1 { grid-template-columns:1fr; }
     .gal-cell { background:#fff; border:1px solid rgba(0,0,0,.14); box-shadow:0 10px 30px rgba(0,0,0,.12); cursor:none; overflow:hidden; }
     .gal-cell img { width:100%; height:auto; display:block; transition:transform .3s ease; }
     .gal-cell:hover img { transform:scale(1.02); }
-    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .gal{grid-template-columns:1fr;} }
+    .web { max-width:900px; margin:1.5rem auto 0; background:#fff; border:1px solid rgba(0,0,0,.14); box-shadow:0 16px 50px rgba(0,0,0,.16); }
+    .web-bar { display:flex; align-items:center; gap:.5rem; padding:.6rem .9rem; background:#2a2a2a; }
+    .web-bar span { width:11px; height:11px; border-radius:50%; background:#ff5f57; }
+    .web-bar span:nth-child(2){ background:#febc2e; } .web-bar span:nth-child(3){ background:#28c840; }
+    .web-scroll { max-height:72vh; overflow-y:auto; } .web-scroll img { width:100%; display:block; cursor:none; }
+    @media (max-width:900px){ .gal.g3{grid-template-columns:repeat(2,1fr);} }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .gal,.gal.g3{grid-template-columns:1fr;} }
     .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
     .lb.open { display:flex; }
     .lb img { max-width:94vw; max-height:92vh; width:auto; height:auto; display:block; box-shadow:0 20px 70px rgba(0,0,0,.5); }
@@ -39,45 +48,106 @@
   <section class="proj-hero" aria-label="Project header">
     <div class="proj-hero-text">
       <a href="../index.html#work" class="proj-back">Back to Work</a>
-      <p class="proj-eyebrow">Brochure &amp; Event &middot; 2025</p>
+      <p class="proj-eyebrow">Brochure, Decks &amp; Events &middot; 2024&ndash;2026</p>
       <h1 class="proj-title">SHEERLINE</h1>
     </div>
     <div class="proj-hero-visual" style="background:#f7f6ee;display:flex;align-items:center;justify-content:center;padding:3rem;">
-      <img src="images/sheerline/logo.png" alt="Sheerline logo" style="max-width:82%;max-height:150px;object-fit:contain;" />
+      <img src="images/sheerline/logo.png" alt="Sheerline logo" style="max-width:78%;max-height:170px;object-fit:contain;" />
     </div>
   </section>
 
   <div class="proj-meta" aria-label="Project details">
     <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">Sheerline</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Brochure &middot; Event</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2025</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; InDesign</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Brochure &middot; Presentation &middot; Event</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2024&ndash;2026</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; InDesign &middot; PowerPoint</div></div>
   </div>
 
   <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
     <div class="wrap">
       <h2 class="proj-heading reveal">Overview</h2>
       <div class="proj-overview-grid">
-        <div class="proj-overview-body reveal r1"><p>Sheerline supplies marine chemicals, safety and technical products to the shipping industry. I designed their 2025 profile brochure and the full event kit for the Aderco presentation &mdash; save-the-date, invitation, email banner and roll-up.</p><p><b>Click any page to view it full size.</b></p></div>
-        <div class="proj-overview-aside reveal r2"><strong>Scope</strong><br />Profile brochure &middot; Aderco event set<br /><br /><strong>Design</strong><br />Timonas Stefanou</div>
+        <div class="proj-overview-body reveal r1"><p>Sheerline supplies marine chemicals, safety and technical products to the shipping industry. I designed the 2025 profile brochure, the PPE and Columbia presentations, the induction template, the STOP customer-portal leaflet and the full event kit for the Aderco presentation.</p><p><b>Click any piece to view it full size.</b></p></div>
+        <div class="proj-overview-aside reveal r2"><strong>Deliverables</strong><br />Profile Brochure 2025<br />PPE Presentation<br />Columbia Presentation<br />Induction Template<br />STOP Customer Portal Leaflet<br />Aderco Presentation Event<br /><br /><strong>Design</strong><br />Timonas Stefanou</div>
+      </div>
+    </div>
+  </section>
+  <section class="proj-section" style="background:var(--ground);" aria-label="Profile Brochure 2025">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Profile Brochure 2025</h2>
+      <div class="gal reveal r1">
+        <div class="gal-cell"><img data-lb src="images/sheerline/1-1.jpg" alt="Sheerline &mdash; Profile Brochure 2025 1" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/1-2.jpg" alt="Sheerline &mdash; Profile Brochure 2025 2" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/1-3.jpg" alt="Sheerline &mdash; Profile Brochure 2025 3" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/1-4.jpg" alt="Sheerline &mdash; Profile Brochure 2025 4" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/1-5.jpg" alt="Sheerline &mdash; Profile Brochure 2025 5" loading="lazy" width="1200" height="1697" /></div>
       </div>
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--paper);" aria-label="The work">
+  <section class="proj-section" style="background:var(--paper);" aria-label="PPE Presentation">
     <div class="wrap">
-      <h2 class="proj-heading reveal">The Work</h2>
-      <p class="web-hint reveal r1">Profile brochure &middot; Aderco event set &mdash; click to zoom</p>
+      <h2 class="proj-heading reveal">PPE Presentation</h2>
       <div class="gal reveal r1">
-        <div class="gal-cell"><img data-lb src="images/sheerline/1.jpg" alt="Sheerline page 1" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/sheerline/2.jpg" alt="Sheerline page 2" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/sheerline/3.jpg" alt="Sheerline page 3" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/sheerline/4.jpg" alt="Sheerline page 4" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/sheerline/5.jpg" alt="Sheerline page 5" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/sheerline/6.jpg" alt="Sheerline page 6" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/sheerline/7.jpg" alt="Sheerline page 7" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/sheerline/8.jpg" alt="Sheerline page 8" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/sheerline/9.jpg" alt="Sheerline page 9" loading="lazy" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/2-1.jpg" alt="Sheerline &mdash; PPE Presentation 1" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/2-2.jpg" alt="Sheerline &mdash; PPE Presentation 2" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/2-3.jpg" alt="Sheerline &mdash; PPE Presentation 3" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/2-4.jpg" alt="Sheerline &mdash; PPE Presentation 4" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/2-5.jpg" alt="Sheerline &mdash; PPE Presentation 5" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/2-6.jpg" alt="Sheerline &mdash; PPE Presentation 6" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/2-7.jpg" alt="Sheerline &mdash; PPE Presentation 7" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/2-8.jpg" alt="Sheerline &mdash; PPE Presentation 8" loading="lazy" width="1200" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Columbia Presentation">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Columbia Presentation</h2>
+      <div class="gal reveal r1">
+        <div class="gal-cell"><img data-lb src="images/sheerline/3-1.jpg" alt="Sheerline &mdash; Columbia Presentation 1" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/3-2.jpg" alt="Sheerline &mdash; Columbia Presentation 2" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/3-3.jpg" alt="Sheerline &mdash; Columbia Presentation 3" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/3-4.jpg" alt="Sheerline &mdash; Columbia Presentation 4" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/3-5.jpg" alt="Sheerline &mdash; Columbia Presentation 5" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/3-6.jpg" alt="Sheerline &mdash; Columbia Presentation 6" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/3-7.jpg" alt="Sheerline &mdash; Columbia Presentation 7" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/3-8.jpg" alt="Sheerline &mdash; Columbia Presentation 8" loading="lazy" width="1200" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Induction Template">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Induction Template</h2>
+      <div class="gal reveal r1">
+        <div class="gal-cell"><img data-lb src="images/sheerline/4-1.jpg" alt="Sheerline &mdash; Induction Template 1" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/4-2.jpg" alt="Sheerline &mdash; Induction Template 2" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/4-3.jpg" alt="Sheerline &mdash; Induction Template 3" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/4-4.jpg" alt="Sheerline &mdash; Induction Template 4" loading="lazy" width="1200" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="STOP Customer Portal Leaflet">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">STOP Customer Portal Leaflet</h2>
+      <div class="gal reveal r1">
+        <div class="gal-cell"><img data-lb src="images/sheerline/5-1.jpg" alt="Sheerline &mdash; STOP Customer Portal Leaflet 1" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/5-2.jpg" alt="Sheerline &mdash; STOP Customer Portal Leaflet 2" loading="lazy" width="1200" height="1697" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Aderco Presentation Event">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Aderco Presentation Event</h2>
+      <p class="sec-desc reveal r1">Save-the-date, invitation, email banner and roll-up.</p>
+      <div class="gal reveal r1">
+        <div class="gal-cell"><img data-lb src="images/sheerline/6-1.jpg" alt="Sheerline &mdash; Aderco Presentation Event 1" loading="lazy" width="600" height="600" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/6-2.jpg" alt="Sheerline &mdash; Aderco Presentation Event 2" loading="lazy" width="600" height="600" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/6-3.jpg" alt="Sheerline &mdash; Aderco Presentation Event 3" loading="lazy" width="1200" height="360" /></div>
+        <div class="gal-cell"><img data-lb src="images/sheerline/6-4.jpg" alt="Sheerline &mdash; Aderco Presentation Event 4" loading="lazy" width="1200" height="2949" /></div>
       </div>
     </div>
   </section>

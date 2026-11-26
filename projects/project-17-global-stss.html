@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GLOBAL STSS â€” design work by Timonas Stefanou." />
+  <meta name="description" content="Global STSS â€” Brochure &middot; Presentation &middot; Social design work by Timonas Stefanou." />
   <title>Global STSS &mdash; Timonas Stefanou</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
     .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    .sec-desc { font-family:var(--ff-serif); color:var(--sepia); max-width:640px; margin:0 0 .5rem; }
     .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:1.5rem; }
-    .gal { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; }
+    .gal { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; align-items:start; }
+    .gal.g3 { grid-template-columns:repeat(3,1fr); }
+    .gal.g1 { grid-template-columns:1fr; }
     .gal-cell { background:#fff; border:1px solid rgba(0,0,0,.14); box-shadow:0 10px 30px rgba(0,0,0,.12); cursor:none; overflow:hidden; }
     .gal-cell img { width:100%; height:auto; display:block; transition:transform .3s ease; }
     .gal-cell:hover img { transform:scale(1.02); }
-    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .gal{grid-template-columns:1fr;} }
+    .web { max-width:900px; margin:1.5rem auto 0; background:#fff; border:1px solid rgba(0,0,0,.14); box-shadow:0 16px 50px rgba(0,0,0,.16); }
+    .web-bar { display:flex; align-items:center; gap:.5rem; padding:.6rem .9rem; background:#2a2a2a; }
+    .web-bar span { width:11px; height:11px; border-radius:50%; background:#ff5f57; }
+    .web-bar span:nth-child(2){ background:#febc2e; } .web-bar span:nth-child(3){ background:#28c840; }
+    .web-scroll { max-height:72vh; overflow-y:auto; } .web-scroll img { width:100%; display:block; cursor:none; }
+    @media (max-width:900px){ .gal.g3{grid-template-columns:repeat(2,1fr);} }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .gal,.gal.g3{grid-template-columns:1fr;} }
     .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
     .lb.open { display:flex; }
     .lb img { max-width:94vw; max-height:92vh; width:auto; height:auto; display:block; box-shadow:0 20px 70px rgba(0,0,0,.5); }
@@ -39,44 +48,101 @@
   <section class="proj-hero" aria-label="Project header">
     <div class="proj-hero-text">
       <a href="../index.html#work" class="proj-back">Back to Work</a>
-      <p class="proj-eyebrow">Brochure &middot; 2026</p>
+      <p class="proj-eyebrow">Brochure &amp; Presentation &middot; 2025&ndash;2026</p>
       <h1 class="proj-title">GLOBAL STSS</h1>
     </div>
     <div class="proj-hero-visual" style="background:#f7f6ee;display:flex;align-items:center;justify-content:center;padding:3rem;">
-      <img src="images/global-stss/logo.png" alt="Global STSS logo" style="max-width:82%;max-height:150px;object-fit:contain;" />
+      <img src="images/global-stss/logo.png" alt="Global STSS logo" style="max-width:78%;max-height:170px;object-fit:contain;" />
     </div>
   </section>
 
   <div class="proj-meta" aria-label="Project details">
     <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">Global STSS</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Brochure &middot; Corporate</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2026</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; InDesign</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Brochure &middot; Presentation &middot; Social</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2025&ndash;2026</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; InDesign &middot; PowerPoint</div></div>
   </div>
 
   <section class="proj-section" style="background:var(--ground);" aria-label="Overview">
     <div class="wrap">
       <h2 class="proj-heading reveal">Overview</h2>
       <div class="proj-overview-grid">
-        <div class="proj-overview-body reveal r1"><p>Global STSS &mdash; ship-to-ship transfer specialists. I designed their corporate profile brochure, a clean services-led document in the Global/STSS gradient identity.</p><p><b>Click any page to view it full size.</b></p></div>
-        <div class="proj-overview-aside reveal r2"><strong>Scope</strong><br />Corporate profile<br /><br /><strong>Design</strong><br />Timonas Stefanou</div>
+        <div class="proj-overview-body reveal r1"><p>Global STSS &mdash; ship-to-ship transfer specialists. I designed the corporate profile brochure, the 2026 presentation and template, a technical brochure and the LinkedIn content &mdash; SMM 2026, Posidonia, agent visits and product posts &mdash; all in the Global/STSS gradient identity.</p><p><b>Click any piece to view it full size.</b></p></div>
+        <div class="proj-overview-aside reveal r2"><strong>Deliverables</strong><br />Corporate Profile Brochure<br />Presentation 2026<br />Presentation Template<br />Technical Brochure<br />Social Media<br /><br /><strong>Design</strong><br />Timonas Stefanou</div>
+      </div>
+    </div>
+  </section>
+  <section class="proj-section" style="background:var(--ground);" aria-label="Corporate Profile Brochure">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Corporate Profile Brochure</h2>
+      <div class="gal reveal r1">
+        <div class="gal-cell"><img data-lb src="images/global-stss/1-1.jpg" alt="Global STSS &mdash; Corporate Profile Brochure 1" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/1-2.jpg" alt="Global STSS &mdash; Corporate Profile Brochure 2" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/1-3.jpg" alt="Global STSS &mdash; Corporate Profile Brochure 3" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/1-4.jpg" alt="Global STSS &mdash; Corporate Profile Brochure 4" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/1-5.jpg" alt="Global STSS &mdash; Corporate Profile Brochure 5" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/1-6.jpg" alt="Global STSS &mdash; Corporate Profile Brochure 6" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/1-7.jpg" alt="Global STSS &mdash; Corporate Profile Brochure 7" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/1-8.jpg" alt="Global STSS &mdash; Corporate Profile Brochure 8" loading="lazy" width="1200" height="1697" /></div>
       </div>
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--paper);" aria-label="The work">
+  <section class="proj-section" style="background:var(--paper);" aria-label="Presentation 2026">
     <div class="wrap">
-      <h2 class="proj-heading reveal">The Work</h2>
-      <p class="web-hint reveal r1">Corporate profile &mdash; click to zoom</p>
+      <h2 class="proj-heading reveal">Presentation 2026</h2>
       <div class="gal reveal r1">
-        <div class="gal-cell"><img data-lb src="images/global-stss/1.jpg" alt="Global STSS page 1" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/global-stss/2.jpg" alt="Global STSS page 2" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/global-stss/3.jpg" alt="Global STSS page 3" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/global-stss/4.jpg" alt="Global STSS page 4" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/global-stss/5.jpg" alt="Global STSS page 5" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/global-stss/6.jpg" alt="Global STSS page 6" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/global-stss/7.jpg" alt="Global STSS page 7" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/global-stss/8.jpg" alt="Global STSS page 8" loading="lazy" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/2-1.jpg" alt="Global STSS &mdash; Presentation 2026 1" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/2-2.jpg" alt="Global STSS &mdash; Presentation 2026 2" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/2-3.jpg" alt="Global STSS &mdash; Presentation 2026 3" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/2-4.jpg" alt="Global STSS &mdash; Presentation 2026 4" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/2-5.jpg" alt="Global STSS &mdash; Presentation 2026 5" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/2-6.jpg" alt="Global STSS &mdash; Presentation 2026 6" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/2-7.jpg" alt="Global STSS &mdash; Presentation 2026 7" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/2-8.jpg" alt="Global STSS &mdash; Presentation 2026 8" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/2-9.jpg" alt="Global STSS &mdash; Presentation 2026 9" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/2-10.jpg" alt="Global STSS &mdash; Presentation 2026 10" loading="lazy" width="1200" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Presentation Template">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Presentation Template</h2>
+      <div class="gal g3 reveal r1">
+        <div class="gal-cell"><img data-lb src="images/global-stss/3-1.jpg" alt="Global STSS &mdash; Presentation Template 1" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/3-2.jpg" alt="Global STSS &mdash; Presentation Template 2" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/3-3.jpg" alt="Global STSS &mdash; Presentation Template 3" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/3-4.jpg" alt="Global STSS &mdash; Presentation Template 4" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/3-5.jpg" alt="Global STSS &mdash; Presentation Template 5" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/3-6.jpg" alt="Global STSS &mdash; Presentation Template 6" loading="lazy" width="1200" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--paper);" aria-label="Technical Brochure">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Technical Brochure</h2>
+      <div class="gal reveal r1">
+        <div class="gal-cell"><img data-lb src="images/global-stss/4-1.jpg" alt="Global STSS &mdash; Technical Brochure 1" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/4-2.jpg" alt="Global STSS &mdash; Technical Brochure 2" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/4-3.jpg" alt="Global STSS &mdash; Technical Brochure 3" loading="lazy" width="1200" height="1697" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/4-4.jpg" alt="Global STSS &mdash; Technical Brochure 4" loading="lazy" width="1200" height="1697" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Social Media">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Social Media</h2>
+      <p class="sec-desc reveal r1">LinkedIn campaign &mdash; events, visits and product posts.</p>
+      <div class="gal g3 reveal r1">
+        <div class="gal-cell"><img data-lb src="images/global-stss/5-1.jpg" alt="Global STSS &mdash; Social Media 1" loading="lazy" width="1080" height="1080" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/5-2.jpg" alt="Global STSS &mdash; Social Media 2" loading="lazy" width="1080" height="1080" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/5-3.jpg" alt="Global STSS &mdash; Social Media 3" loading="lazy" width="1080" height="1080" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/5-4.jpg" alt="Global STSS &mdash; Social Media 4" loading="lazy" width="1080" height="1080" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/5-5.jpg" alt="Global STSS &mdash; Social Media 5" loading="lazy" width="1080" height="1080" /></div>
+        <div class="gal-cell"><img data-lb src="images/global-stss/5-6.jpg" alt="Global STSS &mdash; Social Media 6" loading="lazy" width="1200" height="1200" /></div>
       </div>
     </div>
   </section>

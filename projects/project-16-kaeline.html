@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="KAELINE â€” design work by Timonas Stefanou." />
+  <meta name="description" content="Kaeline â€” Presentation &middot; Print &middot; Merch design work by Timonas Stefanou." />
   <title>Kaeline &mdash; Timonas Stefanou</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
     .proj-overview-grid { display:grid; grid-template-columns:1fr 280px; gap:3rem; margin-top:1.5rem; }
+    .sec-desc { font-family:var(--ff-serif); color:var(--sepia); max-width:640px; margin:0 0 .5rem; }
     .web-hint { text-align:center; font-family:var(--ff-mono); font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sepia); margin-bottom:1.5rem; }
-    .gal { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; }
+    .gal { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; align-items:start; }
+    .gal.g3 { grid-template-columns:repeat(3,1fr); }
+    .gal.g1 { grid-template-columns:1fr; }
     .gal-cell { background:#fff; border:1px solid rgba(0,0,0,.14); box-shadow:0 10px 30px rgba(0,0,0,.12); cursor:none; overflow:hidden; }
     .gal-cell img { width:100%; height:auto; display:block; transition:transform .3s ease; }
     .gal-cell:hover img { transform:scale(1.02); }
-    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .gal{grid-template-columns:1fr;} }
+    .web { max-width:900px; margin:1.5rem auto 0; background:#fff; border:1px solid rgba(0,0,0,.14); box-shadow:0 16px 50px rgba(0,0,0,.16); }
+    .web-bar { display:flex; align-items:center; gap:.5rem; padding:.6rem .9rem; background:#2a2a2a; }
+    .web-bar span { width:11px; height:11px; border-radius:50%; background:#ff5f57; }
+    .web-bar span:nth-child(2){ background:#febc2e; } .web-bar span:nth-child(3){ background:#28c840; }
+    .web-scroll { max-height:72vh; overflow-y:auto; } .web-scroll img { width:100%; display:block; cursor:none; }
+    @media (max-width:900px){ .gal.g3{grid-template-columns:repeat(2,1fr);} }
+    @media (max-width:760px){ .proj-overview-grid{grid-template-columns:1fr;} .gal,.gal.g3{grid-template-columns:1fr;} }
     .lb { position:fixed; inset:0; z-index:9500; background:rgba(10,10,10,.93); display:none; align-items:center; justify-content:center; }
     .lb.open { display:flex; }
     .lb img { max-width:94vw; max-height:92vh; width:auto; height:auto; display:block; box-shadow:0 20px 70px rgba(0,0,0,.5); }
@@ -39,18 +48,18 @@
   <section class="proj-hero" aria-label="Project header">
     <div class="proj-hero-text">
       <a href="../index.html#work" class="proj-back">Back to Work</a>
-      <p class="proj-eyebrow">Presentation &middot; 2026</p>
+      <p class="proj-eyebrow">Presentation &amp; Print &middot; 2025&ndash;2026</p>
       <h1 class="proj-title">KAELINE</h1>
     </div>
     <div class="proj-hero-visual" style="background:#f7f6ee;display:flex;align-items:center;justify-content:center;padding:3rem;">
-      <img src="images/kaeline/logo.png" alt="Kaeline logo" style="max-width:82%;max-height:150px;object-fit:contain;" />
+      <img src="images/kaeline/logo.png" alt="Kaeline logo" style="max-width:78%;max-height:170px;object-fit:contain;" />
     </div>
   </section>
 
   <div class="proj-meta" aria-label="Project details">
     <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">Kaeline Group</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Presentation</div></div>
-    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2026</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Category</div><div class="proj-meta-value">Presentation &middot; Print &middot; Merch</div></div>
+    <div class="proj-meta-item"><div class="proj-meta-label">Year</div><div class="proj-meta-value">2025&ndash;2026</div></div>
     <div class="proj-meta-item"><div class="proj-meta-label">Tools</div><div class="proj-meta-value">Illustrator &middot; PowerPoint</div></div>
   </div>
 
@@ -58,25 +67,52 @@
     <div class="wrap">
       <h2 class="proj-heading reveal">Overview</h2>
       <div class="proj-overview-grid">
-        <div class="proj-overview-body reveal r1"><p>Kaeline&rsquo;s lubricant-optimisation programme, presented. I built the internal event presentation &mdash; a bold deck carrying the colourful Kaeline star system across every slide.</p><p><b>Click any page to view it full size.</b></p></div>
-        <div class="proj-overview-aside reveal r2"><strong>Scope</strong><br />Event presentation<br /><br /><strong>Design</strong><br />Timonas Stefanou</div>
+        <div class="proj-overview-body reveal r1"><p>Kaeline&rsquo;s lubricant-optimisation programme, presented and printed. I built the internal event presentation, the long-format brochure, the icon sticker set and the merch &mdash; carrying the colourful Kaeline star system across every surface.</p><p><b>Click any piece to view it full size.</b></p></div>
+        <div class="proj-overview-aside reveal r2"><strong>Deliverables</strong><br />Internal Event Presentation<br />Kaeline Brochure<br />Stickers<br /><br /><strong>Design</strong><br />Timonas Stefanou</div>
+      </div>
+    </div>
+  </section>
+  <section class="proj-section" style="background:var(--ground);" aria-label="Internal Event Presentation">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Internal Event Presentation</h2>
+      <div class="gal reveal r1">
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-1.jpg" alt="Kaeline &mdash; Internal Event Presentation 1" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-2.jpg" alt="Kaeline &mdash; Internal Event Presentation 2" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-3.jpg" alt="Kaeline &mdash; Internal Event Presentation 3" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-4.jpg" alt="Kaeline &mdash; Internal Event Presentation 4" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-5.jpg" alt="Kaeline &mdash; Internal Event Presentation 5" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-6.jpg" alt="Kaeline &mdash; Internal Event Presentation 6" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-7.jpg" alt="Kaeline &mdash; Internal Event Presentation 7" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-8.jpg" alt="Kaeline &mdash; Internal Event Presentation 8" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-9.jpg" alt="Kaeline &mdash; Internal Event Presentation 9" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-10.jpg" alt="Kaeline &mdash; Internal Event Presentation 10" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-11.jpg" alt="Kaeline &mdash; Internal Event Presentation 11" loading="lazy" width="1200" height="675" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/1-12.jpg" alt="Kaeline &mdash; Internal Event Presentation 12" loading="lazy" width="1200" height="675" /></div>
       </div>
     </div>
   </section>
 
-  <section class="proj-section" style="background:var(--paper);" aria-label="The work">
+  <section class="proj-section" style="background:var(--paper);" aria-label="Kaeline Brochure">
     <div class="wrap">
-      <h2 class="proj-heading reveal">The Work</h2>
-      <p class="web-hint reveal r1">Event presentation &mdash; click to zoom</p>
+      <h2 class="proj-heading reveal">Kaeline Brochure</h2>
+      <p class="sec-desc reveal r1">40&times;20cm brochure.</p>
       <div class="gal reveal r1">
-        <div class="gal-cell"><img data-lb src="images/kaeline/1.jpg" alt="Kaeline page 1" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/kaeline/2.jpg" alt="Kaeline page 2" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/kaeline/3.jpg" alt="Kaeline page 3" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/kaeline/4.jpg" alt="Kaeline page 4" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/kaeline/5.jpg" alt="Kaeline page 5" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/kaeline/6.jpg" alt="Kaeline page 6" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/kaeline/7.jpg" alt="Kaeline page 7" loading="lazy" /></div>
-        <div class="gal-cell"><img data-lb src="images/kaeline/8.jpg" alt="Kaeline page 8" loading="lazy" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/2-1.jpg" alt="Kaeline &mdash; Kaeline Brochure 1" loading="lazy" width="1200" height="1200" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/2-2.jpg" alt="Kaeline &mdash; Kaeline Brochure 2" loading="lazy" width="1200" height="600" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/2-3.jpg" alt="Kaeline &mdash; Kaeline Brochure 3" loading="lazy" width="1200" height="600" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/2-4.jpg" alt="Kaeline &mdash; Kaeline Brochure 4" loading="lazy" width="1200" height="600" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/2-5.jpg" alt="Kaeline &mdash; Kaeline Brochure 5" loading="lazy" width="1200" height="600" /></div>
+        <div class="gal-cell"><img data-lb src="images/kaeline/2-6.jpg" alt="Kaeline &mdash; Kaeline Brochure 6" loading="lazy" width="1200" height="600" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section" style="background:var(--ground);" aria-label="Stickers">
+    <div class="wrap">
+      <h2 class="proj-heading reveal">Stickers</h2>
+      <p class="sec-desc reveal r1">Icon cut-out stickers.</p>
+      <div class="gal g1 reveal r1" style="max-width:900px;margin-left:auto;margin-right:auto;">
+        <div class="gal-cell"><img data-lb src="images/kaeline/3-1.jpg" alt="Kaeline &mdash; Stickers 1" loading="lazy" width="1200" height="1200" /></div>
       </div>
     </div>
   </section>
